@@ -1,0 +1,30 @@
+<div class="nexmoe-drawer  nexmoe-pd" id="drawer" style="overflow-x: auto;overflow-y: auto;">
+
+     <% theme.pendants.forEach(function(pendant){ %>
+        <% if(pendant.enable){ %>
+
+        <%- partial('_pendant/' + pendant.name, {options: pendant.options}) %>
+
+    <% }}) %>
+</div>
+<style>
+    .nexmoe-pd {
+        position: fixed;
+        left: auto;
+        top: 40px;
+        right: 0;
+    }
+    .nexmoe-pd-item{
+       display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    #nexmoe-pendant .mdui-drawer{
+        width: 305px;
+    }
+    @media screen and (max-width: 1600px) {
+        #nexmoe-pendant {
+            display: none
+        }
+    }
+</style>
