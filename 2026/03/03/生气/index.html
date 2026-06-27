@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="yluna">
+    
+    <title>
+        
+            生气 |
+        
+        yluna&#39;s personal page
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/avatar.jpg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/css/custom.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"yluna-36.github.io","root":"/","language":"en"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"yluna's personal page","author":"yluna","avatar":"/images/avatar.jpg","logo":"/images/avatar.jpg","favicon":"/images/avatar.jpg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","gallery":"/gallery","Me":{"children":[{"about":"/about"},{"links":"/links"}]}},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"源于热爱，驱于好奇，见于广阔。 || —— Think Absolute","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/yluna-36","weixin":"img | /images/wechat.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"mailto:your-email@example.com","bilibili":"https://space.bilibili.com/3632309557267399?spm_id_from=333.881.0.0"}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":true,"use":"giscus","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":"yluna-36","github_admins":"yluna-36","repository":"yluna-36.github.io","client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"https://your-waline-server.vercel.app","reaction":true,"version":"3.3.2"},"giscus":{"repo":"yluna-36/yluna-36.github.io","repo_id":"R_kgDOQFnQvw","category":"Announcements","category_id":"DIC_kwDOQFnQv84C5THI","reactions_enabled":true},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs","custom":{"enable":false,"url":null}},"pjax":{"enable":true},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":[null,"/css/custom.css"],"js":[null,"/js/custom.js"]},"root":"","search_db_path":"keep-search.json","source_data":{"links":[{"title":"友情链接"},{"name":"Keep Theme","link":"https://keep.xpoet.cn","description":"一个优雅的 Hexo 主题","avatar":"https://keep.xpoet.cn/images/logo.svg"},{"name":"comydream","link":"https://comydream.github.io/","description":"我的朋友","avatar":"https://github.com/comydream.png"}],"photos":[{"name":"示例照片 - 1","url":"https://picsum.photos/id/1018/800/600"},{"name":"示例照片 - 2","url":"https://picsum.photos/id/1015/800/600"},{"name":"示例照片 - 3","url":"https://picsum.photos/id/1019/800/600"},{"name":"示例照片 - 4","url":"https://picsum.photos/id/1016/800/600"},{"name":"示例照片 - 5","url":"https://picsum.photos/id/1025/800/600"}]},"version":"4.3.0"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               yluna&#39;s personal page
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/gallery">
+                                
+                                GALLERY
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                ME
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/about">
+                                                
+                                                ABOUT
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/links">
+                                                
+                                                LINKS
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/gallery">
+                            
+                            GALLERY
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            ME
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/about">
+                                        
+                                        ABOUT
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/links">
+                                        
+                                        LINKS
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+                <div class="post-content-top border-box"
+                     style="height: 13.8rem"
+                >
+                    <div class="cover-post-title">
+                        生气
+                    </div>
+                    <img class="post-cover" src="https://picsum.photos/seed/490/800/400"
+                         onerror="this.style.display='none'"
+                    >
+                </div>
+            
+
+            <div class="post-content-bottom border-box has-cover">
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">yluna</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-03-03 19:04:58</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sat Jun 27 2026 11:18:16 GMT+0800">2026-06-27 11:18:16</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%B4%A9%E5%9D%8F/">崩坏</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%83%85%E7%BB%AA/">情绪</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%80%A7%E6%A0%BC/">性格</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%94%9F%E6%B0%94/">生气</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.3k Words</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 Mins</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="生气"><a href="#生气" class="headerlink" title="生气"></a>生气</h1><p><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14ggJzCEjh/?spm_id_from=333.1245.0.0&vd_source=929c876c6676cf0b1cd5c5195a6f28be" >https://www.bilibili.com/video/BV14ggJzCEjh/?spm_id_from=333.1245.0.0&amp;vd_source=929c876c6676cf0b1cd5c5195a6f28be<i class="fas fa-external-link-alt"></i></a></p>
+<p>该视频围绕“一个人生气时的状态最能反映其性格底色”展开，从精神分析视角深入解析了四种常见的生气方式，结合童年经历、心理机制及性格特点进行了详细阐释，具体内容如下：</p>
+<h3 id="一、核心观点：生气状态是性格底色的“暴露镜”"><a href="#一、核心观点：生气状态是性格底色的“暴露镜”" class="headerlink" title="一、核心观点：生气状态是性格底色的“暴露镜”"></a>一、核心观点：生气状态是性格底色的“暴露镜”</h3><p>从精神分析角度来看，人在极端愤怒的压力下会卸下伪装，显露更真实的自我。因此，观察一个人生气时的反应，是看清其性格本质的有效方式——这种反应本质上暴露了他过往的经历（尤其是童年创伤）和心理防御机制，对方的攻击性背后往往隐藏着未被解决的伤痛。</p>
+<h3 id="二、四种常见生气方式及深层解析"><a href="#二、四种常见生气方式及深层解析" class="headerlink" title="二、四种常见生气方式及深层解析"></a>二、四种常见生气方式及深层解析</h3><h3 id="1-回避沟通型：用沉默“自保”，源于对沟通的绝望"><a href="#1-回避沟通型：用沉默“自保”，源于对沟通的绝望" class="headerlink" title="1. 回避沟通型：用沉默“自保”，源于对沟通的绝望"></a>1. 回避沟通型：用沉默“自保”，源于对沟通的绝望</h3><ul>
+<li><strong>表现</strong>：争吵后拒绝回应（不回消息、冷战）、频繁挂电话、态度敷衍，刻意回避问题解决。</li>
+<li><strong>心理根源</strong>：多为“回避型依恋”，与童年“需求未被回应”的创伤直接相关。例如：童年时渴望被妈妈关注却被无视，向父母倾诉委屈时被呵斥“别来烦我”。这些经历让他们形成“沟通无用，只会让关系更糟”的认知，逐渐失去沟通欲望，认为沉默才是最安全的选择。</li>
+<li><strong>性格与关系影响</strong>：在亲密关系中，他们容易忽视伴侣的感受和需求，缺乏解决问题的能力，习惯长时间沉浸在自我世界中，难以与伴侣建立深度情感连接。</li>
+</ul>
+<h3 id="2-情绪爆发性：用“本能发泄”替代理性，心智退行至幼儿状态"><a href="#2-情绪爆发性：用“本能发泄”替代理性，心智退行至幼儿状态" class="headerlink" title="2. 情绪爆发性：用“本能发泄”替代理性，心智退行至幼儿状态"></a>2. 情绪爆发性：用“本能发泄”替代理性，心智退行至幼儿状态</h3><ul>
+<li><strong>表现</strong>：生气时会大声指责（如“你有病啊”“你神经病吧”），不分场合大吵大闹，甚至通过摔东西、打人等极端方式宣泄情绪。</li>
+<li><strong>心理根源</strong>：心智不够成熟，生气时会退行至幼儿状态，依赖本能发泄情绪。这种模式多源于成长中缺乏健康的情绪表达示范——比如长期目睹父母用暴力解决冲突，潜意识中会认为“解决问题就是比谁声音大、谁更狠”。</li>
+<li><strong>性格与关系影响</strong>：性格冲动，平时可能直率、藏不住事，但一旦发生冲突就会失控，难以管理情绪，容易对关系造成破坏性冲击。</li>
+</ul>
+<h3 id="3-情绪抑制性：用“压抑”掩盖愤怒，爆发即意味着“放弃关系”"><a href="#3-情绪抑制性：用“压抑”掩盖愤怒，爆发即意味着“放弃关系”" class="headerlink" title="3. 情绪抑制性：用“压抑”掩盖愤怒，爆发即意味着“放弃关系”"></a>3. 情绪抑制性：用“压抑”掩盖愤怒，爆发即意味着“放弃关系”</h3><ul>
+<li><strong>表现</strong>：即使生气也绝不显露，被问及“是不是生气了”时会否认（如“没有啊，你想多了”），刻意压抑真实感受。</li>
+<li><strong>心理根源</strong>：源于对强烈情感的恐惧——早年曾因表达愤怒导致灾难性后果（如被严厉惩罚、关系破裂），因此发展出强大的“超我”（心理层面的自我监控机制），严格抑制攻击性表达，避免冲突升级。</li>
+<li><strong>性格与关系影响</strong>：性格敏感，习惯优先照顾他人感受而牺牲自我，常给人“好脾气”的错觉。但压抑的情绪会不断积累，一旦爆发，往往意味着“已准备放弃这段关系”，是“失望型分手”的高发群体。</li>
+</ul>
+<h3 id="4-焦虑驱动型：用“躯体化”替代表达，愤怒转向“自我攻击”"><a href="#4-焦虑驱动型：用“躯体化”替代表达，愤怒转向“自我攻击”" class="headerlink" title="4. 焦虑驱动型：用“躯体化”替代表达，愤怒转向“自我攻击”"></a>4. 焦虑驱动型：用“躯体化”替代表达，愤怒转向“自我攻击”</h3><ul>
+<li><strong>表现</strong>：生气时会出现躯体化症状——说不出话、身体发抖、呼吸急促，甚至僵住无法动弹，属于典型的“抒情障碍”（难以用语言表达情绪）。</li>
+<li><strong>心理根源</strong>：荣格提出，“躯体化是个体潜意识将心理痛苦转化为躯体症状的防御过程”，这类人会将愤怒情绪转向自我攻击。核心原因是内在情绪体验混乱：他们并非不想表达，而是害怕表达后会受到严厉惩罚或失去重要关系，最终导致身体反应“锁住”了情感表达的通道。</li>
+<li><strong>性格与关系影响</strong>：内在高度焦虑，在高压环境下易感到无助；既难以表达自己的真实感受，也难以共情和理解他人的情绪，情感连接能力较弱。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>一个人的生气方式，本质是其童年经历、心理防御机制的“外在投射”。理解这些模式，不仅能帮助我们看清他人的性格底色，也能更深入地理解亲密关系中冲突的根源——对方的攻击性或许并非针对“当下的你”，而是过往未被疗愈的伤痛在“借题发挥”。</p>
+<h3 id="我自己没怎么生过气感觉是因为我的童年现在被我修补的比较好，而且我本身的童年也还是可以。而且正所谓富人不吵架。"><a href="#我自己没怎么生过气感觉是因为我的童年现在被我修补的比较好，而且我本身的童年也还是可以。而且正所谓富人不吵架。" class="headerlink" title="我自己没怎么生过气感觉是因为我的童年现在被我修补的比较好，而且我本身的童年也还是可以。而且正所谓富人不吵架。"></a>我自己没怎么生过气感觉是因为我的童年现在被我修补的比较好，而且我本身的童年也还是可以。而且正所谓富人不吵架。</h3>
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%83%85%E7%BB%AA/">情绪</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%80%A7%E6%A0%BC/">性格</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%94%9F%E6%B0%94/">生气</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/03/03/%E4%BB%8E%E5%86%85%E8%A1%A3%E6%BC%94%E5%8F%98%E7%9A%84%E8%BF%87%E7%A8%8B%E7%9C%8B%E5%A5%B3%E6%80%A7%E8%A7%A3%E6%94%BE-%E6%97%A0%E8%AE%BA%E4%BD%95%E7%A7%8D%E5%A5%B3%E6%9D%83,%E6%A0%B8%E5%BF%83%E7%9A%84%E7%9B%AE%E7%9A%84%E5%BA%94%E8%AF%A5%E6%98%AF%E8%AE%A9%E5%A5%B3%E6%80%A7%E8%BF%87%E5%BE%97%E6%9B%B4%E5%8A%A0%E8%88%92%E6%9C%8D%E5%B9%B8%E7%A6%8F%E3%80%82/"
+                                   title="从内衣演变的过程看女性解放-无论何种女权,核心的目的应该是让女性过得更加舒服幸福。"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">从内衣演变的过程看女性解放-无论何种女权,核心的目的应该是让女性过得更加舒服幸福。</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/03/03/%E7%A4%BC%E7%89%A9/"
+                                   title="礼物"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">礼物</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;Comments
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">Comment plugin failed to load</span>
+    <button class="reload keep-button">Click to reload</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">Loading comment plugin</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="giscus-comments-container">
+        <div class="giscus" id="giscus"></div>
+        <script data-pjax
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          if (!window.KeepCommentPlugin?.getGiscusTheme) {
+            window.KeepCommentPlugin.getGiscusTheme = () => {
+              return document.documentElement.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.changeGiscusTheme) {
+            window.KeepCommentPlugin.changeGiscusTheme = () => {
+              const iframe = document.querySelector('iframe.giscus-frame')
+              iframe && iframe.contentWindow.postMessage({
+                giscus: {
+                  setConfig: {
+                    theme: window.KeepCommentPlugin.getGiscusTheme()
+                  }
+                }
+              }, 'https://giscus.app')
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.initGiscus) {
+            window.KeepCommentPlugin.initGiscus = () => {
+              const script = document.createElement('script')
+              script.async = true
+              script.src = 'https://giscus.app/client.js'
+              script.setAttribute('data-repo', 'yluna-36/yluna-36.github.io')
+              script.setAttribute('data-repo-id', 'R_kgDOQFnQvw')
+              script.setAttribute('data-category', 'Announcements')
+              script.setAttribute('data-category-id', 'DIC_kwDOQFnQv84C5THI')
+              script.setAttribute('data-reactions-enabled', '1')
+              script.setAttribute('data-lang', 'en')
+              script.setAttribute('data-mapping', 'pathname')
+              script.setAttribute('data-strict', '0')
+              script.setAttribute('data-emit-metadata', '0')
+              script.setAttribute('data-input-position', 'top')
+              script.setAttribute('crossorigin', 'anonymous')
+              script.setAttribute('loading', 'lazy')
+              script.setAttribute('data-theme', window.KeepCommentPlugin.getGiscusTheme())
+              document.querySelector('.giscus-comments-container').appendChild(script)
+              script.onerror = () => {
+                window.KeepCommentPlugin.loadFailHandle()
+              }
+              script.onload = () => {
+                window.KeepCommentPlugin.hideLoading()
+              }
+              const toggleThemeBtn = document.querySelector('.tool-toggle-theme-mode')
+              toggleThemeBtn && toggleThemeBtn.addEventListener('click', () => {
+                window.KeepCommentPlugin.changeGiscusTheme()
+              })
+            }
+          }
+
+          if ('true' === "true") {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initGiscus()
+            }, 1000)
+          } else {
+            window.addEventListener("DOMContentLoaded", window.KeepCommentPlugin.initGiscus)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E6%B0%94"><span class="nav-text">生气</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%A0%B8%E5%BF%83%E8%A7%82%E7%82%B9%EF%BC%9A%E7%94%9F%E6%B0%94%E7%8A%B6%E6%80%81%E6%98%AF%E6%80%A7%E6%A0%BC%E5%BA%95%E8%89%B2%E7%9A%84%E2%80%9C%E6%9A%B4%E9%9C%B2%E9%95%9C%E2%80%9D"><span class="nav-text">一、核心观点：生气状态是性格底色的“暴露镜”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%9B%9B%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%94%9F%E6%B0%94%E6%96%B9%E5%BC%8F%E5%8F%8A%E6%B7%B1%E5%B1%82%E8%A7%A3%E6%9E%90"><span class="nav-text">二、四种常见生气方式及深层解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9B%9E%E9%81%BF%E6%B2%9F%E9%80%9A%E5%9E%8B%EF%BC%9A%E7%94%A8%E6%B2%89%E9%BB%98%E2%80%9C%E8%87%AA%E4%BF%9D%E2%80%9D%EF%BC%8C%E6%BA%90%E4%BA%8E%E5%AF%B9%E6%B2%9F%E9%80%9A%E7%9A%84%E7%BB%9D%E6%9C%9B"><span class="nav-text">1. 回避沟通型：用沉默“自保”，源于对沟通的绝望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%83%85%E7%BB%AA%E7%88%86%E5%8F%91%E6%80%A7%EF%BC%9A%E7%94%A8%E2%80%9C%E6%9C%AC%E8%83%BD%E5%8F%91%E6%B3%84%E2%80%9D%E6%9B%BF%E4%BB%A3%E7%90%86%E6%80%A7%EF%BC%8C%E5%BF%83%E6%99%BA%E9%80%80%E8%A1%8C%E8%87%B3%E5%B9%BC%E5%84%BF%E7%8A%B6%E6%80%81"><span class="nav-text">2. 情绪爆发性：用“本能发泄”替代理性，心智退行至幼儿状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%83%85%E7%BB%AA%E6%8A%91%E5%88%B6%E6%80%A7%EF%BC%9A%E7%94%A8%E2%80%9C%E5%8E%8B%E6%8A%91%E2%80%9D%E6%8E%A9%E7%9B%96%E6%84%A4%E6%80%92%EF%BC%8C%E7%88%86%E5%8F%91%E5%8D%B3%E6%84%8F%E5%91%B3%E7%9D%80%E2%80%9C%E6%94%BE%E5%BC%83%E5%85%B3%E7%B3%BB%E2%80%9D"><span class="nav-text">3. 情绪抑制性：用“压抑”掩盖愤怒，爆发即意味着“放弃关系”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%84%A6%E8%99%91%E9%A9%B1%E5%8A%A8%E5%9E%8B%EF%BC%9A%E7%94%A8%E2%80%9C%E8%BA%AF%E4%BD%93%E5%8C%96%E2%80%9D%E6%9B%BF%E4%BB%A3%E8%A1%A8%E8%BE%BE%EF%BC%8C%E6%84%A4%E6%80%92%E8%BD%AC%E5%90%91%E2%80%9C%E8%87%AA%E6%88%91%E6%94%BB%E5%87%BB%E2%80%9D"><span class="nav-text">4. 焦虑驱动型：用“躯体化”替代表达，愤怒转向“自我攻击”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E8%87%AA%E5%B7%B1%E6%B2%A1%E6%80%8E%E4%B9%88%E7%94%9F%E8%BF%87%E6%B0%94%E6%84%9F%E8%A7%89%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E7%9A%84%E7%AB%A5%E5%B9%B4%E7%8E%B0%E5%9C%A8%E8%A2%AB%E6%88%91%E4%BF%AE%E8%A1%A5%E7%9A%84%E6%AF%94%E8%BE%83%E5%A5%BD%EF%BC%8C%E8%80%8C%E4%B8%94%E6%88%91%E6%9C%AC%E8%BA%AB%E7%9A%84%E7%AB%A5%E5%B9%B4%E4%B9%9F%E8%BF%98%E6%98%AF%E5%8F%AF%E4%BB%A5%E3%80%82%E8%80%8C%E4%B8%94%E6%AD%A3%E6%89%80%E8%B0%93%E5%AF%8C%E4%BA%BA%E4%B8%8D%E5%90%B5%E6%9E%B6%E3%80%82"><span class="nav-text">我自己没怎么生过气感觉是因为我的童年现在被我修补的比较好，而且我本身的童年也还是可以。而且正所谓富人不吵架。</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E6%B0%94"><span class="nav-text">生气</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%A0%B8%E5%BF%83%E8%A7%82%E7%82%B9%EF%BC%9A%E7%94%9F%E6%B0%94%E7%8A%B6%E6%80%81%E6%98%AF%E6%80%A7%E6%A0%BC%E5%BA%95%E8%89%B2%E7%9A%84%E2%80%9C%E6%9A%B4%E9%9C%B2%E9%95%9C%E2%80%9D"><span class="nav-text">一、核心观点：生气状态是性格底色的“暴露镜”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%9B%9B%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%94%9F%E6%B0%94%E6%96%B9%E5%BC%8F%E5%8F%8A%E6%B7%B1%E5%B1%82%E8%A7%A3%E6%9E%90"><span class="nav-text">二、四种常见生气方式及深层解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9B%9E%E9%81%BF%E6%B2%9F%E9%80%9A%E5%9E%8B%EF%BC%9A%E7%94%A8%E6%B2%89%E9%BB%98%E2%80%9C%E8%87%AA%E4%BF%9D%E2%80%9D%EF%BC%8C%E6%BA%90%E4%BA%8E%E5%AF%B9%E6%B2%9F%E9%80%9A%E7%9A%84%E7%BB%9D%E6%9C%9B"><span class="nav-text">1. 回避沟通型：用沉默“自保”，源于对沟通的绝望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%83%85%E7%BB%AA%E7%88%86%E5%8F%91%E6%80%A7%EF%BC%9A%E7%94%A8%E2%80%9C%E6%9C%AC%E8%83%BD%E5%8F%91%E6%B3%84%E2%80%9D%E6%9B%BF%E4%BB%A3%E7%90%86%E6%80%A7%EF%BC%8C%E5%BF%83%E6%99%BA%E9%80%80%E8%A1%8C%E8%87%B3%E5%B9%BC%E5%84%BF%E7%8A%B6%E6%80%81"><span class="nav-text">2. 情绪爆发性：用“本能发泄”替代理性，心智退行至幼儿状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%83%85%E7%BB%AA%E6%8A%91%E5%88%B6%E6%80%A7%EF%BC%9A%E7%94%A8%E2%80%9C%E5%8E%8B%E6%8A%91%E2%80%9D%E6%8E%A9%E7%9B%96%E6%84%A4%E6%80%92%EF%BC%8C%E7%88%86%E5%8F%91%E5%8D%B3%E6%84%8F%E5%91%B3%E7%9D%80%E2%80%9C%E6%94%BE%E5%BC%83%E5%85%B3%E7%B3%BB%E2%80%9D"><span class="nav-text">3. 情绪抑制性：用“压抑”掩盖愤怒，爆发即意味着“放弃关系”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%84%A6%E8%99%91%E9%A9%B1%E5%8A%A8%E5%9E%8B%EF%BC%9A%E7%94%A8%E2%80%9C%E8%BA%AF%E4%BD%93%E5%8C%96%E2%80%9D%E6%9B%BF%E4%BB%A3%E8%A1%A8%E8%BE%BE%EF%BC%8C%E6%84%A4%E6%80%92%E8%BD%AC%E5%90%91%E2%80%9C%E8%87%AA%E6%88%91%E6%94%BB%E5%87%BB%E2%80%9D"><span class="nav-text">4. 焦虑驱动型：用“躯体化”替代表达，愤怒转向“自我攻击”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E8%87%AA%E5%B7%B1%E6%B2%A1%E6%80%8E%E4%B9%88%E7%94%9F%E8%BF%87%E6%B0%94%E6%84%9F%E8%A7%89%E6%98%AF%E5%9B%A0%E4%B8%BA%E6%88%91%E7%9A%84%E7%AB%A5%E5%B9%B4%E7%8E%B0%E5%9C%A8%E8%A2%AB%E6%88%91%E4%BF%AE%E8%A1%A5%E7%9A%84%E6%AF%94%E8%BE%83%E5%A5%BD%EF%BC%8C%E8%80%8C%E4%B8%94%E6%88%91%E6%9C%AC%E8%BA%AB%E7%9A%84%E7%AB%A5%E5%B9%B4%E4%B9%9F%E8%BF%98%E6%98%AF%E5%8F%AF%E4%BB%A5%E3%80%82%E8%80%8C%E4%B8%94%E6%AD%A3%E6%89%80%E8%B0%93%E5%AF%8C%E4%BA%BA%E4%B8%8D%E5%90%B5%E6%9E%B6%E3%80%82"><span class="nav-text">我自己没怎么生过气感觉是因为我的童年现在被我修补的比较好，而且我本身的童年也还是可以。而且正所谓富人不吵架。</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script id="pjax-script" src="/js/libs/pjax.min.js"></script>
+<script>
+  (function () {
+    const isGoogleTranslate = location.hostname.includes('.translate.goog')
+
+    if (isGoogleTranslate) {
+      document.getElementById('pjax-script')?.remove()
+      return
+    }
+
+    function initPjax () {
+      if (window.pjax) return
+
+      window.pjax = new Pjax({
+        selectors: [
+          'head title',
+          '.page-container',
+          '.pjax'
+        ],
+        history: true,
+        debug: false,
+        cacheBust: false,
+        timeout: 0,
+        analytics: false,
+        currentUrlFullReload: false,
+        scrollRestoration: false
+      })
+
+      document.addEventListener('pjax:send', onPjaxSend)
+      document.addEventListener('pjax:complete', onPjaxComplete)
+    }
+
+    function onPjaxSend () {
+      KEEP?.utils?.pjaxProgressBarStart()
+    }
+
+    function onPjaxComplete () {
+      KEEP?.utils?.pjaxProgressBarEnd()
+
+      window?.pjax?.executeScripts(
+        document.querySelectorAll('script[data-pjax], .pjax script')
+      )
+
+      KEEP?.initExecute()
+    }
+
+    // DOM Ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPjax)
+    } else {
+      initPjax()
+    }
+  })()
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/js/custom.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>
