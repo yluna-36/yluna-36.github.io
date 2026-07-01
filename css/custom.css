@@ -16,3 +16,25 @@
 .footer .count-info .count-item.pv {
     display: flex !important;
 }
+
+/* Gallery image hover effect */
+.photo-album-box .photo {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.photo-album-box .photo:hover {
+    transform: scale(1.03);
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Gallery group title styling */
+.gallery-group-title {
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 0.8rem;
+}
