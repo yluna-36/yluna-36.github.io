@@ -29,6 +29,16 @@ function initPostShareHelper() {
               `https://service.weibo.com/share/share.php?url=${pageUrl}&title=${pageTitle}`
             )
           }
+
+          // Twitter share
+          if (item.classList.contains('twitter')) {
+            window.open(`https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`)
+          }
+
+          // Telegram share
+          if (item.classList.contains('telegram')) {
+            window.open(`https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`)
+          }
         })
       })
     }
