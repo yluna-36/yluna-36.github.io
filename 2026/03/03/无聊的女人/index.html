@@ -87,586 +87,245 @@
     <!-- page content -->
     <div class="page-main-content border-box">
         <div class="page-main-content-top">
-            $pc-search-icon-font-size = 1.5rem
-$menu-bar-line-height = 2.5px
-$menu-icon-gap = 0.1rem
-$pc-menu-item-gap = 1.8rem
-$mobile-menu-item-gap = 1.2rem
-$logo-image-box-width = 2.68rem
-$mobile-menu-icon-wrap-width = 1.6rem
-$mobile-menu-icon-wrap-margin = 0.4rem
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               yluna&#39;s personal page
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives/">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags/">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories/">
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/gallery/">
+                                
+                                GALLERY
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                ME
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/about/">
+                                                
+                                                ABOUT
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/personality/">
+                                                
+                                                PERSONALITY
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/links/">
+                                                
+                                                LINKS
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives/">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags/">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories/">
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/gallery/">
+                            
+                            GALLERY
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            ME
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/about/">
+                                        
+                                        ABOUT
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/personality/">
+                                        
+                                        PERSONALITY
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/links/">
+                                        
+                                        LINKS
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
 
-
-.header-wrapper {
-  display flex
-  align-items center
-  justify-content center
-  box-sizing border-box
-  width 100%
-  height 100%
-  padding-top var(--header-scroll-progress-bar-height)
-  background var(--background-color-1)
-  box-shadow 1px 2px 6px var(--shadow-color)
-
-  &:hover {
-    box-shadow 1px 2px 10px var(--shadow-hover-color)
-  }
-
-
-  .header-content {
-    z-index $z-index-5
-    display flex
-    flex-direction row
-    align-items center
-    justify-content space-between
-    width var(--page-content-width)
-    max-width var(--page-content-max-width)
-    height 100%
-    transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
-
-    &.has-first-screen {
-      max-width var(--page-content-max-width-2)
-    }
-
-
-    .has-toc & {
-      max-width var(--page-content-max-width-2)
-    }
-
-
-    +keep-tablet() {
-      width var(--page-content-width-tablet)
-    }
-
-
-    +keep-mobile() {
-      width var(--page-content-width-mobile)
-    }
-
-
-    .left {
-      height 100%
-      font-size 2rem
-
-      transition-t("transform, transform-origin", "0, 0", "0.2, 0.2", "linear, linear")
-
-      .header-shrink & {
-        transform scale(0.78)
-        transform-origin left
-      }
-
-
-      if (hexo-config('base_info') && hexo-config('base_info.logo')) {
-        .logo-image {
-          flex-shrink 0
-          width $logo-image-box-width
-          height $logo-image-box-width
-          margin-right 0.5rem
-
-
-          +keep-tablet() {
-            width $logo-image-box-width * 0.9
-            height $logo-image-box-width * 0.9
-          }
-
-
-          +keep-mobile() {
-            width $logo-image-box-width * 0.8
-            height $logo-image-box-width * 0.8
-          }
-
-
-          img {
-            width 100%
-            border-radius 0.4rem
-          }
-        }
-      }
-
-
-      .site-name {
-        color var(--text-color-1)
-        font-weight 600
-        font-size var(--header-title-font-size)
-        font-family var(--header-title-font-family)
-        line-height 1
-        letter-spacing 1px
-
-        +keep-tablet() {
-          font-size calc(var(--header-title-font-size) * 0.9)
-        }
-
-
-        +keep-mobile() {
-          font-size calc(var(--header-title-font-size) * 0.8)
-        }
-
-
-        .is-home & {
-          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
-            color var(--first-screen-header-font-color-light)
-            filter brightness(92%)
-
-            .dark-mode & {
-              color var(--first-screen-header-font-color-dark)
-              filter brightness(106%)
-            }
-          }
-        }
-
-
-        .show-header-drawer & {
-          color var(--text-color-1) !important
-        }
-      }
-    }
-
-
-    .right {
-      .pc {
-        .menu-list {
-          display flex
-          gap $pc-menu-item-gap
-          align-items center
-
-          +keep-tablet() {
-            display none
-          }
-
-
-          .menu-item {
-            font-size 1rem
-            cursor pointer
-
-            &.search {
-              font-size $pc-search-icon-font-size
-              &::before {
-                display none !important
-              }
-            }
-
-
-            .menu-text-color {
-              color var(--text-color-3)
-            }
-
-
-            &::before {
-              position absolute
-              bottom -10px
-              left 50%
-              box-sizing border-box
-              width 0
-              height 2.6px
-              background var(--primary-color)
-              border-radius 3px
-              transform translateX(-50%)
-              content ''
-              transition-t("transform, bottom, width", "0, 0, 0", "0.2, 0.2, 0.2", "linear, linear, ease")
-
-              .header-shrink & {
-                bottom calc(-1 * calc(var(--header-shrink-height) * 0.5 - 12px))
-              }
-            }
-
-
-            &:hover
-            &.active {
-              &::before {
-                width 100%
-              }
-            }
-
-
-            .menu-icon {
-              display var(--header-menu-icon)
-              margin-right $menu-icon-gap
-            }
-
-
-            .is-home & {
-              if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
-                .menu-text-color {
-                  color var(--first-screen-header-font-color-light)
-                }
-
-
-                .dark-mode & {
-                  .menu-text-color {
-                    color var(--first-screen-header-font-color-dark)
-                  }
-                }
-              }
-            }
-
-
-            &.has-sub-menu {
-              &::after {
-                position absolute
-                bottom 0
-                left 0
-                box-sizing border-box
-                width 100%
-                height 100%
-                content ''
-              }
-
-              &:hover {
-                &::after {
-                  bottom -100%
-                }
-
-                .collapse-icon {
-                  transform rotate(180deg)
-                }
-
-                .sub-menu-list {
-                  display flex
-                }
-              }
-            }
-
-
-            .collapse-icon {
-              margin-left $menu-icon-gap
-              transition-t("transform", "0", "0.3", "ease")
-            }
-          }
-
-
-          .sub-menu-list {
-            position absolute
-            bottom -280%
-            left 50%
-            display none
-            gap $pc-menu-item-gap
-            justify-content flex-start
-            box-sizing border-box
-            padding 0.8rem 1.6rem
-            background var(--background-color-1)
-            border-radius 0.6rem
-            box-shadow 0 0 8px var(--shadow-color)
-            transform translateX(-50%)
-
-            .sub-menu-item {
-              white-space nowrap
-
-              .menu-text-color {
-                color var(--text-color-3) !important
-              }
-
-              &:hover
-              &.active {
-                .menu-text-color {
-                  color var(--primary-color) !important
-                }
-              }
-
-              .sub-menu-icon {
-                display var(--header-menu-icon)
-                margin-right $menu-icon-gap * 4
-              }
-            }
-          }
-        }
-      }
-
-
-      .mobile {
-        gap 1rem
-
-        .icon-item {
-          position relative
-          display none
-          width 20px
-          height 20px
-          color var(--text-color-3)
-          font-size 1.2rem
-          cursor pointer
-
-          i {
-            color var(--text-color-3)
-
-            .show-header-drawer & {
-              color var(--text-color-3) !important
-            }
-
-            .reset-color & {
-              color var(--text-color-3) !important
-            }
-          }
-
-
-          +keep-tablet() {
-            display flex
-            align-items center
-            justify-content center
-          }
-        }
-
-
-        .menu-bar {
-          .menu-bar-middle {
-            position relative
-            width 18px
-            height $menu-bar-line-height
-            background var(--text-color-3)
-
-            &::before
-            &::after {
-              position absolute
-              left 0
-              width 100%
-              height $menu-bar-line-height
-              background var(--text-color-3)
-              content ''
-              transition-t("transform", "0", "0.38", "ease")
-            }
-
-
-            &::before {
-              top -6px
-
-              .show-header-drawer & {
-                transform translateY(6px) rotate(45deg)
-              }
-            }
-
-
-            &::after {
-              bottom -6px
-
-              .show-header-drawer & {
-                transform translateY(-6px) rotate(-45deg)
-              }
-            }
-
-
-            .reset-color & {
-              background var(--text-color-3) !important
-
-              &::before
-              &::after {
-                background var(--text-color-3) !important
-              }
-            }
-
-
-            .show-header-drawer & {
-              background transparent !important
-
-              &::before
-              &::after {
-                background var(--text-color-3) !important
-              }
-            }
-          }
-        }
-
-
-        .is-home & {
-          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
-            .icon-item i {
-              color var(--first-screen-header-font-color-light)
-            }
-
-            .menu-bar .menu-bar-middle {
-              background var(--first-screen-header-font-color-light)
-
-              &::before
-              &::after {
-                background var(--first-screen-header-font-color-light)
-              }
-            }
-
-            .dark-mode & {
-              .icon-item i {
-                color var(--first-screen-header-font-color-dark)
-              }
-
-              .menu-bar .menu-bar-middle {
-                background var(--first-screen-header-font-color-dark)
-
-                &::before
-                &::after {
-                  background var(--first-screen-header-font-color-dark)
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-
-  .header-drawer {
-    position absolute
-    top 0
-    left 0
-    z-index $z-index-2
-    display none
-    justify-content center
-    box-sizing border-box
-    width 100%
-    padding var(--header-height) 0 2rem 0
-    background var(--background-color-1)
-    transform scaleY(0)
-    transform-origin top
-    transition-t("transform", "0", "0.38", "ease")
-
-    +keep-tablet() {
-      display flex
-    }
-
-
-    .show-header-drawer & {
-      transform scaleY(1)
-    }
-
-
-    .drawer-menu-list {
-      display flex
-      flex-direction column
-      gap 1.2rem
-      align-items flex-start
-      justify-content flex-start
-      width var(--page-content-width)
-      max-width var(--page-content-max-width)
-      height 100%
-      margin-top 1rem
-
-      +keep-tablet() {
-        width var(--page-content-width-tablet)
-      }
-
-
-      +keep-mobile() {
-        width var(--page-content-width-mobile)
-      }
-
-
-      .drawer-menu-item {
-        width 100%
-        padding 0.6rem 0
-        font-size 1.06rem
-        border-bottom 0.1rem solid var(--background-color-3)
-
-        &.active {
-          .drawer-menu-label {
-            .drawer-menu-text-color {
-              color var(--primary-color)
-            }
-          }
-        }
-
-
-        &.show-sub-menu {
-          .collapse-icon {
-            transform rotate(-90deg)
-          }
-
-
-          .drawer-sub-menu-list {
-            display flex
-            height auto
-          }
-        }
-
-
-        .drawer-menu-label {
-          display flex
-          align-items center
-          justify-content space-between
-          width 100%
-
-          .left-side {
-            width 100%
-
-            .menu-icon-wrap {
-              display var(--header-menu-icon)
-              width $mobile-menu-icon-wrap-width
-              margin-right $mobile-menu-icon-wrap-margin
-            }
-          }
-
-
-          .right-side {
-            margin-left 0.4rem
-            cursor pointer
-            transition-t("transform", "0", "0.2", "ease")
-          }
-        }
-      }
-
-
-      .drawer-sub-menu-list {
-        position relative
-        display none
-        flex-direction column
-        justify-content flex-start
-        box-sizing border-box
-        width 100%
-        height 0
-        padding-top 0.6rem
-        padding-bottom 0.6rem
-        padding-left $mobile-menu-icon-wrap-width
-        transition-t("display, height", "0, 0", "0.2, 0.2", "linear, linear")
-        disable-user-select()
-
-        .sub-menu-item {
-          margin-top 1rem
-          padding 0.6rem 0
-
-          &.active {
-            a
-            a i {
-              color var(--primary-color)
-            }
-          }
-
-
-          .sub-menu-icon-wrap {
-            display var(--header-menu-icon)
-            width $mobile-menu-icon-wrap-width
-            margin-right $mobile-menu-icon-wrap-margin
-          }
-        }
-      }
-    }
-  }
-
-
-  .window-mask {
-    position absolute
-    top 0
-    left 0
-    z-index $z-index-1
-    display none
-    box-sizing border-box
-    width 100%
-    height 100vh
-    background rgba(0, 0, 0, 0.4)
-    visibility hidden
-    opacity 0
-    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease")
-
-    +keep-tablet() {
-      display block
-    }
-
-
-    .show-header-drawer & {
-      visibility visible
-      opacity 1
-    }
-  }
-}
-
-
-.show-header-drawer {
-  overflow hidden
-}
 
         </div>
 
@@ -694,12 +353,12 @@ $mobile-menu-icon-wrap-margin = 0.4rem
      data-hbe-format="4"
      data-wpm="Oh, this is an invalid password. Check and try again, please."
      data-whm="Oh, this is an invalid password. Check and try again, please."
-     data-salt="90433155981fe911ef682eaa927dd9c25042052fd10e0602fb83feee77363d56"
-     data-nonce="01dc8a05802d141dec111d67"
+     data-salt="8c3900de40ed9218c18f6bd0088422c88bcf9af401a3b7146fdb6cbea9b8cc26"
+     data-nonce="1a35ccf7947645143183ecaa"
      data-kdf-iterations="250000"
      data-auto-save="false">
   <script id="hbeData" type="hbeData">
-    c3c4d2e898c5c953f101d46a4e0d245154f607d2c95095949a3b400915aabbf76553e2f31902f87a00c4a0f764d1ad0b19e58b55f799e0ff3029e6371349af5eb7e57b87873e409723f7c1e464e86a7897c98a3c2efbd80917a82ed200f914aad3c350745ecd82e052a7f948845fd24e79068687fe0ff1e7fca0f8d211e15ed6e8f645dbcb0a3b2c579a7426d9cab6c098f3f951a6b5c6e6567301ad199929adbc27ea15742f9b0be7d833a4454947c3af55c174fa5192ac33e3329b9232ead5aa34f5a12c6e81a1b9a655e4d764497c7e7100027eb80241f1fa4d2c9a93037a9bd2937ada68957586f2b7c1a3c4d3e25571286ff7cbd059329df2e71f2d764928977e99fec85ae4514d787a11df8c9d4c47b112e697a491aeb96b58e1a561656f1990c8b472597cc6fc3bef452a5f6a35e0ced961a60b5dfd5a9f5ca969ca8063f371c125f1d19e2eaed1df27d094db910a0f2efd2cf7df4628361b9db0c3655d972b9ec0133da4feab4d8d6fb7abd716e75c79b99cbe7e4b0b6df2442636cfeebb28aadbdc95caa9a68177811b59beb9b9ece28a5183deafaafccad6c75fdeb6a3bc4dc2277f5fe9b9cc3ad90381daab27b0fc9e140a36e0eecfc65c4bd50ba0fa0f9bc1c757c75f8687d29674dda6c90c094468aa8ecc0474d0ba5bfe6f60c6f147c8137fc22e12f92fb58ae3b4af11b88761c8f4adcbfd0cb8ed593c266eaa4e6c04909941af458190ba2e88b2c713e17277e70b7635d3ef76b08dfc595c870b9cce322fb6095da932bd2749094517a4a4ede0c9c945842168f6caa195cc45b0dc177ba1967183ceb7ef74938e8f57866df9273f26b3576a643d1c1153553667d186d554a9bf8af2e249435ae73b7f28a3c36db9b203791469944d2685696e2b4e1ed83d9620ad7930e37457416994dbecbf7cef2e420975e947a72c8113c5ca48b5be312901aa3504dd50b35ab6525a7c2c205edc82086ba76450a4f5c9cd080194ea066430ba8236a2ce6bae392650665e808c02d1bf088cb183f5269acd1e3650ba71e142a91951c1267c4e60f325d54f6e2a2db0b5f26e04156aa4dde249e5adf7ecb87be44ad5c9f017051859ea38be56fa3f75b9e93cd66b915118aee0175c4f185846c5f9f468fb3facfb97
+    16463096d0af9bb4f9e7df4b2fda7472e50785e745af25818d882c155ddb0bbf016b12e75a2eeee599b5a71c4819d308bf2a5322a571daab8c8711166d69856186d4311c033fc28709c9ac94b493f822800fb7b3e1ca99e556e5e13899046ae8c3227fdf00fe5c7d2fa8bee6d516c6fe4515702e821b37957a90a1460d47bd5a85c8281b739e534eece6fb23a5fd0e05e04184985835e1276770e772097d920d06b058ae994fceb3bab6f2539273eb6a3651b42d875dc6dc946f38079bd6e74b8226529362c5a1791157eaa6603470386e345ce0f1ce41ab64dc2210554819bab35eb40b00537c760feba962f5fb0ff62544fd68d35a73a9ef637c4c0c09ea8bf90f0f5f4be57255ec02d8957cc6778ecf1912a3a74c647839f5e7b2c818301075d5c1823e543411c13dc8ea5804614c8dff4ceb175e2053d2e33e4dc1defb921e4073751e8a36695880c76a9abc5e9fb21d4e881095eedc048844bd1f17a903329467ed15bbf86927a6a387b9a8ee61535be3e2aeea7687026568d930e0f9717dfa2f95e6eaf5d366fac11d75cbc0186b18b6f14f3dcb63ba47468da8faf57ff41cf0c06517bfbe776adb18470abc0c58db54065b2c16b3fdcc5410cf76ea3e1743332a9eedd073599ba7640eea34c6a537ce0e723f79d8280da11eff82ac717c300182fe802ce4d35e6f9d1e2cf8f865cbd0cd02e904ea33de84a6eb97369fef626afa57cbaa6390d7f7fdc477269dba6334f844166585b38aad40966bdbcbb8d092418fc3ff97103ee5f51fd0fae76b76cdeb2b9c55521b44ab9fb2a1ee4f63d0ce0df1bdbf1fcfd67abacc05523cd6308975cd50e5d7f3e265d6c7693ba5a2a9a5591a1b68a9e30c8d2e93820878f547a313e2e896ebd099aeaf5d45cd053e2d710ee190bb82bd98c847142b95391a624ad917cb5fb3ec5ca798206e8ecfe186bd76965725c13e5e65f1d02dbe67be03f0990c6b9d5fa01c9d9ee48f9044921bb0737f41e764bf3306fc07e9c5a9e454453975aa888fb22d05992d2f7d9f6d8090aa946c9121d19055af4dc757a7aebf1b18d58ac68bc721eede126b7089e38660b5cc268e771030f61c49b2b324084588b3d9c6aa3d34c7b418c15c699d0f61e520f1dd4adf13a7e38fac672446fe
   </script>
   <div class="hbe hbe-content">
     <form id="hbeForm" class="hbe hbe-form" onsubmit="return false">

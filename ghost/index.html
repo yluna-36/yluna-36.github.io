@@ -87,586 +87,245 @@
     <!-- page content -->
     <div class="page-main-content border-box">
         <div class="page-main-content-top">
-            $pc-search-icon-font-size = 1.5rem
-$menu-bar-line-height = 2.5px
-$menu-icon-gap = 0.1rem
-$pc-menu-item-gap = 1.8rem
-$mobile-menu-item-gap = 1.2rem
-$logo-image-box-width = 2.68rem
-$mobile-menu-icon-wrap-width = 1.6rem
-$mobile-menu-icon-wrap-margin = 0.4rem
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               yluna&#39;s personal page
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives/">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags/">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories/">
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/gallery/">
+                                
+                                GALLERY
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                ME
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/about/">
+                                                
+                                                ABOUT
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/personality/">
+                                                
+                                                PERSONALITY
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/links/">
+                                                
+                                                LINKS
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives/">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags/">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories/">
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/gallery/">
+                            
+                            GALLERY
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            ME
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/about/">
+                                        
+                                        ABOUT
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/personality/">
+                                        
+                                        PERSONALITY
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/links/">
+                                        
+                                        LINKS
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
 
-
-.header-wrapper {
-  display flex
-  align-items center
-  justify-content center
-  box-sizing border-box
-  width 100%
-  height 100%
-  padding-top var(--header-scroll-progress-bar-height)
-  background var(--background-color-1)
-  box-shadow 1px 2px 6px var(--shadow-color)
-
-  &:hover {
-    box-shadow 1px 2px 10px var(--shadow-hover-color)
-  }
-
-
-  .header-content {
-    z-index $z-index-5
-    display flex
-    flex-direction row
-    align-items center
-    justify-content space-between
-    width var(--page-content-width)
-    max-width var(--page-content-max-width)
-    height 100%
-    transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
-
-    &.has-first-screen {
-      max-width var(--page-content-max-width-2)
-    }
-
-
-    .has-toc & {
-      max-width var(--page-content-max-width-2)
-    }
-
-
-    +keep-tablet() {
-      width var(--page-content-width-tablet)
-    }
-
-
-    +keep-mobile() {
-      width var(--page-content-width-mobile)
-    }
-
-
-    .left {
-      height 100%
-      font-size 2rem
-
-      transition-t("transform, transform-origin", "0, 0", "0.2, 0.2", "linear, linear")
-
-      .header-shrink & {
-        transform scale(0.78)
-        transform-origin left
-      }
-
-
-      if (hexo-config('base_info') && hexo-config('base_info.logo')) {
-        .logo-image {
-          flex-shrink 0
-          width $logo-image-box-width
-          height $logo-image-box-width
-          margin-right 0.5rem
-
-
-          +keep-tablet() {
-            width $logo-image-box-width * 0.9
-            height $logo-image-box-width * 0.9
-          }
-
-
-          +keep-mobile() {
-            width $logo-image-box-width * 0.8
-            height $logo-image-box-width * 0.8
-          }
-
-
-          img {
-            width 100%
-            border-radius 0.4rem
-          }
-        }
-      }
-
-
-      .site-name {
-        color var(--text-color-1)
-        font-weight 600
-        font-size var(--header-title-font-size)
-        font-family var(--header-title-font-family)
-        line-height 1
-        letter-spacing 1px
-
-        +keep-tablet() {
-          font-size calc(var(--header-title-font-size) * 0.9)
-        }
-
-
-        +keep-mobile() {
-          font-size calc(var(--header-title-font-size) * 0.8)
-        }
-
-
-        .is-home & {
-          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
-            color var(--first-screen-header-font-color-light)
-            filter brightness(92%)
-
-            .dark-mode & {
-              color var(--first-screen-header-font-color-dark)
-              filter brightness(106%)
-            }
-          }
-        }
-
-
-        .show-header-drawer & {
-          color var(--text-color-1) !important
-        }
-      }
-    }
-
-
-    .right {
-      .pc {
-        .menu-list {
-          display flex
-          gap $pc-menu-item-gap
-          align-items center
-
-          +keep-tablet() {
-            display none
-          }
-
-
-          .menu-item {
-            font-size 1rem
-            cursor pointer
-
-            &.search {
-              font-size $pc-search-icon-font-size
-              &::before {
-                display none !important
-              }
-            }
-
-
-            .menu-text-color {
-              color var(--text-color-3)
-            }
-
-
-            &::before {
-              position absolute
-              bottom -10px
-              left 50%
-              box-sizing border-box
-              width 0
-              height 2.6px
-              background var(--primary-color)
-              border-radius 3px
-              transform translateX(-50%)
-              content ''
-              transition-t("transform, bottom, width", "0, 0, 0", "0.2, 0.2, 0.2", "linear, linear, ease")
-
-              .header-shrink & {
-                bottom calc(-1 * calc(var(--header-shrink-height) * 0.5 - 12px))
-              }
-            }
-
-
-            &:hover
-            &.active {
-              &::before {
-                width 100%
-              }
-            }
-
-
-            .menu-icon {
-              display var(--header-menu-icon)
-              margin-right $menu-icon-gap
-            }
-
-
-            .is-home & {
-              if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
-                .menu-text-color {
-                  color var(--first-screen-header-font-color-light)
-                }
-
-
-                .dark-mode & {
-                  .menu-text-color {
-                    color var(--first-screen-header-font-color-dark)
-                  }
-                }
-              }
-            }
-
-
-            &.has-sub-menu {
-              &::after {
-                position absolute
-                bottom 0
-                left 0
-                box-sizing border-box
-                width 100%
-                height 100%
-                content ''
-              }
-
-              &:hover {
-                &::after {
-                  bottom -100%
-                }
-
-                .collapse-icon {
-                  transform rotate(180deg)
-                }
-
-                .sub-menu-list {
-                  display flex
-                }
-              }
-            }
-
-
-            .collapse-icon {
-              margin-left $menu-icon-gap
-              transition-t("transform", "0", "0.3", "ease")
-            }
-          }
-
-
-          .sub-menu-list {
-            position absolute
-            bottom -280%
-            left 50%
-            display none
-            gap $pc-menu-item-gap
-            justify-content flex-start
-            box-sizing border-box
-            padding 0.8rem 1.6rem
-            background var(--background-color-1)
-            border-radius 0.6rem
-            box-shadow 0 0 8px var(--shadow-color)
-            transform translateX(-50%)
-
-            .sub-menu-item {
-              white-space nowrap
-
-              .menu-text-color {
-                color var(--text-color-3) !important
-              }
-
-              &:hover
-              &.active {
-                .menu-text-color {
-                  color var(--primary-color) !important
-                }
-              }
-
-              .sub-menu-icon {
-                display var(--header-menu-icon)
-                margin-right $menu-icon-gap * 4
-              }
-            }
-          }
-        }
-      }
-
-
-      .mobile {
-        gap 1rem
-
-        .icon-item {
-          position relative
-          display none
-          width 20px
-          height 20px
-          color var(--text-color-3)
-          font-size 1.2rem
-          cursor pointer
-
-          i {
-            color var(--text-color-3)
-
-            .show-header-drawer & {
-              color var(--text-color-3) !important
-            }
-
-            .reset-color & {
-              color var(--text-color-3) !important
-            }
-          }
-
-
-          +keep-tablet() {
-            display flex
-            align-items center
-            justify-content center
-          }
-        }
-
-
-        .menu-bar {
-          .menu-bar-middle {
-            position relative
-            width 18px
-            height $menu-bar-line-height
-            background var(--text-color-3)
-
-            &::before
-            &::after {
-              position absolute
-              left 0
-              width 100%
-              height $menu-bar-line-height
-              background var(--text-color-3)
-              content ''
-              transition-t("transform", "0", "0.38", "ease")
-            }
-
-
-            &::before {
-              top -6px
-
-              .show-header-drawer & {
-                transform translateY(6px) rotate(45deg)
-              }
-            }
-
-
-            &::after {
-              bottom -6px
-
-              .show-header-drawer & {
-                transform translateY(-6px) rotate(-45deg)
-              }
-            }
-
-
-            .reset-color & {
-              background var(--text-color-3) !important
-
-              &::before
-              &::after {
-                background var(--text-color-3) !important
-              }
-            }
-
-
-            .show-header-drawer & {
-              background transparent !important
-
-              &::before
-              &::after {
-                background var(--text-color-3) !important
-              }
-            }
-          }
-        }
-
-
-        .is-home & {
-          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
-            .icon-item i {
-              color var(--first-screen-header-font-color-light)
-            }
-
-            .menu-bar .menu-bar-middle {
-              background var(--first-screen-header-font-color-light)
-
-              &::before
-              &::after {
-                background var(--first-screen-header-font-color-light)
-              }
-            }
-
-            .dark-mode & {
-              .icon-item i {
-                color var(--first-screen-header-font-color-dark)
-              }
-
-              .menu-bar .menu-bar-middle {
-                background var(--first-screen-header-font-color-dark)
-
-                &::before
-                &::after {
-                  background var(--first-screen-header-font-color-dark)
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-
-  .header-drawer {
-    position absolute
-    top 0
-    left 0
-    z-index $z-index-2
-    display none
-    justify-content center
-    box-sizing border-box
-    width 100%
-    padding var(--header-height) 0 2rem 0
-    background var(--background-color-1)
-    transform scaleY(0)
-    transform-origin top
-    transition-t("transform", "0", "0.38", "ease")
-
-    +keep-tablet() {
-      display flex
-    }
-
-
-    .show-header-drawer & {
-      transform scaleY(1)
-    }
-
-
-    .drawer-menu-list {
-      display flex
-      flex-direction column
-      gap 1.2rem
-      align-items flex-start
-      justify-content flex-start
-      width var(--page-content-width)
-      max-width var(--page-content-max-width)
-      height 100%
-      margin-top 1rem
-
-      +keep-tablet() {
-        width var(--page-content-width-tablet)
-      }
-
-
-      +keep-mobile() {
-        width var(--page-content-width-mobile)
-      }
-
-
-      .drawer-menu-item {
-        width 100%
-        padding 0.6rem 0
-        font-size 1.06rem
-        border-bottom 0.1rem solid var(--background-color-3)
-
-        &.active {
-          .drawer-menu-label {
-            .drawer-menu-text-color {
-              color var(--primary-color)
-            }
-          }
-        }
-
-
-        &.show-sub-menu {
-          .collapse-icon {
-            transform rotate(-90deg)
-          }
-
-
-          .drawer-sub-menu-list {
-            display flex
-            height auto
-          }
-        }
-
-
-        .drawer-menu-label {
-          display flex
-          align-items center
-          justify-content space-between
-          width 100%
-
-          .left-side {
-            width 100%
-
-            .menu-icon-wrap {
-              display var(--header-menu-icon)
-              width $mobile-menu-icon-wrap-width
-              margin-right $mobile-menu-icon-wrap-margin
-            }
-          }
-
-
-          .right-side {
-            margin-left 0.4rem
-            cursor pointer
-            transition-t("transform", "0", "0.2", "ease")
-          }
-        }
-      }
-
-
-      .drawer-sub-menu-list {
-        position relative
-        display none
-        flex-direction column
-        justify-content flex-start
-        box-sizing border-box
-        width 100%
-        height 0
-        padding-top 0.6rem
-        padding-bottom 0.6rem
-        padding-left $mobile-menu-icon-wrap-width
-        transition-t("display, height", "0, 0", "0.2, 0.2", "linear, linear")
-        disable-user-select()
-
-        .sub-menu-item {
-          margin-top 1rem
-          padding 0.6rem 0
-
-          &.active {
-            a
-            a i {
-              color var(--primary-color)
-            }
-          }
-
-
-          .sub-menu-icon-wrap {
-            display var(--header-menu-icon)
-            width $mobile-menu-icon-wrap-width
-            margin-right $mobile-menu-icon-wrap-margin
-          }
-        }
-      }
-    }
-  }
-
-
-  .window-mask {
-    position absolute
-    top 0
-    left 0
-    z-index $z-index-1
-    display none
-    box-sizing border-box
-    width 100%
-    height 100vh
-    background rgba(0, 0, 0, 0.4)
-    visibility hidden
-    opacity 0
-    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease")
-
-    +keep-tablet() {
-      display block
-    }
-
-
-    .show-header-drawer & {
-      visibility visible
-      opacity 1
-    }
-  }
-}
-
-
-.show-header-drawer {
-  overflow hidden
-}
 
         </div>
 
@@ -700,19 +359,22 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       <a href="/2026/03/03/礼物/">礼物</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/糖果果/">糖果果</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/类似的恋爱观/">类似的恋爱观</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/美，智，慕强/">美，智，慕强</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/综合的视频/">综合的视频</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/美，智，慕强/">美，智，慕强</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/糖果果/">糖果果</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/见家长/">见家长</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/资源理论/">资源理论</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/这是一个视频总结。很杂，但是大部分我都认同。/">这是一个视频总结。很杂，但是大部分我都认同。</a> 
@@ -721,16 +383,16 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       <a href="/2026/03/03/追星/">追星</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/资源理论/">资源理论</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/高净值人士/">高净值人士</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/20250429/">20250429</a> 
+      <a href="/2026/03/03/20250419/">20250419</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/20250601/">20250601</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/20250429/">20250429</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/20250728/">20250728</a> 
@@ -739,31 +401,31 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       <a href="/2026/03/03/E记录/">E记录</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/上班的焦虑？/">上班的焦虑？</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/“老哥文学” 爆火的社会心理动因：对精英主义叙事的抵抗/">“老哥文学” 爆火的社会心理动因：对精英主义叙事的抵抗</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/20250419/">20250419</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/个人成长记录相册视频/">个人成长记录相册视频</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/中流/">中流</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/中国式家庭：没有思想交流/">中国式家庭：没有思想交流</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/主义/">主义</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/买房/">买房</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/严格要求/">严格要求</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/上班的焦虑？/">上班的焦虑？</a> 
+      <a href="/2026/03/03/中流/">中流</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/主动关系/">主动关系</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/世界观/">世界观</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/中国式家庭：没有思想交流/">中国式家庭：没有思想交流</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/买房/">买房</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/个人成长记录相册视频/">个人成长记录相册视频</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/亲密关系准则/">亲密关系准则</a> 
@@ -772,19 +434,22 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       <a href="/2026/03/03/人生观/">人生观</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/主动关系/">主动关系</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/价值观/">价值观</a> 
+      <a href="/2026/03/03/主义/">主义</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/人生遗憾/">人生遗憾</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/世界观/">世界观</a> 
+      <a href="/2026/03/03/仪式感/">仪式感</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/价值观转变案例/">价值观转变案例</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/价值观/">价值观</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/健康关系 爱情观念/">健康关系 爱情观念</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/关于分享/">关于分享</a> 
@@ -793,25 +458,25 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       <a href="/2026/03/03/关于时间/">关于时间</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/关于记录/">关于记录</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/关于合作/">关于合作</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/农村 乡村 县城/">农村 乡村 县城</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/匹配/">匹配</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/危机也是机会/">危机也是机会</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/你「整理房间」的方式，就是你对待别人的方式/">你「整理房间」的方式，就是你对待别人的方式</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/仪式感/">仪式感</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/关于记录/">关于记录</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/单身原因/">单身原因</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/健康关系 爱情观念/">健康关系 爱情观念</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/匹配/">匹配</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/压力/">压力</a> 
@@ -823,22 +488,19 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       <a href="/2026/03/03/发展计划/">发展计划</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/危机也是机会/">危机也是机会</a> 
+      <a href="/2026/03/03/女生年龄焦虑/">女生年龄焦虑</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/品质/">品质</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/关于合作/">关于合作</a> 
+      <a href="/2026/03/03/女权/">女权</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/女性付出与困境/">女性付出与困境</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/女权/">女权</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/女生年龄焦虑/">女生年龄焦虑</a> 
+      <a href="/2026/03/03/如何发现一个20岁时就值得投资的人/">如何发现一个20岁时就值得投资的人</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/实验科学/">实验科学</a> 
@@ -847,34 +509,31 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       <a href="/2026/03/03/官方得病图片/">官方得病图片</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/对对对 对吗/">对对对 对吗</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/如何发现一个20岁时就值得投资的人/">如何发现一个20岁时就值得投资的人</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/家庭观 与家长相处/">家庭观 与家长相处</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/崩坏/">崩坏</a> 
+      <a href="/2026/03/03/家长记录/">家长记录</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/寻找自我/">寻找自我</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/强欲/">强欲</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/心理/">心理</a> 
+      <a href="/2026/03/03/对对对 对吗/">对对对 对吗</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/对等付出 共同付出/">对等付出 共同付出</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/寻找自我/">寻找自我</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/崩坏/">崩坏</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/强欲/">强欲</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/彩礼 嫁妆 婚房/">彩礼 嫁妆 婚房</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/家长记录/">家长记录</a> 
+      <a href="/2026/03/03/心理/">心理</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/很有价值的成长案例/">很有价值的成长案例</a> 
@@ -883,19 +542,13 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       <a href="/2026/03/03/心理咨询思考/">心理咨询思考</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/性教育/">性教育</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/性格 精神、哲学/">性格 精神、哲学</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/感动的人/">感动的人</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/成长/">成长</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/教家长学英语/">教家长学英语</a> 
+      <a href="/2026/03/03/性格溯源/">性格溯源</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/情感/">情感</a> 
@@ -904,88 +557,94 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       <a href="/2026/03/03/无聊的女人/">无聊的女人</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/成长/">成长</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/早期观念/">早期观念</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/教家长学英语/">教家长学英语</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/性教育/">性教育</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/教育/">教育</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/时代/">时代</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/暗恋/">暗恋</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/梦/">梦</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/普通异性朋友/">普通异性朋友</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/时代/">时代</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/暧昧与恋爱/">暧昧与恋爱</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/朋友/">朋友</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/求知/">求知</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/生活风格 感觉/">生活风格 感觉</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/性格溯源/">性格溯源</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/独立女性/">独立女性</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/爱情观 恋爱观/">爱情观 恋爱观</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/电解质水使用注意事项/">电解质水使用注意事项</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/男生中年危机/">男生中年危机</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/白月光/">白月光</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/相亲/">相亲</a> 
+      <a href="/2026/03/03/暗恋/">暗恋</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/暴食/">暴食</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/老家/">老家</a> 
+      <a href="/2026/03/03/求知/">求知</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/梦/">梦</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/爱情观 恋爱观/">爱情观 恋爱观</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/朋友/">朋友</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/生活风格 感觉/">生活风格 感觉</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/男生中年危机/">男生中年危机</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/独立女性/">独立女性</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/白月光/">白月光</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/电解质水使用注意事项/">电解质水使用注意事项</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/色欲/">色欲</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/观测/">观测</a> 
+      <a href="/2026/03/03/相亲/">相亲</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/老家/">老家</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/荣辱/">荣辱</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/被时代抛弃的上一代人/">被时代抛弃的上一代人</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/观测/">观测</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/观察 推理/">观察 推理</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/记录的记录/">记录的记录</a> 
-      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
-    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/觉悟/">觉悟</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
       <a href="/2026/03/03/规划 计划/">规划 计划</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/重要转折事件/">重要转折事件</a> 
+      <a href="/2026/03/03/觉悟/">觉悟</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
-      <a href="/2026/03/03/荣辱/">荣辱</a> 
+      <a href="/2026/03/03/记录的记录/">记录的记录</a> 
+      <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
+    </li><li style="margin-bottom: 10px; font-size: 1.1rem;">
+      <a href="/2026/03/03/重要转折事件/">重要转折事件</a> 
       <span style="color: #999; font-size: 0.9rem; margin-left: 10px;">2026-03-03</span>
     </li></ul></div>
                 
