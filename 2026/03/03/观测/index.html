@@ -443,10 +443,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="02987e8e0fd563a12ce35cdc4eba7b127cec396e5c6378d988fb7427afafd94b"
-                             data-iv="c985d3c5579b2b10d390e0fd73524c1d"
-                             data-ep="faf2a1d5b133e9ff86f1a94d4214e7e5"
-                             data-content="0c34df2876063e7726b8fb7508514dcb36040cda3650319cc0f20a8996707ad2d79ea0cb7deda2abadbcca0245d39103dabaf5ac8db68295947047230a0910586880753308b41e143ff5fad0bc40b7d900a5718571677e14722276533515d53e6ad31ef88691312774daf06d748f8225f9eb8c095189dac205e00eba3fae645ac427955ea486f813e48c01a1ba54b6a61741bb2cf5ea4355cf79871bf6248ea7"
+                             data-secret="4ffda1df39084b5317945730d97e9cd5341338b38ed3a4026a499a4908767950"
+                             data-iv="be51f0d7b5934b7b3d53f8ad8ed7abb6"
+                             data-ep="71e7b115ed7629ead92a85b1ae423771"
+                             data-content="955e1679511f96abd6c4c62c7cf7e7434ba017911e3f8088efc17c3c61f927a10ac05c771b2b2f4d4eda43022f90ea2265d1f18ec97e74f55c921416b3b53bfb66843d17af02804717de43ad4e3b47ce768209941d13e09664f78efebd20529f3349a44a35c4a2fed071adbaec1f87d9d7c0934b3e776ca9a886a249f0272da852a55f26a8e4cd4a45a3e781279ec4f385299e96f5c4e8072a1bb864acd3e3b6"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -572,14 +572,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E8%A7%82%E5%AF%9F%20%E6%8E%A8%E7%90%86/"
-                                   title="观察 推理"
+                                   href="/2026/03/03/%E8%A7%84%E5%88%92%20%E8%AE%A1%E5%88%92/"
+                                   title="规划 计划"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">观察 推理</span>
+                                        <span class="post-nav-title-item text-ellipsis">规划 计划</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -589,11 +589,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E8%A7%84%E5%88%92%20%E8%AE%A1%E5%88%92/"
-                                   title="规划 计划"
+                                   href="/2026/03/03/%E8%A7%89%E6%82%9F/"
+                                   title="觉悟"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">规划 计划</span>
+                                        <span class="post-nav-title-item text-ellipsis">觉悟</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -744,6 +744,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -774,6 +775,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

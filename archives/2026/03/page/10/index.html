@@ -346,7 +346,7 @@
             </div>
             <ul class="archive-item-body border-box">
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -354,7 +354,7 @@
                         >色欲</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -362,7 +362,7 @@
                         >荣辱</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -370,7 +370,7 @@
                         >被时代抛弃的上一代人</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -378,15 +378,7 @@
                         >观察 推理</a>
                     </li>
                 
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box">03-03</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E8%A7%82%E6%B5%8B/"
-                        >观测</a>
-                    </li>
-                
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -394,7 +386,15 @@
                         >规划 计划</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
+                        <span class="starting-point border-box flex-center"></span>
+                        <span class="post-date border-box">03-03</span>
+                        <a class="post-title border-box text-ellipsis"
+                           href="/2026/03/03/%E8%A7%82%E6%B5%8B/"
+                        >观测</a>
+                    </li>
+                
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -402,20 +402,20 @@
                         >觉悟</a>
                     </li>
                 
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box">03-03</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E8%AE%B0%E5%BD%95%E7%9A%84%E8%AE%B0%E5%BD%95/"
-                        >记录的记录</a>
-                    </li>
-                
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
                            href="/2026/03/03/%E9%87%8D%E8%A6%81%E8%BD%AC%E6%8A%98%E4%BA%8B%E4%BB%B6/"
                         >重要转折事件</a>
+                    </li>
+                
+                    <li class="post-item border-box is-private-post">
+                        <span class="starting-point border-box flex-center"></span>
+                        <span class="post-date border-box">03-03</span>
+                        <a class="post-title border-box text-ellipsis"
+                           href="/2026/03/03/%E8%AE%B0%E5%BD%95%E7%9A%84%E8%AE%B0%E5%BD%95/"
+                        >记录的记录</a>
                     </li>
                 
             </ul>
@@ -477,6 +477,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -507,6 +508,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

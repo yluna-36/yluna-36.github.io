@@ -348,7 +348,7 @@
             </div>
             <ul class="archive-item-body border-box">
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -356,7 +356,7 @@
                         >上班的焦虑？</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -390,6 +390,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -420,6 +421,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

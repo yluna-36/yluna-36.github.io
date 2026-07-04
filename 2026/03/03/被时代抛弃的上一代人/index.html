@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="e3067bd671476b05b4cc0c42ac8e9b3711e54d9c5620d031b2d4ef6aa2b78346"
-                             data-iv="796b5f7aba5d2c8adbf8ce5c93d96db2"
-                             data-ep="44aa9cff86f700dfeb702048e9d08c99"
-                             data-content="f9f350176999ff2f83da5313ee5c230bba44c429d4adba01ea0ff00dcb518571ac4f4e622a34b26281f40a2a674278bd3ced22278c7917eb7139e1a5be50a078b2a1d3a8bd162b2f4a7c3ea2784d3c8832bc485b87c71e553af1d1b608d4bc33098a57d92ff19b96621062e9c9aa1a4e5b19776441159a03f282bec1842b0f84fe6c5e8d522101fd6dd1b3d3b8fa3a027f88ba7fc059a57a99b7e76b4e3765d2f51e3b44f960463831693a9b0e90c146ffcf22b933f2c6acce3e1d36c6e564af57ebc98faa3144ec2e2f4754520e4fdadd2077c5b0d125cafa785987dd39ca2a7641bddf46637fa859bd51b0f19c9d8984ca846b13458fceaee4ba4f9dfe26b8dec7a2fefea7b643a5c18a9cb78b97f832a04f5d0404a3565ac6f9ed4bd5753fd7eefa77203f18f102f1867506252ed54a9d2a710262533203630bd187b7b1c9a35f7bd79bc62321a74a8a58fa10e5baca612a769905ff5c408e1d488614186065c57f7da336e4c654469ce26a9db49b6771b6719c165df13001c7ec9cf23279795f78098c7c3fe55e4a54b593deba44ba074ff05efa38a600333695f229ee0772f459ba54c287037a5379fb651fd690404fa8b2539da35f43835dc6f018742dea86dd8572cd45be1a0518145c7e801b94030ca1ec64ad560c5c2efc944d74adbbab5cb3b5776bf92adf4a1722912a3c"
+                             data-secret="2a49a58aa014db05a1b47fe207aa2345ab8a36c9f14b2fb9d8ec158b9dbd4a16"
+                             data-iv="331560ab0855a4022de40e9bd4d58ba1"
+                             data-ep="877bada4c99324034f29295a51e98837"
+                             data-content="c7d0fc6569e1f48e6a2b79b5874795d3894a32de4174547d67fa9b14bc705f4ffa82de09b8216b4508354ce6fe98edda80cd0d19eedce7adb5bcda054723c1281443b4f9b61aafe85b91375c624c679686e34a2be042a3bea6ba21f1e58ea01cffebb833e581d60a2257a8f1a7cb5bed72d85dbf1ae41bb1effd1af6d3a136f58d0875764fb0d8fbfc430e9b843b9b785aac3c6c2344d6e35e511a123d0670fcb5e11c116f5410428eaf90078b941a8766da6a250e4d9945cda7d219a40fa2020c38dab87e4f1742bd1324cb65d96bb3058a7b0576a99e4c47c503f7e7ab7286a44a26cacd118ffd524de1092bb9eca3430de60fefef72d719d95f6fdd425298d265e4864fbe3ab36b71f979eb016643de4ad6f62ca4c5d19683a473fb4eef3b26585414bb38b0ab3df4b34c8d2347a47b8ec8caede25ea75a9d5fe3e9b5559049cff405034915d26d32056a23ddaf2701881ed9b6f2b0db0f56aa728acdaa07ec9a84d7a9baa50157e07e164ef4d6acd078d7a41bae34a32bf6916e9a4a5c573472b094de0dcdb479e8d428b12e9514ccd7197d8f8c86a558e87dbe2d8582cfb66cb75e8c288ea1a511665f2131ba15c81a6463b0b49293a139af2c0b23820d69b056e4c1e9ffe3bbb802e8f3797bdaffdaa22a650bfb55c6fb182b94565178504b65994deb9f472bf30ada30d44afd"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -751,6 +751,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -781,6 +782,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

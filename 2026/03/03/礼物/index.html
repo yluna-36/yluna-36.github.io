@@ -440,10 +440,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="e15349fc5be5ba236d1013c37dca1b70ab612f5a71e6275e499bfede91b0eb94"
-                             data-iv="d34940d17de7fd2cce5c214746669194"
-                             data-ep="d203780a2f0119cd389c18c0bf486506"
-                             data-content="1de1143b09e4ebee1fb8fab09a0a809087993f86d02c5749305e74dbf2c09e92a674ea13963ed94825db959e28c68ce7ce6551c43a8d6362e6115684e168fc1d824f6f822908cccccc4dc753fdf92108540c1a40ca778509b6cf359ae9fa03987abafe81ae9469e25b3c3c186175673e6d008ccdfc66f7da5cafbd95b94ff87ed0e443d9bc8faf9f1b31e7dfe11adc01cdbbc288fe77f5d8351f0aabd0a4d463658e22e312b2b64872f79503ffacad2dd43dda2095e96b1d7f260489a1f542c4fea3a8364b9dc1778f91b18a1a937768869e83ed1903376b41393e45258ef27850d8118dbcccb24815846c2a1380bbb62a8760ecf33c12999854f889b83f3b9ca78309d4bac1e2bbb938bb9fa08f8a0a439208442ee817723db6f0fc6c356f71281f26043b93fae288e9117c78c27e1e8232eb7175d56a211fa016874b320b7460efdc6035b3e0193f432697703925e5c7379b43561b90bd9d2da878dfd99006911ba591908868147191c10b262470a00a2c170a4a831570cc4ef33665a242850248ca00f008a24db8bcb47819b23a06860e7d5df8d6c9ba3588afd0c7ab60357b6214bc06ebdc8e05daba818f2e102a0ffcc7f27e02bab1164fa947194c015610fbadbb3e604cb91e744aa398c897ed341230c9897a1fc5c02ad9479ca9450a71bcb97cc73d5d0fc954727f1ac81389aa5311d93f8822d8e79e31940a87a807651a32664b53a0f5735ae2762867c3b02723ca8d5b766e9eb77505aaf7cc3041"
+                             data-secret="abed7206c9061c5351dd5ee50d2d726e22f9bfa699e76205545b862431985a5b"
+                             data-iv="bfefa5fbb25db0acab604fea0649483a"
+                             data-ep="042b5f5ca64bb1bb6e68fbaaaf3d7634"
+                             data-content="75b3eb05ab8da9e75a7a03596b7c9fe5853c6bbb9d66148ad99730ded328923368423714c67c350421e2cf78388d4d96524fe0b86a903e71bdb30926ba173bfd8857e4939beccb78169de2323e96dadc2d9f3478901d39cee64609ac2629337dce707f670b7cb73073171d21c61a88729f475d350daad50d651d30308c6c332665f7b2f96a57fb45ba5d0991c38970ad0b957d619131203502a623da06bd8f2f591ecbd2e561a380943ea17eaacd1fc59a06bd92952c6ec1b5b95b1cbec4c2ebb05965d9bd98fb3c2e831e682127a06f146bde0c571c27698439c3625abd4b5d9bc6b7b463c2a2272ce10b818b74132d11aa0761eb97823f98e868962880d0c44558cdd9e90f44137fc421d825f85b458b1707503260f638705376521e6d45522da1cd51fa815bf2a5485f323549f4ac300ca44d1b73a9def56445c3910cbe57cd8f57b7e123d75aaae420461d805a3b6303a9d1ded0ca5abc807a47890d5bacbf20558f469ada5dff4ddae2e9038a6a533c42e270452117d0b526a3efecaddbe40776723b115031b60c7aca26accd124a46f4de8e40a4da14b1474213fcbc6a4722c2d09e794b50c5100985779d79d28b27802cc940570ee517a630f9adfcca28bfc0406c130f24c556aeb71ffc11e21999f7f073de94d8204c861ec8025f477e167c7c1ad8d800f4e9889ed50e21432f07686f47b7810a9c3324d1defc24949416e11928c422147c956007215b391299b8ab5a5098a33738b7b87826913c67"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -565,14 +565,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E7%94%9F%E6%B0%94/"
-                                   title="生气"
+                                   href="/2026/03/03/%E7%B1%BB%E4%BC%BC%E7%9A%84%E6%81%8B%E7%88%B1%E8%A7%82/"
+                                   title="类似的恋爱观"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">生气</span>
+                                        <span class="post-nav-title-item text-ellipsis">类似的恋爱观</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -737,6 +737,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -767,6 +768,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

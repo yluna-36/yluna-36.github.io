@@ -346,23 +346,7 @@
             </div>
             <ul class="archive-item-body border-box">
                 
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box">03-03</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E4%BB%AA%E5%BC%8F%E6%84%9F/"
-                        >仪式感</a>
-                    </li>
-                
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box">03-03</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E4%BB%B7%E5%80%BC%E8%A7%82/"
-                        >价值观</a>
-                    </li>
-                
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -370,7 +354,23 @@
                         >价值观转变案例</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
+                        <span class="starting-point border-box flex-center"></span>
+                        <span class="post-date border-box">03-03</span>
+                        <a class="post-title border-box text-ellipsis"
+                           href="/2026/03/03/%E4%BA%BA%E7%94%9F%E9%81%97%E6%86%BE/"
+                        >人生遗憾</a>
+                    </li>
+                
+                    <li class="post-item border-box is-private-post">
+                        <span class="starting-point border-box flex-center"></span>
+                        <span class="post-date border-box">03-03</span>
+                        <a class="post-title border-box text-ellipsis"
+                           href="/2026/03/03/%E4%BB%B7%E5%80%BC%E8%A7%82/"
+                        >价值观</a>
+                    </li>
+                
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -378,7 +378,7 @@
                         >你「整理房间」的方式，就是你对待别人的方式</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -386,15 +386,7 @@
                         >健康关系 爱情观念</a>
                     </li>
                 
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box">03-03</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4/"
-                        >关于时间</a>
-                    </li>
-                
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -402,7 +394,15 @@
                         >关于分享</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
+                        <span class="starting-point border-box flex-center"></span>
+                        <span class="post-date border-box">03-03</span>
+                        <a class="post-title border-box text-ellipsis"
+                           href="/2026/03/03/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4/"
+                        >关于时间</a>
+                    </li>
+                
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -410,15 +410,15 @@
                         >关于记录</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E5%8C%B9%E9%85%8D/"
-                        >匹配</a>
+                           href="/2026/03/03/%E5%85%B3%E4%BA%8E%E5%90%88%E4%BD%9C/"
+                        >关于合作</a>
                     </li>
                 
-                    <li class="post-item border-box">
+                    <li class="post-item border-box is-private-post">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
@@ -485,6 +485,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -515,6 +516,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

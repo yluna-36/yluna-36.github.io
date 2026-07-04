@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="cc94f3d7b6ce132bc8d07fa2880a2683cec2ae8143188f7c58ab0efd9ea628e7"
-                             data-iv="b11fe3d694af066ce5d9ff43442dda72"
-                             data-ep="8689fa6979e445b7ed3ca6841db4a2e3"
-                             data-content="2430c052721b2df48ab4760d272d47c2d3f9487822f27268dd8d0902d0073fb0598ccf1f70f6ef2a9f0e8d4c168d2d06ec7f5b815023258ce499a6cfff1de8b350688178bf8aca0ee5bc7a570d485ed558181a9c6451b9183dcf8ebb75fd3cfbc369098e3c869de97b6967a59739aea9afb18fed85b4c18d7f83600e32385ae2"
+                             data-secret="3eb9e26824c180efe83d1071177c4f4d98d9a3374db4d5011359e2f545e6960e"
+                             data-iv="dd1c472bf8fb960b96cb1d360a36756c"
+                             data-ep="78902bd57f309b573a4ebe3f15cb6de5"
+                             data-content="2aa2b7553cc046e366f270e7cb9a5f84e70f95b530b1c142736b2eeffe3c324c75de2449988289dc6d231a21c58487ce0f2d7801fb0d2782b7a95e44b85d856037585a59f0a63653d6857796656001ac2ad841628880eff8b8cc358660fbeed3a7aa5f34ef3d23828d71963be6cab6ff40f743748581c852064d3f4fa359ece8"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -579,14 +579,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E4%B8%AD%E5%9B%BD%E5%BC%8F%E5%AE%B6%E5%BA%AD%EF%BC%9A%E6%B2%A1%E6%9C%89%E6%80%9D%E6%83%B3%E4%BA%A4%E6%B5%81/"
-                                   title="中国式家庭：没有思想交流"
+                                   href="/2026/03/03/%E4%B8%A5%E6%A0%BC%E8%A6%81%E6%B1%82/"
+                                   title="严格要求"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">中国式家庭：没有思想交流</span>
+                                        <span class="post-nav-title-item text-ellipsis">严格要求</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -596,11 +596,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E4%B8%BB%E4%B9%89/"
-                                   title="主义"
+                                   href="/2026/03/03/%E4%B9%B0%E6%88%BF/"
+                                   title="买房"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">主义</span>
+                                        <span class="post-nav-title-item text-ellipsis">买房</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -751,6 +751,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -781,6 +782,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

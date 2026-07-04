@@ -443,10 +443,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="819756c941174555f28c46be16ac73b95cf211f56ab7f20105de01b7f48d72f7"
-                             data-iv="30b98c617a38569be6d268446cab2ca2"
-                             data-ep="2041d561237210e75e2a23ccaf8e92d0"
-                             data-content="df2920738d45c71388c482eb8652e4270d01eb7d3b80cd8677b15b58e7ad11cbec2bb058a08890bb46c63432750c54694bb0faa57fd9b7edd64c847fc8db6661c1eaaad9a9f41c6404222a8670ceface071ebf2e596264402805e4c83cf8ffdfd778e4b8a88c7eeee98cd64f9802a5c3090fbbfd101ee86312dad88b9336cccc4984e32133f05d8288be87052b96af37e65f480ba12c720a5afe7524fc54dc7f17b1a4570fad3f1398a6dabd3603eb25f230c96aedb574932b7b8fdb835cfe7660ecc95c234b570d74e8f9415a53079880d2090c82ce61ce6a5047d01335bb95e9672a705ee501f1f40fb15d20dc99126b0c12e7d7da0591c8b9b108e1bbfaef54789952fc150d26f9078b8e00b20207be29fc0ac0493bd49fb456540817106dcafa02fbf4c3af716e7a9364908ad0f2fefed3befd3e696f5b95b8a59af96de2b11d7dac7382551fc5ac78cfb2fdf935133fd79cec1966fe614fd50bc0cd074d"
+                             data-secret="0d1681c98f2ee250ed6a2c2a6a4c0850a8818bda61c059ae1af46e3dd9754c20"
+                             data-iv="a707b31da06aa2d5108d06328f6f6290"
+                             data-ep="26f309d278abca8bd6d63b619598666e"
+                             data-content="defe893fad66ce77c0e5b922b2ec4b748ce72cae6e45472f9d2205b95bd8c2e34501555d93508f4802a0a46b3245ad64c444349b24d4edbaed6b2b204e08cec35d9bfbd8dc56a5aea44961bc933128934356cd9f61b5e57ed0064b83a32f05adea3397650d1665b55f6f8b4ec9917397b498023ac44285d748a1d2c7dad62d38163da5173351fe0c98b024d8ec0250e8d318a5a23e6dcc779cb9222834befac1452ea2bfdd3291e3af66fc04b1a2c136299aa7820f392f3da9114d3c1f9b6de2b25b555a2bfaa99b3f18b44e829e938e6f79c8e4b0459c79b9b56f8d0ca9b9c660fb205fe2f2ff66f86b8bcefb42548558209818938e4a44c50074c17705b1f2ecb82cea265e206f3c88b3e96cd9aa2ecdc24cef9596c1c7582138b2c9150f66846c761b867445bd1f8022d872eb66252ec34c7af848d9f9aa945215640639f0014221436a9b975e8358a5530e76f7e4d8e9a1eee8a5a4f1aa3436c26f92bce2"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -589,11 +589,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E7%B1%BB%E4%BC%BC%E7%9A%84%E6%81%8B%E7%88%B1%E8%A7%82/"
-                                   title="类似的恋爱观"
+                                   href="/2026/03/03/%E7%BB%BC%E5%90%88%E7%9A%84%E8%A7%86%E9%A2%91/"
+                                   title="综合的视频"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">类似的恋爱观</span>
+                                        <span class="post-nav-title-item text-ellipsis">综合的视频</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -744,6 +744,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -774,6 +775,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

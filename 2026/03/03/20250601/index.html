@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="e586cfd8dfcb2c4430147c3a24f23c0e31b8c11f4f55638ebad8467ed01fe611"
-                             data-iv="761c08d8df81907820262ea87a01648b"
-                             data-ep="59accddefa23562dacb83f341dc4d336"
-                             data-content="2032b88076c326289b30162cdbf56141ad600ecdc5bacf39ae44d1007587f07b1745cc62e5a60447c1713f48385143b1a7a38ba21d58d59747444c5001144403bca5d812a10cab653f62fd25ae0dbefdf7e91490524d3986f4d20e869f07301d6a8028d49673c854149ac8d3e0bdeaab079d9f4220c69a1d20e6944154e8fcc6744d303f4d9c91d00b6f8f634a81ea93960bec4ec8296f68baaf148c6a0d749939e85c2546f86356ce4624449a9333f606cf331755eee6a15016d17c075269b27427274fe78d3ce9e847339833e04969ed18c830d321a63dd4d331260b9c5217919c8534380f67293a6eb27a1828b4af78cbe1b3692476750be0c6eb33ef4d36b4376d05a0110bd28e44304defc7864c69f2a58918dadb15797e8ffc892928283ad06e5eae04158186cd5f8726c70b6b55064a1ebc0cb807f0030a3d491ee3d6dbab3341c0789fc8c0a9996a5f1360dc6a4c5f293ae7d016f45e85c06c7da8993fb7e88b57f957819240dd1e3ac653138b218c97fffa0a80c96fbe139cec91b007366fe8c6a94525c6e05df7538a7c0dbc97a27dbdb4dd389fb5e6d07aebece9"
+                             data-secret="f857144182750b30540996887e0a7709a64a846312ae2c3c7b5e832879f4384d"
+                             data-iv="17bd827bbe0f7ee7a075ccc68bf908fc"
+                             data-ep="0dd3283b111ecbc65619432d307695bf"
+                             data-content="1a70572f2bcf8eea7c3f847cb96dfcbed2bdfca6245748ba0f8ad2019c7db618c948cdac061543674015f0ef67ee2ec58aa8810b27fc39155555da97e2ea6ef7568308b803ce9dd9aade43ff2d2d7fefac50d1fbf290edb1f789f3e49d4ad663b2679becaaa57d3aa728787e18f0fb91103f51827c4abef4c64d6078adc5efb69afb0517667f9ee4490e83891214418af4ca246a903412aea366ea4722bcadd882f5b749baa7511505c07f4f9a67ff11f8660cc82de506058a1166b5031267065cb0b6966a712b06544f93bfdbb5c0d92ba1c1fcdd9af790b86d916469563f04b39ac20f9851e68f76d0d57eef5a0ab57eaaedbf9de8b32f15fa45d9aafeb0c5ee5f6b0a3a8217273bf4b3154a394e721911b139209eb57036400c3ba41dc81723d5c10fb66e3a94ceb1d9809b110c16573e31af063358855be0d3cf669156fb3dc672add0f20ccf1a7fa1f8390d45a49822eefb2ca0895f0c0e6c14dc2f0323e0cc492755788ac86accd39353603770354af44cbfb0b2e9cbb8f5ce220672c174a8ff8c3018c04898e0d6410c223cc27644c8eeb01e46f7202cf18ddd3f1fe0"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -596,11 +596,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/20250728/"
-                                   title="20250728"
+                                   href="/2026/03/03/E%E8%AE%B0%E5%BD%95/"
+                                   title="E记录"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">20250728</span>
+                                        <span class="post-nav-title-item text-ellipsis">E记录</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -751,6 +751,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -781,6 +782,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

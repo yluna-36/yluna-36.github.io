@@ -440,10 +440,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="33eca61223948d4814e467c739665915dd789924ad29555c7987c6a1c2a938cd"
-                             data-iv="7ec5efd8fee716a9e6d83dec3af71cc0"
-                             data-ep="e66c9c8eeeacc75dcb593efb82812f4e"
-                             data-content="371d8c6569cabc9030620cef74822ce7406f03d1278fdf46d342380d80b61b94f88e96498e7f0787ecbb45523e231bf95475a67c547a54a6be841b96d85a874318d51a42eef6aced2db37f6ac5dc4002c5486fe9f500e06750019528426e34f65bc2f8a8d785ca5c49c560a349d03d357de8b8588d933f94a14d72b555708a86966ab5dd778aeff263d71e72ea9964cd3c050f0d966112f22d7969b2381d9c0312ef6230d8fd4db95acbea2b2d69e90594a4214babb45e01aa1abd9cfe088380de964f357649bfa35d61ed26ca0a8b5dfc94123be8e6e9895bc2b6704261b140fd532443778ad89dd989be7b58b19e1954779836474e7086039bbee4bcf5d3408a97288753aec586e510fb8a43d44f4b187b3a1e83d73b01d27e24431d7a7b7433007603c993383e2cfae3d1bafff76477f94e54cf64f21dc16a5ae7129266f8"
+                             data-secret="91ea7991e0b9b2ac9cfca2543867de8cda48b8762a1bc1c983cdae6438c87d4f"
+                             data-iv="09005b60403facbdaa9a6998de3be436"
+                             data-ep="170c0b594fa8409f26b6bca072a8601b"
+                             data-content="ef175bec77c9727ad245954f9728677cb294dd0e90fb40029a3e6bc29856558a0af0965d00357c497dc6b8ada8011832769a6546ddb38b8db58eef0bb37ac6191696946c8b00d6f5f893153b0a263d8b67319e687af416f5dee8eb7f9839e740855a237db16cc6f3076935018f5d219f0cc73d704e033609cba03edcaf08e4c151ac1b0ad0b49ec6125363afad64bf78593be594893a549f56092a73e5f272a94ce39f9e1918c0f7415f3b2131bb977d37fdd9108e507808a14e4c0c7d54343712195639124bc95f1b1dd91f07cd364c15b6015591642445d639423ab0b7ce67655af2f42964ab2e1ccb5e228821f118d1b876929502625e3bd5a385460a2985cd2e8a22889bcbc9c24a65b2aab7200c4b0380d48c55600ddd7bcd3e8edf059b98356d4db052798b8d7208e60c89ccef21092ab07b53a77cc0d26cd753ad1d55"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -737,6 +737,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -767,6 +768,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

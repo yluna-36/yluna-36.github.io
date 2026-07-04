@@ -440,10 +440,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="7504f9a482927cdef1d6ac3f0493c209e3d9a67bf92671ad9ab4cedbef9c7e2b"
-                             data-iv="5a92ffc92707e7af91c832ce7216cd52"
-                             data-ep="dd06b8f76fd9667033b237bfc643f31a"
-                             data-content="96859e8585660aaecdc0b7162fd466ee034b70137c0d3114f390dd812e91dc88f34c9eb5355e6aae7522174059fab2d0f42251ed8cb45643d6ff4aa6dbf821aebb6eb2e43b98e3a3572195c3bd08ca81c619a4bd486d839774b1419b1426b9628e22ef01cfe16b2fbbcf3e88a0a3a9fb80af881199491b9f4f0cdab2d1dea340df764e302add655d6dd8087093edb694b6ac9620ad75dc2640a890ff0fbedf44de9c8bf55cc113b0b9d3c2bfc6d0b78bbc0648bbe76e54a53d04004a9da89defc0c0f901dce175b606350843b2ee0360f91fae5a9bf6f0756c164ee269c166f09e9dfcbb6811a1b16f0cc8f1845c6fd37bbac6fb8dc22a8a8205e1d7b79e9723e27a5c58efefb00c44f7d0c1152dffb4914004cf94dbe911d1bbcb4483024cb8824a75122d754d60c44f4476c169e1123c5ce34421da8067ce763c01208c7f8fa78fdd1de21d173b01abce97932a8b00f3ca4f9eaa89088dcf0920f0df635441d2f9ef251d2e2456d220cb2ed128b0e52cdecaafef614de06a836cb6c8d94317e9f6144da4979d6d3e1e31416eda7e23"
+                             data-secret="97ca13e4ece49791b898d8f96e7309a54b5aeae4bb347f84a49732489ca8dbc6"
+                             data-iv="ce4c759313a8bdad3f7dbd1773744d04"
+                             data-ep="f6c17a6c93a303b5411fc553556573c9"
+                             data-content="8d4282d948a54be82668e4d75d9884a0f0393997412bff442d7b20a7eb831f1ea91632d8720bc00d434f3647afd6c76ee8bffe15f67ed20a239d8122ec31cf5631f030797b063fc854a543cc75fb4281430dd8beab096be6d9263841056b253a66a85835de78aa863aa2e0e5aed47e362c08fe7da42c1c069e0b83f4c1f62d575836fac3ca10c45835ef363acb029780489a6993c3c7c868ef168d26a012b9a93a2710b280fbf720f57bd4b7ac445b7fe88ca132934227775f34badcd77ac343ee270fda222786a593aa275df0a9b53cf35b21202c50cab68dab6851ac500572b8fefcd07189c485c6333368b992c03b3b137be0a7d947141acf253f5bfe07da"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -565,14 +565,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E4%B8%96%E7%95%8C%E8%A7%82/"
-                                   title="世界观"
+                                   href="/2026/03/03/%E4%B8%AD%E5%9B%BD%E5%BC%8F%E5%AE%B6%E5%BA%AD%EF%BC%9A%E6%B2%A1%E6%9C%89%E6%80%9D%E6%83%B3%E4%BA%A4%E6%B5%81/"
+                                   title="中国式家庭：没有思想交流"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">世界观</span>
+                                        <span class="post-nav-title-item text-ellipsis">中国式家庭：没有思想交流</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -582,11 +582,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF%E8%AE%B0%E5%BD%95%E7%9B%B8%E5%86%8C%E8%A7%86%E9%A2%91/"
-                                   title="个人成长记录相册视频"
+                                   href="/2026/03/03/%E4%B8%AD%E6%B5%81/"
+                                   title="中流"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">个人成长记录相册视频</span>
+                                        <span class="post-nav-title-item text-ellipsis">中流</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -737,6 +737,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -767,6 +768,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>
