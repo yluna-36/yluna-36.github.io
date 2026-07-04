@@ -440,10 +440,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="7dfd7d185d3c8b42fbdc0c4cf1a3c0a0cd37a5736220574fe641723a9d5e9644"
-                             data-iv="94bcc7259f6d72743eb7ddd58cf02da8"
-                             data-ep="85d76c13bd65bcc677428fbf84f4a5b3"
-                             data-content="d784755b1e5559449477e60e0c94a08b0a74a51636090a490b2387b038cbb9f4c1b8fee2ccb822eaa03a2a5e629424ad4cc2a10072d0ff7a861a16ac968e1e04e79f8f32159153c6bf8835c0014a765ac1f7624004a973e4d897a0fe4b19a8b81623fe9b317dab2ab5d65d43b09c4e113277752f506126333b7447e4dd92f3fe8f8fa907c6ffa9ab4511d15dcac11b3af7e886205468f4384261c55454280088f0e44f0eb5ee4f3c4ff00f1ad160eac015191ecbb335914264f137092f7563bf50d8d1e7d863ceaf1ec90cba7b92fe93"
+                             data-secret="9008246a0154f198a9f6bf794ffe48e02463df4417d32c0669013b17fbb65638"
+                             data-iv="6659dc8e2d3f2a932dc7806695d3e7b8"
+                             data-ep="be838010c4dc69db7d06b61e3af83d75"
+                             data-content="7db9ab04b3a566500dce37937a474a4c262797ad5af324d3a6f984c3abb7dcdd2b7a20721b4f101ba76204ab72b279228e6f4c5964c0c7b03ff3e847a7116978ba1865e94d8b90f7c9e95015a98241c552cc800cccf44fbf071035a857cee4cc7eeb79cee130103c12a9c6265e2676f88ff0a5bbdad9c09b3d9fedc061e8775f787f5f5f0e07ab42c64a6e0faf823470e763ff6eb4036b5404ea97380052228cfb122769a41687783fd8b672e50a12ad24263d98e653f4593f1b81cc627ec85e06a6fb5ffbe12c7eb74287602be200b2"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -565,14 +565,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E4%B8%AD%E6%B5%81/"
-                                   title="中流"
+                                   href="/2026/03/03/%E4%B9%B0%E6%88%BF/"
+                                   title="买房"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">中流</span>
+                                        <span class="post-nav-title-item text-ellipsis">买房</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -582,11 +582,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E4%B8%BB%E5%8A%A8%E5%85%B3%E7%B3%BB/"
-                                   title="主动关系"
+                                   href="/2026/03/03/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB%E5%87%86%E5%88%99/"
+                                   title="亲密关系准则"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">主动关系</span>
+                                        <span class="post-nav-title-item text-ellipsis">亲密关系准则</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -737,6 +737,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -767,6 +768,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

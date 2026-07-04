@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="f1183dd2609e21efad590e192f12af76539598202589e4eedcbb1a927d26b7d1"
-                             data-iv="efb3ad04ca21ea200aabe19f1981c09b"
-                             data-ep="4d871ecc184e07bf4cdb08a3a8512f4a"
-                             data-content="88d570c26e792a5e7e6a20845d1ef9fb8b1eb7e8aefd477946376b1a76885057a66a253efda9cac606ead809636b9596cfcca19f88c8525a87428145208433dd40265cdcf68169ba0fde5928c398715e7e6100a94bb86fe6ceb767b6cceccf4ac9906494e4b4c3301ca028f4c2ba5429a6cfbd5aac694eb0e06d375c445f16ee16c368f22ec3124e20bb310f230260d8de4f1bdbf50408cd601e6f5f9b3b8db870ec6d78167c6af37593ec5d9d9cac10"
+                             data-secret="d93af09b524497eba618f59852a40a5e7f3658439ebe98483849a84654f1161d"
+                             data-iv="7aa8822896037f78fa4097131d10ce0d"
+                             data-ep="6dd918d0040af0ec3973d2786f9073cd"
+                             data-content="64b742018c41e6a2ae75b164e4ac9f84060c2ed5f1f21d49614a069867acd0e58cc3d307cb1a5cf329471f92374b4f42eb9cf67fc7f06415f65648ce403f85ffbaa31c778de82706c93d420a5d65e5f2af14932dc5db78eccde9e1877f4afb0776c714d40de5f12214f07dcc512bd7e0c26828be7a96cece907f00c9b1388f27b2470607ffa7a368475e880e3e9d5c3801fde602c1953c88dca1977d4161cc1f5553d5d9389ba586f1f71db3fe278994"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -579,14 +579,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E5%8E%8B%E5%8A%9B/"
-                                   title="压力"
+                                   href="/2026/03/03/%E5%85%B3%E4%BA%8E%E8%AE%B0%E5%BD%95/"
+                                   title="关于记录"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">压力</span>
+                                        <span class="post-nav-title-item text-ellipsis">关于记录</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -596,11 +596,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E5%8E%A8%E6%88%BF%E5%9E%83%E5%9C%BE%E6%A1%B6%E5%BA%94%E8%AF%A5%E6%AF%8F%E6%AC%A1%E9%83%BD%E6%8D%A2%E6%96%B0%E7%9A%84%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E5%80%92%E3%80%82/"
-                                   title="厨房垃圾桶应该每次都换新的，而不是倒。"
+                                   href="/2026/03/03/%E5%86%9C%E6%9D%91%20%E4%B9%A1%E6%9D%91%20%E5%8E%BF%E5%9F%8E/"
+                                   title="农村 乡村 县城"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">厨房垃圾桶应该每次都换新的，而不是倒。</span>
+                                        <span class="post-nav-title-item text-ellipsis">农村 乡村 县城</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -751,6 +751,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -781,6 +782,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>

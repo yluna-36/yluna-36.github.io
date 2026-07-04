@@ -443,10 +443,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="3ea9c475d606f6f923e43e2c0fe2767ea8a644cd50b9496c4d34e65b01ebed6c"
-                             data-iv="b21f1e611d680f3702b494250924ffc2"
-                             data-ep="260d80066346616bb9dd7c42549effe5"
-                             data-content="717d81d8165e1005746c5aafaa4a966a2dae625068694ed6184f71a53d95a29c2a21b84973d0320eea9d0fcad1159ec470bff9c2547e614e566ac7822e3dda57f24cca0415a6bc613fa625548ab61960908a52bad7887e4f52cbc212140c67ac637a30e71173b3da5c62713f74d90349"
+                             data-secret="8f69cbce364c140a09117bce6ceb1d02a35c6e5e1618c359ec32c542df21d698"
+                             data-iv="78a8fbfaddbed28cd76aacd883601601"
+                             data-ep="cb3c95ab72a37f8699c9687e92a6f55a"
+                             data-content="4a575e80aae2ac576734d1c9a43b5e45e45e162a83fbd27fa199272b049b2ca0a2289f9931867d2ac6597f4a0fc0d12bc3820e65b114271b28be62ea15631b25aca9d343f834a85ed9a494ffeb0b059891f67705ac4f5e86fd0d1c5904359e69936987ae6c45468f1c8a7d10e70e5cc5"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -589,11 +589,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E6%9A%A7%E6%98%A7%E4%B8%8E%E6%81%8B%E7%88%B1/"
-                                   title="暧昧与恋爱"
+                                   href="/2026/03/03/%E6%B1%82%E7%9F%A5/"
+                                   title="求知"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">暧昧与恋爱</span>
+                                        <span class="post-nav-title-item text-ellipsis">求知</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -744,6 +744,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
+        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
     </div>
 
     <div class="theme-info info-item">
@@ -774,6 +775,40 @@
 
     
 </footer>
+
+<style>
+  body:not(.show-private) .is-private-post {
+    display: none !important;
+  }
+</style>
+<script>
+  (function(){
+    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
+    if (isPrivateShown) {
+      document.body.classList.add('show-private');
+    }
+    
+    var unlockBtn = document.getElementById('unlock-private-btn');
+    if(unlockBtn){
+      unlockBtn.addEventListener('click', function(){
+        if(document.body.classList.contains('show-private')) {
+           document.body.classList.remove('show-private');
+           localStorage.removeItem('show_private_posts');
+           alert('幽灵文章已隐藏 (Ghost posts hidden)');
+        } else {
+           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
+           if (pwd === 'yluna') {
+             document.body.classList.add('show-private');
+             localStorage.setItem('show_private_posts', 'true');
+             alert('口令正确！幽灵文章已解锁。');
+           } else if (pwd !== null) {
+             alert('口令错误。');
+           }
+        }
+      });
+    }
+  })();
+</script>
 
         </div>
     </div>
