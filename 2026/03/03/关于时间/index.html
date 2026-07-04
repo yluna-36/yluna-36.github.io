@@ -87,245 +87,586 @@
     <!-- page content -->
     <div class="page-main-content border-box">
         <div class="page-main-content-top">
-            
-<header class="header-wrapper">
+            $pc-search-icon-font-size = 1.5rem
+$menu-bar-line-height = 2.5px
+$menu-icon-gap = 0.1rem
+$pc-menu-item-gap = 1.8rem
+$mobile-menu-item-gap = 1.2rem
+$logo-image-box-width = 2.68rem
+$mobile-menu-icon-wrap-width = 1.6rem
+$mobile-menu-icon-wrap-margin = 0.4rem
 
-    <div class="border-box header-content">
-        <div class="left flex-start border-box">
-            
-                <a class="logo-image border-box" href="/">
-                    <img src="/images/avatar.jpg">
-                </a>
-            
-            <a class="site-name border-box" href="/">
-               yluna&#39;s personal page
-            </a>
-        </div>
 
-        <div class="right border-box">
-            <div class="pc border-box">
-                <ul class="menu-list border-box">
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/">
-                                
-                                HOME
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/archives/">
-                                
-                                ARCHIVES
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/tags/">
-                                
-                                TAGS
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/categories/">
-                                
-                                CATEGORIES
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/gallery/">
-                                
-                                GALLERY
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box has-sub-menu">
-                            <a class="menu-text-color border-box" href="javascript:void(0);">
-                                
-                                ME
-                                
-                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
-                                
-                            </a>
-                            
-                                <ul class="sub-menu-list border-box">
-                                    
-                                        
-                                        <li class="sub-menu-item border-box ">
-                                            <a class="menu-text-color border-box flex-start" href="/about/">
-                                                
-                                                ABOUT
-                                            </a>
-                                        </li>
-                                    
-                                        
-                                        <li class="sub-menu-item border-box ">
-                                            <a class="menu-text-color border-box flex-start" href="/personality/">
-                                                
-                                                PERSONALITY
-                                            </a>
-                                        </li>
-                                    
-                                        
-                                        <li class="sub-menu-item border-box ">
-                                            <a class="menu-text-color border-box flex-start" href="/links/">
-                                                
-                                                LINKS
-                                            </a>
-                                        </li>
-                                    
-                                </ul>
-                            
-                        </li>
-                    
-                    
-                        <li class="menu-item search search-popup-trigger">
-                            <i class="menu-text-color fas search fa-search"></i>
-                        </li>
-                    
-                </ul>
-            </div>
-            <div class="mobile border-box flex-start">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
-                
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+.header-wrapper {
+  display flex
+  align-items center
+  justify-content center
+  box-sizing border-box
+  width 100%
+  height 100%
+  padding-top var(--header-scroll-progress-bar-height)
+  background var(--background-color-1)
+  box-shadow 1px 2px 6px var(--shadow-color)
 
-    <div class="header-drawer">
-        <ul class="drawer-menu-list border-box">
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
-                            
-                            HOME
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives/">
-                            
-                            ARCHIVES
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags/">
-                            
-                            TAGS
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories/">
-                            
-                            CATEGORIES
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/gallery/">
-                            
-                            GALLERY
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box has-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
-                            
-                            ME
-                        </a>
-                        
-                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
-                        
-                    </label>
-                    
-                        <ul class="drawer-sub-menu-list border-box">
-                            
-                                
-                                <li class="sub-menu-item border-box">
-                                    <a class="drawer-menu-text-color border-box flex-start" href="/about/">
-                                        
-                                        ABOUT
-                                    </a>
-                                </li>
-                            
-                                
-                                <li class="sub-menu-item border-box">
-                                    <a class="drawer-menu-text-color border-box flex-start" href="/personality/">
-                                        
-                                        PERSONALITY
-                                    </a>
-                                </li>
-                            
-                                
-                                <li class="sub-menu-item border-box">
-                                    <a class="drawer-menu-text-color border-box flex-start" href="/links/">
-                                        
-                                        LINKS
-                                    </a>
-                                </li>
-                            
-                        </ul>
-                    
-                </li>
-            
-        </ul>
-    </div>
+  &:hover {
+    box-shadow 1px 2px 10px var(--shadow-hover-color)
+  }
 
-    <div class="window-mask"></div>
 
-</header>
+  .header-content {
+    z-index $z-index-5
+    display flex
+    flex-direction row
+    align-items center
+    justify-content space-between
+    width var(--page-content-width)
+    max-width var(--page-content-max-width)
+    height 100%
+    transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
 
+    &.has-first-screen {
+      max-width var(--page-content-max-width-2)
+    }
+
+
+    .has-toc & {
+      max-width var(--page-content-max-width-2)
+    }
+
+
+    +keep-tablet() {
+      width var(--page-content-width-tablet)
+    }
+
+
+    +keep-mobile() {
+      width var(--page-content-width-mobile)
+    }
+
+
+    .left {
+      height 100%
+      font-size 2rem
+
+      transition-t("transform, transform-origin", "0, 0", "0.2, 0.2", "linear, linear")
+
+      .header-shrink & {
+        transform scale(0.78)
+        transform-origin left
+      }
+
+
+      if (hexo-config('base_info') && hexo-config('base_info.logo')) {
+        .logo-image {
+          flex-shrink 0
+          width $logo-image-box-width
+          height $logo-image-box-width
+          margin-right 0.5rem
+
+
+          +keep-tablet() {
+            width $logo-image-box-width * 0.9
+            height $logo-image-box-width * 0.9
+          }
+
+
+          +keep-mobile() {
+            width $logo-image-box-width * 0.8
+            height $logo-image-box-width * 0.8
+          }
+
+
+          img {
+            width 100%
+            border-radius 0.4rem
+          }
+        }
+      }
+
+
+      .site-name {
+        color var(--text-color-1)
+        font-weight 600
+        font-size var(--header-title-font-size)
+        font-family var(--header-title-font-family)
+        line-height 1
+        letter-spacing 1px
+
+        +keep-tablet() {
+          font-size calc(var(--header-title-font-size) * 0.9)
+        }
+
+
+        +keep-mobile() {
+          font-size calc(var(--header-title-font-size) * 0.8)
+        }
+
+
+        .is-home & {
+          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
+            color var(--first-screen-header-font-color-light)
+            filter brightness(92%)
+
+            .dark-mode & {
+              color var(--first-screen-header-font-color-dark)
+              filter brightness(106%)
+            }
+          }
+        }
+
+
+        .show-header-drawer & {
+          color var(--text-color-1) !important
+        }
+      }
+    }
+
+
+    .right {
+      .pc {
+        .menu-list {
+          display flex
+          gap $pc-menu-item-gap
+          align-items center
+
+          +keep-tablet() {
+            display none
+          }
+
+
+          .menu-item {
+            font-size 1rem
+            cursor pointer
+
+            &.search {
+              font-size $pc-search-icon-font-size
+              &::before {
+                display none !important
+              }
+            }
+
+
+            .menu-text-color {
+              color var(--text-color-3)
+            }
+
+
+            &::before {
+              position absolute
+              bottom -10px
+              left 50%
+              box-sizing border-box
+              width 0
+              height 2.6px
+              background var(--primary-color)
+              border-radius 3px
+              transform translateX(-50%)
+              content ''
+              transition-t("transform, bottom, width", "0, 0, 0", "0.2, 0.2, 0.2", "linear, linear, ease")
+
+              .header-shrink & {
+                bottom calc(-1 * calc(var(--header-shrink-height) * 0.5 - 12px))
+              }
+            }
+
+
+            &:hover
+            &.active {
+              &::before {
+                width 100%
+              }
+            }
+
+
+            .menu-icon {
+              display var(--header-menu-icon)
+              margin-right $menu-icon-gap
+            }
+
+
+            .is-home & {
+              if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
+                .menu-text-color {
+                  color var(--first-screen-header-font-color-light)
+                }
+
+
+                .dark-mode & {
+                  .menu-text-color {
+                    color var(--first-screen-header-font-color-dark)
+                  }
+                }
+              }
+            }
+
+
+            &.has-sub-menu {
+              &::after {
+                position absolute
+                bottom 0
+                left 0
+                box-sizing border-box
+                width 100%
+                height 100%
+                content ''
+              }
+
+              &:hover {
+                &::after {
+                  bottom -100%
+                }
+
+                .collapse-icon {
+                  transform rotate(180deg)
+                }
+
+                .sub-menu-list {
+                  display flex
+                }
+              }
+            }
+
+
+            .collapse-icon {
+              margin-left $menu-icon-gap
+              transition-t("transform", "0", "0.3", "ease")
+            }
+          }
+
+
+          .sub-menu-list {
+            position absolute
+            bottom -280%
+            left 50%
+            display none
+            gap $pc-menu-item-gap
+            justify-content flex-start
+            box-sizing border-box
+            padding 0.8rem 1.6rem
+            background var(--background-color-1)
+            border-radius 0.6rem
+            box-shadow 0 0 8px var(--shadow-color)
+            transform translateX(-50%)
+
+            .sub-menu-item {
+              white-space nowrap
+
+              .menu-text-color {
+                color var(--text-color-3) !important
+              }
+
+              &:hover
+              &.active {
+                .menu-text-color {
+                  color var(--primary-color) !important
+                }
+              }
+
+              .sub-menu-icon {
+                display var(--header-menu-icon)
+                margin-right $menu-icon-gap * 4
+              }
+            }
+          }
+        }
+      }
+
+
+      .mobile {
+        gap 1rem
+
+        .icon-item {
+          position relative
+          display none
+          width 20px
+          height 20px
+          color var(--text-color-3)
+          font-size 1.2rem
+          cursor pointer
+
+          i {
+            color var(--text-color-3)
+
+            .show-header-drawer & {
+              color var(--text-color-3) !important
+            }
+
+            .reset-color & {
+              color var(--text-color-3) !important
+            }
+          }
+
+
+          +keep-tablet() {
+            display flex
+            align-items center
+            justify-content center
+          }
+        }
+
+
+        .menu-bar {
+          .menu-bar-middle {
+            position relative
+            width 18px
+            height $menu-bar-line-height
+            background var(--text-color-3)
+
+            &::before
+            &::after {
+              position absolute
+              left 0
+              width 100%
+              height $menu-bar-line-height
+              background var(--text-color-3)
+              content ''
+              transition-t("transform", "0", "0.38", "ease")
+            }
+
+
+            &::before {
+              top -6px
+
+              .show-header-drawer & {
+                transform translateY(6px) rotate(45deg)
+              }
+            }
+
+
+            &::after {
+              bottom -6px
+
+              .show-header-drawer & {
+                transform translateY(-6px) rotate(-45deg)
+              }
+            }
+
+
+            .reset-color & {
+              background var(--text-color-3) !important
+
+              &::before
+              &::after {
+                background var(--text-color-3) !important
+              }
+            }
+
+
+            .show-header-drawer & {
+              background transparent !important
+
+              &::before
+              &::after {
+                background var(--text-color-3) !important
+              }
+            }
+          }
+        }
+
+
+        .is-home & {
+          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
+            .icon-item i {
+              color var(--first-screen-header-font-color-light)
+            }
+
+            .menu-bar .menu-bar-middle {
+              background var(--first-screen-header-font-color-light)
+
+              &::before
+              &::after {
+                background var(--first-screen-header-font-color-light)
+              }
+            }
+
+            .dark-mode & {
+              .icon-item i {
+                color var(--first-screen-header-font-color-dark)
+              }
+
+              .menu-bar .menu-bar-middle {
+                background var(--first-screen-header-font-color-dark)
+
+                &::before
+                &::after {
+                  background var(--first-screen-header-font-color-dark)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .header-drawer {
+    position absolute
+    top 0
+    left 0
+    z-index $z-index-2
+    display none
+    justify-content center
+    box-sizing border-box
+    width 100%
+    padding var(--header-height) 0 2rem 0
+    background var(--background-color-1)
+    transform scaleY(0)
+    transform-origin top
+    transition-t("transform", "0", "0.38", "ease")
+
+    +keep-tablet() {
+      display flex
+    }
+
+
+    .show-header-drawer & {
+      transform scaleY(1)
+    }
+
+
+    .drawer-menu-list {
+      display flex
+      flex-direction column
+      gap 1.2rem
+      align-items flex-start
+      justify-content flex-start
+      width var(--page-content-width)
+      max-width var(--page-content-max-width)
+      height 100%
+      margin-top 1rem
+
+      +keep-tablet() {
+        width var(--page-content-width-tablet)
+      }
+
+
+      +keep-mobile() {
+        width var(--page-content-width-mobile)
+      }
+
+
+      .drawer-menu-item {
+        width 100%
+        padding 0.6rem 0
+        font-size 1.06rem
+        border-bottom 0.1rem solid var(--background-color-3)
+
+        &.active {
+          .drawer-menu-label {
+            .drawer-menu-text-color {
+              color var(--primary-color)
+            }
+          }
+        }
+
+
+        &.show-sub-menu {
+          .collapse-icon {
+            transform rotate(-90deg)
+          }
+
+
+          .drawer-sub-menu-list {
+            display flex
+            height auto
+          }
+        }
+
+
+        .drawer-menu-label {
+          display flex
+          align-items center
+          justify-content space-between
+          width 100%
+
+          .left-side {
+            width 100%
+
+            .menu-icon-wrap {
+              display var(--header-menu-icon)
+              width $mobile-menu-icon-wrap-width
+              margin-right $mobile-menu-icon-wrap-margin
+            }
+          }
+
+
+          .right-side {
+            margin-left 0.4rem
+            cursor pointer
+            transition-t("transform", "0", "0.2", "ease")
+          }
+        }
+      }
+
+
+      .drawer-sub-menu-list {
+        position relative
+        display none
+        flex-direction column
+        justify-content flex-start
+        box-sizing border-box
+        width 100%
+        height 0
+        padding-top 0.6rem
+        padding-bottom 0.6rem
+        padding-left $mobile-menu-icon-wrap-width
+        transition-t("display, height", "0, 0", "0.2, 0.2", "linear, linear")
+        disable-user-select()
+
+        .sub-menu-item {
+          margin-top 1rem
+          padding 0.6rem 0
+
+          &.active {
+            a
+            a i {
+              color var(--primary-color)
+            }
+          }
+
+
+          .sub-menu-icon-wrap {
+            display var(--header-menu-icon)
+            width $mobile-menu-icon-wrap-width
+            margin-right $mobile-menu-icon-wrap-margin
+          }
+        }
+      }
+    }
+  }
+
+
+  .window-mask {
+    position absolute
+    top 0
+    left 0
+    z-index $z-index-1
+    display none
+    box-sizing border-box
+    width 100%
+    height 100vh
+    background rgba(0, 0, 0, 0.4)
+    visibility hidden
+    opacity 0
+    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease")
+
+    +keep-tablet() {
+      display block
+    }
+
+
+    .show-header-drawer & {
+      visibility visible
+      opacity 1
+    }
+  }
+}
+
+
+.show-header-drawer {
+  overflow hidden
+}
 
         </div>
 
@@ -335,369 +676,51 @@
                 
 
                     
+
 <div class="fade-in-down-animation">
-    <div class="post-page-container border-box encrypt">
-        <div class="post-content-container border-box">
-            
-                <div class="post-content-top border-box"
-                     style="height: 13.8rem"
-                >
-                    <div class="cover-post-title">
-                        关于时间
-                    </div>
-                    <img class="post-cover" src="https://picsum.photos/seed/645/800/400"
-                         onerror="this.style.display='none'"
-                    >
-                </div>
+    <div class="page-template-container border-box keep-container ">
+        <!-- page top -->
+        
+
+        <!-- page bottom -->
+        <div class="page-template-bottom border-box">
+            <!-- use page template -->
             
 
-            <div class="post-content-bottom border-box has-cover">
+            <!-- page content -->
+            <div class="page-content border-box keep-markdown-body ">
                 
-
-                
-                    <div class="post-header border-box">
-                        
-                            <div class="avatar-box border-box">
-                                <img src="/images/avatar.jpg">
-                            </div>
-                        
-                        <div class="info-box">
-                            <div class="author border-box">
-                                <span class="name">yluna</span>
-                                
-                            </div>
-                            <div class="meta-info border-box">
-                                
-
-<div class="post-meta-info-container border-box post">
-    <div class="post-meta-info border-box">
-        
-
-        
-            <span class="meta-info-item post-create-date">
-                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2026-03-03 19:04:57</span>
-            </span>
-
-            
-                <span class="meta-info-item post-update-date">
-                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sat Jul 04 2026 11:07:58 GMT+0800">2026-07-04 11:07:58</span>
-                </span>
-            
-        
-
-        
-            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="post-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E4%BB%B7%E5%80%BC%E8%A7%82/">价值观</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="post-tag meta-info-item border-box">
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%97%B6%E9%97%B4/">时间</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%87%91%E9%92%B1/">金钱</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E8%B5%9A%E9%92%B1/">赚钱</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-            <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>7 Words</span>
-            </span>
-        
-        
-            <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 Mins</span>
-            </span>
-        
-        
-            <span class="meta-info-item post-pv">
-                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-            </span>
-        
+                    <div class="hbe hbe-container" id="hexo-blog-encrypt"
+     data-hbe-format="4"
+     data-wpm="Oh, this is an invalid password. Check and try again, please."
+     data-whm="Oh, this is an invalid password. Check and try again, please."
+     data-salt="79185043499273f3b46b5b9dc66405109f9372e1da5874cd5313eb402e9058b6"
+     data-nonce="29e4120125144afa9d9c0faf"
+     data-kdf-iterations="250000"
+     data-auto-save="false">
+  <script id="hbeData" type="hbeData">
+    83b4ae0d952fe4cfe8ebb933fad7de2b2c8f902b137c6b6a8739f9da51d0c6b1f73f19652cdae99d91570cf5fee2f1f6d99bf966daecfeeaf6ed1dc29e5da474e5feca5f9802db5bdde6c8ace877331d13451841f11669232ab8421e61354b27e3b29db1c4dea09fa04181bb23b26cc511478e2ef070e8f5025a6ff5624c33cb7dc4cadac75a1484ad50db8efdcf1b338b9f6182c418aee7024668169757c3f4ffe379aee245bf14a1f7c8f67773b35462273a39d945c866ab377e9228bda29cf267d33eb525498e99ba533e2adc6dfddfb174e53047ffcac5f028470643513fb506da16a7097cd682e5b4db9ad3d07467d326bc3cfd50faa7bf86ba6439f7c661657c2ea83a0e038ff59d62faac01173ede2415e424eae5adac51de0045781861c025282f78f3833c88ee27eab20fc6e34cabfcdec8693f224c04b4e2afc05d794a0ce80372be3df2baa93bd27e717eea36fce3a575609228556bcc366e37fde23002131d4b2f53e6171b6754b8d2b6e2cda567ce6e56f4458edcfb0ff6b29fe93444196beaf6867162b2c73f119a24809398461f072499e655ecce0e8460e26781c9a452fd2129d5dbbabdfa886e604a08aca045b9f1be4ef7af115412bbe5967fab600c7fa3f7cc6b6410eaa427618883bed4331e52452d668b43ac25d7e36c0a508542058a043d8fc74d9dce853c049f62d892ac9211234468d6eeae26b628606c42b2bc3e6724fdc955641585f21046f350cd38f44ffcff57e6379bbac37a449c717654490b20a865b960b11bddb99fc5d1bfb37d7323402149219630830b063f911ee561bc8c04a05f3e9eff896429c8991b8e75e3c260e087ae1135b1803692fbb30f77ee7d793e1c372d39c4ecdae2cc8d26887c4041d34591af1f426cae8a2d08e265c94b3420794aacd2f11e5ad66d0364f1e33689659ac843a6f078415efbd54493e49435a367493e7a31f82c5825523205b63ea78f8378f6ccb876cc3f5cd7b91d279336ad9a11e34ce6a16cf9cce5603c1a7406a7cb0e74e438c51541ddcda43ba5f4444ad35378d2a66985b3faed60b5d99a6801d1a6429f4348fbd096432f709c8bf318e00ed14a872ad499d3d7640af45841e3a9cf4a8c5b7534d7d5c2ed2cd68b13da8cb691cef08caeb9b29aaca4e5c23e7e50b43d414a809d713c93ef24d88f4333126e9cd99710571a4860aac30aa0d355d2f09fd8b58a0719b5c38753487d7949d29a94142984c6600737f467a7900cac43717d309f196c3bd8f2eb4c260d8a5ba96a622dc622a629c0c082d5c4ed9f35e720e9766d29f7e63252c7435a0d45f56aad7ffbab3cee22ea6b82965356639b2f0a70bd7c8399fa77b9d0b259915726bddac2382a51a6c51283b435ba9c2d968da67f5298b799b36ba71da6c0996be12d1469cf901fedc008d39eb0292b26338594ebc591ef76375c99dc81338c9f0ccbfc0ab125ebd9105f7e7795f779605040947f014b8a4064a4bdc9b387bd2038af53a948a9bc736ae76c64e07f827be844c59bc01c2465a849c85d1de28ceeedcad3de54a98bfaebf839beee602cca790691463647b3b60aeb4abdde4e31cdd823adb26b542cf2a3aa21e3a242cf3d82608b2c294d59c7eb9b875cbd178b140980456e61c0fd7b508a8e3c40d79b27780640eb65cc5deab26338fcf1f24771ca252d60e672daa6fdbeb338895690dd46ea46c2da688201812546027e16ce9c68c34c77df1c79cf79f96360ffb9286f397fd9a516678b09cf149e54c8334401378c1a3c207ba34bc35a94f434612f62465b38d1899849b27492f48145dc5454135b657e97e5063116cdf6f2197da71739d28502879c32f30924c3c47adde84bd65ef2bcd70d7f810dcadbe1c7b9841bd1ccb15ca07add54733c8d90d9883293e1f10b939d48e2e2e707eb13ebe60ee7ff473ea7e1fbcc2596180880a86de5bde21d1d2cbd4dca2e54120dca895310c5c54e6e443e0707d8293b82247bfd0112d46d883766e8c47754e0d53d4de632ae9ad659c903b51d4f9797f51f28db4b20e1844a0ab6b70c96edefec6e0e820ecfdb084728670225c1d9d8ca964a8b0980b21b7b81f279b2d3c386c5d383043dffb8e57bcd102767e221cb2c280ea2441b028c531744085704b0bd70bf0887d0c5c9fdc70d4cf5157b8485e4e44aab66ed8693743e165449ead02393f624cec70699e64b90c2bd58122ec8d355116c07abed49de931a3ecbdd039063203a47577935faa1afa852a87e85cff06b48efcb4c0c1dffeb18369ba1975942dd79c9b20b6aef852bf5d4d2acdbd3b8dc0d993f86cb54a5e61cfdb4f47fb0bf62e91d3ac7269d469d8e07b3627802de73ed8e0db1ad133b047333d60995798ac572ff26a8ac7e4aa12e6552b85341244e250561f7a63b02f2c699fcdba1904e84e61a3acc44ce738cc280675ac4a4d19fd5474b27b395c49728750b54e07a47c06ba17e0f6c0b1ade1b741edb00c5bcf0492092d7d19dc0cb3fa9175ee181cebea58a975c3bd1dae7f7089e64ed61553ad1399e940a1d9f6991ce32b4c25eb0366c41e68fcf811ce2f29abf7837e252e8eff993505a72e3d84ff5ffcc66f099d6fd15bb026e49f0c95cfc5fd1e801caa7e7b9082bb574b4d5f195b50ce344e71c5be9438dc907d0ebe4007be51ace87adb0ab890bc8878a25acaae9d57ee84bcd613d3eab8c0a12ae30f471555501235ddc7d585d7b52e49b79f96e40b2886671d8e9815d2f1894e399945fcb5fc89d9c31bda2d6abf375950b69bf694033140b3d3bd18af96deb3847720da6d227dbf236b6680009f31f41b69fecd2d0aa9ba563645c0c7387467f3cb8286ae891359c64757fa5a35b79aee3c272d86c745048d9771c01c0e5c8168a97589a4d7bd3dce93ab7f6313a7988b1d1183d282e24704bb857938472737542d84ef483a9b919b60fce010ee5748061b7ac5903f54c9f4feea7ba0e185f508c90529cf3a80041a4d57fe6cc26c74bbe670163d780685ac6bcf0f7829a86823d78e9fb5126da5872daf68c7423141236643a26b352d114adb41af8c27d41ad8a5f55a3bb97ed97dc124142b397f15f1d8be8ffe888466d66c4e6b520eae7b10eea56c8f3d8307a4dba25341955e0b254b6fe9c8fc0e6de7ce6e9c4ed1c9da241e789d121ff63bf63933de870c9a1a856ac820a66beff7907ca9df385c8aa01f6e8758c364dd1d71c66a755a6c42193bfcb9ba117a387da912ddf6ce1b0
+  </script>
+  <div class="hbe hbe-content">
+    <form id="hbeForm" class="hbe hbe-form" onsubmit="return false">
+      <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
     </div>
-
-    
+      <button class="hbe hbe-button" type="submit">Decrypt</button>
+      <div class="hbe hbe-error" role="alert" aria-live="polite"></div>
+    </form>
+  </div>
 </div>
-
-                            </div>
-                        </div>
-                    </div>
+<script data-pjax src="/lib/hbe.9e70f1e1d2.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
                 
-
-                <div class="post-content keep-markdown-body ">
-                    
-
-                    
-                        <div class="post-encrypt-box border-box"
-                             data-secret="b7c4dd3b1eb08b9ad6dafee1307990ff5f55cf6418c2f214f71d7600a2abb2b2"
-                             data-iv="6b22109f9f5cf6b0e93211dd2a80d575"
-                             data-ep="088009ae20a3a696a8abd949e95cd853"
-                             data-content="4fdb48031d82ef0b34c5b40b569b5cfc06290c35839e70b114b4e21b949a7f8ba01204ae424e96400d949ea78e900553452cb6d0d67da188917e403d5d962afa58ab75c3454918095d21714a86a1af1dc3ed4bafc3199a4d551a58f1f9ca2e66f132682fd98e01090b8b191743f6828d071a50fcdd24bc3c54f249790782799fb106f56a3c9ba0693a8ae2cf1c3add692f0920637047a3a87f122032dc846965ea0d29a721d6fd11967e27f22a3af97c974186c5aa9f5b0c707979b11e627aac57fdddc4aa9e402fc9f6a8299f0896463283c2736b476c279f562f19c304118d1ca6ee61bba7d4381c2a85fdc60f8acca7d6907666ba4dcd737c208e27212f0c6b6136fb58a278215018136870ae1011293ed3f45eaa0f38b059b6503d61174e0489e9f5ad1b215d6dbe19f397187009698930c295faaf63f1f83cc129bc9c704eb6bc7c440e51f722649e045e41c2c6efe110e1273e84a369e25c0d62d3c00f483b391b31c599555af2f473c8f7678b84221a6248d428850d9c4f7f4c692099b035af7edfca33d93054e3423bdfca7df5966745106f06da2bed24bbe46746842182cfa814db61580c1bb4256ec2493f6bad3fd95d21bf53fc7469ea16dc8592f5e42e18006270e9ad2e2498940994513dc8131375a07204cdde5a01caeb5fe37c9003e84c41ca2770604fe253cdb0f4324434a542c139087d18ecf9266526f4d3b870094577ab05d1dd42c3e6c99c5fd89772ab68b6d6ed287e862dab42c6e32ce3159caeb47349b72a2ef843b05a77fc5ebdf04f40efedd076415d039c9aa6a95e565b347bf7173df1ac357ae8847cc92ff10bde16b16522e8faee61fc9f367ced38cc2d099ee3fed6a86601263d9126013f73b96ffb685a7809b3dc2cf96f421a1e22765a71d427ed25d5fdf8a32b8f1a33e7465f1c99fdf4623d7ee3f899e3c26d96738f251c3c5b26debd496c6e784abe3ec1d04f9aaa75471edbf5c2539cea0ba0569fc0c569634ab04312897e9261db2de0c0b9ff1226d067431e26d135f0f9f156f43d637ca6c687607ec77ce1bfb444dfa40c3a200a8ba8c6340cbbee41293d90fa671c3bdcac65d8ec7a9f78290aa2ee963cfd38030f511c9e7dc2212cdf3b12fd1eb36b34e0b8c69b8d3de61f8d58378a028bb721fd0fd2f4cc78c8146624bff94f1ac37eb11f5fa724e614980ab1bab70984d967255f0aa4f9fb22f93394b0d583dee763d925e8c896dc4efff94cecf4cd0dc38a8eeb3818e1c229dba884beb21df00442a9b388430e3c121b58c2dddd656eec65255138bf8127a5ff0f730d729ad19999d70b95f88d4f8e8022d4dbafbac6b1f23565a66f8440387cae2f3507c9197dc2fb834a9d8d8304911dab2cabab3885adb6c546d8beca3dc4d82f402bb37065e0797671eeb975860cf7e8b0f574596967c906f1cfabc5b9baa73a72c52a8e5b5c8a20b2909cb34fcc6a3e8e5bb8c37171a87c88d0ddfdcef6ba17cc68e55045c80fe9f45c2e94023715b807d77fc9ae5a9bef6d2905f1a7fe83f954b030273d1a48cc267d1b82d4cea758cbfc48d9015d019831ab2ea220a75834802b3b62ab6b99ec327dc9b7240c63e1033fe198a87ecddf8f11753127830988f09bacdbc3e6f29e9227b032f3222d5c6332cc5e72a1dabae8b9e795ff40925d348643157751d5e91889a21ce6bc6853b13ab0d5356ba1f81b2067311e480ffee931c9ded119580a4e2a963ae25e49beb4291a7f18000ddf3d85ba6dca160606632b021ebbf5817d99fbd9470ccae191819785677c3970e0e98afafea6b268e27d1345ea3e99b843cc38c25fa35ed821553fa331150345baca3b3ab75754d2f3bbe9413e446ec7ed004bc14d1bdedae474dfbf5fa27ab61289a5bc41d5a26283b8b6475e8a65fd485ef80cc80bd22144ca28dfedf5597f5245fcbfbf2fdefe02a5fbe79376e7ea2ae9b44dbb9717731f1cc11ea58a28f73bad89cfc26855bf4d488271ce06410f9a1a1658ad5bec75b271c80b8045ed93fd59916c6f949c88dfa915883d39bbcf7c4bdd19b15126af6d166524007772b8a043b8f4f64b51f18494314b027e8012c2873ff3d9751471193361011cae9b2c132f29276c14cc02e3dea35b5f1a60bad5c39745b39aea8f8acaf8a239de99cb8f7b5078356d061b240dd5d6ca87e7186fddb31c54ab73092353dffbb7bf01200bfa9783ce076d7a7584be1256ea5156ff5e64b45651c350e4cb3e643e5f251eb95c995b4867e4d88ea84fe41f4d93de814456e8ce12d77344b698f8dce7f5089ffb73ba551feffca88ec8c2172923d1d8846f72944fd3c2a85e7fd036424fe02eb0e09152d669ea12e563c8736c58d952822a77674d14eae8c4efa43ffb8e8c3af53dddf5d287496c20803f6d79dbae503660ea63d86245dec736e6f51ef7d832f8a4caff20874faf0e537d824f6c24f26b13fcde8c18c91dbe18694439a2ff461ac5b3f787ec9495a27e0435900b0dcfa02aad806eca3b4a845e3893cea6ff97afc484ce13a9cee838aad4df25259123c335f1c7c6857e9fdfd5ac8d32c7d70867d5955c6aba8983bf7abd584ffedc8ca83e4cba865b79e339fb767f5283faa372702525e1abdd4e578cc82f03db5922ce8bba5e1c8a5e01da139855b148850fcb3f21cd6273b3d5ea1b4990e30689a37e9f774cb8072a1cdd257debb0b356274e25397cf54af3023e28a62b157fe0958e7650567608f6ea0c57c5f887fafc66cd0592788459f67bac93a18434ffa6cb8fb833e4310aa71bfc25bbf14424049a470ab51294beba166748f785f87de38152df8d92beefde7632cba2b6242455187f8e87945f1a67218e290c0df10ba120fe4d52f3d0781e3eb18221129e593c90d067f26aea367b72e38b8d44fffee54502aa2b18f21f55498628100aa767cddf3ea88b58ca8bb02d9cd4b2faa60c3de1eae44f05e68ae4eac7d8bdaabe0482da82bb50049105ffea569806f6a7d2f4d47445b3bd5f0810fbed5317441b25079d6914343619d0ca3513d5174a06807374144f61bc070ac7505efd45ca33ecc92b5084d36a610a7a7ea95bc8144fe038eee19d531e3aa29505fda8b618bf923fa469911f236960fad8cba328a5887678e7ead7fcda803e396d24f246956d31b72b193a5f078efd4f681f3d1b43ead24bdcde34e17c55113bfc0c21cfd59106eebfa01bc4a395420635fc23e632b7dc6c0e542dfc69"
-                        >
-                            <input type="password" class="password-input border-box" placeholder="Please enter password ...">
-                        </div>
-                        <div class="post"></div>
-                    
-                </div>
-
-                
-                        
-<div class="post-copyright-info-container border-box">
-    <div class="copyright-info-content border-box">
-        <div class="copyright-info-top border-box">
-            <div class="copyright-post-title border-box text-ellipsis">
-                关于时间
             </div>
 
-            <div class="copyright-post-link border-box text-ellipsis" style="opacity: 0.8; font-size: 0.9em; margin-top: 5px;">
-                转载请注明出处：<a href="/" style="text-decoration: underline;">yluna | Space</a>
-            </div>
+            <!-- comment plugin -->
+            
         </div>
-
-        <div class="copyright-info-bottom border-box">
-            <div class="copyright-post-author bottom-item">
-                <div class="type">
-                    Author
-                </div>
-                <div class="content">yluna</div>
-            </div>
-
-            <div class="post-time bottom-item">
-                <div class="type">
-                    Published
-                </div>
-                <div class="content">2026-03-03 19:04</div>
-            </div>
-
-
-            <div class="post-license bottom-item">
-                <div class="type">
-                    License
-                </div>
-                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
-                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">
-                        
-                            <i class="fa-brands fa-creative-commons"></i>
-                            <i class="fa-brands fa-creative-commons-by"></i>
-                            <i class="fa-brands fa-creative-commons-nc"></i>
-                            <i class="fa-brands fa-creative-commons-sa"></i>
-                        
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <i class="copyright-bg fa-solid fa-copyright"></i>
-    </div>
-    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
-        <i class="fa-solid fa-copy"></i>
-    </div>
-</div>
-
-                
-
-                <div class="post-bottom-tags-and-share border-box">
-                    <div>
-                        
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%97%B6%E9%97%B4/">时间</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%87%91%E9%92%B1/">金钱</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E8%B5%9A%E9%92%B1/">赚钱</a>
-                                    </li>
-                                
-                            </ul>
-                        
-                    </div>
-                    <div>
-                        
-                            <div class="post-share-container border-box">
-    <ul class="share-list-wrap border-box">
-        <li class="qq share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to QQ"
-        >
-            <i class="fa-brands fa-qq"></i>
-        </li>
-        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
-            data-tooltip-content="Share to WeChat"
-            data-tooltip-img-tip="Scan by WeChat"
-            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
-        >
-            <i class="fa-brands fa-weixin"></i>
-        </li>
-        <li class="weibo share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to WeiBo"
-        >
-            <i class="fa-brands fa-weibo"></i>
-        </li>
-        <li class="twitter share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to X (Twitter)"
-        >
-            <i class="fa-brands fa-x-twitter"></i>
-        </li>
-        <li class="telegram share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to Telegram"
-        >
-            <i class="fa-brands fa-telegram"></i>
-        </li>
-    </ul>
-</div>
-
-                        
-                    </div>
-                </div>
-
-                
-
-                
-
-                
-                    
-
-
-    <div class="comments-container border-box">
-        <div id="comments-anchor" class="comment-area-title border-box">
-            <i class="fas fa-comments"></i>&nbsp;Comments
-        </div>
-        <div class="comment-plugin-fail border-box">
-    <span class="fail-tip">Comment plugin failed to load</span>
-    <button class="reload keep-button">Click to reload</button>
-</div>
-<div class="comment-plugin-loading flex-center border-box">
-    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
-    <span class="load-tip">Loading comment plugin</span>
-</div>
-<script data-pjax>
-  window.KeepCommentPlugin = {}
-  window.KeepCommentPlugin.hideLoading = () => {
-    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
-    cplDom.style.display = 'none'
-  }
-  window.KeepCommentPlugin.loadFailHandle = () => {
-    window.KeepCommentPlugin.hideLoading()
-    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
-    cpfDom.style.display = 'flex'
-    cpfDom.querySelector('.reload').addEventListener('click', () => {
-      window.location.reload()
-    })
-  }
-</script>
-
-        
-            
-
-    <div class="giscus-comments-container">
-        <div class="giscus" id="giscus"></div>
-        <script data-pjax
-                onerror="window.KeepCommentPlugin.loadFailHandle()"
-        >
-          if (!window.KeepCommentPlugin?.getGiscusTheme) {
-            window.KeepCommentPlugin.getGiscusTheme = () => {
-              return document.documentElement.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
-            }
-          }
-
-          if (!window.KeepCommentPlugin?.changeGiscusTheme) {
-            window.KeepCommentPlugin.changeGiscusTheme = () => {
-              const iframe = document.querySelector('iframe.giscus-frame')
-              iframe && iframe.contentWindow.postMessage({
-                giscus: {
-                  setConfig: {
-                    theme: window.KeepCommentPlugin.getGiscusTheme()
-                  }
-                }
-              }, 'https://giscus.app')
-            }
-          }
-
-          if (!window.KeepCommentPlugin?.initGiscus) {
-            window.KeepCommentPlugin.initGiscus = () => {
-              const script = document.createElement('script')
-              script.async = true
-              script.src = 'https://giscus.app/client.js'
-              script.setAttribute('data-repo', 'yluna-36/yluna-36.github.io')
-              script.setAttribute('data-repo-id', 'R_kgDOQFnQvw')
-              script.setAttribute('data-category', 'Announcements')
-              script.setAttribute('data-category-id', 'DIC_kwDOQFnQv84C5THI')
-              script.setAttribute('data-reactions-enabled', '1')
-              script.setAttribute('data-lang', 'en')
-              script.setAttribute('data-mapping', 'pathname')
-              script.setAttribute('data-strict', '0')
-              script.setAttribute('data-emit-metadata', '0')
-              script.setAttribute('data-input-position', 'top')
-              script.setAttribute('crossorigin', 'anonymous')
-              script.setAttribute('loading', 'lazy')
-              script.setAttribute('data-theme', window.KeepCommentPlugin.getGiscusTheme())
-              document.querySelector('.giscus-comments-container').appendChild(script)
-              script.onerror = () => {
-                window.KeepCommentPlugin.loadFailHandle()
-              }
-              script.onload = () => {
-                window.KeepCommentPlugin.hideLoading()
-              }
-              const toggleThemeBtn = document.querySelector('.tool-toggle-theme-mode')
-              toggleThemeBtn && toggleThemeBtn.addEventListener('click', () => {
-                window.KeepCommentPlugin.changeGiscusTheme()
-              })
-            }
-          }
-
-          if ('true' === "true") {
-            setTimeout(() => {
-              window.KeepCommentPlugin.initGiscus()
-            }, 1000)
-          } else {
-            window.addEventListener("DOMContentLoaded", window.KeepCommentPlugin.initGiscus)
-          }
-        </script>
-    </div>
-
-
-        
-    </div>
-
-
-
-
-
-                
-            </div>
-        </div>
-
-        
-            <div class="pc-post-toc left-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        
-    </div>
-</div>
-
-            </div>
-        
     </div>
 </div>
 
@@ -751,43 +774,6 @@
 
     <!-- post tools -->
     
-        <div class="post-tools left-toc">
-            <div class="post-tools-container border-box">
-    <ul class="post-tools-list border-box">
-        <!-- PC encrypt again -->
-        
-            <li class="status-item flex-center post-lock border-box"
-                data-tooltip-content="Re-encryption"
-            >
-                <i class="fa-solid fa-lock"></i>
-                <i class="fa-solid fa-lock-open"></i>
-            </li>
-        
-
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        <!-- PC go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
-
-        <!-- PC full screen -->
-        <li class="tools-item flex-center full-screen">
-            <i class="fa-solid fa-expand"></i>
-        </li>
-    </ul>
-</div>
-
-        </div>
-    
 
     <!-- side tools -->
     <div class="side-tools">
@@ -819,15 +805,7 @@
 
     <ul class="exposed-tools-list border-box">
         
-            <li class="tools-item toggle-show-toc-tablet flex-center">
-                <i class="fas fa-list"></i>
-            </li>
-        
 
-        
-            <li class="tools-item go-to-comments-tablet flex-center">
-                <i class="fas fa-comment"></i>
-            </li>
         
 
         <li class="tools-item tool-toggle-show flex-center">
@@ -883,17 +861,6 @@
 
     <!-- tablet toc -->
     
-        <div class="tablet-post-toc-mask">
-            <div class="tablet-post-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        
-    </div>
-</div>
-
-            </div>
-        </div>
-    
 </main>
 
 
@@ -936,32 +903,6 @@
     
 
     <!-- post page -->
-    
-        <!-- post-helper -->
-        
-<script src="/js/post/post-helper.js"></script>
-
-
-        <!-- toc -->
-        
-            
-<script src="/js/post/toc.js"></script>
-
-        
-
-        <!-- copyright-info -->
-        
-            
-<script src="/js/post/copyright-info.js"></script>
-
-        
-
-        <!-- share -->
-        
-            
-<script src="/js/post/share.js"></script>
-
-        
     
 
     <!-- categories page -->

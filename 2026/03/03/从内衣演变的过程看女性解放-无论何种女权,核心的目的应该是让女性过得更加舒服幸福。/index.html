@@ -87,245 +87,586 @@
     <!-- page content -->
     <div class="page-main-content border-box">
         <div class="page-main-content-top">
-            
-<header class="header-wrapper">
+            $pc-search-icon-font-size = 1.5rem
+$menu-bar-line-height = 2.5px
+$menu-icon-gap = 0.1rem
+$pc-menu-item-gap = 1.8rem
+$mobile-menu-item-gap = 1.2rem
+$logo-image-box-width = 2.68rem
+$mobile-menu-icon-wrap-width = 1.6rem
+$mobile-menu-icon-wrap-margin = 0.4rem
 
-    <div class="border-box header-content">
-        <div class="left flex-start border-box">
-            
-                <a class="logo-image border-box" href="/">
-                    <img src="/images/avatar.jpg">
-                </a>
-            
-            <a class="site-name border-box" href="/">
-               yluna&#39;s personal page
-            </a>
-        </div>
 
-        <div class="right border-box">
-            <div class="pc border-box">
-                <ul class="menu-list border-box">
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/">
-                                
-                                HOME
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/archives/">
-                                
-                                ARCHIVES
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/tags/">
-                                
-                                TAGS
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/categories/">
-                                
-                                CATEGORIES
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/gallery/">
-                                
-                                GALLERY
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box has-sub-menu">
-                            <a class="menu-text-color border-box" href="javascript:void(0);">
-                                
-                                ME
-                                
-                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
-                                
-                            </a>
-                            
-                                <ul class="sub-menu-list border-box">
-                                    
-                                        
-                                        <li class="sub-menu-item border-box ">
-                                            <a class="menu-text-color border-box flex-start" href="/about/">
-                                                
-                                                ABOUT
-                                            </a>
-                                        </li>
-                                    
-                                        
-                                        <li class="sub-menu-item border-box ">
-                                            <a class="menu-text-color border-box flex-start" href="/personality/">
-                                                
-                                                PERSONALITY
-                                            </a>
-                                        </li>
-                                    
-                                        
-                                        <li class="sub-menu-item border-box ">
-                                            <a class="menu-text-color border-box flex-start" href="/links/">
-                                                
-                                                LINKS
-                                            </a>
-                                        </li>
-                                    
-                                </ul>
-                            
-                        </li>
-                    
-                    
-                        <li class="menu-item search search-popup-trigger">
-                            <i class="menu-text-color fas search fa-search"></i>
-                        </li>
-                    
-                </ul>
-            </div>
-            <div class="mobile border-box flex-start">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
-                
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+.header-wrapper {
+  display flex
+  align-items center
+  justify-content center
+  box-sizing border-box
+  width 100%
+  height 100%
+  padding-top var(--header-scroll-progress-bar-height)
+  background var(--background-color-1)
+  box-shadow 1px 2px 6px var(--shadow-color)
 
-    <div class="header-drawer">
-        <ul class="drawer-menu-list border-box">
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
-                            
-                            HOME
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives/">
-                            
-                            ARCHIVES
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags/">
-                            
-                            TAGS
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories/">
-                            
-                            CATEGORIES
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/gallery/">
-                            
-                            GALLERY
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box has-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
-                            
-                            ME
-                        </a>
-                        
-                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
-                        
-                    </label>
-                    
-                        <ul class="drawer-sub-menu-list border-box">
-                            
-                                
-                                <li class="sub-menu-item border-box">
-                                    <a class="drawer-menu-text-color border-box flex-start" href="/about/">
-                                        
-                                        ABOUT
-                                    </a>
-                                </li>
-                            
-                                
-                                <li class="sub-menu-item border-box">
-                                    <a class="drawer-menu-text-color border-box flex-start" href="/personality/">
-                                        
-                                        PERSONALITY
-                                    </a>
-                                </li>
-                            
-                                
-                                <li class="sub-menu-item border-box">
-                                    <a class="drawer-menu-text-color border-box flex-start" href="/links/">
-                                        
-                                        LINKS
-                                    </a>
-                                </li>
-                            
-                        </ul>
-                    
-                </li>
-            
-        </ul>
-    </div>
+  &:hover {
+    box-shadow 1px 2px 10px var(--shadow-hover-color)
+  }
 
-    <div class="window-mask"></div>
 
-</header>
+  .header-content {
+    z-index $z-index-5
+    display flex
+    flex-direction row
+    align-items center
+    justify-content space-between
+    width var(--page-content-width)
+    max-width var(--page-content-max-width)
+    height 100%
+    transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
 
+    &.has-first-screen {
+      max-width var(--page-content-max-width-2)
+    }
+
+
+    .has-toc & {
+      max-width var(--page-content-max-width-2)
+    }
+
+
+    +keep-tablet() {
+      width var(--page-content-width-tablet)
+    }
+
+
+    +keep-mobile() {
+      width var(--page-content-width-mobile)
+    }
+
+
+    .left {
+      height 100%
+      font-size 2rem
+
+      transition-t("transform, transform-origin", "0, 0", "0.2, 0.2", "linear, linear")
+
+      .header-shrink & {
+        transform scale(0.78)
+        transform-origin left
+      }
+
+
+      if (hexo-config('base_info') && hexo-config('base_info.logo')) {
+        .logo-image {
+          flex-shrink 0
+          width $logo-image-box-width
+          height $logo-image-box-width
+          margin-right 0.5rem
+
+
+          +keep-tablet() {
+            width $logo-image-box-width * 0.9
+            height $logo-image-box-width * 0.9
+          }
+
+
+          +keep-mobile() {
+            width $logo-image-box-width * 0.8
+            height $logo-image-box-width * 0.8
+          }
+
+
+          img {
+            width 100%
+            border-radius 0.4rem
+          }
+        }
+      }
+
+
+      .site-name {
+        color var(--text-color-1)
+        font-weight 600
+        font-size var(--header-title-font-size)
+        font-family var(--header-title-font-family)
+        line-height 1
+        letter-spacing 1px
+
+        +keep-tablet() {
+          font-size calc(var(--header-title-font-size) * 0.9)
+        }
+
+
+        +keep-mobile() {
+          font-size calc(var(--header-title-font-size) * 0.8)
+        }
+
+
+        .is-home & {
+          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
+            color var(--first-screen-header-font-color-light)
+            filter brightness(92%)
+
+            .dark-mode & {
+              color var(--first-screen-header-font-color-dark)
+              filter brightness(106%)
+            }
+          }
+        }
+
+
+        .show-header-drawer & {
+          color var(--text-color-1) !important
+        }
+      }
+    }
+
+
+    .right {
+      .pc {
+        .menu-list {
+          display flex
+          gap $pc-menu-item-gap
+          align-items center
+
+          +keep-tablet() {
+            display none
+          }
+
+
+          .menu-item {
+            font-size 1rem
+            cursor pointer
+
+            &.search {
+              font-size $pc-search-icon-font-size
+              &::before {
+                display none !important
+              }
+            }
+
+
+            .menu-text-color {
+              color var(--text-color-3)
+            }
+
+
+            &::before {
+              position absolute
+              bottom -10px
+              left 50%
+              box-sizing border-box
+              width 0
+              height 2.6px
+              background var(--primary-color)
+              border-radius 3px
+              transform translateX(-50%)
+              content ''
+              transition-t("transform, bottom, width", "0, 0, 0", "0.2, 0.2, 0.2", "linear, linear, ease")
+
+              .header-shrink & {
+                bottom calc(-1 * calc(var(--header-shrink-height) * 0.5 - 12px))
+              }
+            }
+
+
+            &:hover
+            &.active {
+              &::before {
+                width 100%
+              }
+            }
+
+
+            .menu-icon {
+              display var(--header-menu-icon)
+              margin-right $menu-icon-gap
+            }
+
+
+            .is-home & {
+              if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
+                .menu-text-color {
+                  color var(--first-screen-header-font-color-light)
+                }
+
+
+                .dark-mode & {
+                  .menu-text-color {
+                    color var(--first-screen-header-font-color-dark)
+                  }
+                }
+              }
+            }
+
+
+            &.has-sub-menu {
+              &::after {
+                position absolute
+                bottom 0
+                left 0
+                box-sizing border-box
+                width 100%
+                height 100%
+                content ''
+              }
+
+              &:hover {
+                &::after {
+                  bottom -100%
+                }
+
+                .collapse-icon {
+                  transform rotate(180deg)
+                }
+
+                .sub-menu-list {
+                  display flex
+                }
+              }
+            }
+
+
+            .collapse-icon {
+              margin-left $menu-icon-gap
+              transition-t("transform", "0", "0.3", "ease")
+            }
+          }
+
+
+          .sub-menu-list {
+            position absolute
+            bottom -280%
+            left 50%
+            display none
+            gap $pc-menu-item-gap
+            justify-content flex-start
+            box-sizing border-box
+            padding 0.8rem 1.6rem
+            background var(--background-color-1)
+            border-radius 0.6rem
+            box-shadow 0 0 8px var(--shadow-color)
+            transform translateX(-50%)
+
+            .sub-menu-item {
+              white-space nowrap
+
+              .menu-text-color {
+                color var(--text-color-3) !important
+              }
+
+              &:hover
+              &.active {
+                .menu-text-color {
+                  color var(--primary-color) !important
+                }
+              }
+
+              .sub-menu-icon {
+                display var(--header-menu-icon)
+                margin-right $menu-icon-gap * 4
+              }
+            }
+          }
+        }
+      }
+
+
+      .mobile {
+        gap 1rem
+
+        .icon-item {
+          position relative
+          display none
+          width 20px
+          height 20px
+          color var(--text-color-3)
+          font-size 1.2rem
+          cursor pointer
+
+          i {
+            color var(--text-color-3)
+
+            .show-header-drawer & {
+              color var(--text-color-3) !important
+            }
+
+            .reset-color & {
+              color var(--text-color-3) !important
+            }
+          }
+
+
+          +keep-tablet() {
+            display flex
+            align-items center
+            justify-content center
+          }
+        }
+
+
+        .menu-bar {
+          .menu-bar-middle {
+            position relative
+            width 18px
+            height $menu-bar-line-height
+            background var(--text-color-3)
+
+            &::before
+            &::after {
+              position absolute
+              left 0
+              width 100%
+              height $menu-bar-line-height
+              background var(--text-color-3)
+              content ''
+              transition-t("transform", "0", "0.38", "ease")
+            }
+
+
+            &::before {
+              top -6px
+
+              .show-header-drawer & {
+                transform translateY(6px) rotate(45deg)
+              }
+            }
+
+
+            &::after {
+              bottom -6px
+
+              .show-header-drawer & {
+                transform translateY(-6px) rotate(-45deg)
+              }
+            }
+
+
+            .reset-color & {
+              background var(--text-color-3) !important
+
+              &::before
+              &::after {
+                background var(--text-color-3) !important
+              }
+            }
+
+
+            .show-header-drawer & {
+              background transparent !important
+
+              &::before
+              &::after {
+                background var(--text-color-3) !important
+              }
+            }
+          }
+        }
+
+
+        .is-home & {
+          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
+            .icon-item i {
+              color var(--first-screen-header-font-color-light)
+            }
+
+            .menu-bar .menu-bar-middle {
+              background var(--first-screen-header-font-color-light)
+
+              &::before
+              &::after {
+                background var(--first-screen-header-font-color-light)
+              }
+            }
+
+            .dark-mode & {
+              .icon-item i {
+                color var(--first-screen-header-font-color-dark)
+              }
+
+              .menu-bar .menu-bar-middle {
+                background var(--first-screen-header-font-color-dark)
+
+                &::before
+                &::after {
+                  background var(--first-screen-header-font-color-dark)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .header-drawer {
+    position absolute
+    top 0
+    left 0
+    z-index $z-index-2
+    display none
+    justify-content center
+    box-sizing border-box
+    width 100%
+    padding var(--header-height) 0 2rem 0
+    background var(--background-color-1)
+    transform scaleY(0)
+    transform-origin top
+    transition-t("transform", "0", "0.38", "ease")
+
+    +keep-tablet() {
+      display flex
+    }
+
+
+    .show-header-drawer & {
+      transform scaleY(1)
+    }
+
+
+    .drawer-menu-list {
+      display flex
+      flex-direction column
+      gap 1.2rem
+      align-items flex-start
+      justify-content flex-start
+      width var(--page-content-width)
+      max-width var(--page-content-max-width)
+      height 100%
+      margin-top 1rem
+
+      +keep-tablet() {
+        width var(--page-content-width-tablet)
+      }
+
+
+      +keep-mobile() {
+        width var(--page-content-width-mobile)
+      }
+
+
+      .drawer-menu-item {
+        width 100%
+        padding 0.6rem 0
+        font-size 1.06rem
+        border-bottom 0.1rem solid var(--background-color-3)
+
+        &.active {
+          .drawer-menu-label {
+            .drawer-menu-text-color {
+              color var(--primary-color)
+            }
+          }
+        }
+
+
+        &.show-sub-menu {
+          .collapse-icon {
+            transform rotate(-90deg)
+          }
+
+
+          .drawer-sub-menu-list {
+            display flex
+            height auto
+          }
+        }
+
+
+        .drawer-menu-label {
+          display flex
+          align-items center
+          justify-content space-between
+          width 100%
+
+          .left-side {
+            width 100%
+
+            .menu-icon-wrap {
+              display var(--header-menu-icon)
+              width $mobile-menu-icon-wrap-width
+              margin-right $mobile-menu-icon-wrap-margin
+            }
+          }
+
+
+          .right-side {
+            margin-left 0.4rem
+            cursor pointer
+            transition-t("transform", "0", "0.2", "ease")
+          }
+        }
+      }
+
+
+      .drawer-sub-menu-list {
+        position relative
+        display none
+        flex-direction column
+        justify-content flex-start
+        box-sizing border-box
+        width 100%
+        height 0
+        padding-top 0.6rem
+        padding-bottom 0.6rem
+        padding-left $mobile-menu-icon-wrap-width
+        transition-t("display, height", "0, 0", "0.2, 0.2", "linear, linear")
+        disable-user-select()
+
+        .sub-menu-item {
+          margin-top 1rem
+          padding 0.6rem 0
+
+          &.active {
+            a
+            a i {
+              color var(--primary-color)
+            }
+          }
+
+
+          .sub-menu-icon-wrap {
+            display var(--header-menu-icon)
+            width $mobile-menu-icon-wrap-width
+            margin-right $mobile-menu-icon-wrap-margin
+          }
+        }
+      }
+    }
+  }
+
+
+  .window-mask {
+    position absolute
+    top 0
+    left 0
+    z-index $z-index-1
+    display none
+    box-sizing border-box
+    width 100%
+    height 100vh
+    background rgba(0, 0, 0, 0.4)
+    visibility hidden
+    opacity 0
+    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease")
+
+    +keep-tablet() {
+      display block
+    }
+
+
+    .show-header-drawer & {
+      visibility visible
+      opacity 1
+    }
+  }
+}
+
+
+.show-header-drawer {
+  overflow hidden
+}
 
         </div>
 
@@ -335,369 +676,51 @@
                 
 
                     
+
 <div class="fade-in-down-animation">
-    <div class="post-page-container border-box encrypt">
-        <div class="post-content-container border-box">
-            
-                <div class="post-content-top border-box"
-                     style="height: 13.8rem"
-                >
-                    <div class="cover-post-title">
-                        从内衣演变的过程看女性解放-无论何种女权,核心的目的应该是让女性过得更加舒服幸福。
-                    </div>
-                    <img class="post-cover" src="https://picsum.photos/seed/763/800/400"
-                         onerror="this.style.display='none'"
-                    >
-                </div>
+    <div class="page-template-container border-box keep-container ">
+        <!-- page top -->
+        
+
+        <!-- page bottom -->
+        <div class="page-template-bottom border-box">
+            <!-- use page template -->
             
 
-            <div class="post-content-bottom border-box has-cover">
+            <!-- page content -->
+            <div class="page-content border-box keep-markdown-body ">
                 
-
-                
-                    <div class="post-header border-box">
-                        
-                            <div class="avatar-box border-box">
-                                <img src="/images/avatar.jpg">
-                            </div>
-                        
-                        <div class="info-box">
-                            <div class="author border-box">
-                                <span class="name">yluna</span>
-                                
-                            </div>
-                            <div class="meta-info border-box">
-                                
-
-<div class="post-meta-info-container border-box post">
-    <div class="post-meta-info border-box">
-        
-
-        
-            <span class="meta-info-item post-create-date">
-                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2026-03-03 19:04:58</span>
-            </span>
-
-            
-                <span class="meta-info-item post-update-date">
-                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sat Jul 04 2026 11:07:58 GMT+0800">2026-07-04 11:07:58</span>
-                </span>
-            
-        
-
-        
-            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="post-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E5%A5%B3%E6%9D%83/">女权</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="post-tag meta-info-item border-box">
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%A5%B3%E6%80%A7/">女性</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%86%85%E8%A1%A3/">内衣</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%A5%B3%E6%9D%83/">女权</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-            <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>7 Words</span>
-            </span>
-        
-        
-            <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 Mins</span>
-            </span>
-        
-        
-            <span class="meta-info-item post-pv">
-                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-            </span>
-        
+                    <div class="hbe hbe-container" id="hexo-blog-encrypt"
+     data-hbe-format="4"
+     data-wpm="Oh, this is an invalid password. Check and try again, please."
+     data-whm="Oh, this is an invalid password. Check and try again, please."
+     data-salt="f591243af802ac808d64fc2ab3e1adb8b5eb5c0b35e54f05536ada360e453eda"
+     data-nonce="80053b908b5330f8964d251c"
+     data-kdf-iterations="250000"
+     data-auto-save="false">
+  <script id="hbeData" type="hbeData">
+    406cd0b1eb0edf0a599dda23bce0ba43c00d796446027dec51c34f68671f1bcea65c2cf8c2eb2598e3010b4813a5d75ade027d341a31dea87d0c558080be5ec2193d4fc3dc842daf99ad93a4305893e662b7fee92e4e00d05bec8f081c1d56124576d2eaf53840f3b4971006abc42e3739299e7ca0b11958f38c60c7e1fc59f477992526cb11a24d97bc4d8fdb813bec1a99a166e934854cf3158a223c11b5bbe19539f6d60bedc33edd6656eb4be6d7855fde3e9da4c8b2b61777ff05d36f958f0dcea471c387a1a02bf11519232d5c1074914408f4d33738d51f761113e6000c0537711c979f195b7b8a2efd2e4c25ae92321a2dba502ce4fbd7878fc0cc76ac58376b60efa5f8a26068b70e27ccc730d7eb6e1781370bda4f6418fb8c4a3405907e1b44c6ae1da274bd6b275ecd77bcc9b72ede3e92845e86786f0064d3b0b240d17b1687f2466ee02201e06775ad97e044b4c55c49d9f709ceed30d3d9d652e5a25f28c0de58ed7c658dd06817e99abe68d696ad0606c185eaf3d4fb2f6b588c5e65a4ae0b6d50d9188f0898ec856dd75c42822e5aba0e68d4d98347dd856d115100b5551d19313077b32598c1135136c286be55ad66a081185af6ea60db9014568c1c0d5d160128558a3985f1821b36fe93bd6d3a5f8f2a6d75c6ed6760c720d6c7c787f1f8259a4cbebb2037771d9c79eedf7ad5309e1a83e40657428bfa3ccdb8a0b6b388c9bc3764418576e05a40a4363fb8e12a56cfab5f2a88a96c6f266774bf579caae744b46747e9ebb0fd61069ffba332d07043dcb08b7116119cddfbb8999adc9a3e7c3ae1aaf237b1906b1f699331c58257b4f61d3b64afd99d885d811b83ebad122e864d9478fa45d18735fdabc268910d56b965102fa16a95a6f18aeb3f7681c54e7c33185c97d836813bc86431aeacd1ac12e25cfb29538e50ffbcdecbb3805ad8a1e7bd500e2a582a363d15c0f28a44fe7b6547e57d6d13546f64dbcdcc0d2e05c15477708825106d00ca9335ac3536d4b5eb65b7cc679f592a16eff2c9314b39909f7238b70f18b39e3f9f3e6f6c34dac8f0142860866dbe7b034aaf8b1a88a3bc9c3e3298ab86a56c88836fe96c1ba854d7ee79b8fbfca6a20cb38bb72b479256633b78fee6a9cee9ed43c9d3e18c49800413282132e35a78ba9337c9a9ecbd9cd948ce379dd1bf8481ee682919a9a24be04666e68ab031cc0c7e343143ad6e8623418a82f4b7a514f596339f88db81549c96c48110de907db6643444ecb7da72d6ded42003ac6bcddffc6b24e384ef670362f56676ed007d79997ba421037d689f6cf0fbaac0021452f82276f6b8b2e87cae2f6a27b47c61854ad85e11474811b785a8312326702b685bb59f8226b0f6b30b1dc561430862c487f583628596081b16545fb7b7e08da68a82d72ae0a930099b2cfa98abe80c2f9ea1ef8c345d5817697660446a5fdf95dd9e3467cff0a5b5da909585c2b6b570f0873a9c0eb8cd060a5fba119757bf7cea62981e8f7660650c18bf6e97de97d99d02c43ed8a523414f237add095ca9d657035d0817c8f4ac878a0f95b81fc42db2b05ca79d3b6eb2a4a736b30a1b27cca5655febd36affd3defec8503952fdcc43c552c5dd512cf6f449f3d989919bfc17d9c866088d78ee81d73a6c413e4d3e42779283de75ec55d6a3f04773a9530289e1256f8591afe12f35fa10a27bef354d6bb093eae05e0e7301a159e311fda04650f0fa79eacce94ec82801e2dad55e2e9d1751890ab9afb601474518866257043cb7327d5643d38c2b8e6bb231ce3bd64e666a6541579c7458b0f63fa515ed4f25ecafc9332ba91c2ce18096b72e0662f6e844b3135f7f31c0fea409ab39dc7bec70c5574f4d3943b99b77831261118afa029af4902ed5ce69b15b3bc87b2f61d420ba43bf9208c5066de26fedcf72989a7f7ac5b7fb28c0759196c33e6688da18d7359d2b76b2237bc1ecf6076b65f4df9c51f564fa47315511200ac8939222c16b2e62e953a51de2b97f3debe9837fe538991f8650ff96390b856ac37fccadd812cf5264901e8694cc25ba9f989620c0ed2830067f3979f54f8a3b6cd36acf9a088f57f153ba825288e5be33d34569e58b67c7ca053aacb2c6e59d4dfb40daf349ff0351bb4a229f22bc3a74886e1c4a1996b99ca7117676f81da47492fc09e641ed9e88a9135a0269536de77d31f196aeadf0f92f0ca8e730b930b782ac7629d54497bfb74e882c19826d2b543e2ac01d23f6aca3f3d246e78bf6a172734f3d3d666c50eda0b557b26fd106d229154194031b017a3604d53cb1ad736158de05e8f53aa36e075672abf3120a8f5f5e7e1a849360a21eedda259bcf0538b7039ef94a8d1545c8720028e7b72d4910dee9df9a524fd082838f737601a0a7bbc4a29b9bb2d4edce8b57a9c37a4f8f0d43818a135e2f9e507b4e771f0c4bfdee64ee9220dc83343be45400aee267f0567616994eabaab379e3ce894b532c43159969098636d94ec2f047fd6931088545b194cefedf58edba872973a7157d4112e1ec43078933a306466c206da597d78351c8b9d9e59a73a120aeea3a088aa683ba624e65524cefd39e09d3332143c50e9909195b4a480d0a2627efdf95dec6099f47fc4f7255a9b1143c9bd79c63dbd266de2654d8afb78b0be46c83765394242682d415f502b74487b0625747707a6ff4436e2d0b02204bb2a36c571ecd5b3c2e48b36b592b39a14adedcab6fa5a22bcc749fb2b2be6b1aac155bf91a5d8e8c73441ebeac6dce0d8ddb542c9e6c538ac7828c3dab70dc4ef05a11f2a3b223a3441a030e737ac4ce26b52fc880516c3bfb08597aca9868c88b0e5adb356d13777bd245fa5e69f28b6fe412eca0f4a40c5eccfec8ae4099c4d59bb76967e1d860879d558a12584c9fbf325f7dc802ee1c541ffed9b556230a241547278751d8716d9944f213770dd00438dd4d7bb92b7f4db98f799ed6ba3d06408bdd0f1ac601497d43a5a3b3e3ca627e6a8260faf86eb35019a750d1e4c2f33530889bd5ee411ba29d478a61fd1435607d3b9c1a4ed643631f7eb2b9727a344922832d296dbc910aff2200eec61732c365ed156df196c9cdce749658f4152c923a3efd0a2bd1f9149fb84c49da254b3cbd7cbc7892e79408bfc7be42fdc26a947803a7e4140bdfbaabf06f2986429371d3eeecf6d4ef6e754edecdb9b39b492d898c2fbe70947ff01d1548172b438fb138340c1c86314495197ee7cfc16b4091a1735b342947bf18d07c8e5f8227a1e50a230173050b4e49391fa0bb7b74e95665ff1eda7e3ffe799f2d3cd8eb9c1ac941349dd369fe50b11054b635dd51b50eb878f263c4664d94c44922c6bf0f5926ba51d92f97df11fd2356844a32b1e55009929fee1a3da3e9c2be4b4b61f7f1d968088d4fc1a0ffc7bf5ed4b5fb7c3b1d53a743c4dd59d444be2261e47db0126df8f0ca0db44b70b48f00b01b9674d9a8acbd02515d2f42a81fbf139d6acc19402aba3fb6234215a7291f7256eb4389cd84ae8167cf40b36fd5eaa407229e987716e5cd7e9020683042c93ef8cfaf0b6fbb4b924bc0406a95769cea113c51c6a547d6e7c7aaf35ef81443d366a4f5ad847c441a5f02a35f0c0c036ecc6834ad7a0c793dd19b1a777acb2e3cf3b30675f8faf9c2568e9f221c679d54ccf2b9676a949a021fac78342347cb9de01245cb1f56d6f775aa610317b088a0fae03b3cc57a8f22c3e59e6971bd9ea7b21ad6c8440ae3e6278ac314b77b0dc86cf55b0b6a1bba29d0fbf2b42c1e55
+  </script>
+  <div class="hbe hbe-content">
+    <form id="hbeForm" class="hbe hbe-form" onsubmit="return false">
+      <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
     </div>
-
-    
+      <button class="hbe hbe-button" type="submit">Decrypt</button>
+      <div class="hbe hbe-error" role="alert" aria-live="polite"></div>
+    </form>
+  </div>
 </div>
-
-                            </div>
-                        </div>
-                    </div>
+<script data-pjax src="/lib/hbe.9e70f1e1d2.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
                 
-
-                <div class="post-content keep-markdown-body ">
-                    
-
-                    
-                        <div class="post-encrypt-box border-box"
-                             data-secret="16d154607ea9b35b72bd8cd6db8297f05951c73b103c0a64a942058936e1f79d"
-                             data-iv="55caefa96a443dfc11f3ddc7167b62d7"
-                             data-ep="e9a4455eaa7143fb4e119d77bc8cfbd0"
-                             data-content="c24f655180f6b677b9b1f3191e2463a63fc9b89c59ed9a81075525429b4804fbd77473277e3cea78be0e339793457e9dc64a501d46301a57240048b16d70a0e7d3cbe2f0cd8a373937902e50a1d0253457d6ebd3312da8c61b6b2b966a79e186679ce77d2e6abc1ebb34ae7962d6c8994a8928c72b7fb0a82f4a20cca66f9581958fe5a6419960275c584e392dec0ae96eaea7406584b27e3c00e9f528eef23337f929bbdddf3bbd9076376c1345f0c00638f500e377e7192a2897d280cd02a54ce6c6cdf5e04098437773ba7daba1694c55152cf3eec6cd064ec2b8217ccbcf58eaa02c84ca9c2718c66c0092881d0cd5c42a618f98beea8e951795dc99c906d6622cc6dc848b3558179f53957c65796fffdc2649a3d6cfc4e9d6be9d072b206dc0ce92efd0f63cd1e83a8184ef36ca4389555f0bdb717d94f9aeedd7d14cdeebe34e387bdc7260ea23995448fc1fff3b0bb6686951eb5d8c8bd268b1771a6b481e83398b4081700db475e2a407dd6f5ed3318b84d7d0e8b0f384b6a1082119c29cc3a2352ee3eb0db5cc60a11b9d8c0664cb4a3c0841396f83ac28034732b7117d52bda482268149a986403b056a14884ebbf0e53b8cb48ee8aa6ce1cdd0f1716cce2560903426e22dbde7f1000bc74f63aee8f2fb9461fb7535c6d4545fa7459f1983fce3d94ce68f4ab59f0c2df6062d2a91803d19f04f3c87cfca49fcd3ae78b0c2dbd6bff63cc9719539a6baacc74af521746a762e8cd17bebea4f02bbd5a363d43c33500ec7a5596be12bcea2b847f135905ab00d8af77a44590ac9c6e4dde53d12b2c173bcb7185f2b1e9d9b2407df7ecec10761c83efdf3525b3f59df2d4e08749390cdeabaa80bee2395fde1f0fc348789006f13f0492138457525934a3966081e96e1900f5cf1c033f1aa57d028224118fcfc7483cc7d886b6952b81c60709c33244dac42cd99a074091028fed9e29d63f512bdc2062fe5aea1081f31b8706dd348f7790bedd26339843d9ebfa733da286ccbf673b982ae6f10802d40ee64cc0022a4924e9caa9596c8a1e0d2119dd7f99bba36951a8cfd4e5c55d68588d39dd7f494d1127ce6f6eb128324995c455a28b0392b87952b768882a2e60fe203b158fbac03681a8a70bbf327a3963fe0c921be2962adba6b4d331cf095833d0fac925ea13683133fd4abbf5935e5c8a9aaf32acf363bfb718de6878bca69fce0d3759c7bec66b952e654ae305d8f8a76a0e940a3a308d637e08b451494a754db68db9caec5d7054c6e657f8d58c1924139934fa0bb55d4d4321c8f1ae941667492e7213c61e555ec9f48e3f3308e711d4cac0edf126b39b76a96d8727a89742c88dd0cec0bca45f70df44594995a97eeb350e3e9bde0f3a91fd26b7a06c3f97270d511c2f4c21cbeea8ed30a97967c6f1902a09d851e26f4852fba7c74d16e3f92f0e40510c9fd44f60de7de816921ef1762f129c1f473a6c59ba41285901d97c9a1d205b8d8071412a3ff2142c6f482ea2efa41ad603938d20a67aba096986100ced9d5a23f685eddf11e0a58560fa223706fe80551e62353c697d6adf1b8d749250a37c2126585ea1979198abfbe6da821d07f6213df61b39e41ff79795d1f6307ffade28e59fbfb81cf2914863890316342467b699f35076a8cad5028dc371a9b614885e3aad173f35bc6d266f3b4e32d3ad5dc0937a36c9e9324d5714574738defe377457147d1cbe704b88d404d55e392473753bc3f9d59ff1dbbf0939776976e2f887a9181c38465e7ba04618c959e2f64101e5375d3cfd12714f93c6f68894c1a3d1dbc027a482f247bf36a2d55b20879f0d925980c4e81ff387ef3103b1ec3043612aedeb813512124d3e8c6ae0d65778d74c9993e339943777ddad425557374d5deb2b44a771bfaf2d8327612a26299328310e9f89fc9d7c7834e0ab77c597e03e2619778bb4b4be2650d4c760905ddfb20f652176b6f12b6094399c415aa9529b5236d0c9203591774dfe9b0fde0a0a05368177bc95c56887b07e07948256ff6d3baec9948069fa4404b8526907e8baa31ea3d9065340176198bff6e62ee17ac99260073aae67914d3850c04da720464532ee012176902de937ab3cb187499f0784e77f6a9f6d904628f8fb1773671d6feef66e4aed4d313f0fb01ec2f77bed76cc9444593aa468c9fe01d7aecca6c4efbadcac12526c6bb1775887c910fcc01f133e15cc61317839bf2d1697b5e650af0ea0d873bff4a7a176223541e7325b454f91343f4ec07e5da9fb8dd245c7eb3a5fc7652281705740119c6cc34a8c45824b12ceea3ffc541cdfdfa85ffa7f21a094b48d8ca7ff603dc1b8966f44a5d977923e4bd7c3376fb69e1f28f4353f5e2e6010c2b696b877b870c518b101d25cd0527fe575f07faa9cc5cd3046693c77feffeee959c075347f34ba2fce257fd40a78ef8012a2a126825fd364e651d3ee0c32da58d1079d7755789be14eeae2199a30a15a23d3d8746c14102057257c4085ab201707deb68674714053ceba234b866b94cee3d9cee96d01c1dfcdee8aab80e8850acb89d4e9c2a9afc664d81d811ed081b8b2712303af85a4bca8e0d497a81b8b01c3469ed90ba41981b33c9cdc06fb2596fcc9925fa1312a02be70971231eb4bddde2cb997b9fc8e5b95a2c5cf5da66e3b03d13dc24c051e7623ab4cb5b06c45274d18446de9a59c7c7ebbd5b9044b96cacb3dc6609ae2bbe0ce074f61c3b5bbca489b7f4f3f4edee702f746621cec1fa4f6acc8f5fb95a493cad570861c88f575bc9c0aa900893bb9cffcbcac68e532570e6a5cc0e773982587794796644c9fcb07989d7cdc710b4d4d05c10c9372e7ed376cdfeeacb7871b5def1d75290c6e068abdbf976f50cdf9e462383d3a67e964b13981ca9fc31f14b481584e033bdf01980105fa64501ebaab446e8729c567176a7aa73038f057038dd3d52da672a57f3141ec0da613c6c5b3980b3784336dc2f147196c44b0da869f1073c106b4a5d9e42f409600db788d6bc417b201c73032639b10abc4454452c21a8f47f976e589bf15b6ab5aa5ef547d76ca08a4599345dbee383219069ee93fdff4b415e04adbd1746de4aed7783b89502d42094a24a3be967d7e7c5b28504befe143ff1680ee5485bb39458d35012c28030326870bfe8f44f4a4a97773d8b9358ce7026aa1cacc289768037f5cba21cb3bc585af3afe3fa7f097e3297899bf5af9884a047cdc22a875b4fb7e59d69b0eabf7446c18f7994f89d35f120863e02134a8f8f8a94c847fe5f28d7d285448d6bc91606aa10b69a20de732e09d303a3396b9d32268193b05ff66ce9ae610ac809cb3e18ffb23657cae05e68640e85f0a8238e1c4efa90a53ea1f9330717147514f4ec2371196ec3f72de7a8bfd447ba4fac1ccaad0b81e4e82eb8b44cb2625774779ffbc3e1642f041d8e6f48e433bc773f44a5890d66dca8119b8cdb28d61361d5c218d726c5e3112fc61964c0cda55e72153298e57041ec4e871d1bcda9f7e5c699abd2a0209fff52e95a4b4f63a60b746673294e807522890ef38354309d35df180a1b44fca9ffd5ac42e047c190c77850515f16ded79c325b39b02ebbe3d59f02d104020ee03479b0685fe9e8a663ff7216c0934acf884b53e70632384df6dce465609cce448c3f2550d92e43465812bd2108534eb9641de71b8f1f5bdfea7992f4c04b6191f01712dbbbc3b9df91a609845b910a4978f8702a08d37ee4378f1566b348d90b47c963fc3ed8cd5e24a6449081dce238f6fe"
-                        >
-                            <input type="password" class="password-input border-box" placeholder="Please enter password ...">
-                        </div>
-                        <div class="post"></div>
-                    
-                </div>
-
-                
-                        
-<div class="post-copyright-info-container border-box">
-    <div class="copyright-info-content border-box">
-        <div class="copyright-info-top border-box">
-            <div class="copyright-post-title border-box text-ellipsis">
-                从内衣演变的过程看女性解放-无论何种女权,核心的目的应该是让女性过得更加舒服幸福。
             </div>
 
-            <div class="copyright-post-link border-box text-ellipsis" style="opacity: 0.8; font-size: 0.9em; margin-top: 5px;">
-                转载请注明出处：<a href="/" style="text-decoration: underline;">yluna | Space</a>
-            </div>
+            <!-- comment plugin -->
+            
         </div>
-
-        <div class="copyright-info-bottom border-box">
-            <div class="copyright-post-author bottom-item">
-                <div class="type">
-                    Author
-                </div>
-                <div class="content">yluna</div>
-            </div>
-
-            <div class="post-time bottom-item">
-                <div class="type">
-                    Published
-                </div>
-                <div class="content">2026-03-03 19:04</div>
-            </div>
-
-
-            <div class="post-license bottom-item">
-                <div class="type">
-                    License
-                </div>
-                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
-                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">
-                        
-                            <i class="fa-brands fa-creative-commons"></i>
-                            <i class="fa-brands fa-creative-commons-by"></i>
-                            <i class="fa-brands fa-creative-commons-nc"></i>
-                            <i class="fa-brands fa-creative-commons-sa"></i>
-                        
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <i class="copyright-bg fa-solid fa-copyright"></i>
-    </div>
-    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
-        <i class="fa-solid fa-copy"></i>
-    </div>
-</div>
-
-                
-
-                <div class="post-bottom-tags-and-share border-box">
-                    <div>
-                        
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%A5%B3%E6%80%A7/">女性</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%86%85%E8%A1%A3/">内衣</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%A5%B3%E6%9D%83/">女权</a>
-                                    </li>
-                                
-                            </ul>
-                        
-                    </div>
-                    <div>
-                        
-                            <div class="post-share-container border-box">
-    <ul class="share-list-wrap border-box">
-        <li class="qq share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to QQ"
-        >
-            <i class="fa-brands fa-qq"></i>
-        </li>
-        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
-            data-tooltip-content="Share to WeChat"
-            data-tooltip-img-tip="Scan by WeChat"
-            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
-        >
-            <i class="fa-brands fa-weixin"></i>
-        </li>
-        <li class="weibo share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to WeiBo"
-        >
-            <i class="fa-brands fa-weibo"></i>
-        </li>
-        <li class="twitter share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to X (Twitter)"
-        >
-            <i class="fa-brands fa-x-twitter"></i>
-        </li>
-        <li class="telegram share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to Telegram"
-        >
-            <i class="fa-brands fa-telegram"></i>
-        </li>
-    </ul>
-</div>
-
-                        
-                    </div>
-                </div>
-
-                
-
-                
-
-                
-                    
-
-
-    <div class="comments-container border-box">
-        <div id="comments-anchor" class="comment-area-title border-box">
-            <i class="fas fa-comments"></i>&nbsp;Comments
-        </div>
-        <div class="comment-plugin-fail border-box">
-    <span class="fail-tip">Comment plugin failed to load</span>
-    <button class="reload keep-button">Click to reload</button>
-</div>
-<div class="comment-plugin-loading flex-center border-box">
-    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
-    <span class="load-tip">Loading comment plugin</span>
-</div>
-<script data-pjax>
-  window.KeepCommentPlugin = {}
-  window.KeepCommentPlugin.hideLoading = () => {
-    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
-    cplDom.style.display = 'none'
-  }
-  window.KeepCommentPlugin.loadFailHandle = () => {
-    window.KeepCommentPlugin.hideLoading()
-    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
-    cpfDom.style.display = 'flex'
-    cpfDom.querySelector('.reload').addEventListener('click', () => {
-      window.location.reload()
-    })
-  }
-</script>
-
-        
-            
-
-    <div class="giscus-comments-container">
-        <div class="giscus" id="giscus"></div>
-        <script data-pjax
-                onerror="window.KeepCommentPlugin.loadFailHandle()"
-        >
-          if (!window.KeepCommentPlugin?.getGiscusTheme) {
-            window.KeepCommentPlugin.getGiscusTheme = () => {
-              return document.documentElement.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
-            }
-          }
-
-          if (!window.KeepCommentPlugin?.changeGiscusTheme) {
-            window.KeepCommentPlugin.changeGiscusTheme = () => {
-              const iframe = document.querySelector('iframe.giscus-frame')
-              iframe && iframe.contentWindow.postMessage({
-                giscus: {
-                  setConfig: {
-                    theme: window.KeepCommentPlugin.getGiscusTheme()
-                  }
-                }
-              }, 'https://giscus.app')
-            }
-          }
-
-          if (!window.KeepCommentPlugin?.initGiscus) {
-            window.KeepCommentPlugin.initGiscus = () => {
-              const script = document.createElement('script')
-              script.async = true
-              script.src = 'https://giscus.app/client.js'
-              script.setAttribute('data-repo', 'yluna-36/yluna-36.github.io')
-              script.setAttribute('data-repo-id', 'R_kgDOQFnQvw')
-              script.setAttribute('data-category', 'Announcements')
-              script.setAttribute('data-category-id', 'DIC_kwDOQFnQv84C5THI')
-              script.setAttribute('data-reactions-enabled', '1')
-              script.setAttribute('data-lang', 'en')
-              script.setAttribute('data-mapping', 'pathname')
-              script.setAttribute('data-strict', '0')
-              script.setAttribute('data-emit-metadata', '0')
-              script.setAttribute('data-input-position', 'top')
-              script.setAttribute('crossorigin', 'anonymous')
-              script.setAttribute('loading', 'lazy')
-              script.setAttribute('data-theme', window.KeepCommentPlugin.getGiscusTheme())
-              document.querySelector('.giscus-comments-container').appendChild(script)
-              script.onerror = () => {
-                window.KeepCommentPlugin.loadFailHandle()
-              }
-              script.onload = () => {
-                window.KeepCommentPlugin.hideLoading()
-              }
-              const toggleThemeBtn = document.querySelector('.tool-toggle-theme-mode')
-              toggleThemeBtn && toggleThemeBtn.addEventListener('click', () => {
-                window.KeepCommentPlugin.changeGiscusTheme()
-              })
-            }
-          }
-
-          if ('true' === "true") {
-            setTimeout(() => {
-              window.KeepCommentPlugin.initGiscus()
-            }, 1000)
-          } else {
-            window.addEventListener("DOMContentLoaded", window.KeepCommentPlugin.initGiscus)
-          }
-        </script>
-    </div>
-
-
-        
-    </div>
-
-
-
-
-
-                
-            </div>
-        </div>
-
-        
-            <div class="pc-post-toc left-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        
-    </div>
-</div>
-
-            </div>
-        
     </div>
 </div>
 
@@ -751,43 +774,6 @@
 
     <!-- post tools -->
     
-        <div class="post-tools left-toc">
-            <div class="post-tools-container border-box">
-    <ul class="post-tools-list border-box">
-        <!-- PC encrypt again -->
-        
-            <li class="status-item flex-center post-lock border-box"
-                data-tooltip-content="Re-encryption"
-            >
-                <i class="fa-solid fa-lock"></i>
-                <i class="fa-solid fa-lock-open"></i>
-            </li>
-        
-
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        <!-- PC go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
-
-        <!-- PC full screen -->
-        <li class="tools-item flex-center full-screen">
-            <i class="fa-solid fa-expand"></i>
-        </li>
-    </ul>
-</div>
-
-        </div>
-    
 
     <!-- side tools -->
     <div class="side-tools">
@@ -819,15 +805,7 @@
 
     <ul class="exposed-tools-list border-box">
         
-            <li class="tools-item toggle-show-toc-tablet flex-center">
-                <i class="fas fa-list"></i>
-            </li>
-        
 
-        
-            <li class="tools-item go-to-comments-tablet flex-center">
-                <i class="fas fa-comment"></i>
-            </li>
         
 
         <li class="tools-item tool-toggle-show flex-center">
@@ -883,17 +861,6 @@
 
     <!-- tablet toc -->
     
-        <div class="tablet-post-toc-mask">
-            <div class="tablet-post-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        
-    </div>
-</div>
-
-            </div>
-        </div>
-    
 </main>
 
 
@@ -936,32 +903,6 @@
     
 
     <!-- post page -->
-    
-        <!-- post-helper -->
-        
-<script src="/js/post/post-helper.js"></script>
-
-
-        <!-- toc -->
-        
-            
-<script src="/js/post/toc.js"></script>
-
-        
-
-        <!-- copyright-info -->
-        
-            
-<script src="/js/post/copyright-info.js"></script>
-
-        
-
-        <!-- share -->
-        
-            
-<script src="/js/post/share.js"></script>
-
-        
     
 
     <!-- categories page -->
