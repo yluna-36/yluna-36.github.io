@@ -382,7 +382,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sat Jul 04 2026 10:43:59 GMT+0800">2026-07-04 10:43:59</span>
+                    <span class="datetime" data-updated="Sat Jul 04 2026 11:07:58 GMT+0800">2026-07-04 11:07:58</span>
                 </span>
             
         
@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="3eb9e26824c180efe83d1071177c4f4d98d9a3374db4d5011359e2f545e6960e"
-                             data-iv="dd1c472bf8fb960b96cb1d360a36756c"
-                             data-ep="78902bd57f309b573a4ebe3f15cb6de5"
-                             data-content="2aa2b7553cc046e366f270e7cb9a5f84e70f95b530b1c142736b2eeffe3c324c75de2449988289dc6d231a21c58487ce0f2d7801fb0d2782b7a95e44b85d856037585a59f0a63653d6857796656001ac2ad841628880eff8b8cc358660fbeed3a7aa5f34ef3d23828d71963be6cab6ff40f743748581c852064d3f4fa359ece8"
+                             data-secret="e264faf879e9271fd66095c33bc3174f36c1c6f8d9bf16e1c34ff0a1975a22fb"
+                             data-iv="6672d74d9f32958590230962d9ffe350"
+                             data-ep="4870cdd296e16e22982e385a58ae9f71"
+                             data-content="bea575cef1d243726e6485cd1947469d6b7cef80e5e8610e0b776ea972ebe17a3942555f38b9846633e842b9197607750c3a6e893e2838045968a973a7166d4f1c809539a3047f0f26f1e3f5c626a4fe10e4c2db20323a8df871f089770c7781fbf539c43c4ee2b3807f51db32b9a99211d1711f0ab35bdf5ff91107bff4d122"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -573,43 +573,6 @@
 
                 
 
-                
-                    <div class="post-nav border-box">
-                        
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2026/03/03/%E4%B8%A5%E6%A0%BC%E8%A6%81%E6%B1%82/"
-                                   title="严格要求"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">严格要求</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="/2026/03/03/%E4%B9%B0%E6%88%BF/"
-                                   title="买房"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">买房</span>
-                                        <span class="post-nav-item">Next posts</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                    </div>
                 
 
                 
@@ -751,7 +714,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
+        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -782,40 +745,6 @@
 
     
 </footer>
-
-<style>
-  body:not(.show-private) .is-private-post {
-    display: none !important;
-  }
-</style>
-<script>
-  (function(){
-    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
-    if (isPrivateShown) {
-      document.body.classList.add('show-private');
-    }
-    
-    var unlockBtn = document.getElementById('unlock-private-btn');
-    if(unlockBtn){
-      unlockBtn.addEventListener('click', function(){
-        if(document.body.classList.contains('show-private')) {
-           document.body.classList.remove('show-private');
-           localStorage.removeItem('show_private_posts');
-           alert('幽灵文章已隐藏 (Ghost posts hidden)');
-        } else {
-           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
-           if (pwd === 'yluna') {
-             document.body.classList.add('show-private');
-             localStorage.setItem('show_private_posts', 'true');
-             alert('口令正确！幽灵文章已解锁。');
-           } else if (pwd !== null) {
-             alert('口令错误。');
-           }
-        }
-      });
-    }
-  })();
-</script>
 
         </div>
     </div>
