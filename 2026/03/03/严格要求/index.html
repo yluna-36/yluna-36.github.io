@@ -382,7 +382,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sat Jul 04 2026 10:43:59 GMT+0800">2026-07-04 10:43:59</span>
+                    <span class="datetime" data-updated="Sat Jul 04 2026 11:07:58 GMT+0800">2026-07-04 11:07:58</span>
                 </span>
             
         
@@ -440,10 +440,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="97ca13e4ece49791b898d8f96e7309a54b5aeae4bb347f84a49732489ca8dbc6"
-                             data-iv="ce4c759313a8bdad3f7dbd1773744d04"
-                             data-ep="f6c17a6c93a303b5411fc553556573c9"
-                             data-content="8d4282d948a54be82668e4d75d9884a0f0393997412bff442d7b20a7eb831f1ea91632d8720bc00d434f3647afd6c76ee8bffe15f67ed20a239d8122ec31cf5631f030797b063fc854a543cc75fb4281430dd8beab096be6d9263841056b253a66a85835de78aa863aa2e0e5aed47e362c08fe7da42c1c069e0b83f4c1f62d575836fac3ca10c45835ef363acb029780489a6993c3c7c868ef168d26a012b9a93a2710b280fbf720f57bd4b7ac445b7fe88ca132934227775f34badcd77ac343ee270fda222786a593aa275df0a9b53cf35b21202c50cab68dab6851ac500572b8fefcd07189c485c6333368b992c03b3b137be0a7d947141acf253f5bfe07da"
+                             data-secret="afe146f48f2e66b0ccb70e3c58201627a7ff5acad676033f7b1f557ef30dbbac"
+                             data-iv="11ad93bb164d5df1f5144ab3c440acb8"
+                             data-ep="7df721319ae3dd4481fabca98c219155"
+                             data-content="dd4aa545945b9766f8813ef438e27c3a13d0f37567dd8c03ba52b8b1750cc23e064d7138b7a05fbd1b28a41e6f3b0907f5687a6aee0e066d17ba29f0eaad8ad972d812db059b29fdd20485f32b02c03f14980422d9d99f2040bad4d19512870f888c472019d113c9369860784bcc3c75582d811d360e71b8897f5e1abc4bf4a4b2a67627d556f865b1deb7721d99e0de101e2572e63466e3f195a23b274fb6d219a63306aedc8b66edf05a3c95c3c2b421a27298cd4ec6df3b8bc95327b8078fa6ccda8899175a770ee13dc80b7fbb3dfa45fa5f72ea8c4a4ac4686dd43b774ca17a5ed513b8ddef13efad1995bd72a92e2c2f9f5744ae840d835549da5cb811"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -559,43 +559,6 @@
 
                 
 
-                
-                    <div class="post-nav border-box">
-                        
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2026/03/03/%E4%B8%AD%E5%9B%BD%E5%BC%8F%E5%AE%B6%E5%BA%AD%EF%BC%9A%E6%B2%A1%E6%9C%89%E6%80%9D%E6%83%B3%E4%BA%A4%E6%B5%81/"
-                                   title="中国式家庭：没有思想交流"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">中国式家庭：没有思想交流</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="/2026/03/03/%E4%B8%AD%E6%B5%81/"
-                                   title="中流"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">中流</span>
-                                        <span class="post-nav-item">Next posts</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                    </div>
                 
 
                 
@@ -737,7 +700,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
+        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -768,40 +731,6 @@
 
     
 </footer>
-
-<style>
-  body:not(.show-private) .is-private-post {
-    display: none !important;
-  }
-</style>
-<script>
-  (function(){
-    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
-    if (isPrivateShown) {
-      document.body.classList.add('show-private');
-    }
-    
-    var unlockBtn = document.getElementById('unlock-private-btn');
-    if(unlockBtn){
-      unlockBtn.addEventListener('click', function(){
-        if(document.body.classList.contains('show-private')) {
-           document.body.classList.remove('show-private');
-           localStorage.removeItem('show_private_posts');
-           alert('幽灵文章已隐藏 (Ghost posts hidden)');
-        } else {
-           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
-           if (pwd === 'yluna') {
-             document.body.classList.add('show-private');
-             localStorage.setItem('show_private_posts', 'true');
-             alert('口令正确！幽灵文章已解锁。');
-           } else if (pwd !== null) {
-             alert('口令错误。');
-           }
-        }
-      });
-    }
-  })();
-</script>
 
         </div>
     </div>

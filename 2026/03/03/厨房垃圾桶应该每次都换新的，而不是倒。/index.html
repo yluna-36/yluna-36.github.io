@@ -382,7 +382,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sat Jul 04 2026 10:43:59 GMT+0800">2026-07-04 10:43:59</span>
+                    <span class="datetime" data-updated="Sat Jul 04 2026 11:07:58 GMT+0800">2026-07-04 11:07:58</span>
                 </span>
             
         
@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="7d79d98c0acaea9fa11168cc9fda5550e23748a19dbc1f95e037ce3bfd6515b6"
-                             data-iv="43b1f37f9ab898d2536adaddc4af6fe6"
-                             data-ep="972280a648bc0fc8a67efaf7b51822f9"
-                             data-content="ab64b5f3fa7983c464dd05d892f16de85851f084c24e4c7f477c08eab3fef2833c5e55db2f60e04af6fc84b812aa406a1e1a71d68c0d58ec8225823a882609e3e54c99fcd1c18b5874d69d8d293b71c7b12e16011dd6f311ff9b039f4ebefb2a78ec64f4ad7c3d6733f1b5e7ea5f2efe0bf7f745a452e4758e75145a97ae2ad16a30c443fc19c56c72ba5be0ff18b42e409b6719e16dc414f6e505de7761f7a12ff4c151b0f3f51dd794b5020f3d788bb7be13d9d115359d73081e7330f3eec55de6b1e2df84b2fb99bcaf02ee812635e33572a1b737838299a08fa35f807df4eddc6b7b7426398c3aa52a8eb3899a452517a42830274b538c6daaa3b02ca5c9f08dc8a47463dc6dc8adc826409fab6a5e2a2c530f2db9c0855476c16be8c1279af4e113035fe9df83b2cbd74959160eb88c06ed459724aab38f83cc178cfb64"
+                             data-secret="94d119ac8275e789886addce5f029c3b67fcad70d82ab3c20ee86e67f139375d"
+                             data-iv="130bdccff701f9f4255a2f4708bf9ce0"
+                             data-ep="e19b3dd745df3565ee789b58c92d2159"
+                             data-content="d80168208fc75b906686e5beddd411b5a8950cadc0671eb663c22e0087e532464cf0606760ab5f70882879cdcf16a2ffad1062d0113abe00459f9fd1689e611b8b53ac2ee616e97dc7448a0f8eb27116ca020280e22ad9963d7f68011af724d80a76e5994aaa5df61ab90d71d007112ac717de4ea36cf8744a18cd5f8c468997d62ab3bb6692a78691f34a8f8886f8d2263e93727b3baef49a2324ec7c29e2e743fba9d143c32ecefa76102ffdef3716cd1d42e2325ad913b21832ab5956d34620bb428554d79f87753a21fcf7fbc400492eb45795ab8b5105d3f8c9186ae1bdde2f890f640bd19d96148c9dc586038e7b81c2621b6f811a689969f4f97a15fe0b659018b6af32205ebba2bdbfe63a022510b75aa46a04ab47e1ebe287fb81bd1f713251e9936223a2af263b5aa154d15b83ead771b03bcc6a9c4031e0102b3a"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -573,43 +573,6 @@
 
                 
 
-                
-                    <div class="post-nav border-box">
-                        
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2026/03/03/%E5%8E%8B%E5%8A%9B/"
-                                   title="压力"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">压力</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="/2026/03/03/%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92/"
-                                   title="发展计划"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">发展计划</span>
-                                        <span class="post-nav-item">Next posts</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                    </div>
                 
 
                 
@@ -751,7 +714,7 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<i class="fa-solid fa-lock" id="unlock-private-btn" style="cursor: pointer; opacity: 0.5; margin-left: 5px;" title="Unlock"></i>
+        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -782,40 +745,6 @@
 
     
 </footer>
-
-<style>
-  body:not(.show-private) .is-private-post {
-    display: none !important;
-  }
-</style>
-<script>
-  (function(){
-    var isPrivateShown = localStorage.getItem('show_private_posts') === 'true';
-    if (isPrivateShown) {
-      document.body.classList.add('show-private');
-    }
-    
-    var unlockBtn = document.getElementById('unlock-private-btn');
-    if(unlockBtn){
-      unlockBtn.addEventListener('click', function(){
-        if(document.body.classList.contains('show-private')) {
-           document.body.classList.remove('show-private');
-           localStorage.removeItem('show_private_posts');
-           alert('幽灵文章已隐藏 (Ghost posts hidden)');
-        } else {
-           var pwd = prompt('请输入口令以唤醒幽灵文章 (Enter password):');
-           if (pwd === 'yluna') {
-             document.body.classList.add('show-private');
-             localStorage.setItem('show_private_posts', 'true');
-             alert('口令正确！幽灵文章已解锁。');
-           } else if (pwd !== null) {
-             alert('口令错误。');
-           }
-        }
-      });
-    }
-  })();
-</script>
 
         </div>
     </div>
