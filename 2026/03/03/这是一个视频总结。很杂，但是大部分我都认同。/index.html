@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="yluna">
+    
+    <title>
+        
+            这是一个视频总结。很杂，但是大部分我都认同。 |
+        
+        yluna&#39;s personal page
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/avatar.jpg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/css/custom.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"yluna-36.github.io","root":"/","language":"en"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"yluna's personal page","author":"yluna","avatar":"/images/avatar.jpg","logo":"/images/avatar.jpg","favicon":"/images/avatar.jpg"},"menu":{"home":"/","archives":"/archives/","tags":"/tags/","categories":"/categories/","gallery":"/gallery/","Me":{"children":[{"about":"/about/"},{"personality":"/personality/"},{"links":"/links/"}]}},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"源于热爱，驱于好奇，见于广阔。 || —— Think Absolute","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/yluna-36","weixin":"img | /images/wechat.png","qq":"tencent://message/?uin=975851087","weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"mailto:975851087@qq.com","bilibili":"https://space.bilibili.com/3632309557267399?spm_id_from=333.881.0.0"}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":true,"img_link":null,"text":"Think Absolute.","icon":"fa-solid fa-qrcode"}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":true,"use":"giscus","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":"yluna-36","github_admins":"yluna-36","repository":"yluna-36.github.io","client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"https://your-waline-server.vercel.app","reaction":true,"version":"3.3.2"},"giscus":{"repo":"yluna-36/yluna-36.github.io","repo_id":"R_kgDOQFnQvw","category":"Announcements","category_id":"DIC_kwDOQFnQv84C5THI","reactions_enabled":true},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs","custom":{"enable":false,"url":null}},"pjax":{"enable":true},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":[null,"/css/custom.css"],"js":[null,"/js/custom.js"]},"root":"","search_db_path":"keep-search.json","source_data":{"links":[{"title":"友情链接"},{"name":"Keep Theme","link":"https://keep.xpoet.cn","description":"一个优雅的 Hexo 主题","avatar":"https://keep.xpoet.cn/images/logo.svg"},{"name":"comydream","link":"https://comydream.github.io/","description":"我的朋友","avatar":"https://github.com/comydream.png"}],"photos":[{"group":"✈️ 旅游风光","photos":[{"name":"示例照片 - 1","url":"https://picsum.photos/id/1018/800/600"},{"name":"示例照片 - 2","url":"https://picsum.photos/id/1015/800/600"}]},{"group":"☕️ 日常生活","photos":[{"name":"示例照片 - 3","url":"https://picsum.photos/id/1019/800/600"},{"name":"示例照片 - 4","url":"https://picsum.photos/id/1016/800/600"},{"name":"示例照片 - 5","url":"https://picsum.photos/id/1025/800/600"}]}]},"version":"4.3.0"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               yluna&#39;s personal page
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives/">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags/">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories/">
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/gallery/">
+                                
+                                GALLERY
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                ME
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/about/">
+                                                
+                                                ABOUT
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/personality/">
+                                                
+                                                PERSONALITY
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/links/">
+                                                
+                                                LINKS
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives/">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags/">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories/">
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/gallery/">
+                            
+                            GALLERY
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            ME
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/about/">
+                                        
+                                        ABOUT
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/personality/">
+                                        
+                                        PERSONALITY
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/links/">
+                                        
+                                        LINKS
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        这是一个视频总结。很杂，但是大部分我都认同。
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">yluna</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-03-03 19:04:58</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Wed Mar 25 2026 20:24:57 GMT+0800">2026-03-25 20:24:57</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E7%88%B1%E6%83%85%E8%A7%82-%E6%81%8B%E7%88%B1%E8%A7%82/">爱情观 恋爱观</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2k Words</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>6 Mins</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="这是一个视频总结。很杂，但是大部分我都认同。"><a href="#这是一个视频总结。很杂，但是大部分我都认同。" class="headerlink" title="这是一个视频总结。很杂，但是大部分我都认同。"></a>这是一个视频总结。很杂，但是大部分我都认同。</h1><p>【我们终于看透了爱情！30岁不结婚有问题吗？为什么恋爱越来越难了……】 【精准空降到 05:28】 <a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1MPKAe8EAi/?share_source=copy_web&vd_source=&t=328" >https://www.bilibili.com/video/BV1MPKAe8EAi/?share_source&#x3D;copy_web&amp;vd_source&#x3D;&amp;t&#x3D;328<i class="fas fa-external-link-alt"></i></a></p>
+<p>以下是该视频内容的结构化摘要，按主题分类并提炼核心观点：</p>
+<hr>
+<h3 id="一、长期关系维护与沟通"><a href="#一、长期关系维护与沟通" class="headerlink" title="一、长期关系维护与沟通"></a><strong>一、长期关系维护与沟通</strong></h3><ol>
+<li><p><strong>激活长期关系</strong></p>
+<p> • 通过共同体验新事物（如旅行）保持新鲜感</p>
+<p> • 强调双方共同成长与相互支持的重要性</p>
+</li>
+<li><p><strong>AA制与礼物开销沟通</strong></p>
+<p> • 建议坦诚协商财务分配，避免单方面牺牲</p>
+<p> • 价值观一致性是关键，双方需共同付出以维持平衡</p>
+</li>
+</ol>
+<hr>
+<h3 id="二、恋爱观的成长与独立"><a href="#二、恋爱观的成长与独立" class="headerlink" title="二、恋爱观的成长与独立"></a><strong>二、恋爱观的成长与独立</strong></h3><ol>
+<li><p><strong>从”恋爱脑”到自我独立</strong></p>
+<p> • 依赖他人满足需求→通过工作&#x2F;拓展视野实现自我满足</p>
+<p> • 现实择偶标准取代影视剧的完美化想象</p>
+</li>
+<li><p><strong>独立女性的亲密关系平衡</strong></p>
+<p> • 独立不排斥亲密关系，核心是自由选择权（婚姻、生育等）</p>
+<p> • 警惕社交媒体制造的完美爱情模板，接受现实中的磨合与责任</p>
+</li>
+</ol>
+<hr>
+<h3 id="三、社会压力与婚恋选择"><a href="#三、社会压力与婚恋选择" class="headerlink" title="三、社会压力与婚恋选择"></a><strong>三、社会压力与婚恋选择</strong></h3><ol>
+<li><p><strong>年龄焦虑应对</strong></p>
+<p> • 教育提升赋予女性选择自由，拒绝因年龄妥协</p>
+<p> • 一线城市环境减轻家庭催婚压力，主张等待合适伴侣</p>
+</li>
+<li><p><strong>主动追求爱情</strong></p>
+<p> • 鼓励女性主动表达，掌握关系主动权</p>
+<p> • 被拒绝是常态，重点在于尝试的勇气与及时止损</p>
+</li>
+</ol>
+<hr>
+<h3 id="四、关系冲突与处理"><a href="#四、关系冲突与处理" class="headerlink" title="四、关系冲突与处理"></a><strong>四、关系冲突与处理</strong></h3><ol>
+<li><p><strong>分手后能否做朋友？</strong></p>
+<p> • 观点分歧：一方认为关系无法降级，另一方接受释怀后的友谊</p>
+<p> • 冷暴力与PUA应对：识别负面行为，寻求支持并保持自我边界</p>
+</li>
+<li><p><strong>妥协与底线</strong></p>
+<p> • 非核心问题（如生活习惯）可调整，核心底线（如职业发展）不可妥协</p>
+<p> • 前期充分了解对方，促成双方适度改变的良性互动</p>
+</li>
+</ol>
+<hr>
+<h3 id="五、金钱与价值观平衡"><a href="#五、金钱与价值观平衡" class="headerlink" title="五、金钱与价值观平衡"></a><strong>五、金钱与价值观平衡</strong></h3><ul>
+<li>财务沟通需透明，职业发展与伴侣需求冲突时寻求共赢方案</li>
+</ul>
+<p>• 避免单方面牺牲，维持付出对等以保障关系稳定</p>
+<hr>
+<h3 id="六、未来婚恋趋势探讨"><a href="#六、未来婚恋趋势探讨" class="headerlink" title="六、未来婚恋趋势探讨"></a><strong>六、未来婚恋趋势探讨</strong></h3><ol>
+<li><p><strong>数字婚恋（AI匹配&#x2F;虚拟伴侣）</strong></p>
+<p> • 认可技术提升相亲效率，但人际互动与情感反馈不可替代</p>
+</li>
+<li><p><strong>理想爱情模式</strong></p>
+<p> • 日常相互扶持，事业上势均力敌，保持独立发光状态</p>
+</li>
+</ol>
+<hr>
+<h3 id="核心总结"><a href="#核心总结" class="headerlink" title="核心总结"></a><strong>核心总结</strong></h3><p>现代恋爱观强调<strong>沟通、尊重与共同成长</strong>。健康的亲密关系需平衡独立与依赖，接纳现实挑战而非追求完美模板。无论单身与否，关键在于自我价值的实现与积极经营关系的能力。面对社会压力与新兴科技，保持清醒选择，方能获得可持续的幸福。</p>
+<p><strong>结语</strong>：视频以“愿所有人拥有美好情人节”收尾，传递开放包容的爱情价值观。</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1FZKHeKEeo/?spm_id_from=333.1245.0.0&vd_source=929c876c6676cf0b1cd5c5195a6f28be" >https://www.bilibili.com/video/BV1FZKHeKEeo/?spm_id_from=333.1245.0.0&amp;vd_source=929c876c6676cf0b1cd5c5195a6f28be<i class="fas fa-external-link-alt"></i></a></p>
+<p>该视频是一场围绕恋爱、相亲、婚姻等情感话题展开的讨论，两位女性分享了各自丰富的情感经历与深刻观点，具体内容如下：</p>
+<ol>
+<li><strong>个人情感经历</strong><ul>
+<li><strong>暧昧居多的恋爱过往</strong>：30岁的分享者称自己与男生大多处于暧昧状态，长时间暧昧后却未能正式在一起。她自述因缺乏恋爱经验，在处理亲密关系时存在困难，保护意识较强，一旦男生的行为让自己感到不适，便会认为两人不合适。根据依恋类型理论，她认为自己属于焦虑型依恋，在与逃避型人格的人相处时，对方不及时回消息等行为会引发她的焦虑情绪，严重影响个人生活状态，因此她常在暧昧阶段就选择结束关系。</li>
+<li><strong>奇葩的相亲遭遇</strong>：分享者在相亲过程中遇到了形形色色的人。有第一天见面，晚上就站在她家楼下提出“我能住下来吗”“今天晚上我能跟你一起睡吗”这类非分要求的相亲对象；有一边享受与她的暧昧，一边心里还装着前女友，甚至在与她相处时还给前女友发消息的人；还有一上来就问“你愿意为我生几个孩子”，以及对女方感情史有苛刻要求，自己却称是前女友勾引的双标者。</li>
+<li><strong>相亲渠道及费用情况</strong>：她的相亲对象来源主要是他人介绍和相亲平台。相亲平台存在付费服务，如解锁心动男嘉宾等，她的闺蜜就曾为证明自己努力相亲，在销售的劝说下花费8000元购买一对一VIP服务。</li>
+</ul>
+</li>
+<li><strong>择偶标准</strong><ul>
+<li><strong>性格与情绪方面</strong>：希望未来伴侣性格温和、情绪稳定，这样在相处过程中不易产生争吵，能够营造和谐的关系。</li>
+<li><strong>身高要求的变化</strong>：最初对男方身高期望较高，随着经历增多，逐渐意识到身高并非决定两人是否合适的关键因素，相比之下，相处时的感受更为重要。</li>
+<li><strong>物质与精神的考量</strong>：认为找对象不能过于看重物质条件，但男方的经济能力要能够满足日常生活以及组建家庭后对孩子的开支需求。同时，精神层面的契合度至关重要，例如双方对努力和成功的看法、人生观念等底层逻辑若不一致，在日常生活交流中容易引发矛盾。</li>
+</ul>
+</li>
+<li><strong>婚姻相关话题</strong><ul>
+<li><strong>早婚晚婚的探讨</strong>：分享者妈妈通过算命得知她早婚可能会离婚，所以建议她晚点结婚。虽然算命说法缺乏科学依据，但从侧面反映出部分人对早婚的担忧。早婚可能面临的问题包括心理和经济上的不成熟，难以应对婚姻中的各种挑战；晚婚的优势则在于人们在年龄增长过程中积累了更多经验，心智更成熟，经济也相对更稳定。然而，晚婚也可能使人更加自我，在处理亲密关系和沟通方面出现问题，还可能面临更大的家庭和社会压力。</li>
+<li><strong>婚姻中的矛盾与解决</strong>：已婚分享者表示在婚姻中会有想离婚的念头，比如单身时所拥有的自由在婚后受到限制，以及对方的缺点在婚后被放大，触及底线或感情内耗严重时，这种想法会更加强烈。以她自身为例，去年与老公因城市选择和异地问题发生激烈争吵，老公因学业压力大，埋怨她没为家庭留在深圳，而她觉得老公不应将压力转嫁到自己身上。不过，冷静之后双方能够相互理解并和好。这表明夫妻间的矛盾需要通过沟通和相互理解来解决，感情在经历波折后也有修复的可能。</li>
+<li><strong>对家庭和城市的看法</strong>：已婚分享者认为，比起具体的城市，她更在乎家庭能否团聚。如果一家人都能在某个城市找到喜欢的工作，过上开心的生活，那便是她最希望看到的状态。</li>
+<li><strong>育儿情况</strong>：她提到自家孩子正在上幼儿园，生活无忧无虑，被宠得有些任性，但她认为这个阶段是孩子最快乐的时光。</li>
+</ul>
+</li>
+</ol>
+
+                    
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                这是一个视频总结。很杂，但是大部分我都认同。
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis" style="opacity: 0.8; font-size: 0.9em; margin-top: 5px;">
+                转载请注明出处：<a href="/" style="text-decoration: underline;">yluna 的个人空间</a>
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    Author
+                </div>
+                <div class="content">yluna</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    Published
+                </div>
+                <div class="content">2026-03-03 19:04</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    License
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">
+                        
+                            <i class="fa-brands fa-creative-commons"></i>
+                            <i class="fa-brands fa-creative-commons-by"></i>
+                            <i class="fa-brands fa-creative-commons-nc"></i>
+                            <i class="fa-brands fa-creative-commons-sa"></i>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+        <li class="twitter share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to X (Twitter)"
+        >
+            <i class="fa-brands fa-x-twitter"></i>
+        </li>
+        <li class="telegram share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to Telegram"
+        >
+            <i class="fa-brands fa-telegram"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/03/03/%E7%B3%96%E6%9E%9C%E6%9E%9C/"
+                                   title="糖果果"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">糖果果</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/03/03/%E8%BF%BD%E6%98%9F/"
+                                   title="追星"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">追星</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;Comments
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">Comment plugin failed to load</span>
+    <button class="reload keep-button">Click to reload</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">Loading comment plugin</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="giscus-comments-container">
+        <div class="giscus" id="giscus"></div>
+        <script data-pjax
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          if (!window.KeepCommentPlugin?.getGiscusTheme) {
+            window.KeepCommentPlugin.getGiscusTheme = () => {
+              return document.documentElement.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.changeGiscusTheme) {
+            window.KeepCommentPlugin.changeGiscusTheme = () => {
+              const iframe = document.querySelector('iframe.giscus-frame')
+              iframe && iframe.contentWindow.postMessage({
+                giscus: {
+                  setConfig: {
+                    theme: window.KeepCommentPlugin.getGiscusTheme()
+                  }
+                }
+              }, 'https://giscus.app')
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.initGiscus) {
+            window.KeepCommentPlugin.initGiscus = () => {
+              const script = document.createElement('script')
+              script.async = true
+              script.src = 'https://giscus.app/client.js'
+              script.setAttribute('data-repo', 'yluna-36/yluna-36.github.io')
+              script.setAttribute('data-repo-id', 'R_kgDOQFnQvw')
+              script.setAttribute('data-category', 'Announcements')
+              script.setAttribute('data-category-id', 'DIC_kwDOQFnQv84C5THI')
+              script.setAttribute('data-reactions-enabled', '1')
+              script.setAttribute('data-lang', 'en')
+              script.setAttribute('data-mapping', 'pathname')
+              script.setAttribute('data-strict', '0')
+              script.setAttribute('data-emit-metadata', '0')
+              script.setAttribute('data-input-position', 'top')
+              script.setAttribute('crossorigin', 'anonymous')
+              script.setAttribute('loading', 'lazy')
+              script.setAttribute('data-theme', window.KeepCommentPlugin.getGiscusTheme())
+              document.querySelector('.giscus-comments-container').appendChild(script)
+              script.onerror = () => {
+                window.KeepCommentPlugin.loadFailHandle()
+              }
+              script.onload = () => {
+                window.KeepCommentPlugin.hideLoading()
+              }
+              const toggleThemeBtn = document.querySelector('.tool-toggle-theme-mode')
+              toggleThemeBtn && toggleThemeBtn.addEventListener('click', () => {
+                window.KeepCommentPlugin.changeGiscusTheme()
+              })
+            }
+          }
+
+          if ('true' === "true") {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initGiscus()
+            }, 1000)
+          } else {
+            window.addEventListener("DOMContentLoaded", window.KeepCommentPlugin.initGiscus)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%A7%86%E9%A2%91%E6%80%BB%E7%BB%93%E3%80%82%E5%BE%88%E6%9D%82%EF%BC%8C%E4%BD%86%E6%98%AF%E5%A4%A7%E9%83%A8%E5%88%86%E6%88%91%E9%83%BD%E8%AE%A4%E5%90%8C%E3%80%82"><span class="nav-text">这是一个视频总结。很杂，但是大部分我都认同。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%95%BF%E6%9C%9F%E5%85%B3%E7%B3%BB%E7%BB%B4%E6%8A%A4%E4%B8%8E%E6%B2%9F%E9%80%9A"><span class="nav-text">一、长期关系维护与沟通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%81%8B%E7%88%B1%E8%A7%82%E7%9A%84%E6%88%90%E9%95%BF%E4%B8%8E%E7%8B%AC%E7%AB%8B"><span class="nav-text">二、恋爱观的成长与独立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%A4%BE%E4%BC%9A%E5%8E%8B%E5%8A%9B%E4%B8%8E%E5%A9%9A%E6%81%8B%E9%80%89%E6%8B%A9"><span class="nav-text">三、社会压力与婚恋选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%85%B3%E7%B3%BB%E5%86%B2%E7%AA%81%E4%B8%8E%E5%A4%84%E7%90%86"><span class="nav-text">四、关系冲突与处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E9%87%91%E9%92%B1%E4%B8%8E%E4%BB%B7%E5%80%BC%E8%A7%82%E5%B9%B3%E8%A1%A1"><span class="nav-text">五、金钱与价值观平衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%9C%AA%E6%9D%A5%E5%A9%9A%E6%81%8B%E8%B6%8B%E5%8A%BF%E6%8E%A2%E8%AE%A8"><span class="nav-text">六、未来婚恋趋势探讨</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%80%BB%E7%BB%93"><span class="nav-text">核心总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
+        
+        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%A7%86%E9%A2%91%E6%80%BB%E7%BB%93%E3%80%82%E5%BE%88%E6%9D%82%EF%BC%8C%E4%BD%86%E6%98%AF%E5%A4%A7%E9%83%A8%E5%88%86%E6%88%91%E9%83%BD%E8%AE%A4%E5%90%8C%E3%80%82"><span class="nav-text">这是一个视频总结。很杂，但是大部分我都认同。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%95%BF%E6%9C%9F%E5%85%B3%E7%B3%BB%E7%BB%B4%E6%8A%A4%E4%B8%8E%E6%B2%9F%E9%80%9A"><span class="nav-text">一、长期关系维护与沟通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%81%8B%E7%88%B1%E8%A7%82%E7%9A%84%E6%88%90%E9%95%BF%E4%B8%8E%E7%8B%AC%E7%AB%8B"><span class="nav-text">二、恋爱观的成长与独立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%A4%BE%E4%BC%9A%E5%8E%8B%E5%8A%9B%E4%B8%8E%E5%A9%9A%E6%81%8B%E9%80%89%E6%8B%A9"><span class="nav-text">三、社会压力与婚恋选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%85%B3%E7%B3%BB%E5%86%B2%E7%AA%81%E4%B8%8E%E5%A4%84%E7%90%86"><span class="nav-text">四、关系冲突与处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E9%87%91%E9%92%B1%E4%B8%8E%E4%BB%B7%E5%80%BC%E8%A7%82%E5%B9%B3%E8%A1%A1"><span class="nav-text">五、金钱与价值观平衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%9C%AA%E6%9D%A5%E5%A9%9A%E6%81%8B%E8%B6%8B%E5%8A%BF%E6%8E%A2%E8%AE%A8"><span class="nav-text">六、未来婚恋趋势探讨</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%80%BB%E7%BB%93"><span class="nav-text">核心总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+            
+<script src="/js/post/copyright-info.js"></script>
+
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script id="pjax-script" src="/js/libs/pjax.min.js"></script>
+<script>
+  (function () {
+    const isGoogleTranslate = location.hostname.includes('.translate.goog')
+
+    if (isGoogleTranslate) {
+      document.getElementById('pjax-script')?.remove()
+      return
+    }
+
+    function initPjax () {
+      if (window.pjax) return
+
+      window.pjax = new Pjax({
+        selectors: [
+          'head title',
+          '.page-container',
+          '.pjax'
+        ],
+        history: true,
+        debug: false,
+        cacheBust: false,
+        timeout: 0,
+        analytics: false,
+        currentUrlFullReload: false,
+        scrollRestoration: false
+      })
+
+      document.addEventListener('pjax:send', onPjaxSend)
+      document.addEventListener('pjax:complete', onPjaxComplete)
+    }
+
+    function onPjaxSend () {
+      KEEP?.utils?.pjaxProgressBarStart()
+    }
+
+    function onPjaxComplete () {
+      KEEP?.utils?.pjaxProgressBarEnd()
+
+      window?.pjax?.executeScripts(
+        document.querySelectorAll('script[data-pjax], .pjax script')
+      )
+
+      KEEP?.initExecute()
+    }
+
+    // DOM Ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPjax)
+    } else {
+      initPjax()
+    }
+  })()
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/js/custom.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>
