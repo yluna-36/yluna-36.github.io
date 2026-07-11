@@ -350,7 +350,7 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E5%BD%A9%E7%A4%BC%20%E5%AB%81%E5%A6%86%20%E5%A9%9A%E6%88%BF/"
+                           href="/2026/03/03/%E5%B4%A9%E5%9D%8F/"
                         >修身-039 (已加密)</a>
                     </li>
                 
@@ -358,7 +358,7 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E5%BE%88%E6%9C%89%E4%BB%B7%E5%80%BC%E7%9A%84%E6%88%90%E9%95%BF%E6%A1%88%E4%BE%8B/"
+                           href="/2026/03/03/%E5%BD%A9%E7%A4%BC%20%E5%AB%81%E5%A6%86%20%E5%A9%9A%E6%88%BF/"
                         >修身-040 (已加密)</a>
                     </li>
                 
@@ -366,16 +366,8 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E5%B4%A9%E5%9D%8F/"
+                           href="/2026/03/03/%E5%BE%88%E6%9C%89%E4%BB%B7%E5%80%BC%E7%9A%84%E6%88%90%E9%95%BF%E6%A1%88%E4%BE%8B/"
                         >修身-041 (已加密)</a>
-                    </li>
-                
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box">03-03</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E6%80%A7%E6%95%99%E8%82%B2/"
-                        >齐家-007 (已加密)</a>
                     </li>
                 
                     <li class="post-item border-box">
@@ -398,8 +390,16 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E6%83%85%E6%84%9F/"
+                           href="/2026/03/03/%E6%80%A7%E6%A0%BC%20%E7%B2%BE%E7%A5%9E%E3%80%81%E5%93%B2%E5%AD%A6/"
                         >修身-044 (已加密)</a>
+                    </li>
+                
+                    <li class="post-item border-box">
+                        <span class="starting-point border-box flex-center"></span>
+                        <span class="post-date border-box">03-03</span>
+                        <a class="post-title border-box text-ellipsis"
+                           href="/2026/03/03/%E6%80%A7%E6%95%99%E8%82%B2/"
+                        >齐家-007 (已加密)</a>
                     </li>
                 
                     <li class="post-item border-box">
@@ -414,7 +414,7 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E6%80%A7%E6%A0%BC%20%E7%B2%BE%E7%A5%9E%E3%80%81%E5%93%B2%E5%AD%A6/"
+                           href="/2026/03/03/%E6%83%85%E6%84%9F/"
                         >修身-046 (已加密)</a>
                     </li>
                 
@@ -485,7 +485,6 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -758,6 +757,26 @@
     list-max-height="500px"
     lrc-type="0">
 </meting-js>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
 </body>
 
 </html>

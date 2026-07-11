@@ -424,10 +424,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="0a1186ffac4f65636002471e1d91748d3ee814e0aa3bb83315f58b1088a388d6"
-                             data-iv="9e749a1da8e3fc208dff54c2a6ff1981"
-                             data-ep="e774aa18e43dc7c22479a392cbebdb24"
-                             data-content="f2eaf66855c18ba766194788a2742fe3687a0c74b5d8d53e0ed5e3fa02f1ffd0efc1127a8101b9d9bdc7ff43a41de28fa529a6ea212a24a68ab17ec110c263e155f8ea1fc76dc8706d85962d5a6dca3135d7ec8c42f8513b5da821b136e8e5caf3d5fc5bf31eaecfe0436f58984fc9eb36fa7b9452426f4f5fa159300886a682651d82c4abf244beb3f17b4a3f82bb69034f59c1ca12e5089a8d7be6db0eea2b2aeb9f0b024bb8c57e9d48157d685222d300d0de8d25b0565156cedc60857f51ad62baad8268cdb6b908d3b012961d9ec732b81da8a8aeb06946a17c1a01ce64f3fd0459713a1b3b4a507e7b280a372f05d6d2d0decff6b31c80716842fd07f92bf7b4b0e64ef53eaf35fd05be138286ea0bb15fe2531c411143309fbbcb61688941889b9d4a4f5b77b4cc3f9fd22451ff3d2775a680e01d0bf6da5ebe36e485"
+                             data-secret="5bc7c173f3261e198bf11a4cf1bad013a32f59175661ac5a93fda9591c3ae505"
+                             data-iv="c0259dd86f9b4e1ca73a94035bf09df6"
+                             data-ep="4c312d56687b22d30e487e3599f10b0d"
+                             data-content="45be5a91d56f82c684b1363789789446e36203924efc103d93cc28412ee4cb4e771cb191fbaad33c9d135dd7328bc9f32c9231ea4760bcfdd595a134d2566b63dff509900477395f640db54c7afd5ed6b3868db354477ef57ebd920569977f0755039a554fe9c6ed589158fff1e240b243eca9bd054c83e29be5e1a085de30828c69be515d161e06b5d23f22faebf7c5bce159dd6792d3392bc3246d72b0150bc87b6c533d3cfd5384d2a766d3ba20b411475d1235e1b8ace6ba0b201685b109488120bffd6c4e909b924e6291a2e46f61363d65c214d3bfae3f71fd9d8599f70ab3d97ffc4cd6ec4c57d6d2db513b0092c2c37314b564e66a9c9d7c2c70bb0415f54b12273b8f8b9be5b1dc7e67c9b8e9daf744e1a5dad4c840c22eacc169b9b39ae53a955393b2240837e20ca252fe9585ba1ea12f19d0271fc73efbeaeb32"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -542,13 +542,13 @@
                                 <a class="prev"
                                    rel="prev"
                                    href="/2026/03/03/%E7%94%B7%E7%94%9F%E4%B8%AD%E5%B9%B4%E5%8D%B1%E6%9C%BA/"
-                                   title="修身-061 (已加密)"
+                                   title="修身-062 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-061 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-062 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -558,11 +558,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E8%80%81%E5%AE%B6/"
-                                   title="齐家-010 (已加密)"
+                                   href="/2026/03/03/%E7%9B%B8%E4%BA%B2/"
+                                   title="修身-064 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">齐家-010 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-064 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -713,7 +713,6 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -1067,6 +1066,28 @@
     list-max-height="500px"
     lrc-type="0">
 </meting-js>
+
+    <meta name="post-section" content="修身">
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
 </body>
 
 </html>

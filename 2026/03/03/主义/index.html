@@ -424,10 +424,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="9632af5c7a27edd490c01f44351e54e5ea3a2ed9b8ed94129344081631813da9"
-                             data-iv="cf482964e706a9f6e97340c24fdfb3d8"
-                             data-ep="c3e63c1b18cc36e6a611ae6133c69a22"
-                             data-content="28c4cc7ce1421b3e963f5a53867d721ac70a9cf1e6e44063f3bd9e1406bb51f116f6d0049374b87175338d6c4a9ada6e4566098c62a51c736b03884d4de06ba44321ca8e203b1972823c427e8f4aaf8b33374258cc2470a71096749b3c8859c40e3c1546f6fbbcae454f21f8c98a88a2c037dd794d79b2973e62459c720e8bbb1af945309534591ef17851f080096a0faad81d4410ed77bc3c185f891bec1792ec6ddbc28d25fa60321d4252cc6c0a7414a9775692adbdf5f1d70e1d06445292eff98b055120a4f7d0e9c67f4357fedc"
+                             data-secret="bb08e8ebe7ae93dc439805dfaca5ecfda93cd96b82724a8a7a90672b3295c3d0"
+                             data-iv="b7568534a5a4b6bdb813a4c5d0aa6586"
+                             data-ep="33ee5b4d5c828f25d494007a68a338a8"
+                             data-content="47f44ee4d0c53db91808d7fac7eec6593c98ae1daf1822b5123b59d6ee6503dcbee6fb2491fdde47d218378530e26d1c2da7855c19ed206805056de6e52d93c3e9b991edb64041d311655f15745399c7516d40729a7453510b2d42819c747d27154f5e59017d1ebfe47e921352f4ae9790febdb87504f74ee3f319b9f245d8aece9c771c0aad134ea512b71148499b75f34dd4d425f96546fa9554075c4ce4b071edd956b73e17f06189ad319d8de0c625f3250e5e80483ff46390013ddd179556e1dadbc7df2aad4076ca47588c4177"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -541,14 +541,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E4%B8%A5%E6%A0%BC%E8%A6%81%E6%B1%82/"
-                                   title="修身-006 (已加密)"
+                                   href="/2026/03/03/%E4%B8%AD%E6%B5%81/"
+                                   title="立业-001 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-006 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">立业-001 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -558,11 +558,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E4%B8%AD%E6%B5%81/"
-                                   title="立业-001 (已加密)"
+                                   href="/2026/03/03/%E4%B8%BB%E5%8A%A8%E5%85%B3%E7%B3%BB/"
+                                   title="修身-008 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">立业-001 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-008 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -713,7 +713,6 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -1067,6 +1066,28 @@
     list-max-height="500px"
     lrc-type="0">
 </meting-js>
+
+    <meta name="post-section" content="修身">
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
 </body>
 
 </html>
