@@ -424,10 +424,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="2355ea414e3c553d71e025c3ef92ab4a36e141e97280c60d3aed536798dd4e48"
-                             data-iv="15dcaec296675bfb4fad0bc26b8344c6"
-                             data-ep="f68508a744fe6de92d123ef15b6684cd"
-                             data-content="c91bfe717545f892e0dc24eb479b90f979d4722984178ee59fb1dc86ea5cf771db7b7beafbb8eaf6982fc51ce030a775d075c0fb96274c0daa6842fe40dc47a36edbb7ba3f44c397f3d7eb7837fdef4d54f451e6e25869215a1db4360d960d80d91e9a55442dae0b10db1bf3233c56bff53098319ce8f04133496296bc22e709dac1300e4e99de10098a28fd6a4bbeb8932a9b9f6fecd8c016d3d2ad5ceaeb59a09056037f0d64a9396ddec072f26c3f781b32ac111b4c00118f10f66cb4eee51515fcd3b409843bddd71b645797e8c410a0559286becbfc994db74dace8e6c4917554f0aae2626b5e6a3e9fefe49335520f66cd340727bc214293869a8b59cfd187fc05e7574fd5b732c0efeec19a997702f8e173665e33f34e6f2d54be7ba7d8f9d560604d9e6e85743da5ceb540d8d9b196e7b08593499b5def3d66c5e9e8b514cf9e5885f6574d72cb7273783578bcf58b21b691922886f1013f4367688331d6202cec2380733b320fd1c4840c5cd144695f12867e0312db1b5dede8420f6b09b1f9b4b63815119accd1b6615687e715a1296272abdad8dfde904d232fbbf6aa682c16245dbb18e568e74ffc81e9a853496d1bd2ebad1c4038be9303fd31db536b1ec3732ce0640263475a58447939151a96f8c1b43108ba232068d93b1ef8f64cac59c2320c63ef3721a5aecc3f4ef96bd016972a0b79fff1dcd94ef799d297d7b8c0e425c9da877a093c865218"
+                             data-secret="62aead3213eaa36764f1b4504c9dcf1adc3a743794e5a835d5acb36764baca41"
+                             data-iv="1f773f36ff156ca001ef314f75211874"
+                             data-ep="a5240990f52e624c6b1220ef36c8b644"
+                             data-content="5003945f5a5c77c6af587b65e7064c3c54ea3d15a0b6b8ba8639ea95a15446b00b12b912374a464272c11792b26d5d3765d7e4021165eeab3041d8267fee03308997ebf49c7905c3b68ff02f5ac05e2eebebab3a1fb02032e95be1c46c59688ed3a49cc9637fef3f4ec649ddbd79b72063afa9d6742f28bfd493edd0a7f347db1fb25d9fe7c78e46ac4ad08e3131306d90f979629524306d184879226306218c9b10fd54c50c2e615ce9e076bf975214f5d3b57772ee303635dc82ef45020506d3e01ab069ed6b2863d431ee2ebc263e01d1b30da54071f5534e73caefa204e6e89b71be23134e3f813ffc8cccdc69c280a49dbfd312b47b5a6c170afeed418e746c9a39791fa1d261169a4872909d816e1afde1cc7ab88bec0fed9b7fea8dcadbf363337bcd0ada85d7ed404778312ea7607c0b530651be189538464cb8f709afd7f50a0c848cfb175ef9fbccf35bec301a13eb710fa40ad293fab072c14670b4b3117f936727f59b664fc7cdf634f5986d779c2c7c956b38d1b4a589fa6fa613ba87026216bc396461003b3c03c99f6748c0eb24788a3fe4a8b012483553dd7e04c09eb56498df7741017b77b2def5434659e4b7ea076838cdad8434d3bfab238bc77ac5e8f6439451181f57cd7492234cdfb252052b9b0729365842e6c4ccedfcbb123482a9cdb9436b9c354d6076f68ac4ebfee2ed43dd99142d24053dc3309708c826e11482c2d21284492c57d4"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -713,7 +713,6 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -1067,6 +1066,28 @@
     list-max-height="500px"
     lrc-type="0">
 </meting-js>
+
+    <meta name="post-section" content="修身">
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
 </body>
 
 </html>

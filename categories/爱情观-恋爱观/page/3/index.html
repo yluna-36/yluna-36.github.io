@@ -353,8 +353,8 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E5%AF%B9%E7%AD%89%E4%BB%98%E5%87%BA%20%E5%85%B1%E5%90%8C%E4%BB%98%E5%87%BA/"
-                        >修身-038 (已加密)</a>
+                           href="/2026/03/03/%E5%AF%B9%E5%AF%B9%E5%AF%B9%20%E5%AF%B9%E5%90%97/"
+                        >修身-036 (已加密)</a>
                     </li>
                 
                     <li class="post-item border-box">
@@ -362,7 +362,7 @@
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
                            href="/2026/03/03/%E5%BD%A9%E7%A4%BC%20%E5%AB%81%E5%A6%86%20%E5%A9%9A%E6%88%BF/"
-                        >修身-039 (已加密)</a>
+                        >修身-040 (已加密)</a>
                     </li>
                 
                     <li class="post-item border-box">
@@ -377,15 +377,15 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E6%99%AE%E9%80%9A%E5%BC%82%E6%80%A7%E6%9C%8B%E5%8F%8B/"
-                        >修身-049 (已加密)</a>
+                           href="/2026/03/03/%E6%97%A9%E6%9C%9F%E8%A7%82%E5%BF%B5/"
+                        >修身-050 (已加密)</a>
                     </li>
                 
                     <li class="post-item border-box">
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E6%9A%A7%E6%98%A7%E4%B8%8E%E6%81%8B%E7%88%B1/"
+                           href="/2026/03/03/%E6%99%AE%E9%80%9A%E5%BC%82%E6%80%A7%E6%9C%8B%E5%8F%8B/"
                         >修身-051 (已加密)</a>
                     </li>
                 
@@ -393,7 +393,7 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E6%97%A9%E6%9C%9F%E8%A7%82%E5%BF%B5/"
+                           href="/2026/03/03/%E6%9A%97%E6%81%8B/"
                         >修身-052 (已加密)</a>
                     </li>
                 
@@ -401,7 +401,7 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E6%9A%97%E6%81%8B/"
+                           href="/2026/03/03/%E6%9A%A7%E6%98%A7%E4%B8%8E%E6%81%8B%E7%88%B1/"
                         >修身-053 (已加密)</a>
                     </li>
                 
@@ -410,7 +410,7 @@
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
                            href="/2026/03/03/%E7%8B%AC%E7%AB%8B%E5%A5%B3%E6%80%A7/"
-                        >修身-057 (已加密)</a>
+                        >修身-059 (已加密)</a>
                     </li>
                 
                     <li class="post-item border-box">
@@ -418,7 +418,7 @@
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
                            href="/2026/03/03/%E7%94%B7%E7%94%9F%E4%B8%AD%E5%B9%B4%E5%8D%B1%E6%9C%BA/"
-                        >修身-061 (已加密)</a>
+                        >修身-062 (已加密)</a>
                     </li>
                 
                     <li class="post-item border-box">
@@ -488,7 +488,6 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -765,6 +764,26 @@
     list-max-height="500px"
     lrc-type="0">
 </meting-js>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
 </body>
 
 </html>

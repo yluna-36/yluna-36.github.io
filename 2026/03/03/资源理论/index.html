@@ -424,10 +424,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="b21f189c6aae12ceac4e32c9cd9d2089b09a0ea51bae219b9b864f4c93d42bae"
-                             data-iv="86e53834ef7ee12232e75ab8b5ad5e15"
-                             data-ep="08f3fa3f9871decb5501350e52dbfa01"
-                             data-content="9f03d0731e660fdb5a49e35a47c1b55029f9868acdd8d4294c0d130d27de59ce0a42cbaf9ef5532b72f0fb5a442a7cb24f5853aa94fa0dbcf32c1068d0182e008f87da1056f5641fff525378a84a6cbd614d4d5c17894c3777399714cd3f0fef79283b5e03cfd798bf2d7e3b21d97fc08de64bde3db2e8941714d89a50909d8b503658fa16debad0255e015839aa07d77463a4ebcdd4f4e730a075abac72e6121f438ac4cb56070c45a9c4fb1705131e654221d027ff63ddac1b311d50afe82e16ec3c3ab0fea018175cd4eb9c2cd8b9b8995363a8b40e34f2d862906c38d5594b45b49860fb9ea2f16d4cea5bb0826304eb334c000769ed8979c2becfa626848d1dc6d3fe5e7294f7052970bcae8618"
+                             data-secret="1dd0dcfe18e72ab5b689e29fb4730b8769093abb196b86478a38850c57772f62"
+                             data-iv="d12e16cdddfe3300679b366f11ca2bbe"
+                             data-ep="c55220749fd7a4aebb7172b475336bb7"
+                             data-content="517fd6a6197c82156f2a57eea6bba48ad31609ab154fb13eb2dea4d04617541ff33ff02feec1ea093bee1b9bce85136f4b51ae1d3fa0ad42515da35c02cb7b9a728dacbb51ef0956b30bed0642630e43b294ffb12df79d601980d91b247c98087b5c6e6ecea9445e7f59e5bbfffc22ea9135e517dd0fd9407dc3f89531511e9f52efc9f9b6ac15fa4f028d71c4da07238c9ed0b1731c9e3cb63b4a11f35cd399e7784fb3ab5f03e6dd38033ccac115b81ce95b31bc13222df46e7ee58c36d532181d9db3050fb97348faf62e6fdb853a07fab6cc72f39e4b7e46bea2f88b070597949e4fe1812a52f01efea7361e50d8f0b790382d26517b591dbc41b267b37e18d7ea89147d2d20642411fdff8bebfe"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -541,14 +541,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E7%B1%BB%E4%BC%BC%E7%9A%84%E6%81%8B%E7%88%B1%E8%A7%82/"
-                                   title="修身-071 (已加密)"
+                                   href="/2026/03/03/%E8%A7%81%E5%AE%B6%E9%95%BF/"
+                                   title="修身-072 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-071 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-072 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -558,7 +558,7 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E8%BF%BD%E6%98%9F/"
+                                   href="/2026/03/03/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%A7%86%E9%A2%91%E6%80%BB%E7%BB%93%E3%80%82%E5%BE%88%E6%9D%82%EF%BC%8C%E4%BD%86%E6%98%AF%E5%A4%A7%E9%83%A8%E5%88%86%E6%88%91%E9%83%BD%E8%AE%A4%E5%90%8C%E3%80%82/"
                                    title="修身-077 (已加密)"
                                 >
                                     <span class="title flex-center">
@@ -713,7 +713,6 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -1067,6 +1066,28 @@
     list-max-height="500px"
     lrc-type="0">
 </meting-js>
+
+    <meta name="post-section" content="修身">
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
 </body>
 
 </html>

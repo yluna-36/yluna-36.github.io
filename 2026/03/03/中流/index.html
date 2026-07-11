@@ -424,10 +424,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="c043667c79683147ed21412001bc480e42bb19c9accf045430d00afb986e9ea7"
-                             data-iv="dc3bf89dd2ba4188196cdd7a0cd69949"
-                             data-ep="0fb5bc3991d3f511f807e59491ce27a0"
-                             data-content="be5365c73db045f1735a08cbeabd6dc09533f98b851c48035fcf5a9a10d2016df24a67568742f31e98a2346859919561fed12752a90f249e16e425afb593eef7dbeb2452423fa1fc0d5bf810e22f2db067b23ba02250ebb9d61baf3b78e1bcb0315bd8b3d208f842583ba21a76d741885a8f87b1e04628d1b1a285eed6e6582d"
+                             data-secret="d129a93db0e45c2b1f9f73a39b1382c3a005f755a119df92cfa57fccf2b890fd"
+                             data-iv="5e348656154563054ca9b990db9a9c3e"
+                             data-ep="b05b29655163157a148bec5601f22020"
+                             data-content="a92ca72b8ee361b4fc58ab83aed0fde11e0b4eed7f3db1533cde64fd35088362a29951cc760fe4e8b3e32e4258a229a6c8b0021c27677070f6f12ef4e97572225e0fc6217f488b50e5e5fd8d2473e45d23537bbdbdc292647b357e823c7fd7847f308dba5b3481888057508019eeb5baad81a400638d0d88fee4acf3699df73e"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -541,14 +541,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E4%B8%BB%E4%B9%89/"
-                                   title="修身-007 (已加密)"
+                                   href="/2026/03/03/%E4%B8%AD%E5%9B%BD%E5%BC%8F%E5%AE%B6%E5%BA%AD%EF%BC%9A%E6%B2%A1%E6%9C%89%E6%80%9D%E6%83%B3%E4%BA%A4%E6%B5%81/"
+                                   title="齐家-005 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-007 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">齐家-005 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -558,11 +558,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E4%B8%BB%E5%8A%A8%E5%85%B3%E7%B3%BB/"
-                                   title="修身-008 (已加密)"
+                                   href="/2026/03/03/%E4%B8%BB%E4%B9%89/"
+                                   title="修身-007 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-008 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-007 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -713,7 +713,6 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -1067,6 +1066,28 @@
     list-max-height="500px"
     lrc-type="0">
 </meting-js>
+
+    <meta name="post-section" content="立业">
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
 </body>
 
 </html>

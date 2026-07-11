@@ -424,10 +424,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="e688339bf3fc4507197ab53bf6a973be39aa943ccc23ce7a66b3eb7f078d41b0"
-                             data-iv="7435e79ad27edd48eef686585235837a"
-                             data-ep="6a7d54a8c3b7869a8b4fe6ea0d464f15"
-                             data-content="0f2cf937822b1ad7ed963903ff7498f46d5a468f029759403f333628006716708b87812adc1d39a5af891f986f914980e69f03f04c55ba1fba3a5157645d07d19155e8f061c42882154258cb624fc2d59f9a0614676a760310349469de588ac54a830587567a61fec4687a36a67e21fce8835bda7cc717e1853efcad87d27287059538e8af622271b505e2e352643815269e4904ecaeb9e4933ae7c6873bdf65abde17c051a62a1f1c99362a5d329ad4c9230aaf123e1c7c67114596a4cb194dbb13fdfc370dd2c99a2ac47db8e2a1958d2b2165248f6266d6ce799e71036944"
+                             data-secret="858859afd63f6e6a58d90399c2591dc561b0a842fd0aa62c153eff1696f55c20"
+                             data-iv="af7d6d7e815f09d7a860c460f5e1e739"
+                             data-ep="5ed7d044a84ca05f83f54c2db804d274"
+                             data-content="dd7fd8879cefafb174271e66ab85cdac56fb02bb7335510454e70b27acfee82c1389b98cddcf4bba51fcc7bc9b3a6576cbcb6f0050db0cb74ac2e1104bd4386859885c174c26a29fae2eb66f2fb90f5762cf967bcc8da1f9235637c982a3ff8a5c808a63a62f531aa1e22ef8277fc12687c3402377ad7b40e5f823f861c290a7d3525645a22e6d0493dee429434953970948b941d88629891d39e3590cc8da817d35e1f45b84d2741022f4464c71b9061fcabc6c7d8465dd86c1c6a8a8a47407c783a3efffa90229b7b0dbb60729496421c525093946605931f02d4b2734bbf1"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -541,7 +541,7 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E6%9A%97%E6%81%8B/"
+                                   href="/2026/03/03/%E6%9A%A7%E6%98%A7%E4%B8%8E%E6%81%8B%E7%88%B1/"
                                    title="修身-053 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
@@ -558,7 +558,7 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E7%88%B1%E6%83%85%E8%A7%82%20%E6%81%8B%E7%88%B1%E8%A7%82/"
+                                   href="/2026/03/03/%E6%9C%8B%E5%8F%8B/"
                                    title="修身-055 (已加密)"
                                 >
                                     <span class="title flex-center">
@@ -713,7 +713,6 @@
     
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
         
-        &nbsp;<a href="/ghost/"><i class="fa-solid fa-lock" style="cursor: pointer; opacity: 0.5; margin-left: 5px; color: inherit;" title="Ghost Base"></i></a>
     </div>
 
     <div class="theme-info info-item">
@@ -1067,6 +1066,28 @@
     list-max-height="500px"
     lrc-type="0">
 </meting-js>
+
+    <meta name="post-section" content="修身">
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
 </body>
 
 </html>
