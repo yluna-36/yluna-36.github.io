@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="56b5e8090016a5d0e7e84c0e82beb2cbbd91dfe6fa5a302bca694f24501cefb9"
-                             data-iv="4466b5f5cbd0e94138c4b755bd249cdf"
-                             data-ep="cf66db7a46023c45faccedb0f5eaf37d"
-                             data-content="1f4b3080e57284b577c519aafc9fdd673605cac88553f8e51dfbfaa7435b75a246d9fdd83838b2f6815132e8dd75aae9c25c32a0a77452470fb02614485c51e5d853d186abe5a904a7ecb7c4d66f002274101bd6f00d73d6b82728daa64ebe6f10bb0dd57b9e6e87cd0e590ed318913f2d13e99da96282d2db7bfa89562f2adc92c2de0df1899f028a0379c64b09d98401771028acf984d178fc17ecfab18ad982ee4289b6476cdaaa4772b802c58e0d13f5d389138b3ff59ddec941a04396e770f6f45e75da92ac84945a01e7fff470b274c8ae59ac976815c1f117b355dc2716a95dc678339e97c225961dbc343e709896065a89fa18504a321e71f5e925ee20531e6f50d723fec2f4fe80cb784c835fe8b218d8dcdc080bc68abf9d6c9408609ee9c7110109f58318e556b90e466af9d9897f81f7b77e31d9e7221a518e1c93b2f0156fdee4a3abd037119cc6ada442a190307c2ecd791b07cae1d5681a6e"
+                             data-secret="eef44bc0ceb9b9ab379dc8a639306af15965f96d01c7eb347fa7ff4e3bb5084c"
+                             data-iv="61ce809147a515efdb6bf5146c7e9a7c"
+                             data-ep="670472dd501601c57da78c9d86910c6e"
+                             data-content="d8f91b164d2c7ebfeae79281299a5954cbe2d2250e61faa0804bc7fc2182e653df6a6977295cd9fb786f054c2f50de62860a481f722e2dfc067123ac8616abc540b59dd92eed5c8e33d47fdb28349fc903cdda253ede7fa327d2acffc6e653818d9bd3dc438d50d4b0a415a45218203d97948c72965036b93fb95ffc38ba0aad808c0c2494e3614851789aab4de6b9898e4f47c11bbaf3f2ba343487ae3152a6a04631e6dd6c7e580de80628fddbbeddb5f01f156793b5ed9cdee5cccc513f500628e1578139069f35d5d6a613c3b75c1a92c43d348cd8dd7ae85abfdb15d1a945bc7c56f1a51477313aa336052dac9a671911e7c667a142972836d6472074717054a3478d011cd1d36dd5622113958d70956f958a28d058c72aae18e83d6faccac7748358fe53d5fa8c9914f518b827924a3f76bc627adf5a41f8142948db97f4b67f999c5afb9cee20921407fa944706136d0534e5cce12fa1ead7c85f7e21"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -580,11 +580,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E7%BB%BC%E5%90%88%E7%9A%84%E8%A7%86%E9%A2%91/"
-                                   title="修身-074 (已加密)"
+                                   href="/2026/03/03/%E7%B3%96%E6%9E%9C%E6%9E%9C/"
+                                   title="修身-073 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-074 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-073 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -772,114 +772,39 @@
     <!-- post tools -->
     
         <div class="post-tools left-toc">
-            $li-margin-bottom = 0.8rem
-$post-tool-button-width = 2.5rem
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+            <li class="status-item flex-center post-lock border-box"
+                data-tooltip-content="Re-encryption"
+            >
+                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-lock-open"></i>
+            </li>
+        
 
-.post-tools-container {
-  padding-top var(--component-gap)
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-  .post-tools-list {
-    li {
-      margin-bottom $li-margin-bottom
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
 
-      &:last-child {
-        margin-bottom 0
-      }
-    }
-
-
-    li.tools-item {
-      position relative
-      box-sizing border-box
-      width $post-tool-button-width
-      height $post-tool-button-width
-      color var(--text-color-3)
-      font-size 1.2rem
-      background var(--background-color-1)
-      border-radius 50%
-      box-shadow 2px 2px 5px var(--shadow-color)
-      cursor pointer
-
-      &:hover {
-        box-shadow 2px 2px 8px var(--shadow-hover-color)
-      }
-
-      i {
-        color var(--text-color-3)
-      }
-
-
-      &:hover {
-        color var(--background-color-1)
-        background var(--primary-color)
-
-        i {
-          color var(--background-color-1) !important
-        }
-      }
-
-
-      &.toggle-show-toc {
-        display none
-      }
-
-
-      &.go-to-comments {
-        .post-comments-count {
-          position absolute
-          top 0
-          right -1rem
-          display none
-          align-items center
-          justify-content center
-          box-sizing border-box
-          min-width 1.1rem
-          height 1.1rem
-          padding 0 0.2rem
-          color var(--badge-color)
-          font-size 12px
-          background var(--badge-background-color)
-          border-radius 0.4rem
-
-          +keep-tablet() {
-            display none !important
-          }
-        }
-      }
-    }
-
-
-    li.status-item {
-      width $post-tool-button-width
-      height $post-tool-button-width
-      color var(--text-color-3)
-      font-size 1.6rem
-      cursor pointer
-
-
-      &.post-lock {
-        cursor default
-
-        .fa-lock-open {
-          display none
-          color var(--keep-success-color)
-        }
-
-        &.decrypt {
-          cursor pointer
-
-          .fa-lock-open {
-            display block
-          }
-
-          .fa-lock {
-            display none
-          }
-        }
-      }
-    }
-  }
-}
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
 
         </div>
     

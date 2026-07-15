@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="f5e6e8c753d7f76e1c93db909a08c58171512e54682c338edb427270fcd334f8"
-                             data-iv="a1af2af286fe7e6863f774ea48624d15"
-                             data-ep="e14cef1ce821fcb9ed43adcaf4a9b44c"
-                             data-content="0b2479383b140b49d5b3cc8731b30577739ecf2ba4305dc6578cbc948920dc2bc7e7abfb657584e0d7487b4868f7dc2a621da1662eb6032b3a127cf92fd00c8400e51ab9f05d11f045adc46f3385ea38235f981604c098f8578e04b9a2163b578c697af30d173bf4574fbf99991e9706b86bb917943b72ff4faece11599420ad254f1e822126fc161407f4bca3d91ab7bed94731a941aea5c896921fe183f47edeaf18f7bf99afbc9ddf84c4ebf86942b904237b3ebd55394d3d215530f740e37a9f5f23008fd7cf3a2ad28fa703780a8e0a265859fffba644bcc0536953a0dd8d194b9a78455a6ff2c8b8e6cd5a5133"
+                             data-secret="ba6a98d9a3b8232898fcbc2020938aa8bb88e50852a50a881bef41d0e03d54a3"
+                             data-iv="a063de5144de71b15eaa18cec17bf79a"
+                             data-ep="4d5f9df04e606dd472d5acd5a5dc0dd1"
+                             data-content="2d9cf82c696ab65b63bb8ab29341f709cbed737ae90226368b033c7bb641394319e5032c00b469ab863f09640153a119493f573c94c6d1b8cbbcd4ad54124f81ae76418a7cdd81e5e5a23f5f5b18c711e154eb37c46711b4db4c6879e8c2d1b3194419092592c04da7ac2f90ec687609a09115516c0f2afdd804b78141eae261bf11c04db91bb3a597f06dd31a3b1da5ec06e72c0c145bbf78d4bdf2a35efd15468449e8f999e0fe2452a81d756d6f02adff8e2bec0eacb11001a400affa0318a27ba90a6cd1003cab28a368e37465b03d6deeafdcfb2e36e2237580811f817d8911a4645c2b7ff78be98bbfaaf1db01"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -580,11 +580,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E8%A7%82%E6%B5%8B/"
-                                   title="修身-066 (已加密)"
+                                   href="/2026/03/03/%E8%80%81%E5%AE%B6/"
+                                   title="齐家-010 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-066 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">齐家-010 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -772,114 +772,39 @@
     <!-- post tools -->
     
         <div class="post-tools left-toc">
-            $li-margin-bottom = 0.8rem
-$post-tool-button-width = 2.5rem
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+            <li class="status-item flex-center post-lock border-box"
+                data-tooltip-content="Re-encryption"
+            >
+                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-lock-open"></i>
+            </li>
+        
 
-.post-tools-container {
-  padding-top var(--component-gap)
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-  .post-tools-list {
-    li {
-      margin-bottom $li-margin-bottom
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
 
-      &:last-child {
-        margin-bottom 0
-      }
-    }
-
-
-    li.tools-item {
-      position relative
-      box-sizing border-box
-      width $post-tool-button-width
-      height $post-tool-button-width
-      color var(--text-color-3)
-      font-size 1.2rem
-      background var(--background-color-1)
-      border-radius 50%
-      box-shadow 2px 2px 5px var(--shadow-color)
-      cursor pointer
-
-      &:hover {
-        box-shadow 2px 2px 8px var(--shadow-hover-color)
-      }
-
-      i {
-        color var(--text-color-3)
-      }
-
-
-      &:hover {
-        color var(--background-color-1)
-        background var(--primary-color)
-
-        i {
-          color var(--background-color-1) !important
-        }
-      }
-
-
-      &.toggle-show-toc {
-        display none
-      }
-
-
-      &.go-to-comments {
-        .post-comments-count {
-          position absolute
-          top 0
-          right -1rem
-          display none
-          align-items center
-          justify-content center
-          box-sizing border-box
-          min-width 1.1rem
-          height 1.1rem
-          padding 0 0.2rem
-          color var(--badge-color)
-          font-size 12px
-          background var(--badge-background-color)
-          border-radius 0.4rem
-
-          +keep-tablet() {
-            display none !important
-          }
-        }
-      }
-    }
-
-
-    li.status-item {
-      width $post-tool-button-width
-      height $post-tool-button-width
-      color var(--text-color-3)
-      font-size 1.6rem
-      cursor pointer
-
-
-      &.post-lock {
-        cursor default
-
-        .fa-lock-open {
-          display none
-          color var(--keep-success-color)
-        }
-
-        &.decrypt {
-          cursor pointer
-
-          .fa-lock-open {
-            display block
-          }
-
-          .fa-lock {
-            display none
-          }
-        }
-      }
-    }
-  }
-}
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
 
         </div>
     
