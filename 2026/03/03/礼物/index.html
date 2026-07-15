@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="e40d92dfe84095792e1ff58964f3b68ac48a38dc70661bfdb75e86358606362b"
-                             data-iv="45a85383db4058ea49b6aeeaa688f87b"
-                             data-ep="25df5694490db9e2c69f3acad69ce78a"
-                             data-content="88f2aed00736c6e9093ad004bdd44872bc1deca22ab425a83de4480d1814ff17725f3acd62aefa3a5245f6050b9aacbc630e47febbc9749fe5609b2bfd46b7621ea23af689eba01169621ad538e46ce0b74b575a10f1c359c5911db0b376e5907b43cca5fa54e825a9d88e6096f3680b87e9318449df5de335072a1a1b8043e61393b5b1db80602898ae0499257e287c153696ef8146b81c11d965125bf6580cad86d3d4e8f7c02c189aebfee594da9df3598e956dc629af319d67fa6b2b17ff8e4653db03e7656cd263866018ef4fef0c37f6cadfdd44959b82804f6c0e0e09a4d96974b200511a8b2ccca4c98426c482f848ac8a9994edea6d4d9357b449232bcd7e797c208ccd485189640e8b8035947ba1347f75bfd5f867a6bd5e1e019c2bc7d86c5b9d0932d10157e6eb1dc18ea9fa2d19dedc46c94bd555145b3156eaec75767616267f24cd68b68d137dcdc5a5b45304835996dfb43fb9c4e548e25fc44bc87ff4d13c96f622187939130496bd4b852959534990986802e9fae24c140710f2c702470c98e2e6419c3144985355fdfa29abd27573f36afa04dba26ccb649d078cff11140724c7df19ace36576a3c4bae8e74ae30ce63e462bca71949445df02430cb7cc6ef61404e1742933e38966b6b2bd5cb1d261d57e64b2c6fcba52c60e379acd8557e398d00eb09b9012bff4334f1089033c6219c8465c921273d30a99ba7a8b403a2e0f7b29c2a1eb4f095df82fbf508c6aac273767b8560be0"
+                             data-secret="911e9289183806d4973c39a58fa80e9aa1068ea01294602edb0d911e10c62d06"
+                             data-iv="409995e0420a932baa7ca940e31d7447"
+                             data-ep="a43eb75af251e11020fddac13dfc01e4"
+                             data-content="5cf6b886adac8ca07a5a0064a368025b1f0540406cbb40cc39f677074118184586ea498c0ffaf539001aff5aa5da9649e59c0d88223ee57286ce961f31056c9a94132a7a162ab4ee30ef437069495d24d3b294b3bd726c0ee967e237e6bbd56c9c0240abd8eccf8afd879fb1b420af2423744084d9757f63adf8fd0295b6ee962fdd5b872c622feb57d8faf664d84c0ca62925a011d18647d182440942b7d7b81c2d94cc988e9edf6a35b6aaff5a6dea5a24d5e6addd7d8b7ce7c14ccb59a981f640cf586e0e9a6c34296a65a3d8a1614053ca42ec18f7729646656cece031cf110751cc4adcc771691ebedbf509d527484c47ddd90372f72ab6f70be995ac93dfa9f5e54800949e9528bce828278aacc36ebd97b421902a41131ab68f6a30d64616fd9573b717f4c65a8a527676ad9a8374c9c34ac45def825f9f6d0dbb140471b8f573dde2121e1030bbf1a9e7d5bf30e27562246abc74df701a5821e821f53900497bd806621e3a9694dca4a5e6e912732f60255f6724d5e5f47171119ce41d353adf6b67ad9989c628c941d2842542995cbca81d5434c3ef07b7affe5dee7452d477ff01bbeba2ebb5734ecac033686b2094e53a9bbe9cd6d05a28a6458cdf022e1f73517c9431b8dc783aea9380e1de6a571fcd31fdf1917f98ba0bf4bfddebe93ae3c807121e44da7eb3f06af1099619233087e36cd8d8614065942951b37ed92101e632fbfcb545e4562ead487280e643db90271be95ccb7e2a2c1482"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -772,39 +772,114 @@
     <!-- post tools -->
     
         <div class="post-tools left-toc">
-            <div class="post-tools-container border-box">
-    <ul class="post-tools-list border-box">
-        <!-- PC encrypt again -->
-        
-            <li class="status-item flex-center post-lock border-box"
-                data-tooltip-content="Re-encryption"
-            >
-                <i class="fa-solid fa-lock"></i>
-                <i class="fa-solid fa-lock-open"></i>
-            </li>
-        
+            $li-margin-bottom = 0.8rem
+$post-tool-button-width = 2.5rem
 
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
+.post-tools-container {
+  padding-top var(--component-gap)
 
-        <!-- PC go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
+  .post-tools-list {
+    li {
+      margin-bottom $li-margin-bottom
 
-        <!-- PC full screen -->
-        <li class="tools-item flex-center full-screen">
-            <i class="fa-solid fa-expand"></i>
-        </li>
-    </ul>
-</div>
+      &:last-child {
+        margin-bottom 0
+      }
+    }
+
+
+    li.tools-item {
+      position relative
+      box-sizing border-box
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.2rem
+      background var(--background-color-1)
+      border-radius 50%
+      box-shadow 2px 2px 5px var(--shadow-color)
+      cursor pointer
+
+      &:hover {
+        box-shadow 2px 2px 8px var(--shadow-hover-color)
+      }
+
+      i {
+        color var(--text-color-3)
+      }
+
+
+      &:hover {
+        color var(--background-color-1)
+        background var(--primary-color)
+
+        i {
+          color var(--background-color-1) !important
+        }
+      }
+
+
+      &.toggle-show-toc {
+        display none
+      }
+
+
+      &.go-to-comments {
+        .post-comments-count {
+          position absolute
+          top 0
+          right -1rem
+          display none
+          align-items center
+          justify-content center
+          box-sizing border-box
+          min-width 1.1rem
+          height 1.1rem
+          padding 0 0.2rem
+          color var(--badge-color)
+          font-size 12px
+          background var(--badge-background-color)
+          border-radius 0.4rem
+
+          +keep-tablet() {
+            display none !important
+          }
+        }
+      }
+    }
+
+
+    li.status-item {
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.6rem
+      cursor pointer
+
+
+      &.post-lock {
+        cursor default
+
+        .fa-lock-open {
+          display none
+          color var(--keep-success-color)
+        }
+
+        &.decrypt {
+          cursor pointer
+
+          .fa-lock-open {
+            display block
+          }
+
+          .fa-lock {
+            display none
+          }
+        }
+      }
+    }
+  }
+}
 
         </div>
     
