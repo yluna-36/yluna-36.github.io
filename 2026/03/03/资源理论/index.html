@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="349ffa5d30901450d8fb79f19f289f252c35da197ccc8a5515647c91658590b1"
-                             data-iv="0596c6ed5c79c407b9903b623084390f"
-                             data-ep="00ad993c0fc14cce5977caf7a083fef5"
-                             data-content="3a559fc69b4125579a4b6ad5158ec155ab5462e55287c3c27027d4ee5ba4a3908590ae6c0cf28177784915174fb3101278fc44594b213c1bb24ec1bfbf63b42c1ce6613022a9a4a56380dd95d76d1b65b8c01bb3e2b4c98ca49a934e0f478a27c705a5edb2f9eeea8c8cb296349b4cc18388293d49877a4b010a829b418181cb98301772536ca2780cf3768c7cb825c66e81531ee6384c8c7d6802ec30e3968444ba6fea9f9541508679b915276b343a62a21792990bece44e1d313647604a1db9e879689ae68b1fabf626c49e20f4782c3f0a86b6554929536fdc38ff94d20595d2fd07c1d9ec0d77fa9c8a59596b0cb13338bd05db632bf72d3d92feb0e2df32d63836389d96a7e5301e704fbbf2fc"
+                             data-secret="f2a6773fbfa9026aca1a0c74700b3e038fdde2036a265c988190c492be9e9594"
+                             data-iv="d5a80915f1f3eb08774670be4e18b9bd"
+                             data-ep="2f3b3c639edecc2b1175e2c3384b1aa9"
+                             data-content="3184bfca62773d1122d0df3d98a9854f13cb4830b82f094de3411c9258cb3bf8310eb3d24a3384e11782dc679eae75ffb59a25a69083cab1cdfa90d636289a0242bcc4a1cb316d5dd8c4b66a4e3a88b84ad874c2e0750bb46d7e34ed6ab5c6c459425a6b4d838138f75007b56a0dea1c2b9d8c2bce16e13578da6157963aa4c4ce04027209cf25aa5cf44e5d8f50455f12a4f4cd776aea22d0a60e66908f50af60cee0b14874fd458b7be35d7808a1687a997e246f89f2ba5e465fa9e66ca105926fec9e468253773f407f98a25b10c0c14a7c0b3db2a10fd4d8c3dea62fb4d7fd18a481294c9acbdd0ceec7a13d0e4537bafad4e44b1dc84d7240ff0260f702315e8be6a1aab53280a95b6690546282"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -580,11 +580,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E8%BF%BD%E6%98%9F/"
-                                   title="修身-079 (已加密)"
+                                   href="/2026/03/03/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%A7%86%E9%A2%91%E6%80%BB%E7%BB%93%E3%80%82%E5%BE%88%E6%9D%82%EF%BC%8C%E4%BD%86%E6%98%AF%E5%A4%A7%E9%83%A8%E5%88%86%E6%88%91%E9%83%BD%E8%AE%A4%E5%90%8C%E3%80%82/"
+                                   title="修身-078 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-079 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-078 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -772,39 +772,114 @@
     <!-- post tools -->
     
         <div class="post-tools left-toc">
-            <div class="post-tools-container border-box">
-    <ul class="post-tools-list border-box">
-        <!-- PC encrypt again -->
-        
-            <li class="status-item flex-center post-lock border-box"
-                data-tooltip-content="Re-encryption"
-            >
-                <i class="fa-solid fa-lock"></i>
-                <i class="fa-solid fa-lock-open"></i>
-            </li>
-        
+            $li-margin-bottom = 0.8rem
+$post-tool-button-width = 2.5rem
 
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
+.post-tools-container {
+  padding-top var(--component-gap)
 
-        <!-- PC go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
+  .post-tools-list {
+    li {
+      margin-bottom $li-margin-bottom
 
-        <!-- PC full screen -->
-        <li class="tools-item flex-center full-screen">
-            <i class="fa-solid fa-expand"></i>
-        </li>
-    </ul>
-</div>
+      &:last-child {
+        margin-bottom 0
+      }
+    }
+
+
+    li.tools-item {
+      position relative
+      box-sizing border-box
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.2rem
+      background var(--background-color-1)
+      border-radius 50%
+      box-shadow 2px 2px 5px var(--shadow-color)
+      cursor pointer
+
+      &:hover {
+        box-shadow 2px 2px 8px var(--shadow-hover-color)
+      }
+
+      i {
+        color var(--text-color-3)
+      }
+
+
+      &:hover {
+        color var(--background-color-1)
+        background var(--primary-color)
+
+        i {
+          color var(--background-color-1) !important
+        }
+      }
+
+
+      &.toggle-show-toc {
+        display none
+      }
+
+
+      &.go-to-comments {
+        .post-comments-count {
+          position absolute
+          top 0
+          right -1rem
+          display none
+          align-items center
+          justify-content center
+          box-sizing border-box
+          min-width 1.1rem
+          height 1.1rem
+          padding 0 0.2rem
+          color var(--badge-color)
+          font-size 12px
+          background var(--badge-background-color)
+          border-radius 0.4rem
+
+          +keep-tablet() {
+            display none !important
+          }
+        }
+      }
+    }
+
+
+    li.status-item {
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.6rem
+      cursor pointer
+
+
+      &.post-lock {
+        cursor default
+
+        .fa-lock-open {
+          display none
+          color var(--keep-success-color)
+        }
+
+        &.decrypt {
+          cursor pointer
+
+          .fa-lock-open {
+            display block
+          }
+
+          .fa-lock {
+            display none
+          }
+        }
+      }
+    }
+  }
+}
 
         </div>
     

@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="4b8482a0898112ca48e3752921437fb0b482d5e5fba8c0d8c5e2c163d28189de"
-                             data-iv="9293002f2f770272e3b2bb85a1f85292"
-                             data-ep="04fd0eebfb138cb9e29eb3b403db3cd1"
-                             data-content="ba2c6d4610151a59e5b5bde8974127f7fde7d21b9416d070b189ab402cc40360d7a697cbfb3e2397264c92416c64faae83fb3839cf5ea92cd2189ce8ce3c5ab66f1db981573e88349f741da2559b053d107c72ed17c7a111d0cd0c3ea1810996eb508f2f3c740f16472bc531349200e67d8465feb40979f803921249be68472bb8109ccfe0021d5d0016a55357378dc8208067e3ad519314a73622f75bab79bb161b3e0a5fc0ba235acc7ea16f129fc388a43264a04c55141ac8702a284243aa6ea1b2987ca5c9181a972df41fd8668805abfd7750e0214d138c72bf2b9351dec8fd817bfd44aceae73e580d6b713ba5617e93f6be29c60af155dc7ce848f436ca53533891666fee88253291af4ac36fa266eba7cf16a806ae9b639fcb1ebeda57fccd10f0ea49b29943a992ec9ad0e1707f6305a25dcc821f96b52e382507bf9da96e5e08406f9b53c0b0df5f88f7b19f27d3e213f50296525984e28f38448adad4b0cc38cda9398ac7e1486680524b882e9eb29aa364beecaee623e28b0406e1d3b9cec31ef6b9512f57072b961afc465d8aefc97ac2d64bb8145fec0f315e"
+                             data-secret="5f4c1126e79a1a1e01737f2278423dd7b9fc17d26ef0441245aef8c1e4b2e01d"
+                             data-iv="41c147a0e6960460adaa6cd211b3c0a8"
+                             data-ep="fbf0f8c95237205823fb76fe7f7f0ae1"
+                             data-content="453bf93a1e7b5899c6285a628008b48815ad7b021e79159754765f4c600298cc1b902d83e20077fdb530e166600e33b243cc30b460d2ed534576937d34c956d446882af2b43a23364a918339291fd8834b49e988f3099367e2a4792fc3a5e4b5cb3879ae3faae334b3e3be8c519b2a1c3b8f26d0a7c3ba9a5e79ac7a327edcccbd7bc6115d12fafebef23e057841a77959c1c919f7e6a8ccdb26bc7ccb0416a1240d61cdc56f769f0b0d6c21050a8167b62df04272cf4e9a346a233bc76b181062e608e2e1a6ac622000f7fa0cc672c5d57ec1cc9a5e4e4e9f8da71c1639f93dc80c5a65a7415c61e6149ce02944ac7006a628ed1113df1e936a854dbeb688997128c8c104aa2fffc16a611215d8ab5cb2fd6ac281302a4ca2f0a428419d260c281ec0116ab09a2f0c744fad313937064427cb7b187ffb1998e117644aee7a9c456ef0ad6b625bb4f08e2084f8128e9c1aa75a78dfa7d7617f966883ff55ca18b1ae9b39941209367fffb2744749e8af889a043f54abad1e0117b39f727091726fc68fb87133adc855430419ba48589f8ecf2ece63ef8da3d35a0c80e63f08e6"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -580,11 +580,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/E%E8%AE%B0%E5%BD%95/"
-                                   title="修身-001 (已加密)"
+                                   href="/2026/03/03/20250728/"
+                                   title="齐家-004 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-001 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">齐家-004 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -772,39 +772,114 @@
     <!-- post tools -->
     
         <div class="post-tools left-toc">
-            <div class="post-tools-container border-box">
-    <ul class="post-tools-list border-box">
-        <!-- PC encrypt again -->
-        
-            <li class="status-item flex-center post-lock border-box"
-                data-tooltip-content="Re-encryption"
-            >
-                <i class="fa-solid fa-lock"></i>
-                <i class="fa-solid fa-lock-open"></i>
-            </li>
-        
+            $li-margin-bottom = 0.8rem
+$post-tool-button-width = 2.5rem
 
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
+.post-tools-container {
+  padding-top var(--component-gap)
 
-        <!-- PC go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
+  .post-tools-list {
+    li {
+      margin-bottom $li-margin-bottom
 
-        <!-- PC full screen -->
-        <li class="tools-item flex-center full-screen">
-            <i class="fa-solid fa-expand"></i>
-        </li>
-    </ul>
-</div>
+      &:last-child {
+        margin-bottom 0
+      }
+    }
+
+
+    li.tools-item {
+      position relative
+      box-sizing border-box
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.2rem
+      background var(--background-color-1)
+      border-radius 50%
+      box-shadow 2px 2px 5px var(--shadow-color)
+      cursor pointer
+
+      &:hover {
+        box-shadow 2px 2px 8px var(--shadow-hover-color)
+      }
+
+      i {
+        color var(--text-color-3)
+      }
+
+
+      &:hover {
+        color var(--background-color-1)
+        background var(--primary-color)
+
+        i {
+          color var(--background-color-1) !important
+        }
+      }
+
+
+      &.toggle-show-toc {
+        display none
+      }
+
+
+      &.go-to-comments {
+        .post-comments-count {
+          position absolute
+          top 0
+          right -1rem
+          display none
+          align-items center
+          justify-content center
+          box-sizing border-box
+          min-width 1.1rem
+          height 1.1rem
+          padding 0 0.2rem
+          color var(--badge-color)
+          font-size 12px
+          background var(--badge-background-color)
+          border-radius 0.4rem
+
+          +keep-tablet() {
+            display none !important
+          }
+        }
+      }
+    }
+
+
+    li.status-item {
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.6rem
+      cursor pointer
+
+
+      &.post-lock {
+        cursor default
+
+        .fa-lock-open {
+          display none
+          color var(--keep-success-color)
+        }
+
+        &.decrypt {
+          cursor pointer
+
+          .fa-lock-open {
+            display block
+          }
+
+          .fa-lock {
+            display none
+          }
+        }
+      }
+    }
+  }
+}
 
         </div>
     

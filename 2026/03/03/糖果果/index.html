@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="cf8b19f493aae11a1f057d116cf5e03e252214b0019c8c19987bd1e5ae174df1"
-                             data-iv="ff1175691441a5520f33be94fda20a4f"
-                             data-ep="fcbcc05d0f3925bfc9f849be957ac863"
-                             data-content="52ed32bbee506a99dc0aa8d00e1f51b415dddf5740aa3109d2f3c14c8d27e86c2c4e3d7f9d9f94b50beb5900c5ea15386bc30c59fd7386adc38ae5fa3c97a8b057a5752241a3f29c2cd046cd2e3af3aae329e5793ac536befde94b7d80e26d85b42f87f0dd0478de1dd242fbc7cbfa58d8084ca816baf928a80497e98e08d1ceeca7f1dedf975665f1a4c6f79076ba05f9043b70559406ebf10909b3cffce5083f887b08cbbc7869215f5d9bf35b5767425a51ca865f014b4546143d6ba46504a268eab226eacf387e11d6b82907d459e4e15a6667b88ff7463cc2f5165bc8647282a086fd8299cbc737ae6761b852427e7120ba7c495fc408e4f1dc36c68ccdab90007bb4b9691db0a92e1014c73575feee4f0fe12a384d34116a3d753d91c374a9800480f5422a9d4011511e140f382d5d92aad2a76ab3706a97511e555766"
+                             data-secret="52c712cb7aab968a683664af4b067f8ebc12638159457d1c2dd58e417de0bcab"
+                             data-iv="782a08d16020d8fe00259deb631ecaa6"
+                             data-ep="5117ab6890e52da777a6441c8c1016db"
+                             data-content="2f395009ec69216059ae7becdc8a566e9a5efe80a5d6d5747c662c67310d8bb7d6bbe9ee3e6b69d360c7633eabb24856a27a08552e9445e366147cb77e049cba0e9522591f4be7127cbd001b815fa5070c6e903dd39c9658df867d8025bcd4b5f36b55496092b05ea8761a21597b421d523541e9fc6bf5d50a3d93db4d3e85c93b2c01b24b0908a7edf0a91160198909c1896d4c9788212f076269cebc00bdaf70afb0b8d911394afe0f924f21aea02c64b88358e96cff122ad454969855a2ac41cad06d722b1782959df3e10a14eb08fef1db443a1c856607a6c42ee8d4e59c019c36ea15823523b9e64d6400335b5ba06b6a152921c7e412fd30c179f1d470fb13196f3116fa59238de755857708429a9a6b0062ce79b91f418e640a26eb9dbf549f5987ccfa380b195f59651c32a750b82d15523209e4e1bb821dc14bc760"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -772,39 +772,114 @@
     <!-- post tools -->
     
         <div class="post-tools left-toc">
-            <div class="post-tools-container border-box">
-    <ul class="post-tools-list border-box">
-        <!-- PC encrypt again -->
-        
-            <li class="status-item flex-center post-lock border-box"
-                data-tooltip-content="Re-encryption"
-            >
-                <i class="fa-solid fa-lock"></i>
-                <i class="fa-solid fa-lock-open"></i>
-            </li>
-        
+            $li-margin-bottom = 0.8rem
+$post-tool-button-width = 2.5rem
 
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
+.post-tools-container {
+  padding-top var(--component-gap)
 
-        <!-- PC go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
+  .post-tools-list {
+    li {
+      margin-bottom $li-margin-bottom
 
-        <!-- PC full screen -->
-        <li class="tools-item flex-center full-screen">
-            <i class="fa-solid fa-expand"></i>
-        </li>
-    </ul>
-</div>
+      &:last-child {
+        margin-bottom 0
+      }
+    }
+
+
+    li.tools-item {
+      position relative
+      box-sizing border-box
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.2rem
+      background var(--background-color-1)
+      border-radius 50%
+      box-shadow 2px 2px 5px var(--shadow-color)
+      cursor pointer
+
+      &:hover {
+        box-shadow 2px 2px 8px var(--shadow-hover-color)
+      }
+
+      i {
+        color var(--text-color-3)
+      }
+
+
+      &:hover {
+        color var(--background-color-1)
+        background var(--primary-color)
+
+        i {
+          color var(--background-color-1) !important
+        }
+      }
+
+
+      &.toggle-show-toc {
+        display none
+      }
+
+
+      &.go-to-comments {
+        .post-comments-count {
+          position absolute
+          top 0
+          right -1rem
+          display none
+          align-items center
+          justify-content center
+          box-sizing border-box
+          min-width 1.1rem
+          height 1.1rem
+          padding 0 0.2rem
+          color var(--badge-color)
+          font-size 12px
+          background var(--badge-background-color)
+          border-radius 0.4rem
+
+          +keep-tablet() {
+            display none !important
+          }
+        }
+      }
+    }
+
+
+    li.status-item {
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.6rem
+      cursor pointer
+
+
+      &.post-lock {
+        cursor default
+
+        .fa-lock-open {
+          display none
+          color var(--keep-success-color)
+        }
+
+        &.decrypt {
+          cursor pointer
+
+          .fa-lock-open {
+            display block
+          }
+
+          .fa-lock {
+            display none
+          }
+        }
+      }
+    }
+  }
+}
 
         </div>
     

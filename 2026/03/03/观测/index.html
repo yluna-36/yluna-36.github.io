@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="360b32bab4e0a8ba9e03892829f7093c15d2098e79048a7e30bdeff68ae87e6c"
-                             data-iv="369dbcc7d216d34254b59e97f45dcbd1"
-                             data-ep="2cc7c3c16863155dc307f23d44adfed6"
-                             data-content="0a84c0b0e04ffab6d5127a8fc927bfdbf76135a3b423616f87d5ecbe196de2ba7e84edf820ebeae94f923584609752611b4902b60fbdcf4fba3ae8e41fa772514e554f5e53a67fa4445df37a2155a2f21f40187f7cd9553017d9c91a4b4cfff733d3676e8ea2c4c281e372eea80a4721f5c19708de3b12c692adb11eeb96058c6c7292899972a63bf9920dcfb5120b25b365224206ea9c43cca4895f48ac1bce"
+                             data-secret="1a2077fc419afacc5b6c879c14531ee69ad3cd6be69bfc5118ba59625239456d"
+                             data-iv="22a4758bab39cec4300551d7150765e9"
+                             data-ep="dbaec3c0085dec4a0c46c23cc5c94ff5"
+                             data-content="f7070d967c7e731e3ff1e969ae85f2a2c9bdff193431db6646c971dccdb80ab9213b3a405cdf36b4f76f8f2345f3a662b6bdeede84a268cd71f06fd27eae7af1d223e61845a37a44b941751590aa11da5e07eace1db82f8ecd3827198dd5f24617d63bea37a1c48b75c1479c58d3e292ec48c09974a863a03e97c70ee2b5a37be68b1cf5f53cda6743a12f0c4f4fa42a26322c9d9593892e804473456ae1fe34"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -563,14 +563,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E8%A2%AB%E6%97%B6%E4%BB%A3%E6%8A%9B%E5%BC%83%E7%9A%84%E4%B8%8A%E4%B8%80%E4%BB%A3%E4%BA%BA/"
-                                   title="立业-004 (已加密)"
+                                   href="/2026/03/03/%E8%8D%A3%E8%BE%B1/"
+                                   title="修身-065 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">立业-004 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-065 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -580,11 +580,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E8%A7%82%E5%AF%9F%20%E6%8E%A8%E7%90%86/"
-                                   title="格物-003 (已加密)"
+                                   href="/2026/03/03/%E8%AE%B0%E5%BD%95%E7%9A%84%E8%AE%B0%E5%BD%95/"
+                                   title="立业-005 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">格物-003 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">立业-005 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -772,39 +772,114 @@
     <!-- post tools -->
     
         <div class="post-tools left-toc">
-            <div class="post-tools-container border-box">
-    <ul class="post-tools-list border-box">
-        <!-- PC encrypt again -->
-        
-            <li class="status-item flex-center post-lock border-box"
-                data-tooltip-content="Re-encryption"
-            >
-                <i class="fa-solid fa-lock"></i>
-                <i class="fa-solid fa-lock-open"></i>
-            </li>
-        
+            $li-margin-bottom = 0.8rem
+$post-tool-button-width = 2.5rem
 
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
+.post-tools-container {
+  padding-top var(--component-gap)
 
-        <!-- PC go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
+  .post-tools-list {
+    li {
+      margin-bottom $li-margin-bottom
 
-        <!-- PC full screen -->
-        <li class="tools-item flex-center full-screen">
-            <i class="fa-solid fa-expand"></i>
-        </li>
-    </ul>
-</div>
+      &:last-child {
+        margin-bottom 0
+      }
+    }
+
+
+    li.tools-item {
+      position relative
+      box-sizing border-box
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.2rem
+      background var(--background-color-1)
+      border-radius 50%
+      box-shadow 2px 2px 5px var(--shadow-color)
+      cursor pointer
+
+      &:hover {
+        box-shadow 2px 2px 8px var(--shadow-hover-color)
+      }
+
+      i {
+        color var(--text-color-3)
+      }
+
+
+      &:hover {
+        color var(--background-color-1)
+        background var(--primary-color)
+
+        i {
+          color var(--background-color-1) !important
+        }
+      }
+
+
+      &.toggle-show-toc {
+        display none
+      }
+
+
+      &.go-to-comments {
+        .post-comments-count {
+          position absolute
+          top 0
+          right -1rem
+          display none
+          align-items center
+          justify-content center
+          box-sizing border-box
+          min-width 1.1rem
+          height 1.1rem
+          padding 0 0.2rem
+          color var(--badge-color)
+          font-size 12px
+          background var(--badge-background-color)
+          border-radius 0.4rem
+
+          +keep-tablet() {
+            display none !important
+          }
+        }
+      }
+    }
+
+
+    li.status-item {
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.6rem
+      cursor pointer
+
+
+      &.post-lock {
+        cursor default
+
+        .fa-lock-open {
+          display none
+          color var(--keep-success-color)
+        }
+
+        &.decrypt {
+          cursor pointer
+
+          .fa-lock-open {
+            display block
+          }
+
+          .fa-lock {
+            display none
+          }
+        }
+      }
+    }
+  }
+}
 
         </div>
     
