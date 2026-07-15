@@ -446,10 +446,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="85105682a1bb6da165502089efff07646201229dcf9d4f38088665671e813193"
-                             data-iv="0456a977e4cb147d2c155a8edf4abaaf"
-                             data-ep="9292df1ead70905ecc26510cdf3a4ecc"
-                             data-content="0ee5388a5efa5f474cb86479927bb3ede18c721535e530dd9006ba470cf261439c0ff552ba93f5239481794354a5d5fab23bbfc736c1d185b4eca72044b6c053c38d910fb22f0cb356bb5e19618020a0500c3a0bbf5e8c7dc464f5997ce7ab5678310546aeabe2e26896bb94c2eb547549d7bdd4d0a124c447aed68642cd961434755d3dd30703e00c1c8d1de0574d7cf07db4941ad5c2971faf6776e43d343611ea7501d543d9a7f0330c706963168c4827f0bba0c80b914e6a254d3b75b2546678dc1ca1536749249738aea5e976d9c9aea5fb7cbf3ce25b490eb2e10d0a64145a0fbeaf2cf75511cbca684ad7c8a191fa2ece79c80b9986a04ef778ab9e5f"
+                             data-secret="6376514cabc033a01d42b0b0022269e8ace23fd25feea82292cf2fa37074403e"
+                             data-iv="a1dcf92a885be2d926721d9c6e3ea458"
+                             data-ep="12e88104ab438bfed49bdcd556e8b24f"
+                             data-content="9de5c648f96dd1b99621ece4c07fe12de7dc1730b15517539ba8dc4d94655c56c861bfbd7655d6e9753ce8e326d3153f74eabc9b884d77ad26969eccd9385b0eb9aecdb9ee5d3c7c8a918a57e2ecf4e9e9ae07d810a8debd0f4f9b2c621fbdada41d6886463ff2a00da0662d3e0efdfd473016ec7d47405731f59c93cb24d12110e6951ce4047b5eeda25f862dbd3aa7e15841f3951d9b0c11798dbb4446c5bc3ed8047c8a84d375e5a34ed08f982f2c745d830fcf50f3792084938f81660c47b52d3b46b8efbc17f7eb458a7a6dfd12c2dd7eb512ad157c078ad11c7d9ad26d77aec6a48e45de8e106802c32cc62582c1573a3c2a87cd3bb217e3c8ea319da5"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -563,14 +563,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E4%B8%96%E7%95%8C%E8%A7%82/"
-                                   title="修身-004 (已加密)"
+                                   href="/2026/03/03/20250601/"
+                                   title="齐家-003 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-004 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">齐家-003 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -772,114 +772,39 @@
     <!-- post tools -->
     
         <div class="post-tools left-toc">
-            $li-margin-bottom = 0.8rem
-$post-tool-button-width = 2.5rem
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+            <li class="status-item flex-center post-lock border-box"
+                data-tooltip-content="Re-encryption"
+            >
+                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-lock-open"></i>
+            </li>
+        
 
-.post-tools-container {
-  padding-top var(--component-gap)
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-  .post-tools-list {
-    li {
-      margin-bottom $li-margin-bottom
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
 
-      &:last-child {
-        margin-bottom 0
-      }
-    }
-
-
-    li.tools-item {
-      position relative
-      box-sizing border-box
-      width $post-tool-button-width
-      height $post-tool-button-width
-      color var(--text-color-3)
-      font-size 1.2rem
-      background var(--background-color-1)
-      border-radius 50%
-      box-shadow 2px 2px 5px var(--shadow-color)
-      cursor pointer
-
-      &:hover {
-        box-shadow 2px 2px 8px var(--shadow-hover-color)
-      }
-
-      i {
-        color var(--text-color-3)
-      }
-
-
-      &:hover {
-        color var(--background-color-1)
-        background var(--primary-color)
-
-        i {
-          color var(--background-color-1) !important
-        }
-      }
-
-
-      &.toggle-show-toc {
-        display none
-      }
-
-
-      &.go-to-comments {
-        .post-comments-count {
-          position absolute
-          top 0
-          right -1rem
-          display none
-          align-items center
-          justify-content center
-          box-sizing border-box
-          min-width 1.1rem
-          height 1.1rem
-          padding 0 0.2rem
-          color var(--badge-color)
-          font-size 12px
-          background var(--badge-background-color)
-          border-radius 0.4rem
-
-          +keep-tablet() {
-            display none !important
-          }
-        }
-      }
-    }
-
-
-    li.status-item {
-      width $post-tool-button-width
-      height $post-tool-button-width
-      color var(--text-color-3)
-      font-size 1.6rem
-      cursor pointer
-
-
-      &.post-lock {
-        cursor default
-
-        .fa-lock-open {
-          display none
-          color var(--keep-success-color)
-        }
-
-        &.decrypt {
-          cursor pointer
-
-          .fa-lock-open {
-            display block
-          }
-
-          .fa-lock {
-            display none
-          }
-        }
-      }
-    }
-  }
-}
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
 
         </div>
     
