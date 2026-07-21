@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="22811ebe829a3f7a4d642f7fc2ad751cae31e87f37d1fc4e2e16bc98fc91ac0a"
-                             data-iv="e2f852126393af2fbfc0e2f0bd90dfde"
-                             data-ep="6f8bf1b059970b36c0ab312bc775fc55"
-                             data-content="7921f17a776b7441f6a0c4df27bfefa5b82b97aeebd8bb2868ca4795b7c853d33a0a49217f369bcb767fe1065a4984fffcd48c723ca239a6b568256df9198bffdd655d8d9bbd39774ed8716ab6dc6fb035b7e71785b60f75446f1d464157126ff8b612edb303b77e953eb2bf232489cf26414496ed7a206ecb1be334965b77f05f6d7a039af375369fbfe6828c1e4e01f4e2cb09c59b06eea630cc00740438001adc48d75def6911853a5966084d407b1a09754674efa1c8b80cc0e58186d836650296e78835fd63525abd4aef470e021011c6948a50425c099686caaec6884557db7442d6d9307d52decb210640453400603662bc3c60cef8517e7ae26d62074ae5ff18558a95817eee6e2e4d4c1738"
+                             data-secret="55adb302d8295e15aa9cd6510a68f98cca795729ff1ab902e044bee268191f6f"
+                             data-iv="bf755393affc76b59cecc508b3289526"
+                             data-ep="da7abcd608e0e9a6d34453e05317e410"
+                             data-content="1ae6681905820b4ac81bb6b4dc73d89f34862e960c1dd5365fa39c8ed1fdfb8c77b49137cc844d857419c3e5a3b0c00f00831d6c0219fb20de1833550fa622614b72f1166d6a138a687cfaf96cfe04cd425f6236a7c618554be4aaebe6865f32f242a7e243a732fa4ea5e34a2ee204025da4fe05e72760c2295a8d20f81c9aca867dcc582c6c5aace85e137cce61c38b163f8cd47ef0c02aff1447538c5ef1ce3f84819177899a1962c50bf7abe4f55baee3685dd545aead1cf24fc2875f9ec7f05acb28d3577d4cf92096d110f420f04c294d7249596b192b17f07e364d7cceef284dc375990b69ba9e21f4a0454ad6590a565476a668430ec0fed5441c649e51a821a2773506cf4f4b2d882307d54c"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -744,43 +744,108 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
-    
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
-        
-    </div>
+            .footer {
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  padding 1rem 0
+  color var(--text-color-4)
+  font-size 1rem
 
-    <div class="theme-info info-item">
-        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
+  a {
+    color var(--text-color-4)
 
-    
+    &:hover {
+      color var(--primary-color)
+    }
 
-    
-        <div class="count-info info-item">
-            
+    &.no-pointer {
+      pointer-events none
+    }
+  }
 
-            
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box">Unique Visitor</span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            
 
-            
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box">Page View</span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            
-        </div>
-    
+  .info-item {
+    position relative
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content center
+    box-sizing border-box
+    margin 0.2rem 0
+    color var(--text-color-4)
 
-    
-</footer>
+    &.count-info {
+      display flex
+
+      .count-item {
+        &.uv
+        &.pv {
+          display none
+        }
+      }
+    }
+
+
+    &.deploy-info {
+
+      display flex
+
+      a
+      .tooltip {
+        display flex
+        align-items center
+      }
+
+      img {
+        height 1.08rem
+        margin 0 0.4rem
+      }
+    }
+
+
+    &.count-info
+    &.record-info {
+
+      .count-item
+      .record-item {
+        margin-right 15px
+
+        &::before {
+          position absolute
+          top 50%
+          left -10px
+          box-sizing border-box
+          transform translateY(-56%)
+          content '|'
+        }
+
+
+        &:first-child {
+          &::before {
+            display none
+          }
+        }
+
+
+        &:last-child {
+          margin-right 0
+        }
+
+
+        .item-type {
+          margin-right 4px
+        }
+      }
+    }
+  }
+
+
+  .icon-animate {
+    animation heartbeat-animate 1.2s ease-in-out infinite
+  }
+}
 
         </div>
     </div>

@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="f6a72f4556fadc2688ca70a17424d03dd0115f7cce44fa7ca81d94b3777928ce"
-                             data-iv="130f52018a4549c3920999d0abcc505b"
-                             data-ep="74bc89cabdbf06faec3187e05942005f"
-                             data-content="2c59698692f13126326de03ebbfd245a23c63317e58c94302dcf703518f0631f8d496b3c06c0794753d130f3e2d7be875a61c974a8cd3534bb45ce1064004667fe2d69c9b0171c6da99f5c594be677ded51322c8a79c4415bd513845b6f7426ac395e2a705a1f2918be1e0014a86b6471be2311461fc89a70004261433c1ccef05469c9bf443157cbc79e9da659bfa17116619df9c0562046b89459cf9816ba60e36b63715f3643b8caebd2794d9c4b6cc5950330ef27fcfe81cd1b84686c4e042e27b4ec708b72fe4d76acffef8d58b"
+                             data-secret="754e85a1a9fa4d4c2db2b12b73c86bca2834a36511abd0e2c0bec92b5ac30941"
+                             data-iv="75e138254a088b464afd0b1e9a343a73"
+                             data-ep="a59e61212475e309e20f0e06e1a5aae8"
+                             data-content="30e1b8f6b9c6eee305c7e4b67e15ae3f40eb33c334501c8f6fcedc12c49417463e799a40e26034847a71ff0bee6c9adeb0d784350c948a8a7d3965838800389811235dd4277664a75dc34cd0c1f9d7efa218c985c0e6036fd03f0e7037b79cdd1b4108ec3decfa2dbaa87663994d2bb3022988b4336539163e6ae7d42491988032e4159a85c960f99f35f90e15b84d0812134ddad97a035d6afc8112fc41c46dda174463a75ef4efab1166accdbaea5d8b9fb233e4fb20a19e66276b5fd9c573540c020534dbe9eaa4568510e452f4c8"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -744,43 +744,108 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
-    
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
-        
-    </div>
+            .footer {
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  padding 1rem 0
+  color var(--text-color-4)
+  font-size 1rem
 
-    <div class="theme-info info-item">
-        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
+  a {
+    color var(--text-color-4)
 
-    
+    &:hover {
+      color var(--primary-color)
+    }
 
-    
-        <div class="count-info info-item">
-            
+    &.no-pointer {
+      pointer-events none
+    }
+  }
 
-            
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box">Unique Visitor</span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            
 
-            
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box">Page View</span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            
-        </div>
-    
+  .info-item {
+    position relative
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content center
+    box-sizing border-box
+    margin 0.2rem 0
+    color var(--text-color-4)
 
-    
-</footer>
+    &.count-info {
+      display flex
+
+      .count-item {
+        &.uv
+        &.pv {
+          display none
+        }
+      }
+    }
+
+
+    &.deploy-info {
+
+      display flex
+
+      a
+      .tooltip {
+        display flex
+        align-items center
+      }
+
+      img {
+        height 1.08rem
+        margin 0 0.4rem
+      }
+    }
+
+
+    &.count-info
+    &.record-info {
+
+      .count-item
+      .record-item {
+        margin-right 15px
+
+        &::before {
+          position absolute
+          top 50%
+          left -10px
+          box-sizing border-box
+          transform translateY(-56%)
+          content '|'
+        }
+
+
+        &:first-child {
+          &::before {
+            display none
+          }
+        }
+
+
+        &:last-child {
+          margin-right 0
+        }
+
+
+        .item-type {
+          margin-right 4px
+        }
+      }
+    }
+  }
+
+
+  .icon-animate {
+    animation heartbeat-animate 1.2s ease-in-out infinite
+  }
+}
 
         </div>
     </div>
