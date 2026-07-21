@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="41211f628e4a75db2328a75a3be1761dab5c1ed45ba764ec5818c1dcfbba0a02"
-                             data-iv="69ff8a98765a174f2e03292a3d2d9609"
-                             data-ep="d888883425e986982abd53cb06f2bdd7"
-                             data-content="56cbf9136b279c76ae035bdd0ebca0ef96ee693c8b5c43eeedf3b36a6fd5c1fe5b66517977176ee233b85c657278b475f37af3a084d3d333e44c6cac07dac7e003264900e8acd0671c79f188c128743ee65049d900459a67b9dbd38e6bb2e1442b34243382810a801add02a14499660e2ec34b0b4218158452a34e8ac674aa0c2dda1b4546b613e8394c177b2a7f5b810daa8b9e60c729ab3da9ff077f4ca7aa70deb012eabc81311613198946fa80762603fe5c70863ac6293382c6fa626d0109519471908afdba9fec1e1675993f2f3d9b2520ab5a98b3b140bea8f496183696063edff937f763c8297559404787f6cc12252a54fd498f054889a9ed939edb7516954caedb8b39fa01d630e5aff5dd5c6f2af7718676858fe20338965f8a4c9e7c02df41833a2c923bb8bcbaf42915"
+                             data-secret="3b117504c45ee9dc9fcc509e1e0eb4ef65476a6f567646e7c936af6daecdb2e4"
+                             data-iv="791602ead7f39bc53bd7419f671cc200"
+                             data-ep="f62b3180a63935622e64a561c5daabc9"
+                             data-content="3a31831ac3cf88d78b8f19f1aa09d18984ca093a7788a9de11e6b6e1eb1c60f293321b80cf7c352ae12bb1e547e172799265c72d2b237e3411f56131db5ed132ec15e83f26e3c86dfe6cf364246e51e900b86a4f87b332a4c4f8be0a2115a0fbee16f85d0b7b49dccc9b8f6b2c4c061d974328de123d641c0eefd088b5b5ec2ed8a207a56723912506ec1db95ce5da2ced66dfa4abc4e19c1967b1bab550a18839a022825fb3cf1f7189dc251cbfeaff3cfd39c1f113f7cb7c9df47e848f340613cc1c81850c4e4eded61820aecf9282265d0fe2fc991de8b456fa73e48d43d16fc8a847dfb55928487efaaa1139c2cbcaab8d0acf8f91ef34096b91dd18dde500e8d58a0f62ccf0e6bbb91c0c0fb86ad45410026bb36536831fdaa0fff064b9488677a810908d6843983b78befea53a"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -592,6 +592,22 @@
                                 </a>
                             </div>
                         
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/03/03/%E8%A7%84%E5%88%92%20%E8%AE%A1%E5%88%92/"
+                                   title="修身-067 (已加密)"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">修身-067 (已加密)</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
                         
                     </div>
                 
@@ -728,43 +744,108 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
-    
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
-        
-    </div>
+            .footer {
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  padding 1rem 0
+  color var(--text-color-4)
+  font-size 1rem
 
-    <div class="theme-info info-item">
-        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
+  a {
+    color var(--text-color-4)
 
-    
+    &:hover {
+      color var(--primary-color)
+    }
 
-    
-        <div class="count-info info-item">
-            
+    &.no-pointer {
+      pointer-events none
+    }
+  }
 
-            
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box">Unique Visitor</span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            
 
-            
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box">Page View</span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            
-        </div>
-    
+  .info-item {
+    position relative
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content center
+    box-sizing border-box
+    margin 0.2rem 0
+    color var(--text-color-4)
 
-    
-</footer>
+    &.count-info {
+      display flex
+
+      .count-item {
+        &.uv
+        &.pv {
+          display none
+        }
+      }
+    }
+
+
+    &.deploy-info {
+
+      display flex
+
+      a
+      .tooltip {
+        display flex
+        align-items center
+      }
+
+      img {
+        height 1.08rem
+        margin 0 0.4rem
+      }
+    }
+
+
+    &.count-info
+    &.record-info {
+
+      .count-item
+      .record-item {
+        margin-right 15px
+
+        &::before {
+          position absolute
+          top 50%
+          left -10px
+          box-sizing border-box
+          transform translateY(-56%)
+          content '|'
+        }
+
+
+        &:first-child {
+          &::before {
+            display none
+          }
+        }
+
+
+        &:last-child {
+          margin-right 0
+        }
+
+
+        .item-type {
+          margin-right 4px
+        }
+      }
+    }
+  }
+
+
+  .icon-animate {
+    animation heartbeat-animate 1.2s ease-in-out infinite
+  }
+}
 
         </div>
     </div>

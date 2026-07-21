@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="9b26dfc79c2747b14fb7ec3dd87a5a1857a65726087df3b49ad9e5fc9b12ee6d"
-                             data-iv="e1f0e7cdc1fd1db48a6316b71aa3aa44"
-                             data-ep="0afbc59c8e19578eaec2c89b1c378fa8"
-                             data-content="17205b93fea4088b0fdbcdb5e80a953f505122fed373d1f95a1ce01ffc0a47901eb6b6f659a141fd53cacb260de3b424b54b79776ac9a3ac96971bfaba0b081141c8a1cad1515bc5197a3b0d56045d7deb74f7315906db3a23c9841ebd7279c265ffd7836a90a341eb5417f220a4dac41135932b7dc4ed1e6026ecaf8a584d447e012b71271d626016f7f41d99a038e81603c1316bc00d6e17dbcf142e973036d4a5b75a618b8af358edba112bbcf36b2de34f7ebb4a8ffc99f87df00eb6779cebf3b7f713780fe2723744ffe04f580b21bc6c2656edf05c5daf5a9732f24590b9182c185061f31e767003fc9e0b674827778412c1121f783ead972a108e9c2658a526a72d3ec64aba7b964783498a58c398a0013fa92747241af9b8f3559229b86dcccccbad7ce722314decc9ef9fc8fa3bdbe4e1867a309e4fbec1622c1eae"
+                             data-secret="0da0c7aaca7941e5c1beadbff928b874499af9b848e88d015a5df354d0d9ac79"
+                             data-iv="b24120902acc99def072529585eb4873"
+                             data-ep="436340a084416b75247e1294e8d05c48"
+                             data-content="f8ab5459df59678615a0c3f800462824c7356df381d4094dd7e8ca6bac810f6474441de450ca0ccc2ed73923e97988143c0b5a5bf04594f4b9e151b726b8599ef4aef8555880e5fdab20dfe917b08cfeae56f7c51419b2a42f6a60ec3bfbbc6726cc2d252c624f61b38bd2e3960f404cc8983d8ead66d8ec2771fd7483bfac794d9e2764ad62f37add5c0add7ebf986813ca4d5087f876fde7c1dd7526cccf682f8f5f6c2456b88a159dcafa677f50460101f71ef32b2d1d65e502cdde950a3f0a1ddc23237c61a137a85661bb1459c59e55a514ea6d345f331607a32cae886e0839a26820e27377dceab44928d3fa8e9fd55bdc3ceca032d3a91ef69462ced9ac478b6d481ad843af89a715f91f8d08c9e83512d5ea7115b7c91fcde6bd3726b8bda9f2ab1f9386f98f057f1c7b418caaf03d5aa6693589e4fb72ca311943b2"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -579,14 +579,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E7%94%B5%E8%A7%A3%E8%B4%A8%E6%B0%B4%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"
-                                   title="格物-002 (已加密)"
+                                   href="/2026/03/03/%E5%AF%B9%E5%AF%B9%E5%AF%B9%20%E5%AF%B9%E5%90%97/"
+                                   title="修身-035 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">格物-002 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-035 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -744,43 +744,108 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
-    
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
-        
-    </div>
+            .footer {
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  padding 1rem 0
+  color var(--text-color-4)
+  font-size 1rem
 
-    <div class="theme-info info-item">
-        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
+  a {
+    color var(--text-color-4)
 
-    
+    &:hover {
+      color var(--primary-color)
+    }
 
-    
-        <div class="count-info info-item">
-            
+    &.no-pointer {
+      pointer-events none
+    }
+  }
 
-            
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box">Unique Visitor</span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            
 
-            
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box">Page View</span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            
-        </div>
-    
+  .info-item {
+    position relative
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content center
+    box-sizing border-box
+    margin 0.2rem 0
+    color var(--text-color-4)
 
-    
-</footer>
+    &.count-info {
+      display flex
+
+      .count-item {
+        &.uv
+        &.pv {
+          display none
+        }
+      }
+    }
+
+
+    &.deploy-info {
+
+      display flex
+
+      a
+      .tooltip {
+        display flex
+        align-items center
+      }
+
+      img {
+        height 1.08rem
+        margin 0 0.4rem
+      }
+    }
+
+
+    &.count-info
+    &.record-info {
+
+      .count-item
+      .record-item {
+        margin-right 15px
+
+        &::before {
+          position absolute
+          top 50%
+          left -10px
+          box-sizing border-box
+          transform translateY(-56%)
+          content '|'
+        }
+
+
+        &:first-child {
+          &::before {
+            display none
+          }
+        }
+
+
+        &:last-child {
+          margin-right 0
+        }
+
+
+        .item-type {
+          margin-right 4px
+        }
+      }
+    }
+  }
+
+
+  .icon-animate {
+    animation heartbeat-animate 1.2s ease-in-out infinite
+  }
+}
 
         </div>
     </div>

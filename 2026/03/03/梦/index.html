@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="e0bcf2fb50fceffd50b36e6a8f52196154095fd7693b1643a89672325f12df84"
-                             data-iv="e8cc892d028ed89d2a11108eda27ec53"
-                             data-ep="a64bd15a25df29514b32aa8edbc57b77"
-                             data-content="c48cbb54d3b5ed6b21e20dec8ca382cfddad20e9eb2c2343b69deadc36300966d9d255a3ceaac10ef07dbecaf399e61d4e99cda76be5b8c63a87f22a751f0bcbfeb3a4ccd4f9128e99691c626b503a2c28737d2fccfa193385bee0ccdb2da783336faf5b6acc744e9a218ec4392552d7"
+                             data-secret="9e703aa7d3459dc7ef82590267d9ed2b549510be8d6e117e53e9810a797e9768"
+                             data-iv="3d59b317c0659429a99aca439374b263"
+                             data-ep="6e287f3044f45524bc0a0b03bc2af32b"
+                             data-content="61e6285ba7156eb2ffcacd81de7cdce9b3c65713b4ca47b2d27075bcd78acac43bbf565759ecd7f9ff9c4508400a5aab2466c0f9c6f4b207653e2a28f4a94e042ec6d11c050c5e629dd950afaee39621a3ecc5fc307d6fd916b9d5c27240877aea1a4aa903cdd2958819afc6bbad5f6d"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -579,14 +579,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E7%88%B1%E6%83%85%E8%A7%82%20%E6%81%8B%E7%88%B1%E8%A7%82/"
-                                   title="修身-058 (已加密)"
+                                   href="/2026/03/03/%E6%97%A0%E8%81%8A%E7%9A%84%E5%A5%B3%E4%BA%BA/"
+                                   title="修身-049 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-058 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-049 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -596,11 +596,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E6%9C%8B%E5%8F%8B/"
-                                   title="修身-055 (已加密)"
+                                   href="/2026/03/03/%E6%99%AE%E9%80%9A%E5%BC%82%E6%80%A7%E6%9C%8B%E5%8F%8B/"
+                                   title="修身-051 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-055 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-051 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -744,43 +744,108 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
-    
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
-        
-    </div>
+            .footer {
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  padding 1rem 0
+  color var(--text-color-4)
+  font-size 1rem
 
-    <div class="theme-info info-item">
-        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
+  a {
+    color var(--text-color-4)
 
-    
+    &:hover {
+      color var(--primary-color)
+    }
 
-    
-        <div class="count-info info-item">
-            
+    &.no-pointer {
+      pointer-events none
+    }
+  }
 
-            
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box">Unique Visitor</span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            
 
-            
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box">Page View</span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            
-        </div>
-    
+  .info-item {
+    position relative
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content center
+    box-sizing border-box
+    margin 0.2rem 0
+    color var(--text-color-4)
 
-    
-</footer>
+    &.count-info {
+      display flex
+
+      .count-item {
+        &.uv
+        &.pv {
+          display none
+        }
+      }
+    }
+
+
+    &.deploy-info {
+
+      display flex
+
+      a
+      .tooltip {
+        display flex
+        align-items center
+      }
+
+      img {
+        height 1.08rem
+        margin 0 0.4rem
+      }
+    }
+
+
+    &.count-info
+    &.record-info {
+
+      .count-item
+      .record-item {
+        margin-right 15px
+
+        &::before {
+          position absolute
+          top 50%
+          left -10px
+          box-sizing border-box
+          transform translateY(-56%)
+          content '|'
+        }
+
+
+        &:first-child {
+          &::before {
+            display none
+          }
+        }
+
+
+        &:last-child {
+          margin-right 0
+        }
+
+
+        .item-type {
+          margin-right 4px
+        }
+      }
+    }
+  }
+
+
+  .icon-animate {
+    animation heartbeat-animate 1.2s ease-in-out infinite
+  }
+}
 
         </div>
     </div>

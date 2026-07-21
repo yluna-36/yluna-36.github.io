@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="9a26ffb7666e0f7b3098da61944ceb13156c61c442a45d2980054d2f06d1741a"
-                             data-iv="bc0acffdee73402d69e7b71a353f5e0b"
-                             data-ep="d0ca488607e9d9ae983312b5f3044033"
-                             data-content="650d98abe815b39347b8ad62a9332f8c1860f04d92b7c1824c47e93cfcccaa4e57e0153620e6797a6f42ff620dec3a9d78d28036904d9ec4cfeec1d216d5d4e685f346b3b983b0a2e477239651c1d4e9f2f9039ab38f4bfeaa8ce76381cbdd670eb515c087a349f12fa8856d7603b7059e074b9940155fd25b70d80fb90a908eeeec5586c5b0b192f30940d8709f79ce72452c44731db087880eb887921d5fe212fad8d8dfc05fa63c1b6811dc3e7ab3dbf78d3b75b8b6c8da240ca19e23f313d77f532e7850ddc905ce8d442915d2bf23cd734048186e54045053513d69f271adbc44b2c62ed94bc738503845a2e1c2301cb1628e2e246c483e74aabe35aaa6cf858721281331fa1f579402dcdd52db8e985aded0897459eab6857a12dc865ff14a3e7ef5c4751f7ef402000896ed78f4dff7bd468ff3e4b84867853a1641604f83e05cf42ea98c8bab8d1c8278bfdfba86a7cdd61fe85489c0b9dde9addb0e"
+                             data-secret="1e7871c2cd4ceec2110be03cc9ba9092bf848f9178ff1d9ae2795298320d799e"
+                             data-iv="36f120573544f2ce49cf3226fb02662d"
+                             data-ep="3f3b9d7cc3bb34f9dfad5dd676a5b3eb"
+                             data-content="13668532c93baf12215acc1357c1e72125527b11559fb311e986418ca20b72e949d3fe579ead99120bd236e574fbe71dbf59c22cb3d3be8afc150339fdf36772f0f3d8fdc1d8f1c2dad41ea8463d40e56c0ffed0a97bae6cd0f1a1d72858ab42725253d9179ac584c5a3d602b05125084b00e0970feee83c88b675462e98aecb8d29aedb5525acf239e5e2937fc45b0e2b6f128a30970d28e0a64766216e83d6e7de38ccfa1d418b1472be3ae092879480a98cf45fdc421497daba44e313fffd0436c9db482be2d1903bfd6c685029f413677ecb914b7520de8b577279c95f0fed521387e4126b1bac2041f1cb21f923ad9500fb23ab11ea4bac3fb6ff8160e13201a4ed943ba5843bfbcc1d211ab5ad633cd511964f5ad4d8d5f0784376ba658da4b0fab91364805d6c17c707a9305c37685dccd4c61d055fa65abe82b0c4a8b8fcea62aa220ca4f678ccdd23f652ff04692217cd274dabfff121592c8d2d04"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -596,11 +596,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E7%B1%BB%E4%BC%BC%E7%9A%84%E6%81%8B%E7%88%B1%E8%A7%82/"
-                                   title="修身-072 (已加密)"
+                                   href="/2026/03/03/%E7%A4%BC%E7%89%A9/"
+                                   title="修身-071 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-072 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-071 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -744,43 +744,108 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
-    
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
-        
-    </div>
+            .footer {
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  padding 1rem 0
+  color var(--text-color-4)
+  font-size 1rem
 
-    <div class="theme-info info-item">
-        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
+  a {
+    color var(--text-color-4)
 
-    
+    &:hover {
+      color var(--primary-color)
+    }
 
-    
-        <div class="count-info info-item">
-            
+    &.no-pointer {
+      pointer-events none
+    }
+  }
 
-            
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box">Unique Visitor</span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            
 
-            
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box">Page View</span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            
-        </div>
-    
+  .info-item {
+    position relative
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content center
+    box-sizing border-box
+    margin 0.2rem 0
+    color var(--text-color-4)
 
-    
-</footer>
+    &.count-info {
+      display flex
+
+      .count-item {
+        &.uv
+        &.pv {
+          display none
+        }
+      }
+    }
+
+
+    &.deploy-info {
+
+      display flex
+
+      a
+      .tooltip {
+        display flex
+        align-items center
+      }
+
+      img {
+        height 1.08rem
+        margin 0 0.4rem
+      }
+    }
+
+
+    &.count-info
+    &.record-info {
+
+      .count-item
+      .record-item {
+        margin-right 15px
+
+        &::before {
+          position absolute
+          top 50%
+          left -10px
+          box-sizing border-box
+          transform translateY(-56%)
+          content '|'
+        }
+
+
+        &:first-child {
+          &::before {
+            display none
+          }
+        }
+
+
+        &:last-child {
+          margin-right 0
+        }
+
+
+        .item-type {
+          margin-right 4px
+        }
+      }
+    }
+  }
+
+
+  .icon-animate {
+    animation heartbeat-animate 1.2s ease-in-out infinite
+  }
+}
 
         </div>
     </div>

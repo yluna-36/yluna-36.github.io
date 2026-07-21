@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="b3011253f4012da2010053ceb6aaab47bffd12aa0519601c03d8f20a48de8fae"
-                             data-iv="1e8a6952be90ba1ff1dc6bde087153ec"
-                             data-ep="55eb88524d3626627265d4fc7bb6f596"
-                             data-content="15e5d42210a5fc54661b44a80b337beffbdb04595d79d890ff9bfc4401317a2a14a1b4001f6cf18a9ee8bec5345dba9b226a96ca406c39bda5515012acd7296ba902701d785f3c004f9c5669527fa7a41bea5fe5cac46f6d32417542f2d4c4562669810d973766a63ba67174f090e9b29c7f61160bd450895dbfe47195b3fddb"
+                             data-secret="a7534905bfc92b73d7569d3db46325fade098c617ab2cff16b80819a2ad5e356"
+                             data-iv="b483c5c747edbc103a2b5f1a22c72af4"
+                             data-ep="eb96073cba8203820c12d0969fa15d40"
+                             data-content="05a99e67a7d15a74526b52efc21e490e215c95fb3ffdeefc1e52df52b97a90961d7ae52b2057240344247c372c587baf18f918ab1a1707a1418baef7338d766bca2bf41d25d3e244bf471107fa93c7743861479309d830cd65a499046d4e1820be82e2f6c8707f32c312a5a3404cec2a2212130a5499d639c3e67a2278f7db5e"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -579,14 +579,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E4%B8%AD%E5%9B%BD%E5%BC%8F%E5%AE%B6%E5%BA%AD%EF%BC%9A%E6%B2%A1%E6%9C%89%E6%80%9D%E6%83%B3%E4%BA%A4%E6%B5%81/"
-                                   title="齐家-005 (已加密)"
+                                   href="/2026/03/03/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF%E8%AE%B0%E5%BD%95%E7%9B%B8%E5%86%8C%E8%A7%86%E9%A2%91/"
+                                   title="修身-006 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">齐家-005 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-006 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -744,43 +744,108 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
-    
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
-        
-    </div>
+            .footer {
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  padding 1rem 0
+  color var(--text-color-4)
+  font-size 1rem
 
-    <div class="theme-info info-item">
-        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
+  a {
+    color var(--text-color-4)
 
-    
+    &:hover {
+      color var(--primary-color)
+    }
 
-    
-        <div class="count-info info-item">
-            
+    &.no-pointer {
+      pointer-events none
+    }
+  }
 
-            
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box">Unique Visitor</span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            
 
-            
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box">Page View</span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            
-        </div>
-    
+  .info-item {
+    position relative
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content center
+    box-sizing border-box
+    margin 0.2rem 0
+    color var(--text-color-4)
 
-    
-</footer>
+    &.count-info {
+      display flex
+
+      .count-item {
+        &.uv
+        &.pv {
+          display none
+        }
+      }
+    }
+
+
+    &.deploy-info {
+
+      display flex
+
+      a
+      .tooltip {
+        display flex
+        align-items center
+      }
+
+      img {
+        height 1.08rem
+        margin 0 0.4rem
+      }
+    }
+
+
+    &.count-info
+    &.record-info {
+
+      .count-item
+      .record-item {
+        margin-right 15px
+
+        &::before {
+          position absolute
+          top 50%
+          left -10px
+          box-sizing border-box
+          transform translateY(-56%)
+          content '|'
+        }
+
+
+        &:first-child {
+          &::before {
+            display none
+          }
+        }
+
+
+        &:last-child {
+          margin-right 0
+        }
+
+
+        .item-type {
+          margin-right 4px
+        }
+      }
+    }
+  }
+
+
+  .icon-animate {
+    animation heartbeat-animate 1.2s ease-in-out infinite
+  }
+}
 
         </div>
     </div>

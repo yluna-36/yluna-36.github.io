@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="d33d7a45d80961649a7d6fdd4b647cb9d7423662f997ede4635bd742357f1ebf"
-                             data-iv="bb8c968d8029bf81d408eda397829aea"
-                             data-ep="3ab29bf9013a2e88e6c4d18bcf15677b"
-                             data-content="524080945fe6c900ebf76e4b63369a37dfdc86580363f47b09078fbd9ec87ff19a3fb9c3b6f54d80e2f06a15e517332165a1e72c5949058154d35a6343af33e6839ab41646bc68d79e0f13f9d866144c511b18ee9d84087b7daa5655a2da3bedd8caaaea36fd4c8096a18d772ebcbeed6d4095804976bca38b30a835609199398c6a70366300903d0fbfcfb3855b136ffe031238b5a47ac98c3bd9b6ce05d476"
+                             data-secret="a28ad4ab0d8e3c7c6f37b7ae9f33f499af15def3b58c79b0030bca585008e296"
+                             data-iv="90a990c438a850827f488c711ea94e80"
+                             data-ep="3c2a36893ecd48a5076f8999d9673996"
+                             data-content="cdd7332a84649de236a70dffdaf1d17ab34f65a7b7549215481af4c5fe4fcbfecf40cf5cf63e444b04c016caeb7d89986cdaa877207aeb7483de4fb1222f16babebee6b3a607dab5ce864659f14a0c369673b869cbffc779713dda7b49cd6481c72f80827634b8453ead91bd0d3e5677718bb00d97ae26ff3feb621f7fd66b43b865d6abe5540f14013c54d6491350463e4910fab37c1ac246c3c31bc71925d1"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -579,14 +579,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E8%A7%84%E5%88%92%20%E8%AE%A1%E5%88%92/"
-                                   title="修身-067 (已加密)"
+                                   href="/2026/03/03/%E8%80%81%E5%AE%B6/"
+                                   title="齐家-010 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-067 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">齐家-010 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -596,11 +596,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E8%A7%89%E6%82%9F/"
-                                   title="修身-068 (已加密)"
+                                   href="/2026/03/03/%E8%A7%82%E5%AF%9F%20%E6%8E%A8%E7%90%86/"
+                                   title="格物-003 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-068 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">格物-003 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -744,43 +744,108 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
-    
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
-        
-    </div>
+            .footer {
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  padding 1rem 0
+  color var(--text-color-4)
+  font-size 1rem
 
-    <div class="theme-info info-item">
-        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
+  a {
+    color var(--text-color-4)
 
-    
+    &:hover {
+      color var(--primary-color)
+    }
 
-    
-        <div class="count-info info-item">
-            
+    &.no-pointer {
+      pointer-events none
+    }
+  }
 
-            
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box">Unique Visitor</span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            
 
-            
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box">Page View</span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            
-        </div>
-    
+  .info-item {
+    position relative
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content center
+    box-sizing border-box
+    margin 0.2rem 0
+    color var(--text-color-4)
 
-    
-</footer>
+    &.count-info {
+      display flex
+
+      .count-item {
+        &.uv
+        &.pv {
+          display none
+        }
+      }
+    }
+
+
+    &.deploy-info {
+
+      display flex
+
+      a
+      .tooltip {
+        display flex
+        align-items center
+      }
+
+      img {
+        height 1.08rem
+        margin 0 0.4rem
+      }
+    }
+
+
+    &.count-info
+    &.record-info {
+
+      .count-item
+      .record-item {
+        margin-right 15px
+
+        &::before {
+          position absolute
+          top 50%
+          left -10px
+          box-sizing border-box
+          transform translateY(-56%)
+          content '|'
+        }
+
+
+        &:first-child {
+          &::before {
+            display none
+          }
+        }
+
+
+        &:last-child {
+          margin-right 0
+        }
+
+
+        .item-type {
+          margin-right 4px
+        }
+      }
+    }
+  }
+
+
+  .icon-animate {
+    animation heartbeat-animate 1.2s ease-in-out infinite
+  }
+}
 
         </div>
     </div>
