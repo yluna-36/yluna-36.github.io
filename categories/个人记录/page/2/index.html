@@ -391,8 +391,8 @@
                         <span class="starting-point border-box flex-center"></span>
                         <span class="post-date border-box">03-03</span>
                         <a class="post-title border-box text-ellipsis"
-                           href="/2026/03/03/%E8%A7%84%E5%88%92%20%E8%AE%A1%E5%88%92/"
-                        >修身-067 (已加密)</a>
+                           href="/2026/03/03/%E9%87%8D%E8%A6%81%E8%BD%AC%E6%8A%98%E4%BA%8B%E4%BB%B6/"
+                        >修身-069 (已加密)</a>
                     </li>
                 
             </ul>
@@ -447,108 +447,43 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            .footer {
-  display flex
-  flex-direction column
-  align-items center
-  justify-content center
-  padding 1rem 0
-  color var(--text-color-4)
-  font-size 1rem
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
+        
+    </div>
 
-  a {
-    color var(--text-color-4)
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
 
-    &:hover {
-      color var(--primary-color)
-    }
+    
 
-    &.no-pointer {
-      pointer-events none
-    }
-  }
+    
+        <div class="count-info info-item">
+            
 
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
 
-  .info-item {
-    position relative
-    display flex
-    flex-wrap wrap
-    align-items center
-    justify-content center
-    box-sizing border-box
-    margin 0.2rem 0
-    color var(--text-color-4)
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
 
-    &.count-info {
-      display flex
-
-      .count-item {
-        &.uv
-        &.pv {
-          display none
-        }
-      }
-    }
-
-
-    &.deploy-info {
-
-      display flex
-
-      a
-      .tooltip {
-        display flex
-        align-items center
-      }
-
-      img {
-        height 1.08rem
-        margin 0 0.4rem
-      }
-    }
-
-
-    &.count-info
-    &.record-info {
-
-      .count-item
-      .record-item {
-        margin-right 15px
-
-        &::before {
-          position absolute
-          top 50%
-          left -10px
-          box-sizing border-box
-          transform translateY(-56%)
-          content '|'
-        }
-
-
-        &:first-child {
-          &::before {
-            display none
-          }
-        }
-
-
-        &:last-child {
-          margin-right 0
-        }
-
-
-        .item-type {
-          margin-right 4px
-        }
-      }
-    }
-  }
-
-
-  .icon-animate {
-    animation heartbeat-animate 1.2s ease-in-out infinite
-  }
-}
+    
+</footer>
 
         </div>
     </div>
@@ -778,23 +713,18 @@
     
 
 
-<!-- Global Music Player (MetingJS + APlayer) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-<meting-js
-    server="netease"
-    type="playlist"
-    id="119447580"
-    fixed="true"
-    autoplay="false"
-    loop="all"
-    order="random"
-    preload="auto"
-    list-folded="true"
-    list-max-height="500px"
-    lrc-type="0">
-</meting-js>
+<!-- Global Spotify Player -->
+<div id="spotify-player-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; transition: all 0.3s ease; max-width: calc(100vw - 40px);">
+    <!-- Outer Site Player -->
+    <iframe id="spotify-outer" style="border-radius:12px; width:300px; height:80px; border:none; display:block; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/09iyJFvXvGbBBye2fXfNmr?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    
+    <!-- Inner Site Player -->
+    <iframe id="spotify-inner" style="border-radius:12px; width:300px; height:80px; border:none; display:none; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/1NVhN5uA2xNMgjFbOcW0kF?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
 
 
 <script>
