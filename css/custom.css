@@ -63,10 +63,23 @@ body.inner-site-active {
 /* Change the first screen background */
 body.inner-site-active .first-screen-container {
     background-image: url('/images/里站背景图.jpg') !important;
-    background-size: cover;
-    background-position: center;
+    background-size: cover !important;
+    background-position: center !important;
+    filter: none !important;
     background-repeat: no-repeat;
     transition: background-image 0.5s ease;
+}
+
+/* De-emphasize unused social icons */
+.sc-icon-item[data-tooltip-content="instagram"],
+.sc-icon-item[data-tooltip-content="twitter"] {
+    opacity: 0.3 !important;
+    transform: scale(0.85);
+    transition: all 0.3s ease;
+}
+.sc-icon-item[data-tooltip-content="instagram"]:hover,
+.sc-icon-item[data-tooltip-content="twitter"]:hover {
+    opacity: 0.6 !important;
 }
 
 /* Use a cartoon font and ensure high contrast for the text */
