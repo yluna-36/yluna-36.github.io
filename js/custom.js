@@ -75,12 +75,15 @@ const initInnerSite = () => {
                 clearTimeout(clickTimer);
                 
                 if (clickCount >= 5) {
-                    if (localStorage.getItem('inner-site-enabled') === 'true') {
+                    const currentPath = window.location.pathname;
+                    if (currentPath === '/inner/' || currentPath === '/inner/index.html') {
+                        // Exit inner site
                         localStorage.removeItem('inner-site-enabled');
-                        document.body.classList.remove('inner-site-active');
+                        window.location.href = '/';
                     } else {
+                        // Enter inner site
                         localStorage.setItem('inner-site-enabled', 'true');
-                        document.body.classList.add('inner-site-active');
+                        window.location.href = '/inner/';
                     }
                     clickCount = 0;
                 }
