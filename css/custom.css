@@ -69,9 +69,13 @@ body.inner-site-active .first-screen-container {
     transition: background-image 0.5s ease;
 }
 
-/* Use a cartoon font for the text */
-body.inner-site-active .first-screen-container .description {
+/* Use a cartoon font and ensure high contrast for the text */
+body.inner-site-active .first-screen-container .description,
+body.inner-site-active .first-screen-container .description .desc,
+body.inner-site-active .first-screen-container .description .cursor {
     font-family: 'ZCOOL KuaiLe', cursive !important;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9), -1px -1px 4px rgba(0,0,0,0.7) !important;
 }
 
 body.inner-site-active header {
