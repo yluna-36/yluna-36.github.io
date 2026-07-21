@@ -94,6 +94,21 @@ const initInnerSite = () => {
             });
         }
     }
+
+    // 4. Modify Home links (e.g. Logo, Home menu item) to point to /inner/ when inner site is active
+    const homeLinks = document.querySelectorAll('a[href="/"]');
+    homeLinks.forEach(link => {
+        if (isInnerSite) {
+            if (!link.dataset.originalHref) {
+                link.dataset.originalHref = link.getAttribute('href');
+            }
+            link.setAttribute('href', '/inner/');
+        } else {
+            if (link.dataset.originalHref) {
+                link.setAttribute('href', link.dataset.originalHref);
+            }
+        }
+    });
 };
 
 document.addEventListener('DOMContentLoaded', initInnerSite);
