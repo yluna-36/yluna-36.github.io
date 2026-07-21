@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="5ab2ad2e5f793cc13e1e7531ff5b8942f86686f787caef9b9d8d0ac4d51aa3d4"
-                             data-iv="ad1617b7530765e8f7276b5f7d07408c"
-                             data-ep="d24ba4a26a9d2b509199db794af677c7"
-                             data-content="907b9751576551329f8e927e32e788e151bf7e13424418d41e96c90dd1e962b0d90a79dfdd26705e5cef2e7290a832d7041a97ef713c7643e036765ebdfd6e7a0f5f2bac5ef3f339596b76a681f3b3c7129428bdcf702a6ae905458ba190b51cb541711d0238d6790c0a0c23412bc53c4b60c9b27a146b83181865706a372005e0dc7b7ceb4915b7d9ef1a6816f791b756b356d541bc728e32852efd09cd2728475dd78f437e4b8f7b7aba64e2cd19e571fda5e4e8c511d22d5d9091b202325c2c2736791ce521948da1e29f20b6548469cc39f1a58de7a689010860d23bcb0d"
+                             data-secret="020f3454caca3a44b3d0f08ee81b95456a9f4b01be02bf309e975a6a02e77ecf"
+                             data-iv="6c124481bee69727fea87129104ee958"
+                             data-ep="c1b294e1c40c9d7af4a054c3c6fe2a0d"
+                             data-content="3e84093b3fe14ced25a63e81c82382ead0d6afcca32c74733525acdf295152e1330c425845e9a393c05063716a38b262c832222bf98b40efd0d74681b662e02df350ed3567397d000072fb7b2bdc5381a05d0c3c8b5190bdc9dfdc3358380a0fcca4e91cda07069e52d6513e0dc8e9654782d0a9ae13e3cb4c2cb2a032b1d7879803f1619a46e4b59ff97a4b2d3d4d5e98bae73cbbda307cf779ad4fe0cadd66d8c19906b0e0db3fe6ccac5d59ec2035424fab32c9125d45e4d27305146b30c58db6e266207aafa8e548a574f212de43adab25318a5411df0d65d6a076f50fbf"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -744,108 +744,43 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            .footer {
-  display flex
-  flex-direction column
-  align-items center
-  justify-content center
-  padding 1rem 0
-  color var(--text-color-4)
-  font-size 1rem
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
+        
+    </div>
 
-  a {
-    color var(--text-color-4)
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
 
-    &:hover {
-      color var(--primary-color)
-    }
+    
 
-    &.no-pointer {
-      pointer-events none
-    }
-  }
+    
+        <div class="count-info info-item">
+            
 
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
 
-  .info-item {
-    position relative
-    display flex
-    flex-wrap wrap
-    align-items center
-    justify-content center
-    box-sizing border-box
-    margin 0.2rem 0
-    color var(--text-color-4)
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
 
-    &.count-info {
-      display flex
-
-      .count-item {
-        &.uv
-        &.pv {
-          display none
-        }
-      }
-    }
-
-
-    &.deploy-info {
-
-      display flex
-
-      a
-      .tooltip {
-        display flex
-        align-items center
-      }
-
-      img {
-        height 1.08rem
-        margin 0 0.4rem
-      }
-    }
-
-
-    &.count-info
-    &.record-info {
-
-      .count-item
-      .record-item {
-        margin-right 15px
-
-        &::before {
-          position absolute
-          top 50%
-          left -10px
-          box-sizing border-box
-          transform translateY(-56%)
-          content '|'
-        }
-
-
-        &:first-child {
-          &::before {
-            display none
-          }
-        }
-
-
-        &:last-child {
-          margin-right 0
-        }
-
-
-        .item-type {
-          margin-right 4px
-        }
-      }
-    }
-  }
-
-
-  .icon-animate {
-    animation heartbeat-animate 1.2s ease-in-out infinite
-  }
-}
+    
+</footer>
 
         </div>
     </div>
@@ -1152,23 +1087,18 @@
     
 
 
-<!-- Global Music Player (MetingJS + APlayer) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-<meting-js
-    server="netease"
-    type="playlist"
-    id="119447580"
-    fixed="true"
-    autoplay="false"
-    loop="all"
-    order="random"
-    preload="auto"
-    list-folded="true"
-    list-max-height="500px"
-    lrc-type="0">
-</meting-js>
+<!-- Global Spotify Player -->
+<div id="spotify-player-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; transition: all 0.3s ease; max-width: calc(100vw - 40px);">
+    <!-- Outer Site Player -->
+    <iframe id="spotify-outer" style="border-radius:12px; width:300px; height:80px; border:none; display:block; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/09iyJFvXvGbBBye2fXfNmr?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    
+    <!-- Inner Site Player -->
+    <iframe id="spotify-inner" style="border-radius:12px; width:300px; height:80px; border:none; display:none; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/1NVhN5uA2xNMgjFbOcW0kF?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
 
     <meta name="post-section" content="修身">
 

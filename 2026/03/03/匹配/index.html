@@ -462,10 +462,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="6553d7eab723b081691ab1e59b58c6a2a80f6bc90a593c88b8d6fb05d58f703d"
-                             data-iv="d2e7eea5e45e2497690b6519671679c2"
-                             data-ep="22daa364c7da5d78138eef3ea69c809d"
-                             data-content="39e97baf1382b27230d63e14f25fdd2004098fa90c694ca5c5242c0537b47dac3c482d8650478732ae45d4009bf2a3ab89f3f944551b8e825d15254b0d6451cbcc1ae83bc6ed7deb2b482d03703d455a901196e4c52a1ffafe4bb1100e14ad3131d0f5695abc49d99297dfcc6ef66b7a128703b46dc3770b3f71e6afdfe5eb17fa3118028b6e581c111176ecf7e210dca6fd4665468c606c99f2ee54500c998fc2faf839a7734349b2affcaaa93f43977f8060296debb62339cb680e3da499198e083ac5344657684cde3469a767b30d65ff5ebae8d0cbdc0a3574fd8069cacf217e8e61976102ffd5c97b07321316b32d27e7d7c02dfd9464c1b543ad525655554666860dccf0e7987909d226d30440cd8ea86b0971ab5f06cd2197e3822d615d5c9f2e5b68ff8a29716b470192d5d393849c268d65413a9522fbf714fb7969c3e8a7473cfc52e9aa2b685e00d74148598780ca4e844c9f3e88f6c6db9922cf2b235f35ada38b194472f8ad5744ac82aeca3cd0159d03a089323c71287a62585576dd72b27572b18729af4f3f8680e3105de63faeadb64b76784bc88108146456b45bf2dd7b89d7845404926694c73bf721bb313d3db37b1f0dbce224203878"
+                             data-secret="7fc769036e27fe64b62fe4f92fa4c0d1037d3dcf138dcf37380738429a3a0da3"
+                             data-iv="1ae04d9ecb30dcb962a31d9bc7b9a165"
+                             data-ep="55ae0deb4ef543f6a50eed6accbd225b"
+                             data-content="23fd4f46aab90b293e6764981badbabc0e5beea19cb9a846a9d5adf79c5ed5d88740ce847c77ffd9438f774e9b4aa2d87aa3fff2a30433ff154a3c1f7273bd9a06ca38ec28079410ef62a80a88d8bce807e9ca6a7e05008eae976f8f009048a2fd589dfa79ad10264ee22f04ef0bcfe1b661330829818c63062c584cbeb3437121ac25665814d5cd660ae698aec47e6386a495bdac94d3b7403a93355c2780ffef1529ca3681c63095a082ee9b5a40f4c48c1ef0d26b35589345086a78576c9bddd30d64fff448c9923dad66cca25d04d22fd19bcd409fa200c18a2bfe77da91bdbb514da23b6314c8483cfb1fbd40d65fb4e25c20c36a0c9df773bcac8679476f35d22abd1c8bfaf128b77e23a6c907d2c46b1ce8c3d65d977f971e3eb521abe0baef2c8bf2ce61e7005965128ef6f6c606d42ba4e9de5894e6485ae0d5a5bcea7508e9c2a2c8c3efbf692735641fe81e75d4e330d27fb523d8e73e901f8a29aca88443a8cd9241c2d6f9e13f674197e046abdb2f9e488d54c0895e249967a7c50b8a8f7ce1ac6940a6f70b6cc002c0503d4f562dfb961640bb4d18e086ba3431292348ca14e1377f87b335a11d3cd185452b73b24199fc5e208435ede2e326"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -744,108 +744,43 @@
         </div>
 
         <div class="page-main-content-bottom border-box">
-            .footer {
-  display flex
-  flex-direction column
-  align-items center
-  justify-content center
-  padding 1rem 0
-  color var(--text-color-4)
-  font-size 1rem
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
+        
+    </div>
 
-  a {
-    color var(--text-color-4)
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
 
-    &:hover {
-      color var(--primary-color)
-    }
+    
 
-    &.no-pointer {
-      pointer-events none
-    }
-  }
+    
+        <div class="count-info info-item">
+            
 
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
 
-  .info-item {
-    position relative
-    display flex
-    flex-wrap wrap
-    align-items center
-    justify-content center
-    box-sizing border-box
-    margin 0.2rem 0
-    color var(--text-color-4)
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
 
-    &.count-info {
-      display flex
-
-      .count-item {
-        &.uv
-        &.pv {
-          display none
-        }
-      }
-    }
-
-
-    &.deploy-info {
-
-      display flex
-
-      a
-      .tooltip {
-        display flex
-        align-items center
-      }
-
-      img {
-        height 1.08rem
-        margin 0 0.4rem
-      }
-    }
-
-
-    &.count-info
-    &.record-info {
-
-      .count-item
-      .record-item {
-        margin-right 15px
-
-        &::before {
-          position absolute
-          top 50%
-          left -10px
-          box-sizing border-box
-          transform translateY(-56%)
-          content '|'
-        }
-
-
-        &:first-child {
-          &::before {
-            display none
-          }
-        }
-
-
-        &:last-child {
-          margin-right 0
-        }
-
-
-        .item-type {
-          margin-right 4px
-        }
-      }
-    }
-  }
-
-
-  .icon-animate {
-    animation heartbeat-animate 1.2s ease-in-out infinite
-  }
-}
+    
+</footer>
 
         </div>
     </div>
@@ -1152,23 +1087,18 @@
     
 
 
-<!-- Global Music Player (MetingJS + APlayer) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-<meting-js
-    server="netease"
-    type="playlist"
-    id="119447580"
-    fixed="true"
-    autoplay="false"
-    loop="all"
-    order="random"
-    preload="auto"
-    list-folded="true"
-    list-max-height="500px"
-    lrc-type="0">
-</meting-js>
+<!-- Global Spotify Player -->
+<div id="spotify-player-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; transition: all 0.3s ease; max-width: calc(100vw - 40px);">
+    <!-- Outer Site Player -->
+    <iframe id="spotify-outer" style="border-radius:12px; width:300px; height:80px; border:none; display:block; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/09iyJFvXvGbBBye2fXfNmr?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    
+    <!-- Inner Site Player -->
+    <iframe id="spotify-inner" style="border-radius:12px; width:300px; height:80px; border:none; display:none; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/1NVhN5uA2xNMgjFbOcW0kF?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
 
     <meta name="post-section" content="修身">
 
