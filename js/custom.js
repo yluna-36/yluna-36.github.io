@@ -46,36 +46,50 @@ const initInnerSite = () => {
         document.body.classList.remove('inner-site-active');
     }
 
-    // 3. Hidden trigger (5 clicks on logo)
-    const logo = document.querySelector('.site-name') || document.querySelector('.site-logo') || document.querySelector('.header-info');
-    if (logo && !logo.dataset.innerSiteListener) {
-        let clickCount = 0;
-        let clickTimer;
-        
-        logo.addEventListener('click', (e) => {
-            clickCount++;
-            clearTimeout(clickTimer);
+    // 3. Hidden trigger (5 clicks on a special icon in the top right menu)
+    let secretIcon = document.getElementById('secret-inner-trigger');
+    
+    // Inject the icon if it doesn't exist yet
+    if (!secretIcon) {
+        const menuList = document.querySelector('.menu-list') || document.querySelector('.header-menu');
+        if (menuList) {
+            secretIcon = document.createElement('li');
+            secretIcon.id = 'secret-inner-trigger';
+            secretIcon.className = 'menu-item flex-start border-box'; // Keep theme menu item class
             
-            if (clickCount >= 5) {
-                // Toggle state
-                if (localStorage.getItem('inner-site-enabled') === 'true') {
-                    localStorage.removeItem('inner-site-enabled');
-                    document.body.classList.remove('inner-site-active');
-                } else {
-                    localStorage.setItem('inner-site-enabled', 'true');
-                    document.body.classList.add('inner-site-active');
-                }
-                clickCount = 0;
+            // Use a subtle icon, e.g., a moon
+            const aTag = document.createElement('a');
+            aTag.className = 'menu-text-color border-box';
+            aTag.style.cursor = 'default';
+            aTag.innerHTML = '<i class="menu-text-color menu-icon fa-solid fa-moon" style="opacity: 0.3; margin-left: 15px;"></i>';
+            
+            secretIcon.appendChild(aTag);
+            menuList.appendChild(secretIcon);
+            
+            let clickCount = 0;
+            let clickTimer;
+            
+            secretIcon.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent any default action
+                clickCount++;
+                clearTimeout(clickTimer);
                 
-                // Prevent default navigation if it's a link
-                e.preventDefault(); 
-            }
-            
-            clickTimer = setTimeout(() => {
-                clickCount = 0;
-            }, 1000); // Reset click count after 1 second of inactivity
-        });
-        logo.dataset.innerSiteListener = "true";
+                if (clickCount >= 5) {
+                    if (localStorage.getItem('inner-site-enabled') === 'true') {
+                        localStorage.removeItem('inner-site-enabled');
+                        document.body.classList.remove('inner-site-active');
+                    } else {
+                        localStorage.setItem('inner-site-enabled', 'true');
+                        document.body.classList.add('inner-site-active');
+                    }
+                    clickCount = 0;
+                }
+                
+                clickTimer = setTimeout(() => {
+                    clickCount = 0;
+                }, 1000);
+            });
+        }
     }
 };
 
