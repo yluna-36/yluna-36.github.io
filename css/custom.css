@@ -49,3 +49,29 @@ img.home-cover[src*="steve_jobs_presentation.jpg"],
 img.post-cover[src*="steve_jobs_presentation.jpg"] {
     object-position: center bottom !important;
 }
+
+/* =========================================================
+   Inner Site Styles 
+   ========================================================= */
+
+body.inner-site-active {
+    --primary-color: #e53935 !important;
+}
+
+/* Change the first screen background */
+body.inner-site-active .first-screen-container {
+    filter: invert(0.9) hue-rotate(180deg); 
+    transition: filter 0.5s ease;
+}
+
+body.inner-site-active header {
+    background-color: rgba(20, 20, 20, 0.9) !important;
+}
+
+body.inner-site-active .site-name {
+    color: #e53935 !important;
+}
+
+body.inner-site-active .menu-item i {
+    color: #e53935 !important;
+}
