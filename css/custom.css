@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
 /* Initial state for home post items */
 .home-post-list .home-post-item {
     opacity: 0;
@@ -60,8 +62,16 @@ body.inner-site-active {
 
 /* Change the first screen background */
 body.inner-site-active .first-screen-container {
-    filter: invert(0.9) hue-rotate(180deg); 
-    transition: filter 0.5s ease;
+    background-image: url('/images/里站背景图.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+}
+
+/* Use a cartoon font for the text */
+body.inner-site-active .first-screen-container .description {
+    font-family: 'ZCOOL KuaiLe', cursive !important;
 }
 
 body.inner-site-active header {
