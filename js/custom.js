@@ -42,8 +42,17 @@ const initInnerSite = () => {
     const isInnerSite = localStorage.getItem('inner-site-enabled') === 'true';
     const firstScreen = document.querySelector('.first-screen-container');
     
+    // Favicon swapping
+    let faviconLink = document.querySelector("link[rel~='icon']");
+    if (!faviconLink) {
+        faviconLink = document.createElement('link');
+        faviconLink.rel = 'icon';
+        document.head.appendChild(faviconLink);
+    }
+    
     if (isInnerSite) {
         document.body.classList.add('inner-site-active');
+        faviconLink.href = '/images/里站头像.png';
         if (firstScreen) {
             const innerBgImages = [
                 '/images/里站背景图.jpg',
@@ -58,6 +67,7 @@ const initInnerSite = () => {
         }
     } else {
         document.body.classList.remove('inner-site-active');
+        faviconLink.href = '/images/logo-icon.png';
         if (firstScreen) {
             firstScreen.style.removeProperty('background-image');
         }
