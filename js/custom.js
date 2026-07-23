@@ -40,10 +40,27 @@ const initInnerSite = () => {
 
     // 2. Apply class based on state
     const isInnerSite = localStorage.getItem('inner-site-enabled') === 'true';
+    const firstScreen = document.querySelector('.first-screen-container');
+    
     if (isInnerSite) {
         document.body.classList.add('inner-site-active');
+        if (firstScreen) {
+            const innerBgImages = [
+                '/images/里站背景图.jpg',
+                'https://cdn.jsdelivr.net/gh/yluna-36/image-bed@main/img/309F7D03-BF1A-4B4A-9563-A11FDC1100FD.jpeg',
+                'https://cdn.jsdelivr.net/gh/yluna-36/image-bed@main/img/230ADD76-567A-46E8-8FE7-5E4F033A80B5_1_105_c.jpeg',
+                'https://cdn.jsdelivr.net/gh/yluna-36/image-bed@main/img/FA115AE7-2939-4E92-936D-7C8D3C0A96FB_1_105_c.jpeg',
+                'https://cdn.jsdelivr.net/gh/yluna-36/image-bed@main/img/49DADDA0-A1CB-4E81-AC32-D33A12293330_1_105_c.jpeg',
+                'https://cdn.jsdelivr.net/gh/yluna-36/image-bed@main/img/B1EB3B0B-AEB0-4DD1-8FEB-25DC03175E56_1_105_c.jpeg'
+            ];
+            const randomBg = innerBgImages[Math.floor(Math.random() * innerBgImages.length)];
+            firstScreen.style.setProperty('background-image', `url('${randomBg}')`, 'important');
+        }
     } else {
         document.body.classList.remove('inner-site-active');
+        if (firstScreen) {
+            firstScreen.style.removeProperty('background-image');
+        }
     }
 
     // 3. Hidden trigger (5 clicks on a special icon in the top right menu)
