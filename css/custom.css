@@ -117,3 +117,25 @@ body.inner-site-active #spotify-inner {
 body.inner-site-active .menu-item i {
     color: #e53935 !important;
 }
+
+/* =========================================================
+   Fix Navigation Layout & Wrapping
+   ========================================================= */
+
+/* Prevent the site title from breaking into two lines */
+header .site-name {
+    white-space: nowrap !important;
+}
+
+/* Ensure dropdown arrows are aligned next to text and prevent wrapping */
+header .menu-item > a.menu-text-color {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap !important;
+}
+
+/* Reduce gap between menu items to prevent overflow on smaller screens */
+header .right .pc .menu-list {
+    gap: 1.0rem !important;
+}
