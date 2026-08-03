@@ -506,10 +506,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="7b18e6e8306cf75a06d513b472d724aafae9e3b3c024f06aa3e05208771b7e62"
-                             data-iv="ccae3ed32440431e7f8ff89e87d511ac"
-                             data-ep="7de6fd5dfa3add6c9f3adcc199536d7d"
-                             data-content="dafd5dbcc2970fb67d9949dc2fac179421d8e559818a350335a366d94c4f33e9bffb6f2bb922223ce56df186577fb26f4d46a754b43e2b6a5ef2b17d875a0177e88226d05798f5d84dc4b03c39fd1e68e120f8b5f9b1937472374f83e013bb57b50f51729e1cc895d3578a0d1b7e90ca"
+                             data-secret="c1a4193db73e26a5d04bafff35756a95ef6ff922b368bb38e62bf9c9aa3a7452"
+                             data-iv="e92b0bc78f4777a30a8857eb93c70e64"
+                             data-ep="bd9bdaf5679c2c8cea683689a800b98b"
+                             data-content="70e3cefc02cfb5c20388596a3377ba8791c776f70f28c57c7968c27b73787e17f222219702314f5c14f5587ab820d94da71a5513c752dbd27bdbde344259721ea537f2514627c396c1398fa3e97f2988b40b28f3759a98f088a73d7023a3d3dc66886257abc169b42da73faed3be3dfd"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -623,14 +623,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E6%95%99%E5%AE%B6%E9%95%BF%E5%AD%A6%E8%8B%B1%E8%AF%AD/"
-                                   title="齐家-009 (已加密)"
+                                   href="/2026/03/03/%E6%9A%B4%E9%A3%9F/"
+                                   title="修身-054 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">齐家-009 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-054 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -640,11 +640,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E6%99%AE%E9%80%9A%E5%BC%82%E6%80%A7%E6%9C%8B%E5%8F%8B/"
-                                   title="修身-051 (已加密)"
+                                   href="/2026/03/03/%E6%9C%8B%E5%8F%8B/"
+                                   title="修身-055 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-051 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-055 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -871,131 +871,55 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        $tools-item-width = 2.2rem
-$tools-item-font-size = 1.1rem
-$tools-item-border-radius = 0.2rem
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-.side-tools-show-handle {
-  transform translateX(100%)
-  opacity 0
-  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
-  &.show {
-    transform translateX(0)
-    opacity 1
-  }
-}
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
 
-.side-tools-container {
-  .tools-item {
-    width $tools-item-width
-    height $tools-item-width
-    margin-bottom 0.25rem
-    color var(--text-color-3)
-    font-size $tools-item-font-size
-    background var(--background-color-1)
-    border-right none
-    border-radius $tools-item-border-radius
-    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
-    cursor pointer
+        <!-- rss -->
+        
 
-    i {
-      color var(--text-color-3)
-    }
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    &:hover {
-      color var(--background-color-1)
-      background var(--primary-color)
-      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-      i {
-        color var(--background-color-1)
-      }
-    }
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
 
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
 
-    +keep-tablet() {
-      width $tools-item-width * 0.9
-      height $tools-item-width * 0.9
-      font-size $tools-item-font-size * 0.9
-
-      &.toggle-show-toc-tablet
-      &.go-to-comments-tablet {
-        display flex !important
-      }
-    }
-
-    &.rss {
-
-      a {
-        width 100%
-        height 100%
-        border-radius $tools-item-border-radius
-
-        &:hover {
-          color var(--background-color-1)
-          background var(--primary-color)
-          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
-        }
-      }
-    }
-
-    &.toggle-show-toc-tablet
-    &.go-to-comments-tablet {
-      display none
-    }
-  }
-
-
-  .exposed-tools-list {
-
-    .tool-scroll-to-top {
-      display none
-
-      &.show {
-        display flex
-      }
-
-
-      &.show-arrow {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      &.show-percent {
-        .percent {
-          display flex
-        }
-
-        .arrow {
-          display none
-        }
-      }
-
-
-      &:hover {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      .percent {
-        font-size 1rem
-      }
-    }
-  }
-}
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
 
     </div>
 

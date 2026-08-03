@@ -506,10 +506,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="7c66d3734980f7a294952e2d021d72670c8f3906ae5d6919769fb56a424ffbdf"
-                             data-iv="b5824f4a179b1f748d12a0a32aad6ac5"
-                             data-ep="17d9cef2c77862be6d1226ea51a9540e"
-                             data-content="7ba5a115a1d05326d93ea91f65b9e9c97df0a1294515cc1290114828fab391a6f86611748026e055c070e8f0c8cd7f493683ff822eaa3fcd5f580431789415347829028122c9b5fcbb57cb893878691277f2cac90576d3916f61e0e912c68e26cb1e9085f7aa9d6792599b5e74052ffcc61fc0be3e2087b1355090ba2092a60ea96ccc14b795d13aa8b50cb2a1b6c0ef329d689e351d6be2763e77ae1a1e8c26986934ff8c9f25a5106112c91cfa0bd0b2f912e84ac74f8914b71597a5a6f897e179bf53685bf61609b274cd91353f5f6c028236ff50092340363285b8fc7cbe95fc1c353e767bd067411169228a8509f627cdf8e262e8ee133fa7d66aa4aa0319613870032cff4811c58b3f0db923db99b0687079855fa6ee285323a592056908bf00848d99f2b21d3fa6341fd6ab2274a06f56869e03309a752ca6bd49cb5f"
+                             data-secret="4197ed3f82a17c91935eb217fc053337e6455dd2eaec79be58dc08d22afac1de"
+                             data-iv="423be1611571ba32d474f6362c8c5c8d"
+                             data-ep="1518ff195a09cf5f1f34905171720d59"
+                             data-content="c278c68920add82d68d1e7948cf2e3170096156cae2517379a9d2f75e1e40ba5a279ed929227d937c8551c7b76b2604575d0a55fe4dc5f7d1eee6782af250917ffa498e0ecc6f5ad8d3989cfb377a0d184c5d928c3056ce5fed1fcbfa4659675f91ab5fbd20e7a9ade2af69e2f73fa003bbe8ff7c6a2d327a7f2fd11297fcabec2f769666ed137a92c2e1f698f3e85dd8055416974fc48e19f19a9e22462530e9b232c2794a849f0b4e7b1108bca0bd02707837f80b75f67131cec21a9dc0eb39b0e8c9eee0cfa9ffc79724ade87efe4876910113f0b0a1d99d244c82adf756065c0bb6a82964eb0a4b2e5d6d5d295553950fbc74d2495d9780aad4c58ce9c604da9166d83bd8b5f529b020da05ef284a4a21bbb6ec8a975f92f42bba9ecb90ef06437fdeadd938c0594a05ffb1fefc6485567107f4ed02af8ad65b64fa5c76b"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -640,11 +640,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E7%BE%8E%EF%BC%8C%E6%99%BA%EF%BC%8C%E6%85%95%E5%BC%BA/"
-                                   title="修身-075 (已加密)"
+                                   href="/2026/03/03/%E7%B1%BB%E4%BC%BC%E7%9A%84%E6%81%8B%E7%88%B1%E8%A7%82/"
+                                   title="修身-072 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-075 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-072 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -871,131 +871,55 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        $tools-item-width = 2.2rem
-$tools-item-font-size = 1.1rem
-$tools-item-border-radius = 0.2rem
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-.side-tools-show-handle {
-  transform translateX(100%)
-  opacity 0
-  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
-  &.show {
-    transform translateX(0)
-    opacity 1
-  }
-}
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
 
-.side-tools-container {
-  .tools-item {
-    width $tools-item-width
-    height $tools-item-width
-    margin-bottom 0.25rem
-    color var(--text-color-3)
-    font-size $tools-item-font-size
-    background var(--background-color-1)
-    border-right none
-    border-radius $tools-item-border-radius
-    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
-    cursor pointer
+        <!-- rss -->
+        
 
-    i {
-      color var(--text-color-3)
-    }
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    &:hover {
-      color var(--background-color-1)
-      background var(--primary-color)
-      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-      i {
-        color var(--background-color-1)
-      }
-    }
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
 
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
 
-    +keep-tablet() {
-      width $tools-item-width * 0.9
-      height $tools-item-width * 0.9
-      font-size $tools-item-font-size * 0.9
-
-      &.toggle-show-toc-tablet
-      &.go-to-comments-tablet {
-        display flex !important
-      }
-    }
-
-    &.rss {
-
-      a {
-        width 100%
-        height 100%
-        border-radius $tools-item-border-radius
-
-        &:hover {
-          color var(--background-color-1)
-          background var(--primary-color)
-          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
-        }
-      }
-    }
-
-    &.toggle-show-toc-tablet
-    &.go-to-comments-tablet {
-      display none
-    }
-  }
-
-
-  .exposed-tools-list {
-
-    .tool-scroll-to-top {
-      display none
-
-      &.show {
-        display flex
-      }
-
-
-      &.show-arrow {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      &.show-percent {
-        .percent {
-          display flex
-        }
-
-        .arrow {
-          display none
-        }
-      }
-
-
-      &:hover {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      .percent {
-        font-size 1rem
-      }
-    }
-  }
-}
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
 
     </div>
 

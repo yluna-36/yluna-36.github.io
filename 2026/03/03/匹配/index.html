@@ -506,10 +506,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="a7b3acfd0da55dccf270282e82100ecaeeb3cee6b9ed91984fb2bb92a2b09aa1"
-                             data-iv="79e90c3894248b371bf4d803cf1885a6"
-                             data-ep="9adc3be424aa06738020e8e147c0905b"
-                             data-content="91dc441477862ea3055f552c0a5593e75909be74c8f119921c81c1fe525ca4897a0279d4fbec98554a79a99a4014259857bd2d88aaba116a5cba1f967033321376309f1fe3ddbebe9b1f5e264d4b85dc1a20a0818e1ad025d9908ce96aea9cf6cfbec87a31b761491cc9b358b67e47b9d393c37a82833e254d1c9f226c9f6f1e51c3b2aa52afbfc3d7b0e4ff4af3ea4731e4a0d2932f75d811783c4b9de5c58fe9e7c5117dc87b9c93e7f386f6be87c1d427bceb7e95a6e95411985ccbad5f99f8b49a3fbaa5fed755209e68b81d9058fe3c7a7b857ba871870c7c98e23eb0cfec70664e179e468b5791aa82fabb257c0fd82e2419d8c4324734ee81ed3e1efcffc636561986571b0c8fb356983e60679f7528d389d0b9c7204b6ee65f97bef80e584cdc1358a7ec9342fd3a9d4ef61f28347fe400ac4cb9d0beaed1fc40286963bc66eb595cdb4f2f1e1627a09b25c25fd6b561eb19f8e9fedea4f2876422747406dd565e269113c59659e9e70f6987ac6da93f3509b80925b140edd5ae225cda04978cf048890ba45980816f7b734df0f72ceb54d96f4e58472ae9f25f69e0aa2d2aebe676b6e3b3ddfb3b79283bd530d918c3d09470e857f504f4f22ca201"
+                             data-secret="ad169897ddebf414f630475a7b98585e8bdf2642cc3dced58428aab878d8abbd"
+                             data-iv="c0947c606556554254053bc6097ddfc6"
+                             data-ep="24a3b09d6553057183c9eb798a75ae72"
+                             data-content="af81fc1ab912fa5c0094650409d73279b84bc8bd55e73c4a663a19d90bb6795b4d19cfa1ab0e60cee069294b1ce4279c4497ef317997d7b5b100ff3ae5171683978bf34bde3c916a7f7058587e9c27b4c7f748dfe38e2135c0f760426d007fc1d0ec89faa178418c3bb417aa84592e5c55c02a0cea11c8e3dde386852f201f7626a2fca55202309c3424bc6faa6ca4192e1e31a08a7c30cef29bae708e5f80e69f3a5a5526ede1cca0f2d48e25a2f8e979208a7e9d9811a5f3f891cbcf8fa771860322b0df6aa459c49e3ae1d8d0b904c3f4268edff42cc661dd8f09521ef19d657a61f741b73a0ff32afa305aa07872ea04f452c9b5499ed6257cd95583dd727a8974564efb741c4787262cd4231e555866453c8bda329611cab3dd5094a553fd5d095d9855a6274a9b2a80cff04b3fc1b1a3122f9cb1473ddf28a543e84b6f00ab186600c6ed78d94fade7581372916fca33357647c6303c5a126016b9afa72f0c9096ce9f4f0cc00b41b159b0ff4c6417168e52aed97375975061c3a89541f3a89bcb2ddef94dd394c042ab38ee5f9ce0dee52354c7cee025f7465165751d481f8b133c3d61fd8d7a244ccdf79ea5215c3b5ad30e3827f720a919d42622a8"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -640,11 +640,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E5%8E%8B%E5%8A%9B/"
-                                   title="修身-025 (已加密)"
+                                   href="/2026/03/03/%E5%8D%95%E8%BA%AB%E5%8E%9F%E5%9B%A0/"
+                                   title="修身-023 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-025 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-023 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -871,131 +871,55 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        $tools-item-width = 2.2rem
-$tools-item-font-size = 1.1rem
-$tools-item-border-radius = 0.2rem
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-.side-tools-show-handle {
-  transform translateX(100%)
-  opacity 0
-  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
-  &.show {
-    transform translateX(0)
-    opacity 1
-  }
-}
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
 
-.side-tools-container {
-  .tools-item {
-    width $tools-item-width
-    height $tools-item-width
-    margin-bottom 0.25rem
-    color var(--text-color-3)
-    font-size $tools-item-font-size
-    background var(--background-color-1)
-    border-right none
-    border-radius $tools-item-border-radius
-    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
-    cursor pointer
+        <!-- rss -->
+        
 
-    i {
-      color var(--text-color-3)
-    }
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    &:hover {
-      color var(--background-color-1)
-      background var(--primary-color)
-      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-      i {
-        color var(--background-color-1)
-      }
-    }
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
 
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
 
-    +keep-tablet() {
-      width $tools-item-width * 0.9
-      height $tools-item-width * 0.9
-      font-size $tools-item-font-size * 0.9
-
-      &.toggle-show-toc-tablet
-      &.go-to-comments-tablet {
-        display flex !important
-      }
-    }
-
-    &.rss {
-
-      a {
-        width 100%
-        height 100%
-        border-radius $tools-item-border-radius
-
-        &:hover {
-          color var(--background-color-1)
-          background var(--primary-color)
-          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
-        }
-      }
-    }
-
-    &.toggle-show-toc-tablet
-    &.go-to-comments-tablet {
-      display none
-    }
-  }
-
-
-  .exposed-tools-list {
-
-    .tool-scroll-to-top {
-      display none
-
-      &.show {
-        display flex
-      }
-
-
-      &.show-arrow {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      &.show-percent {
-        .percent {
-          display flex
-        }
-
-        .arrow {
-          display none
-        }
-      }
-
-
-      &:hover {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      .percent {
-        font-size 1rem
-      }
-    }
-  }
-}
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
 
     </div>
 

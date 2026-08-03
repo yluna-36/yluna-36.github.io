@@ -506,10 +506,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="e6ae69782f60e2c0444d8c5df9fc9d4ede921840daa15f60ebff6b94873abf37"
-                             data-iv="bfff298cb006dd382101e782c8cde8b1"
-                             data-ep="cc54346057fe359c8c052a29393bb50a"
-                             data-content="46b7a14e64731d970de1d92ce2bd32da3554d9cbe3fc6cc3563ce47fa4cfaaf997fc4335685a131ae55efb523a69c5568612d80a4abef7e1740e8fc914f9d5e987b49539c4fecfda2ca95cbb7bce200d821df4e5631353c2a250fff798ab219f77d532e07d004fb1ccd0a3e46798cfb83d069b77fdad480080824b635c1c88281f4c7afec0c02db957b92e54f64a7c844d49d83096974494b9b28cbbb4c60b198c8a93ca6bb12a1b9a156b1f55f7beffc7e064fe02b7fdfb5fcb8049336a1993dbb5efe258faf4ff6f907f9a8b43459d98d60797d0741beecd89c59c088dbef55a7154cf9b568c1c1787ef257dffcb753056186a19d9b66106265cd92d6a124fad0da734904deac220fbadec40defa37ea2079d42a19610e1982d7fee95cc8366e742f715256e607c360519d6a0c4f7c8931002b81efaf5060b90a380a19b7c173da5cbd100bc1d9a089f25dc982d9239424d10f584b16419b205fb117ebbd9be6ffb466077e1d5204fdf545930f30ce25eebcaf69233fdca277b7a6c7d3fa12142bc787e0a0b830af4b75bd284fc24f002f7f00881e3d4591fd0d379a260d20d839df82704143258f8e58c638bbdb7e29e183a595db21ae62c11eaac6808c768cf277ab04df9d4ab13a6f7d856b521e235880140b2fe65ea674331af1d153050d1b070c8c883b9c3fba3a7b7ce2996f6922efe836d4c1fd36b2baf3392181eeabfd5888cab3213ebd75966cb39698a9556ad11ff24d751224292f585f4bb2698e516ec1d92933700f6995e91d523517"
+                             data-secret="7d1c77153266194243644694ad2c3651568a15eb5097e242b05a12c71252ab5a"
+                             data-iv="4e69f1827950c7232b654998b2473942"
+                             data-ep="491b166f530b85e358b60deefffa2158"
+                             data-content="0e79fb45d4b66d90b3955de638748828a94a9fbe7f81d0e8983696ebe3b60bb39483d70cc604f474a2248cab69e309b6fb360ca8bc711665b818e95780c9c7e0799b95f5d8566ae6373afac1302c0e6cfc893181d068a633f4a7ac4c7f112e94c8a5c4a9afb461828b668c07a64d561d29eea4e01829084366adf62a5e9a5c373ba10335d0bdfcb61c551529a223d17bac00de3f1bd9db72bf39aeaa1ced2246c392bbdbfe2b59fa0feec5fa60c8e16c0dff66b0b62805a7c469254cf49aef4eff44199f7bd4abba127b7f56d256e7a8a67f9cf4303beac6a1ae770c5132c10d11aa40995561ad56cfc7f5a26dcf714937a44749a50f6218935359593cff4e5ab9e4f83129e691d66b925d52f7867671124a8ef735672c8544da7763a70181de5ff6d6a373114de2973d1d225f733897e17082fd5813b5cc7ca1763893ceb77b23bd1538f148dc4787cece9c3a41535ed68c64bb53826ca851cf601ddc7fed5d87726cd2ce3797d7f5595084abca01312b8f5a56bffac2d23fd39547dc5b9d50642867632acad0e2e352774d5e61de162fe0c1b5ba562d3a8a38d9f138f062999f1d63f2f054881f200838d6d0a48d6bccdf52bb47f618a3ffac3e5ddc53cbb5092d06521016df53132f2d7696f59e8e3312964aa0631b9f747f55ea8bdf39b49119a80febbcdd7da48090c4ef9043ec127d7f664a1c581fd87ce593e2a0debb872144880605cfb593bbbc10e7f3740ab9ba5bb1abe01c4721b2b6b40063b087babfe5d7ab138c09fa8dde29cb73f595"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -871,131 +871,55 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        $tools-item-width = 2.2rem
-$tools-item-font-size = 1.1rem
-$tools-item-border-radius = 0.2rem
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-.side-tools-show-handle {
-  transform translateX(100%)
-  opacity 0
-  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
-  &.show {
-    transform translateX(0)
-    opacity 1
-  }
-}
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
 
-.side-tools-container {
-  .tools-item {
-    width $tools-item-width
-    height $tools-item-width
-    margin-bottom 0.25rem
-    color var(--text-color-3)
-    font-size $tools-item-font-size
-    background var(--background-color-1)
-    border-right none
-    border-radius $tools-item-border-radius
-    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
-    cursor pointer
+        <!-- rss -->
+        
 
-    i {
-      color var(--text-color-3)
-    }
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    &:hover {
-      color var(--background-color-1)
-      background var(--primary-color)
-      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-      i {
-        color var(--background-color-1)
-      }
-    }
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
 
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
 
-    +keep-tablet() {
-      width $tools-item-width * 0.9
-      height $tools-item-width * 0.9
-      font-size $tools-item-font-size * 0.9
-
-      &.toggle-show-toc-tablet
-      &.go-to-comments-tablet {
-        display flex !important
-      }
-    }
-
-    &.rss {
-
-      a {
-        width 100%
-        height 100%
-        border-radius $tools-item-border-radius
-
-        &:hover {
-          color var(--background-color-1)
-          background var(--primary-color)
-          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
-        }
-      }
-    }
-
-    &.toggle-show-toc-tablet
-    &.go-to-comments-tablet {
-      display none
-    }
-  }
-
-
-  .exposed-tools-list {
-
-    .tool-scroll-to-top {
-      display none
-
-      &.show {
-        display flex
-      }
-
-
-      &.show-arrow {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      &.show-percent {
-        .percent {
-          display flex
-        }
-
-        .arrow {
-          display none
-        }
-      }
-
-
-      &:hover {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      .percent {
-        font-size 1rem
-      }
-    }
-  }
-}
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
 
     </div>
 

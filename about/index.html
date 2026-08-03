@@ -458,7 +458,7 @@
 <p>相比于被动消费，我更渴望去创造一些新的东西，尝试<strong>创业</strong>。<br>我热衷于探索<strong>技术、自动化工作流与个人表达的结合</strong>，并相信这些工具能极大地延展个人的边界。在工作与研究之余，我也喜欢通过下象棋、打羽毛球来保持敏锐，或是看看动漫，享受深度思考的乐趣。</p>
 <hr>
 <h2 id="如何联系我-Contact"><a href="#如何联系我-Contact" class="headerlink" title="如何联系我 (Contact)"></a>如何联系我 (Contact)</h2><p>欢迎就独立开发、自动化实践、研究型创作等话题与我交流：</p>
-<p>📧 <strong>邮箱优先</strong>：<a class="link"   href="mailto:&#x79;&#108;&#x75;&#x6e;&#x61;&#64;&#102;&#111;&#x78;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;" >yluna@foxmail.com<i class="fas fa-external-link-alt"></i></a><br>💬 <strong>微信&#x2F;QQ</strong>：作为次选。您可以在侧边栏点击对应的社交图标找到我的联系方式。</p>
+<p>📧 <strong>邮箱优先</strong>：<a class="link"   href="mailto:&#x79;&#x6c;&#117;&#110;&#97;&#64;&#102;&#x6f;&#x78;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;" >yluna@foxmail.com<i class="fas fa-external-link-alt"></i></a><br>💬 <strong>微信&#x2F;QQ</strong>：作为次选。您可以在侧边栏点击对应的社交图标找到我的联系方式。</p>
 <hr>
 <h2 id="关于本站-About-this-site"><a href="#关于本站-About-this-site" class="headerlink" title="关于本站 (About this site)"></a>关于本站 (About this site)</h2><p><strong>这里是我的“表站” (Public Site)。</strong></p>
 <p>本站主要用于展示专业技能、技术实验、工作流探索以及一些可公开的产出。</p>
@@ -536,131 +536,47 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        $tools-item-width = 2.2rem
-$tools-item-font-size = 1.1rem
-$tools-item-border-radius = 0.2rem
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-.side-tools-show-handle {
-  transform translateX(100%)
-  opacity 0
-  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
-  &.show {
-    transform translateX(0)
-    opacity 1
-  }
-}
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
 
-.side-tools-container {
-  .tools-item {
-    width $tools-item-width
-    height $tools-item-width
-    margin-bottom 0.25rem
-    color var(--text-color-3)
-    font-size $tools-item-font-size
-    background var(--background-color-1)
-    border-right none
-    border-radius $tools-item-border-radius
-    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
-    cursor pointer
+        <!-- rss -->
+        
 
-    i {
-      color var(--text-color-3)
-    }
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    &:hover {
-      color var(--background-color-1)
-      background var(--primary-color)
-      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+    <ul class="exposed-tools-list border-box">
+        
 
-      i {
-        color var(--background-color-1)
-      }
-    }
+        
 
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
 
-    +keep-tablet() {
-      width $tools-item-width * 0.9
-      height $tools-item-width * 0.9
-      font-size $tools-item-font-size * 0.9
-
-      &.toggle-show-toc-tablet
-      &.go-to-comments-tablet {
-        display flex !important
-      }
-    }
-
-    &.rss {
-
-      a {
-        width 100%
-        height 100%
-        border-radius $tools-item-border-radius
-
-        &:hover {
-          color var(--background-color-1)
-          background var(--primary-color)
-          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
-        }
-      }
-    }
-
-    &.toggle-show-toc-tablet
-    &.go-to-comments-tablet {
-      display none
-    }
-  }
-
-
-  .exposed-tools-list {
-
-    .tool-scroll-to-top {
-      display none
-
-      &.show {
-        display flex
-      }
-
-
-      &.show-arrow {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      &.show-percent {
-        .percent {
-          display flex
-        }
-
-        .arrow {
-          display none
-        }
-      }
-
-
-      &:hover {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      .percent {
-        font-size 1rem
-      }
-    }
-  }
-}
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
 
     </div>
 
