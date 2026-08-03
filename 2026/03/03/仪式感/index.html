@@ -506,10 +506,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="a236d43bccddd2f8f33714b805ef41fb64c8c9134501963341e1a555ce092a28"
-                             data-iv="ce298f2246fe5327ff40d76d0de03d16"
-                             data-ep="f58821918168689549f66579c3e51fc8"
-                             data-content="ee2666f5d4befc7a495cba54da77ce33d7f839e2d5cbc74c6a4211359fadd5194c0752151b06fc0ac06d543b22cad436e6747ebb707e0f13c8bbd1a74091d68a7bb775f32712bf6fd0a12d382e2cc652ee77bfe5bcf5b48ea78cc2b72512572d205d60b540e80fe30c78a8b1ab1c4197e7d7344462f06c19bb7d3f6e52dca2c8db49142cf806a84085150506c47ad715ffaf3f1d7137078510b11e1481f837080a83f0e070354b0590d17741048926e1a249dc82248358a154d3949e9805a5f7e263ace88a941fe6426ae5d43d0a167155b383d112609ba9bce68adca3bc9f3c3a210883fbbf34f3bd3d538ddc668ccca50a8573e1ed17a497f850c891cb660f67721735459593e301cff67e0f866475fe158fe9ca9981073b119e04eb02904c752b5dc7a3e157befe23c8f720fabf4a52162c2982e6fc740ed286bf81158fcf"
+                             data-secret="4876ac4f596dfba1d779247233442abf16036b3dbe034be30d72f1d2c2fe15d6"
+                             data-iv="e304e68ed12f8f968a4c71931db085d3"
+                             data-ep="f9d87dd4d288a80dbcf27454d94e5bfd"
+                             data-content="d8fef82aadfed50f05c795481d35b5e98fae3069a53663d4a77a49dde7e42fc738bda602dbaaae6734efcde9f7bedb883ceadfa5ef2d1fe716714ff23c2c4e9280adc401943c9f208f0013a7aaf0c33beb29fcbc6ec070a37bdeed1b73764f8de48bf21f84065359ba7b25d4f3cb1970f7a8ce3a218da1190e0115d75656f55f0d57cf899006c6b3cd11377ba93486de4960f4b8d761c4e8fca2f7bcd23e3baf5647c0fe973ab545f6e71b8cce8a24b6fb165c696c84cb622a16b2b6ab33c718444c80376096a2fa38de20cdb8a789dc14c53c3ea7a90e1c397f821e3ff9f3945714771f64c23ad655cea0af1570a3797b69db051d48c5ec56cd55f3e1bb90adee06f508c8b15caab94698a269655be5c2e8040403ac731ce66b110b754ac502dc8268abcebc7186a47619893a840a1b27353cf865f6155a34b3526b96207ed0"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -623,14 +623,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E4%BA%BA%E7%94%9F%E9%81%97%E6%86%BE/"
-                                   title="修身-012 (已加密)"
+                                   href="/2026/03/03/%E4%BB%B7%E5%80%BC%E8%A7%82/"
+                                   title="修身-014 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-012 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-014 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -871,131 +871,55 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        $tools-item-width = 2.2rem
-$tools-item-font-size = 1.1rem
-$tools-item-border-radius = 0.2rem
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-.side-tools-show-handle {
-  transform translateX(100%)
-  opacity 0
-  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
-  &.show {
-    transform translateX(0)
-    opacity 1
-  }
-}
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
 
-.side-tools-container {
-  .tools-item {
-    width $tools-item-width
-    height $tools-item-width
-    margin-bottom 0.25rem
-    color var(--text-color-3)
-    font-size $tools-item-font-size
-    background var(--background-color-1)
-    border-right none
-    border-radius $tools-item-border-radius
-    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
-    cursor pointer
+        <!-- rss -->
+        
 
-    i {
-      color var(--text-color-3)
-    }
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    &:hover {
-      color var(--background-color-1)
-      background var(--primary-color)
-      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-      i {
-        color var(--background-color-1)
-      }
-    }
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
 
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
 
-    +keep-tablet() {
-      width $tools-item-width * 0.9
-      height $tools-item-width * 0.9
-      font-size $tools-item-font-size * 0.9
-
-      &.toggle-show-toc-tablet
-      &.go-to-comments-tablet {
-        display flex !important
-      }
-    }
-
-    &.rss {
-
-      a {
-        width 100%
-        height 100%
-        border-radius $tools-item-border-radius
-
-        &:hover {
-          color var(--background-color-1)
-          background var(--primary-color)
-          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
-        }
-      }
-    }
-
-    &.toggle-show-toc-tablet
-    &.go-to-comments-tablet {
-      display none
-    }
-  }
-
-
-  .exposed-tools-list {
-
-    .tool-scroll-to-top {
-      display none
-
-      &.show {
-        display flex
-      }
-
-
-      &.show-arrow {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      &.show-percent {
-        .percent {
-          display flex
-        }
-
-        .arrow {
-          display none
-        }
-      }
-
-
-      &:hover {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      .percent {
-        font-size 1rem
-      }
-    }
-  }
-}
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
 
     </div>
 

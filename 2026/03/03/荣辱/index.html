@@ -506,10 +506,10 @@
 
                     
                         <div class="post-encrypt-box border-box"
-                             data-secret="91e4723b9dbfc1e252bcde5232a1b2e2d7992096b7c206f6b892410bd2c93ed7"
-                             data-iv="eef33a81ddce7bdbc4a6ecd8a18eece6"
-                             data-ep="398f5aebe90f1dd6281144a91297176e"
-                             data-content="136c4eb57d3f1c76b5c824a295e8fc38aeb8c85f75977bc0efb8e383b0d23b8d88b7b7a091d818481bc87e48f11a27640840bb6b0137a93178baade3a5fd5f8fe7a2b60c775563d350d5f733e04164b36a1992cafabfd138347cbff98cbf8aaea23d3dfce99a330182cb30b77627a12a8ee818f5dd7ac8e6b27615e7b08701fefdd8ef981d33153120a034ea0681cd09acb406c3dc8678c1d01b5f161ad7959cb202dda0bdd428c33a0371c3d91a384cdaf42c7456c9f98f4991842359acbd2a3f122bfc51b693e06c5d11298d3b3b6136c939978fe45ec74ba9baac111d118688f74319db34bb8ce5ad9b83f73bd310"
+                             data-secret="490653abede55e33709cc2fb4fb9713e03ffb8680808c247db212e7641c19ba4"
+                             data-iv="c09235e3164cd2de7587e73304dcbca9"
+                             data-ep="503abfd4fc9844d6f2881a93de78f9bb"
+                             data-content="7818ceab85f653ba5515eb0d76265a8e7178b2faa91887f9c5ac9a2b19206d51dd88521093547733656f5ee4656bf7277342f2738d8e61a3c62feeffc60f8b57f3a2e411479136299e8ade6056d7c55eddaee16f3d59e8c6d38ada38bcef63e05f411034b738e1ee2857760e89197e9fa1ab03ad8e0fbf625a26e6577e8db9b8d656ca704a86ad27f48b8a94a54dff58eb2812824479709f880e5464c5fd54c0f47d04a436278645614f23b627f7d1787a4ef0ba0abbe24329022be31ccac321ef8cc26482d5272123084aa6930955372044d7a55d7aa2d348fbbf46b1565ec61e665c5f3da148b1ac1efb04315feae8"
                         >
                             <input type="password" class="password-input border-box" placeholder="Please enter password ...">
                         </div>
@@ -623,14 +623,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2026/03/03/%E8%A7%82%E5%AF%9F%20%E6%8E%A8%E7%90%86/"
-                                   title="格物-003 (已加密)"
+                                   href="/2026/03/03/%E8%89%B2%E6%AC%B2/"
+                                   title="修身-064 (已加密)"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">格物-003 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">修身-064 (已加密)</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -640,11 +640,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2026/03/03/%E8%A7%82%E6%B5%8B/"
-                                   title="修身-066 (已加密)"
+                                   href="/2026/03/03/%E8%A7%82%E5%AF%9F%20%E6%8E%A8%E7%90%86/"
+                                   title="格物-003 (已加密)"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-066 (已加密)</span>
+                                        <span class="post-nav-title-item text-ellipsis">格物-003 (已加密)</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -871,131 +871,55 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        $tools-item-width = 2.2rem
-$tools-item-font-size = 1.1rem
-$tools-item-border-radius = 0.2rem
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-.side-tools-show-handle {
-  transform translateX(100%)
-  opacity 0
-  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
-  &.show {
-    transform translateX(0)
-    opacity 1
-  }
-}
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
 
-.side-tools-container {
-  .tools-item {
-    width $tools-item-width
-    height $tools-item-width
-    margin-bottom 0.25rem
-    color var(--text-color-3)
-    font-size $tools-item-font-size
-    background var(--background-color-1)
-    border-right none
-    border-radius $tools-item-border-radius
-    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
-    cursor pointer
+        <!-- rss -->
+        
 
-    i {
-      color var(--text-color-3)
-    }
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    &:hover {
-      color var(--background-color-1)
-      background var(--primary-color)
-      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-      i {
-        color var(--background-color-1)
-      }
-    }
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
 
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
 
-    +keep-tablet() {
-      width $tools-item-width * 0.9
-      height $tools-item-width * 0.9
-      font-size $tools-item-font-size * 0.9
-
-      &.toggle-show-toc-tablet
-      &.go-to-comments-tablet {
-        display flex !important
-      }
-    }
-
-    &.rss {
-
-      a {
-        width 100%
-        height 100%
-        border-radius $tools-item-border-radius
-
-        &:hover {
-          color var(--background-color-1)
-          background var(--primary-color)
-          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
-        }
-      }
-    }
-
-    &.toggle-show-toc-tablet
-    &.go-to-comments-tablet {
-      display none
-    }
-  }
-
-
-  .exposed-tools-list {
-
-    .tool-scroll-to-top {
-      display none
-
-      &.show {
-        display flex
-      }
-
-
-      &.show-arrow {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      &.show-percent {
-        .percent {
-          display flex
-        }
-
-        .arrow {
-          display none
-        }
-      }
-
-
-      &:hover {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      .percent {
-        font-size 1rem
-      }
-    }
-  }
-}
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
 
     </div>
 
