@@ -9,7 +9,7 @@
     
     <title>
         
-            格物-001 (已加密) |
+            文章检索与筛选 |
         
         yluna 的个人空间
     </title>
@@ -373,368 +373,323 @@
                 
 
                     
+
 <div class="fade-in-down-animation">
-    <div class="post-page-container border-box encrypt">
-        <div class="post-content-container border-box">
+    <div class="page-template-container border-box keep-container ">
+        <!-- page top -->
+        
+
+        <!-- page bottom -->
+        <div class="page-template-bottom border-box">
+            <!-- use page template -->
             
 
-            <div class="post-content-bottom border-box">
+            <!-- page content -->
+            <div class="page-content border-box keep-markdown-body ">
                 
-                    <div class="post-title">
-                        格物-001 (已加密)
-                    </div>
-                
+                    <style>
+.filter-container {
+    background: var(--background-color, #fff);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.filter-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color, #eee);
+    padding-bottom: 10px;
+}
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+.filter-group label {
+    font-size: 0.9rem;
+    color: var(--text-color-3, #666);
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.filter-group select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 4px;
+    background: var(--background-color, #fff);
+    color: var(--text-color, #333);
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+.filter-group select:focus {
+    border-color: var(--primary-color, #0078e7);
+}
+.filter-results-info {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-color-3, #666);
+}
 
-                
-                    <div class="post-header border-box">
-                        
-                            <div class="avatar-box border-box">
-                                <img src="/images/logo-icon.png">
-                            </div>
-                        
-                        <div class="info-box">
-                            <div class="author border-box">
-                                <span class="name">yluna</span>
-                                
-                            </div>
-                            <div class="meta-info border-box">
-                                
+/* Post list styles */
+.filtered-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.filtered-post-item {
+    background: var(--background-color, #fff);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.filtered-post-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+.post-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.post-title a {
+    color: var(--text-color, #333);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    border-bottom: none;
+}
+.post-title a:hover {
+    color: var(--primary-color, #0078e7);
+}
+.post-meta {
+    font-size: 0.85rem;
+    color: var(--text-color-3, #888);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.post-meta i {
+    margin-right: 5px;
+}
+.post-attributes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.attr-badge {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: var(--second-background-color, #f5f5f5);
+    color: var(--text-color-2, #555);
+    border: 1px solid var(--border-color, #eee);
+}
+.attr-badge span.attr-key {
+    font-weight: bold;
+    margin-right: 4px;
+}
+#loading-indicator {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-color-3, #888);
+}
+</style>
 
-<div class="post-meta-info-container border-box post">
-    <div class="post-meta-info border-box">
-        
-
-        
-            <span class="meta-info-item post-create-date">
-                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2026-03-03 19:04:57</span>
-            </span>
-
-            
-                <span class="meta-info-item post-update-date">
-                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Tue Mar 03 2026 19:04:57 GMT+0800">2026-03-03 19:04:57</span>
-                </span>
-            
-        
-
-        
-            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="post-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E8%AE%A8%E8%AE%BA%E4%BA%8B%E9%A1%B9/">讨论事项</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-
-        
-        
-            <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>7 Words</span>
-            </span>
-        
-        
-            <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 Mins</span>
-            </span>
-        
-        
-            <span class="meta-info-item post-pv">
-                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-            </span>
-        
+<div class="filter-container">
+    <div class="filter-header">条件筛选</div>
+    <div class="filter-controls" id="filter-controls-container">
+        <!-- Dynamic filters will be injected here -->
     </div>
+    <div class="filter-results-info" id="results-count">正在加载数据...</div>
+</div>
 
+<div id="loading-indicator">数据加载中...</div>
+<div class="filtered-posts-list" id="posts-container">
+    <!-- Posts will be injected here -->
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    const postsContainer = document.getElementById('posts-container');
+    const filterControlsContainer = document.getElementById('filter-controls-container');
+    const resultsCount = document.getElementById('results-count');
+    const loadingIndicator = document.getElementById('loading-indicator');
     
-</div>
-
-                            </div>
-                        </div>
-                    </div>
-                
-
-                <div class="post-content keep-markdown-body ">
-                    
-
-                    
-                        <div class="post-encrypt-box border-box"
-                             data-secret="df7346cff6a83e07491a0cfaee9ae417b05556b7a74b43d11615c89d4047a354"
-                             data-iv="927e565c4d0046db3cdc735b72df07d2"
-                             data-ep="c1acbbaf1267d7a1b1f6d269ba6ecd9b"
-                             data-content="c7120f69057aa65ab9f8ef05d9a8cc171ca3a4147991aa70eec1abf8a85b275710dc579834d06d2d7e95178f57a2c914a88f7a3d586ed58177558f572cae21a26b669834d48b81455122fb6aa899ce5c511b36bbe812739476b5437cc68f7af06968cf67482e116f937e9c00c75e5c80474460c0ca8033d0abc971644573934c00de1ba0d0e5e2d558fe0aadf0bcd7c9c60f13b623c8901b8e773732edd1fb20b9e2b40e9ee6293414cbca9138591a4cfd0bfa68d51252c3a0c6cd693d0dc1a3cc88db2f96dc767647fb9d73d66791c56fd111af44726a30fea74c3b0bd92c8f776cb9a3a0a0677f0d7d2ec1cf63c43b5a12e8962f5ebe7e0258d64ff6f5422ac79077405cd6155dc624346b8e54c4f128e74368e3801c6b9902ae71665214fbe70eef9cce96a8e222f1adbf9b9627ff3a213140e0d6dff458aa9e706a2c8c7e"
-                        >
-                            <input type="password" class="password-input border-box" placeholder="Please enter password ...">
-                        </div>
-                        <div class="post"></div>
-                    
-                </div>
-
-                
-                        
-<div class="post-copyright-info-container border-box">
-    <div class="copyright-info-content border-box">
-        <div class="copyright-info-top border-box">
-            <div class="copyright-post-title border-box text-ellipsis">
-                格物-001 (已加密)
+    let allPosts = [];
+    let availableAttributes = new Set();
+    
+    try {
+        const response = await fetch('/api/posts.json');
+        if (!response.ok) throw new Error('Failed to fetch posts data');
+        allPosts = await response.json();
+        
+        // Discover dynamic attributes
+        allPosts.forEach(post => {
+            Object.keys(post).forEach(key => {
+                if (['title', 'path', 'date', 'tags', 'categories'].includes(key)) return;
+                availableAttributes.add(key);
+            });
+        });
+        
+        loadingIndicator.style.display = 'none';
+        
+        buildFilters();
+        renderPosts(allPosts);
+        
+    } catch (error) {
+        loadingIndicator.innerText = '加载失败，请检查网络或配置。';
+        console.error(error);
+    }
+    
+    function buildFilters() {
+        // Base filters (Categories & Date)
+        let html = \`
+            <div class="filter-group">
+                <label>分类 (Category)</label>
+                <select id="filter-category" class="filter-select">
+                    <option value="">全部</option>
+                    \${getUniqueValues('categories').map(v => \`<option value="\${v}">\${v}</option>\`).join('')}
+                </select>
             </div>
-
-            <div class="copyright-post-link border-box text-ellipsis" style="opacity: 0.8; font-size: 0.9em; margin-top: 5px;">
-                转载请注明出处：<a href="/" style="text-decoration: underline;">yluna 的个人空间</a>
+            <div class="filter-group">
+                <label>发布时间排序</label>
+                <select id="sort-date" class="filter-select">
+                    <option value="desc">最新发布</option>
+                    <option value="asc">最早发布</option>
+                </select>
             </div>
-        </div>
-
-        <div class="copyright-info-bottom border-box">
-            <div class="copyright-post-author bottom-item">
-                <div class="type">
-                    Author
+        \`;
+        
+        // Dynamic custom attribute filters
+        availableAttributes.forEach(attr => {
+            const values = getUniqueValues(attr);
+            if (values.length > 0) {
+                html += \`
+                <div class="filter-group">
+                    <label>\${attr}</label>
+                    <select id="filter-attr-\${attr}" data-attr="\${attr}" class="filter-select dynamic-attr">
+                        <option value="">全部</option>
+                        \${values.map(v => \`<option value="\${v}">\${v}</option>\`).join('')}
+                    </select>
                 </div>
-                <div class="content">yluna</div>
-            </div>
-
-            <div class="post-time bottom-item">
-                <div class="type">
-                    Published
+                \`;
+            }
+        });
+        
+        filterControlsContainer.innerHTML = html;
+        
+        // Add event listeners
+        document.querySelectorAll('.filter-select').forEach(el => {
+            el.addEventListener('change', applyFilters);
+        });
+    }
+    
+    function getUniqueValues(key) {
+        const values = new Set();
+        allPosts.forEach(post => {
+            if (post[key]) {
+                if (Array.isArray(post[key])) {
+                    post[key].forEach(v => values.add(v));
+                } else {
+                    values.add(post[key]);
+                }
+            }
+        });
+        return Array.from(values).sort();
+    }
+    
+    function applyFilters() {
+        const categoryFilter = document.getElementById('filter-category').value;
+        const sortOrder = document.getElementById('sort-date').value;
+        
+        const dynamicFilters = {};
+        document.querySelectorAll('.dynamic-attr').forEach(el => {
+            if (el.value) dynamicFilters[el.dataset.attr] = el.value;
+        });
+        
+        let filtered = allPosts.filter(post => {
+            // Category check
+            if (categoryFilter && (!post.categories || !post.categories.includes(categoryFilter))) return false;
+            
+            // Dynamic attributes check
+            for (const attr in dynamicFilters) {
+                const requiredVal = dynamicFilters[attr];
+                const postVal = post[attr];
+                if (!postVal) return false;
+                if (Array.isArray(postVal) && !postVal.includes(requiredVal)) return false;
+                if (!Array.isArray(postVal) && postVal.toString() !== requiredVal) return false;
+            }
+            
+            return true;
+        });
+        
+        // Sort
+        filtered.sort((a, b) => {
+            return sortOrder === 'desc' ? b.date - a.date : a.date - b.date;
+        });
+        
+        renderPosts(filtered);
+    }
+    
+    function renderPosts(posts) {
+        resultsCount.innerText = \`共找到 \${posts.length} 篇文章\`;
+        
+        if (posts.length === 0) {
+            postsContainer.innerHTML = '<div style="text-align:center; padding:30px; color:var(--text-color-3, #999);">没有找到匹配的文章。</div>';
+            return;
+        }
+        
+        postsContainer.innerHTML = posts.map(post => {
+            const dateStr = new Date(post.date).toLocaleDateString('zh-CN', {year: 'numeric', month: '2-digit', day: '2-digit'});
+            
+            // Build badges for tags/categories
+            let metaHtml = \`
+                <div class="post-meta">
+                    <span><i class="fas fa-calendar-alt"></i> \${dateStr}</span>
+                    \${post.categories && post.categories.length ? \`<span><i class="fas fa-folder"></i> \${post.categories.join(', ')}</span>\` : ''}
+                    \${post.tags && post.tags.length ? \`<span><i class="fas fa-tags"></i> \${post.tags.join(', ')}</span>\` : ''}
                 </div>
-                <div class="content">2026-03-03 19:04</div>
-            </div>
-
-
-            <div class="post-license bottom-item">
-                <div class="type">
-                    License
+            \`;
+            
+            // Build badges for dynamic custom attributes
+            let attrBadges = '';
+            availableAttributes.forEach(attr => {
+                if (post[attr]) {
+                    const val = Array.isArray(post[attr]) ? post[attr].join(', ') : post[attr];
+                    attrBadges += \`<div class="attr-badge"><span class="attr-key">\${attr}:</span>\${val}</div>\`;
+                }
+            });
+            
+            if (attrBadges) {
+                attrBadges = \`<div class="post-attributes">\${attrBadges}</div>\`;
+            }
+            
+            return \`
+                <div class="filtered-post-item">
+                    <div class="post-title"><a href="\${post.path}">\${post.title}</a></div>
+                    \${metaHtml}
+                    \${attrBadges}
                 </div>
-                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
-                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">
-                        
-                            <i class="fa-brands fa-creative-commons"></i>
-                            <i class="fa-brands fa-creative-commons-by"></i>
-                            <i class="fa-brands fa-creative-commons-nc"></i>
-                            <i class="fa-brands fa-creative-commons-sa"></i>
-                        
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <i class="copyright-bg fa-solid fa-copyright"></i>
-    </div>
-    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
-        <i class="fa-solid fa-copy"></i>
-    </div>
-</div>
-
-                
-
-                <div class="post-bottom-tags-and-share border-box">
-                    <div>
-                        
-                    </div>
-                    <div>
-                        
-                            <div class="post-share-container border-box">
-    <ul class="share-list-wrap border-box">
-        <li class="qq share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to QQ"
-        >
-            <i class="fa-brands fa-qq"></i>
-        </li>
-        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
-            data-tooltip-content="Share to WeChat"
-            data-tooltip-img-tip="Scan by WeChat"
-            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
-        >
-            <i class="fa-brands fa-weixin"></i>
-        </li>
-        <li class="weibo share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to WeiBo"
-        >
-            <i class="fa-brands fa-weibo"></i>
-        </li>
-        <li class="twitter share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to X (Twitter)"
-        >
-            <i class="fa-brands fa-x-twitter"></i>
-        </li>
-        <li class="telegram share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to Telegram"
-        >
-            <i class="fa-brands fa-telegram"></i>
-        </li>
-    </ul>
-</div>
-
-                        
-                    </div>
-                </div>
-
-                
-
-                
-                    <div class="post-nav border-box">
-                        
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2026/03/03/%E5%8D%95%E8%BA%AB%E5%8E%9F%E5%9B%A0/"
-                                   title="修身-023 (已加密)"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-023 (已加密)</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="/2026/03/03/%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92/"
-                                   title="修身-026 (已加密)"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">修身-026 (已加密)</span>
-                                        <span class="post-nav-item">Next posts</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                    </div>
-                
-
-                
-                    
-
-
-    <div class="comments-container border-box">
-        <div id="comments-anchor" class="comment-area-title border-box">
-            <i class="fas fa-comments"></i>&nbsp;Comments
-        </div>
-        <div class="comment-plugin-fail border-box">
-    <span class="fail-tip">Comment plugin failed to load</span>
-    <button class="reload keep-button">Click to reload</button>
-</div>
-<div class="comment-plugin-loading flex-center border-box">
-    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
-    <span class="load-tip">Loading comment plugin</span>
-</div>
-<script data-pjax>
-  window.KeepCommentPlugin = {}
-  window.KeepCommentPlugin.hideLoading = () => {
-    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
-    cplDom.style.display = 'none'
-  }
-  window.KeepCommentPlugin.loadFailHandle = () => {
-    window.KeepCommentPlugin.hideLoading()
-    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
-    cpfDom.style.display = 'flex'
-    cpfDom.querySelector('.reload').addEventListener('click', () => {
-      window.location.reload()
-    })
-  }
+            \`;
+        }).join('');
+    }
+});
 </script>
 
-        
-            
-
-    <div class="giscus-comments-container">
-        <div class="giscus" id="giscus"></div>
-        <script data-pjax
-                onerror="window.KeepCommentPlugin.loadFailHandle()"
-        >
-          if (!window.KeepCommentPlugin?.getGiscusTheme) {
-            window.KeepCommentPlugin.getGiscusTheme = () => {
-              return document.documentElement.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
-            }
-          }
-
-          if (!window.KeepCommentPlugin?.changeGiscusTheme) {
-            window.KeepCommentPlugin.changeGiscusTheme = () => {
-              const iframe = document.querySelector('iframe.giscus-frame')
-              iframe && iframe.contentWindow.postMessage({
-                giscus: {
-                  setConfig: {
-                    theme: window.KeepCommentPlugin.getGiscusTheme()
-                  }
-                }
-              }, 'https://giscus.app')
-            }
-          }
-
-          if (!window.KeepCommentPlugin?.initGiscus) {
-            window.KeepCommentPlugin.initGiscus = () => {
-              const script = document.createElement('script')
-              script.async = true
-              script.src = 'https://giscus.app/client.js'
-              script.setAttribute('data-repo', 'yluna-36/yluna-36.github.io')
-              script.setAttribute('data-repo-id', 'R_kgDOQFnQvw')
-              script.setAttribute('data-category', 'Announcements')
-              script.setAttribute('data-category-id', 'DIC_kwDOQFnQv84C5THI')
-              script.setAttribute('data-reactions-enabled', '1')
-              script.setAttribute('data-lang', 'en')
-              script.setAttribute('data-mapping', 'pathname')
-              script.setAttribute('data-strict', '0')
-              script.setAttribute('data-emit-metadata', '0')
-              script.setAttribute('data-input-position', 'top')
-              script.setAttribute('crossorigin', 'anonymous')
-              script.setAttribute('loading', 'lazy')
-              script.setAttribute('data-theme', window.KeepCommentPlugin.getGiscusTheme())
-              document.querySelector('.giscus-comments-container').appendChild(script)
-              script.onerror = () => {
-                window.KeepCommentPlugin.loadFailHandle()
-              }
-              script.onload = () => {
-                window.KeepCommentPlugin.hideLoading()
-              }
-              const toggleThemeBtn = document.querySelector('.tool-toggle-theme-mode')
-              toggleThemeBtn && toggleThemeBtn.addEventListener('click', () => {
-                window.KeepCommentPlugin.changeGiscusTheme()
-              })
-            }
-          }
-
-          if ('true' === "true") {
-            setTimeout(() => {
-              window.KeepCommentPlugin.initGiscus()
-            }, 1000)
-          } else {
-            window.addEventListener("DOMContentLoaded", window.KeepCommentPlugin.initGiscus)
-          }
-        </script>
-    </div>
-
-
-        
-    </div>
-
-
-
-
-
                 
             </div>
+
+            <!-- comment plugin -->
+            
         </div>
-
-        
-            <div class="pc-post-toc left-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        
-    </div>
-</div>
-
-            </div>
-        
     </div>
 </div>
 
@@ -787,43 +742,6 @@
 
     <!-- post tools -->
     
-        <div class="post-tools left-toc">
-            <div class="post-tools-container border-box">
-    <ul class="post-tools-list border-box">
-        <!-- PC encrypt again -->
-        
-            <li class="status-item flex-center post-lock border-box"
-                data-tooltip-content="Re-encryption"
-            >
-                <i class="fa-solid fa-lock"></i>
-                <i class="fa-solid fa-lock-open"></i>
-            </li>
-        
-
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        <!-- PC go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
-
-        <!-- PC full screen -->
-        <li class="tools-item flex-center full-screen">
-            <i class="fa-solid fa-expand"></i>
-        </li>
-    </ul>
-</div>
-
-        </div>
-    
 
     <!-- side tools -->
     <div class="side-tools">
@@ -855,15 +773,7 @@
 
     <ul class="exposed-tools-list border-box">
         
-            <li class="tools-item toggle-show-toc-tablet flex-center">
-                <i class="fas fa-list"></i>
-            </li>
-        
 
-        
-            <li class="tools-item go-to-comments-tablet flex-center">
-                <i class="fas fa-comment"></i>
-            </li>
         
 
         <li class="tools-item tool-toggle-show flex-center">
@@ -919,17 +829,6 @@
 
     <!-- tablet toc -->
     
-        <div class="tablet-post-toc-mask">
-            <div class="tablet-post-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        
-    </div>
-</div>
-
-            </div>
-        </div>
-    
 </main>
 
 
@@ -972,32 +871,6 @@
     
 
     <!-- post page -->
-    
-        <!-- post-helper -->
-        
-<script src="/js/post/post-helper.js"></script>
-
-
-        <!-- toc -->
-        
-            
-<script src="/js/post/toc.js"></script>
-
-        
-
-        <!-- copyright-info -->
-        
-            
-<script src="/js/post/copyright-info.js"></script>
-
-        
-
-        <!-- share -->
-        
-            
-<script src="/js/post/share.js"></script>
-
-        
     
 
     <!-- categories page -->
@@ -1099,8 +972,6 @@
             src="https://open.spotify.com/embed/playlist/1NVhN5uA2xNMgjFbOcW0kF?utm_source=generator&theme=0" 
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
-
-    <meta name="post-section" content="格物">
 
 
 <script>
