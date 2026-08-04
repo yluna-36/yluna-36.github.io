@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="yluna">
+    
+    <title>
+        
+            立业-013 (已加密) |
+        
+        yluna 的个人空间
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo-icon.png">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/css/custom.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"yluna-36.github.io","root":"/","language":"en"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"yluna 的个人空间","author":"yluna","avatar":"/images/logo-icon.png","logo":"/images/logo-icon.png","favicon":"/images/logo-icon.png"},"menu":{"home":"/","archives":"/archives/","tags":"/tags/","categories":"/categories/","Topics":{"children":[{"books":"/books/ || fa-solid fa-book"},{"interview":"/interview/ || fa-solid fa-microphone"},{"spark":"/spark/ || fa-solid fa-lightbulb"}]},"gallery":"/gallery/","Me":{"children":[{"about":"/about/"},{"personality":"/about/"},{"links":"/links/"},{"moment":"/moment/"}]}},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"源于热爱，驱于好奇，见于广阔。 || —— Think Absolute","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/yluna-36","weixin":"img | /images/wechat.png","qq":"tencent://message/?uin=975851087","weibo":null,"zhihu":null,"twitter":null,"x":"https://x.com/ylunoa","facebook":null,"email":"mailto:yluna@foxmail.com","telegram":"https://t.me/ylunoa","spotify":"https://open.spotify.com/user/31gakmsj3z5rxenbsyixi454xmxe","bilibili":"https://space.bilibili.com/3632309557267399?spm_id_from=333.881.0.0","xiaohongshu":"https://xhslink.com/m/8MDIkna7Kzn","instagram":"https://www.instagram.com/ylunoa36?igsh=Zm50NmpuZzc5aWZv&utm_source=qr"}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":true,"img_link":null,"text":"Think Absolute.","icon":"fa-solid fa-qrcode"}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":true,"use":"giscus","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":"yluna-36","github_admins":"yluna-36","repository":"yluna-36.github.io","client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"https://your-waline-server.vercel.app","reaction":true,"version":"3.3.2"},"giscus":{"repo":"yluna-36/yluna-36.github.io","repo_id":"R_kgDOQFnQvw","category":"Announcements","category_id":"DIC_kwDOQFnQv84C5THI","reactions_enabled":true},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs","custom":{"enable":false,"url":null}},"pjax":{"enable":true},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":[null,"/css/custom.css"],"js":[null,"/js/custom.js"]},"root":"","search_db_path":"keep-search.json","source_data":{"links":[{"title":"友情链接"},{"name":"Keep Theme","link":"https://keep.xpoet.cn","description":"一个优雅的 Hexo 主题","avatar":"https://keep.xpoet.cn/images/logo.svg"},{"name":"comydream","link":"https://comydream.github.io/","description":"我的朋友","avatar":"https://github.com/comydream.png"}],"photos":[{"group":"✈️ 旅游风光","photos":[{"name":"示例照片 - 1","url":"https://picsum.photos/id/1018/800/600"},{"name":"示例照片 - 2","url":"https://picsum.photos/id/1015/800/600"}]},{"group":"☕️ 日常生活","photos":[{"name":"示例照片 - 3","url":"https://picsum.photos/id/1019/800/600"},{"name":"示例照片 - 4","url":"https://picsum.photos/id/1016/800/600"},{"name":"示例照片 - 5","url":"https://picsum.photos/id/1025/800/600"}]}]},"version":"4.3.0"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo-icon.png">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               yluna 的个人空间
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives/">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags/">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories/">
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                TOPICS
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/books/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-book"></i>
+                                                
+                                                BOOKS
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/interview/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-microphone"></i>
+                                                
+                                                INTERVIEW
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/spark/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-lightbulb"></i>
+                                                
+                                                SPARK
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/gallery/">
+                                
+                                GALLERY
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                ME
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/about/">
+                                                
+                                                ABOUT
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/about/">
+                                                
+                                                PERSONALITY
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/links/">
+                                                
+                                                LINKS
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/moment/">
+                                                
+                                                MOMENT
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives/">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags/">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories/">
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            TOPICS
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/books/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-book"></i>
+                                            </span>
+                                        
+                                        BOOKS
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/interview/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-microphone"></i>
+                                            </span>
+                                        
+                                        INTERVIEW
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/spark/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-lightbulb"></i>
+                                            </span>
+                                        
+                                        SPARK
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/gallery/">
+                            
+                            GALLERY
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            ME
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/about/">
+                                        
+                                        ABOUT
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/about/">
+                                        
+                                        PERSONALITY
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/links/">
+                                        
+                                        LINKS
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/moment/">
+                                        
+                                        MOMENT
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box encrypt">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        立业-013 (已加密)
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/logo-icon.png">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">yluna</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-08-04 15:45:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Tue Aug 04 2026 15:45:00 GMT+0800">2026-08-04 15:45:00</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Spark/">Spark</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%95%86%E4%B8%9A/">商业</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%88%9B%E4%B8%9A/">创业</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%B5%81%E9%87%8F/">流量</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%81%B5%E6%84%9F/">灵感</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>21 Words</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                        <div class="post-encrypt-box border-box"
+                             data-secret="e1225e15f0fd05e91ac66097284eccb96a888db086928ad863bd78bb9e79153f"
+                             data-iv="23b9288c797a6512108331d3ac0fa99d"
+                             data-ep="6dbc06ccf191bc99e6462f78d75fe74b"
+                             data-content="7fe6792b9d56657d9da73b701b9ee568ea43c9a1cfd52d693c78daa61822e5ac73f4b87fce7a9030f307a946b48faeb04797ea020ad03b424861c5a83c27335039dd60eef16c8cee7904cfdb71ddc084e2bf218f2a07294a425fed1c70a2dd681c288671b096b5fe318b5ff130b665f0d72b8f8684be90a62a26ae4f9465f1d7bff51e4e5d75c1688f514c91f157275e684a2bc202443e0cb90f540442412d3cd7eb0cf0ed2576625c78c2b4a31a406a842bfc8d05d063371e8f41bf85d266f3a3fa7a018f320eff46fc9eba4f2dc7942c64707e7bc7c24f767787fd8e16815a4981a88d2c1004c39c6e4d6c681800ad0acaaeb7290b41360b0d26b3d0d47340a027e403c9d57cba4c2a25023df13595adc01f20b8b5cb708590c350ad4bfc35ddf6e2b3a048529b21cc2a2d4fdb19df318e9cb88dcdb8d4a5cb1217824bcf38c4f46a0a9c50bb15e23db3afb444b051bd580069172da5825a64dac5196bd91179cd2a5cef06bff36f4555540314c74c17f03613fce2d52978842c756bba6382dce43baff87f8f94625b3f7f78f0a6772ecda18d701e7a0136a0382bac0e38a64f9e98af6e87ff1d8eedcc87305530c94aa93203dee5feab4cfab075cc77c77aee42cf942260d8eb8ef561b74fa43663fc37c400b4e6534525d8865034ffe1232bcdd591828d91bc697914d6c6db1b32dcd09bb7659e8f26c78baaf25d9ff17fdae3d4aef1ea0c30f5a44b54e4d546c3d383828fab1474bc3d6261b5fc2569616caddf7b11cfdc7693101810ccbf0f45ee996fd5721bb3b13efb4910c7a256a34f95515cfd2170fc4624dca6c56d5802a64966b7d190916e95bb9eb9b8fe95806d59044d74ce8b6e603b291e45d932ad9c484da522d164061e8af6e25185db2c37fac276a3c3bbded6b41d90ea6ec74f007959701e9739aac7f4be75358f22e8ce9c83c5a09e109f9c4f712bb6cc797cbc29449b9fb6395443a10274bb3d217df6456981c514d1c046b1ac19871eaeb44096f3c4596c3975e2aff2353cf85db537899ef212466f5bb1747cdb67f4d27fde2c7f139406501c93315b849217d188e3b7ca30c931ace6789803673cc1b9c30726be74193f20d7028a355c9ea2af4b2a0cc058651a49446c380d63bda6373a542bd39cf873a48d0c78ba84d9bff24eaa86d44d89668d5f666b9ec9a638a83f36eafb49756578cc43f1af6fbe18dcdb5ae643eef599afa2d8c656a23575e8c5ab5c1aa381af093c0622cfd7598277143f25564b0ceac5b4815577e5a9ff3921e3f2c7b523ebfb34e06e3cafa5515f4a3da58e2b23aca5a1fc0b06bb3947fac7cb1053b3be7bf00daf852647ecabd1db83a4d9e7eb4ff27c90f0470455068e2d1108d0f9f313a8b305dd742d402d631c78cdb1dd6fae6c9e8893ccb56cc781ffa07665b8e01727358aa5eaa636c9f12e40dfee1d03f4982fa988a9af83a15bded76cb31d55a46dc4815014e77230edc385aad82557a9c5fc23d47d9ef686ed36a7a2f10d02fc4f1fe3f1595cc838c33b5950603e0bd22b9cf8998a838ff1748901dbf06d8741a11255c031cd6af83d66a28e239f1319c8a1f7ec5a8fe788efa4c98c95dfe65c2ead7b7e7d64e63240479b9d0638df5605ea18055655a4517921bcb7adcde960b65b956fbe67aef36d24deeabe4a738fb05acba5b9bf6e7f48445c32402699a52f7e6eed6fefc45b47d98398de17e00253fa44c4dc301dd90bf6b729b54b8341fd5dc461b1f4c166d86459cc61be67b67a756caddd06761448ae51087fe441721dd488e219e8e122f9ef4eddf4712e3e3183aa1712f818ffddef600c30c7fed4365e7b0adb5a8b37fa2d76b6624fe37e2144f1f41ab58a60a9109851813e301b154c21fe96eb84b70acc2311dab96ec4b2181a13b9533062a678fb1b6ad5513f9b10d6eb59cbb9af8ef988ab9157b79e5c65a7a7794637dee910fa1e13fe0d3633d1a215fd59c08059c1c7f1274c084b99c89cc16d3c2a33df8c01811c0258390669d5817d00023483ea31f29c48959af6f8a823eba811c1318d93390d9f595e41117c86fe688117cdafe8f83e2307b853f1c8cbe71d3d28e9a2d1a2143a8b9968b6427fb512927845e89d5c3eddf5695277bfe90f812af34e39cd3c3838722da669a69776b07767829823f3ade248236fc5a90eda16fec8f68365454772f27267dcc49a305dc24fa5e48782a0f7fb81e165b45c12961cd3afda19c8e05c77c1a70c0d7dfafbed2936574c02cf7aa826cd7b62c2f8419fa8098ddab4f2eda29478ac63eb499ef8abfb0c9de8a4bd9788ddfb2408b4efa534adbad0bd467c65396cdb0f3a320e0131be7eb952aea0d65c03b2b6c89fd7f7a8559f8b318882aef162d354f9bb15cf1a541aed111e99df583f768bf33ec6e978b18f9f7a3eff1c9fc33484b484d8c931b03518dbb7863df18a981402943c56269b58f5fbcc43d7bf4fa41894fb6c586e2a6eb6d3d270f62125930d527894ffd8384f158ead1512dbcc0beb9451beab0cd4e3e7955142616e191ee294b6e1721c8a900347e1a81f1f3d5bcb99fa66c00d9c15270190f986855726f7a10f00c7b09aef0ae47975c6472580a69f919e6cc5d014331aac0345f9e5a869bab39e99ab02048413652d6198c41b47cb40fbb7bcf7a13f8fdb92220988ecd2adfb18059ffec974c16358d28b22baab02dfa72a2df4d4ace022a1b258989ce9fa3ec3d235e6815911640524c5ced568116d9f51d0922a610bb4c92568529c6242fbbcbeb83564708c7ac68f24d970b87524115a1b0bd7d6139f5410501ce74caa17c3a34b09ef30a9d679bdafd63637ad66aab2a98683d7d1fa61dc3b6597ec697c741509e93aeebd1653bc34a85be67d54ccb65a005ea5f79c844222613b37b9350f2d9420866a13420c5bbb87f16329ebed19ac4975c6b407311b0d002bfd1c744e2c469438358420129a6586e03d2fe32af1522e1470644a89ee3b394ed4fa8330a01c906ce0b7360b21d6def42b35684fb56ddfc60a1e733bc7d428540b187089cb90cff6a63018d80cef8b744df67e97f9fa4d269cad7d187aef93c66fb85d14b2c7856feaca605c2ebe910751a6976da2d6d7957e3ed78111790a293c1af69cf9e883f20b79c2ab64197303303ec8ede2a0c6fe80e9bb0eac516bb0da4ef81d82598d8fdbce20777103ee1a20478f100182aa7bd688da43df2bf39f55c51f42331ca7f5e670080e2c0448ac292b80a4bfc024dfb8b7bc173eb8611528d3b116be160aefb629568cc0123329ddbe40ffb1bb6464659def4bd928c5b21c6789e097883b99e67985fcb33cba155c475c1fbae7e0ac3bf08744f60bfe3c18112575deb62eca58dbebe50c7e420c39ca19ca61a5192c2f9e5ab46aded47aaa05283409d7fd3b1e39b2b564e61ad40f40b2db4dab1abd3c8ecafcfdcb2798129fe4d11244cd559cc2c0c72ed6b078a260ee98ad32ec09b010e20cc9d050a091da6dc0f12093ce64aeeb1a7c66dcd8bc494b2da73a496f4345fbc4c1dda1dc2da21875bb1483d76ed71cd64029c215749f11252fb9b7618202468f301a8068ef6baedb7e85ce4021fd66eeb36111756c39b4b0c832795fee654abd9b37a575c785dc0bebf59a936131dead18a34a94b94509a0f3779effddec9864b44ab48c2cd8cdae015f778af2b68494c3512aab5b0361b069c8cafaa177b605a20b2c7c07045905024e9fa206c5cbb6737c58db8c39aeff47d1f2e23a03c1cf164707f280a49acdecf6452bd6734a51b1bc916dfbda58b4ddc2f08677843dde25bc447917c491f26697b661711a55f60fd1e149ae9491302990308cbdcd5227b3fffa0fedf80d00d3283cd4b52ac028d4e32f72b1088bbaeed85b7e13d9ca392477c6757a13ec28b57003d3f92dea4b3360b314c69c81bf9c36c0514c3ae3d893f3be1eb0d0d6cfc7e1ceebc72979722dd2aa8944962f8c39b1c7b1d5b3614821b37274fd87f8193c87ab85968cabeba2e51c37db02379788789ed75a25727ba2573095a7c04e3df3af5f42c6be934e061b5cf495852fdc6441ac83125e3ecef317e1f07f166b95404c0508277d0af2c0c2e29ac20a4ecdb12d4d055b8ae5675b5f387b6127b033b9c16d4b2d53e13c086aa2eef860fa950bf4e26f8c43d7f9d13410f89825ba152449662ed1c8bfd86720603ce3e2fb6848bf593567adf57f54677a9372b5d52c128520817b80978b7be820c36fa9650937deaddc159f3e547b0de001fb12da9e07f4daced60c8cac7e41c28af0445174e40e2454e3b2cfdbcb149a7fad3406fae25ca3c1b88b03f9e59e5c10120feb2c6f23e91a43b0b6f8de8e6cd216001d8f632c38ff631a298f36123622c9aaec6db8e8383dc9932ab6cf2336abd154e332e3768b89a846907f2e3ecd8ad7a4bf76571c6d16802f25ee6d8fe3d148e4833b3de9cb388be1820aa69c93e173bb7ee87ab1a7b16edbb762c5a1bbe7afeb734b27243296304948d1c0f8b696a22f43855adf5475b0635202bc69fda0aa8e47bfb00c5e3c809d6612d1f1c7702abf5305fc32b523fb34a09e1513c6c2dcf0abe52d5cc7b7cc912ee23ead885a9b67cbaa0acd29ff8a6b9c4c6a7eeb0b82d92383b3a635b5476e29a02d2316db7644d40866d43aee1548529179a3a31cabcd7210a5d5feb4a32bca5a5190732e788fc1a1de5c65dbe46f22dc6f9bc9adc919122bec91d50c41d4c9f8654de7c71c876005911a3865bc742c2af705d0d4d3eb094412bb26d24f131cdd6330855488e739266d202ef011446156f6d55b232733ba81bacb0e34d45255bf7c8caf3ac2b3f06a48901e164e9d911b7a6c43e88762f9599cc7adc8b3d8f331ec93024f5da9afdf155d9891ad5738c58b0eb152bd8f3c2b58c41f6ebecc7bf5f875d533c15de40380fc6f2445cfee3ae8312ec07e8e687455dc302a8e3a8f2b54e66ddb3484495eba35985c40e7f7505c9dad2279c8457d1a1f2382cee4ee64a86352c19b445ab99dda665ced5c4d888e7e1164dd76b3b4bb4105fa2b89bf4ba0ae23494ac26eac24c48d1b944daae961f86d35ce0d6eedc0db1312e084fc0bf0de0402cbdb71d56293220741756866ef7e8b003ac6b1041f209395777a15ddb345e7cede76db315bbb089e323a2c4aff1da63d29cc29f90ff05495f1d94f3f00c796eda9d7a506c39fc4df00a9dcaf1b68808af0885d5012e9577ffef286e8457e2e02c59a26a406be77d435afdf9fdf04d570f6691f29ed58c16344d202728231b6dbef26252a301564d02e2530343bb6b8184e8973f4184e5fd6a18af70d1ca7f7d3089197b4867588cc64f76996739fcaa907390671115104492fd492386de6a75948da12e894f49f5fd44a2b3ea25906814530c8de65bb6bfc8dac9c926f430f279823aa303cd9435f104abd23a5a46e610477947e7c9e98eba3ac1e3585ddb6495565c33ae241d043d9f166c58098882d983ac2cd542de4fe637cc90af27acfa6f82af9a3dea32309744b880d401178140a95c81de1c97b8410cca93d54ccaf96383aa33f4c3f9b6a98259d765032904e60529818d0ee454c33e7e183fad827b72fd5e96c0e77e3f99bc7d2d9cfea42779625223f93acb546659f16307a7c81d6ab2a4a5e018e496268d6702c84d2190138893bacf33d900b40bd3745b03da980791b998c0daf253826fc1da5a6111c4a4dd34e7ed9f3684ed2f678a1f23d12603e8a2bc6c63f46a172907dd16f8cce51098c8b13e9d06743cb35d8abb9380d4c9534bddb730b65f195a44c5f70db8b800c44c9b28f6045dec7a4e7ca13582fe85f2f5ba7b3e6927e72bb36a313bf1c419815145245e7a02ede4330702a101b855a589c61931649587da66c303e3453336b8b8ed8c9b920140ba08482e37077ed79dac7fa0375e1c13c24258fcca896936f70868d522735102b9fca94a7973007ad96aab5e2032ba91f1eaac4c6bcddcdf372fd65687e71f5af7ef56ea5755dbee6d8c35bbe3aeade73dc25f5ad945a0545217fc8508ccff1e24abe7dbcfdc05768eb165de2b48c8941ea32874251216b94848d504f1e8f21b5057d83a3aeda08bf6242b686bb5d5a7482651714f736a0eb11bb106ea70044832162c7c4ab1e8173e955f73abfb5e841c063898ec24db417672e769f9c504c437db7f41ab3b6b73072cb487cf2d7943796f401204dd6344356bcda2ae553fba77905250ff63cd77b9cc9aecdc01f67d6e3ed2829e30d7cd4b70638a0a6e0ae7cd595b913f5c6c2087a8e644158bb292cda0ac9afb7d35783bc46c335a74749222e199297a5cf3294de26a82179f78c6ca3af31b5b0b4ba06d0787690a96b8e88d26a7b8d9887f239a512dddf371db1ac314f20aa3aa347655b2f5bf9769f1d1303653da824d7dac7d12983281d3cbdfcb308a5458bddd09ee1bc62d568d8e5b2b622f76860c820d5e9f37e633f70080b80d999f55b9d519e43f07ff7fddd77bb56adc4e49958725076d12d6d8f5143d9601c1c7f6c4e9c6079569829d842f71e623df4f5b1a705c392cdeab70fa617235973fa44cb2860b318614f9dd2318fe5e23dd2370bacfca87301ec1344d8c892c35dfada21cf494c9305041f82e969a1b290cc8016bb9629fa5830ddffe3bf3646829de6e895c4958d767d90e906c6cd813b3f3ba046adbbb9489e893a42fe349cafce3fc4bf9793f1b0630aa51817654ea2c14aef62ae6a4b6d4257a8dba4726559a1ca7e449f2edfdee733e7c6ecf174dd54ade3a9cd9beb8745712b10f96daf27a4688122d5cf92a8c7c750e5d0e04d5ea8a3d54d2aa0c73daee209712ad14fe689180f9f2038b029d5e6113e4dbcdc7d000fbb0ac34078f686a51a13e2dfee763ba40bf929fd5c87bb20bc7075ce9c459cf97e436aa2ccb1d5d17c10cdc7ce39ac98ba1d79c1cc8edf014db4d0f2621a3369cb830e708c0d11e949c6b668d3dc06173df98b04a81dcae7c1183ae056cf9fe46e09b6ad7b3b424e05f51c01c81fcb8011d7e97c969becd685859d059534a553d92d6382cafecc9a59af45d01e05cb370296f8789183968a90156b27ec26bacfb3384e0fdf2e8d1d3e38ffb5b107987dee14e613926b2492a40c8cfeffae2491411a0b7b6adfb94cbbb04c51e9b9ff7c29f85eb04a3ff07677692c4fb369ae1e06c6f2f04bf7047e7f61aba9b978f2362d6f619fbd1f70f34181ca9b2b952b7ed418a35370b2e9c453d5bf127f0a505b5675a0696e4d57b868c2f332dc6e42a59c106e53f527d33113c70ec2f36bedd8b1ed867b5d452261c44b60287c6546d8800b0f6b6347dd0bbc2ab287c505f541277b54c18ee62bca449f38dfbbe268cce1c8a2b7420f64bd2fc836f3e26fc6809a6467b0448db6c227eafbf36bf977d9749a718af24f9043d240c6d5902e4de90e65acdb8f40f45fab8cf83de6f1946e5e6a31706c7e6b534c78de8560a7e8c80af8c093d538aaffe2864978faf7388564075d6160a0d4f649ab98561d56cb9e1487045a97084ee377f42e6420b9f1f6e45c5331467c09eeb5e91dec86a0c487df4511705dd5a1bd0b0b820dfbc9ec917c867f8e4b7ec45e893ece07ea7b97204118a62ee3ef1d1003b8aa356927b4a4114559e9647db3cf260ff9246b2fd8d84cd53c56e54b6f82952e93834c946b976c91d0c8f77721690768db634776e857b734b52e5cbc1c4d674a0b00c67ec9a0358df32b952fbff2ba3772adf4ef2160b8c90ac7181d5dadfef0e894c2295c6dada214c9d8d2d2a7af7465b7842bdca8d78c1ef51b73360fdc86f750befe3b2b77ff6dc81fbd14899743aeb82aa387accee52fafbec278b4759705923485d4d0253c9266e26a79a6eb4e927188be6154cb6f6eeffb535d859781832a5ad259b64edbfadba9e38d6dc3419d5ff28448cef1f165d6f818c43aaa865e8905b4e47a0069a88adfea7d88f3eecfc662558f7cb7f1d43b12136312c6aaa0d8c3524d71da9467e9438d559e564f0bba6900225e057071e693d0fe7b582319cbdb9895376ba3ea9f2c7adc86daa52907b404b9994682a7311f7d3795f6b0fb2b937898ce124b6729005e3688d14530b30262e12b4d12a5618cb35d1aa5b6ba7d0a371c17fe4bacf328a27012bb2b4b12955c01545affb3cd96a2f65ff910a199ae69599e1fe97ee3e4892f15d1625dbcc8fac90ad766afaf4e29eb9b7349e5c74f213f536e4ea017806f5c2146a21fca4cc962acf4aeef6b708d9d7d0c07fa793cd8b8fb2fe4797889af503aed99c26603a079883e4d2a393b39dbe396246d1e080ffe7aab76cbcc2e6cbfe07aac55c3762556767b1cd16b375cf9071ffdefcc8b0bd13b64e03c546d856163c2688f99e40a285616d5fdc9d574a30fd3859f2b35bdf770dc033a5f405848025e15747cb2bcfc135975eb4d4ede46823548e76dad5fa60ca0c9ad516d957de5737ab1eee989497b9c74e3dd4ff96f96dbda9161f4baca44e6002b983d95d78a93404d0b5a25b357652c20717da49ac63bfdd3a834154673b4cff3e2b04cbac2c4624ac1f62e6c73b2ccbf4b21807e58b5450f0a711f4d9e623eb398e7f29a66d0a122c99264abce3e4177f9ad96a387f05304545ea36ba8d5e2bee9f6e247b795bbd5312655ed0fae4130eb3cf90395a8df09ef32d5658a91dd9b71fdb86f0f15b7e99bfe69cd668ca6dc68b4ade5bc7c2cb2347f3b810bf0a9d6d24bb1f58af72c0dd386a5d8a2f4388ec4d8af9f44b57a5f9774deeb0f9cfebe07d3b7af4d4fc72d50e0b6428817260486564148849b56106ad3292907377defe70759e90a4441985516b1269fd520d7d03635efb431130d3ad404ffaefc7fdb7ed731904a69738277a92264c4f60017fcc74d56acb6db0d282476f558c7e5c2bc1f5e97d35389faaa4406dbfff62270dd883c24e99483f441bad7738fe6b148abf90125769a7f37d8e228710726aed46b79e6c23307681eda9cfa5235d7542db6ed5867e715bef9f5ff99e89c65e6e67f455f788778084bf9c6bc4655121b5a67018408611601fd9f4ccffabff2cfc7f1b56a8213e1bdf5c7f716050e65e6d8cab747f28273e221dc474ff9de562b98a3e7370d7fa75c821ec83cd0e66f473be87473b941464f7073b4e7995c74ac7686a2fdf17f8d68c0fbe9c2e13da938b1c0566dd4f6cde208b12b78753dc89eb3848591cd4c28c979b15bd4f58f519e4b8d09af2b6489f87620e1e575beafb326498ced6be1a4b2e4e82daf9db22e6392c63302fca36e940c695120f89c3aec626dc8d1ff13e7d2a300273bef743d44d0117bb391d525256a2f08090e3fec449c53dd2dd9cba243cd750397d2c2660e85a3b1be95e34d5983857c292a901c18c0cacd8a0a83248b418003432a6fe7171823607b87cbfa523029925414d01514e3eb5b1ad09ddeedc1a379575847b0b0e295476560cdbdce84145d4de70cb269fb01af8a9998cefcc1464006e4c42c6a77f5cdc01ec89ca0068f0f9ee4597ba88ffa33b145210afe95d22fd6dd0092cc315cd7dc3c5df9aa2580bded2f914d8a473b919c50f4f2f22fd4deab00860cd8e906adc29bb6c70c554956d92e506144c846a237a763d4e29d92ed5d583f86acaaaf71542e6198d470390ea848e2da8ac6017c813bef2a4cf85bcbebd42ac8fbd54f27ab1dc0f95777cff5926b778fa337db327fbec2c25e21"
+                        >
+                            <input type="password" class="password-input border-box" placeholder="Please enter password ...">
+                        </div>
+                        <div class="post"></div>
+                    
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                立业-013 (已加密)
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis" style="opacity: 0.8; font-size: 0.9em; margin-top: 5px;">
+                转载请注明出处：<a href="/" style="text-decoration: underline;">yluna 的个人空间</a>
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    Author
+                </div>
+                <div class="content">yluna</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    Published
+                </div>
+                <div class="content">2026-08-04 15:45</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    License
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">
+                        
+                            <i class="fa-brands fa-creative-commons"></i>
+                            <i class="fa-brands fa-creative-commons-by"></i>
+                            <i class="fa-brands fa-creative-commons-nc"></i>
+                            <i class="fa-brands fa-creative-commons-sa"></i>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%95%86%E4%B8%9A/">商业</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%88%9B%E4%B8%9A/">创业</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%B5%81%E9%87%8F/">流量</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%81%B5%E6%84%9F/">灵感</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+        <li class="twitter share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to X (Twitter)"
+        >
+            <i class="fa-brands fa-x-twitter"></i>
+        </li>
+        <li class="telegram share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to Telegram"
+        >
+            <i class="fa-brands fa-telegram"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/08/04/%E7%81%B5%E6%84%9F%E7%81%AB%E8%8A%B1%EF%BC%9A%E5%88%9B%E4%B8%9A%E7%9A%84%E6%8A%A4%E5%9F%8E%E6%B2%B3%E3%80%81%E6%9C%BA%E4%BC%9A%E4%B8%BB%E4%B9%89%E4%B8%8E%E5%9B%A2%E9%98%9F%E5%AE%A2%E8%A7%82%E6%80%A7/"
+                                   title="[立业-012] 灵感火花：创业的护城河、机会主义与团队客观性"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">[立业-012] 灵感火花：创业的护城河、机会主义与团队客观性</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;Comments
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">Comment plugin failed to load</span>
+    <button class="reload keep-button">Click to reload</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">Loading comment plugin</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="giscus-comments-container">
+        <div class="giscus" id="giscus"></div>
+        <script data-pjax
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          if (!window.KeepCommentPlugin?.getGiscusTheme) {
+            window.KeepCommentPlugin.getGiscusTheme = () => {
+              return document.documentElement.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.changeGiscusTheme) {
+            window.KeepCommentPlugin.changeGiscusTheme = () => {
+              const iframe = document.querySelector('iframe.giscus-frame')
+              iframe && iframe.contentWindow.postMessage({
+                giscus: {
+                  setConfig: {
+                    theme: window.KeepCommentPlugin.getGiscusTheme()
+                  }
+                }
+              }, 'https://giscus.app')
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.initGiscus) {
+            window.KeepCommentPlugin.initGiscus = () => {
+              const script = document.createElement('script')
+              script.async = true
+              script.src = 'https://giscus.app/client.js'
+              script.setAttribute('data-repo', 'yluna-36/yluna-36.github.io')
+              script.setAttribute('data-repo-id', 'R_kgDOQFnQvw')
+              script.setAttribute('data-category', 'Announcements')
+              script.setAttribute('data-category-id', 'DIC_kwDOQFnQv84C5THI')
+              script.setAttribute('data-reactions-enabled', '1')
+              script.setAttribute('data-lang', 'en')
+              script.setAttribute('data-mapping', 'pathname')
+              script.setAttribute('data-strict', '0')
+              script.setAttribute('data-emit-metadata', '0')
+              script.setAttribute('data-input-position', 'top')
+              script.setAttribute('crossorigin', 'anonymous')
+              script.setAttribute('loading', 'lazy')
+              script.setAttribute('data-theme', window.KeepCommentPlugin.getGiscusTheme())
+              document.querySelector('.giscus-comments-container').appendChild(script)
+              script.onerror = () => {
+                window.KeepCommentPlugin.loadFailHandle()
+              }
+              script.onload = () => {
+                window.KeepCommentPlugin.hideLoading()
+              }
+              const toggleThemeBtn = document.querySelector('.tool-toggle-theme-mode')
+              toggleThemeBtn && toggleThemeBtn.addEventListener('click', () => {
+                window.KeepCommentPlugin.changeGiscusTheme()
+              })
+            }
+          }
+
+          if ('true' === "true") {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initGiscus()
+            }, 1000)
+          } else {
+            window.addEventListener("DOMContentLoaded", window.KeepCommentPlugin.initGiscus)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
+        
+        &nbsp;&nbsp;All Rights Reserved.
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+            <li class="status-item flex-center post-lock border-box"
+                data-tooltip-content="Re-encryption"
+            >
+                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-lock-open"></i>
+            </li>
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+            
+<script src="/js/post/copyright-info.js"></script>
+
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script id="pjax-script" src="/js/libs/pjax.min.js"></script>
+<script>
+  (function () {
+    const isGoogleTranslate = location.hostname.includes('.translate.goog')
+
+    if (isGoogleTranslate) {
+      document.getElementById('pjax-script')?.remove()
+      return
+    }
+
+    function initPjax () {
+      if (window.pjax) return
+
+      window.pjax = new Pjax({
+        selectors: [
+          'head title',
+          '.page-container',
+          '.pjax'
+        ],
+        history: true,
+        debug: false,
+        cacheBust: false,
+        timeout: 0,
+        analytics: false,
+        currentUrlFullReload: false,
+        scrollRestoration: false
+      })
+
+      document.addEventListener('pjax:send', onPjaxSend)
+      document.addEventListener('pjax:complete', onPjaxComplete)
+    }
+
+    function onPjaxSend () {
+      KEEP?.utils?.pjaxProgressBarStart()
+    }
+
+    function onPjaxComplete () {
+      KEEP?.utils?.pjaxProgressBarEnd()
+
+      window?.pjax?.executeScripts(
+        document.querySelectorAll('script[data-pjax], .pjax script')
+      )
+
+      KEEP?.initExecute()
+    }
+
+    // DOM Ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPjax)
+    } else {
+      initPjax()
+    }
+  })()
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/js/custom.js" data-pjax></script>
+
+        
+    
+
+
+<!-- Global Spotify Player -->
+<div id="spotify-player-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; transition: all 0.3s ease; max-width: calc(100vw - 40px);">
+    <!-- Outer Site Player -->
+    <iframe id="spotify-outer" style="border-radius:12px; width:300px; height:80px; border:none; display:block; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/09iyJFvXvGbBBye2fXfNmr?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    
+    <!-- Inner Site Player -->
+    <iframe id="spotify-inner" style="border-radius:12px; width:300px; height:80px; border:none; display:none; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/1NVhN5uA2xNMgjFbOcW0kF?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
+    <meta name="post-section" content="立业">
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
+</body>
+
+</html>
