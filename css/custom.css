@@ -60,6 +60,12 @@ body.inner-site-active {
     --primary-color: #e53935 !important;
 }
 
+/* Hide secret galleries on outer site */
+body:not(.inner-site-active) .secret-gallery-group,
+body:not(.inner-site-active) .secret-gallery-group-box {
+    display: none !important;
+}
+
 /* Change the first screen background */
 body.inner-site-active .first-screen-container {
     background-image: url('/images/里站背景图.jpg') !important;
