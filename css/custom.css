@@ -150,3 +150,57 @@ header .right .pc .menu-list {
 header .left .logo-image {
     transform: translateY(7px);
 }
+
+/* =========================================================
+   Multi-Language Switcher Styles (PC & Mobile)
+   ========================================================= */
+#keep-lang-menu-item .sub-menu-list {
+    min-width: 150px;
+}
+
+.keep-lang-option.active-lang {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+}
+
+.keep-lang-mobile-trigger {
+    cursor: pointer;
+    margin-right: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.keep-lang-mobile-popup {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background: var(--background-color-1, rgba(255, 255, 255, 0.96));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    padding: 6px 0;
+    z-index: 9999;
+    min-width: 160px;
+}
+
+.keep-lang-mobile-popup.open {
+    display: block;
+}
+
+.keep-lang-mobile-item {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    color: var(--default-text-color, #333);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+}
+
+.keep-lang-mobile-item:hover {
+    background: rgba(0, 102, 204, 0.08);
+}
+
