@@ -140,3 +140,180 @@ const initInnerSite = () => {
 
 document.addEventListener('DOMContentLoaded', initInnerSite);
 window.addEventListener('pjax:complete', initInnerSite);
+
+// =========================================================
+// Multi-Language Auto Translation (Powered by translate.js + Edge Neural Engine)
+// =========================================================
+const SUPPORTED_LANGUAGES = [
+    { id: 'chinese_simplified', label: '🇨🇳 简体中文', short: '简中' },
+    { id: 'english', label: '🇺🇸 English', short: 'EN' },
+    { id: 'japanese', label: '🇯🇵 日本語', short: '日本語' },
+    { id: 'korean', label: '🇰🇷 한국어', short: '한국어' },
+    { id: 'chinese_traditional', label: '🇭🇰 繁體中文', short: '繁中' },
+    { id: 'french', label: '🇫🇷 Français', short: 'FR' },
+    { id: 'spanish', label: '🇪🇸 Español', short: 'ES' }
+];
+
+const getSavedLang = () => {
+    try {
+        return localStorage.getItem('translate_to_language') || (window.translate && window.translate.storage && window.translate.storage.get('to')) || 'chinese_simplified';
+    } catch (e) {
+        return 'chinese_simplified';
+    }
+};
+
+const updateLangUI = (langId) => {
+    const found = SUPPORTED_LANGUAGES.find(l => l.id === langId) || SUPPORTED_LANGUAGES[0];
+    const labelEl = document.getElementById('keep-current-lang-label');
+    if (labelEl) {
+        labelEl.textContent = found.short === '简中' ? '🌐 语言 / Lang' : `🌐 ${found.short}`;
+    }
+    document.querySelectorAll('.keep-lang-option').forEach(el => {
+        if (el.dataset.lang === langId) {
+            el.classList.add('active-lang');
+        } else {
+            el.classList.remove('active-lang');
+        }
+    });
+};
+
+window.switchSiteLanguage = (langId) => {
+    try {
+        localStorage.setItem('translate_to_language', langId);
+    } catch (e) {}
+    updateLangUI(langId);
+    const mobileMenu = document.getElementById('keep-lang-mobile-popup');
+    if (mobileMenu) {
+        mobileMenu.classList.remove('open');
+    }
+    if (window.translate && typeof window.translate.changeLanguage === 'function') {
+        window.translate.changeLanguage(langId);
+    }
+};
+
+const injectLanguageSwitcherUI = () => {
+    const currentLang = getSavedLang();
+    const found = SUPPORTED_LANGUAGES.find(l => l.id === currentLang) || SUPPORTED_LANGUAGES[0];
+
+    // 1. Desktop Menu Injection (.pc .menu-list)
+    const pcMenuList = document.querySelector('.header-wrapper .pc .menu-list');
+    if (pcMenuList && !document.getElementById('keep-lang-menu-item')) {
+        const li = document.createElement('li');
+        li.id = 'keep-lang-menu-item';
+        li.className = 'menu-item flex-start border-box has-sub-menu ignore';
+
+        const subItemsHtml = SUPPORTED_LANGUAGES.map(l => `
+            <li class="sub-menu-item border-box ignore">
+                <a class="menu-text-color border-box flex-start keep-lang-option ${l.id === currentLang ? 'active-lang' : ''}"
+                   data-lang="${l.id}"
+                   href="javascript:void(0);"
+                   onclick="window.switchSiteLanguage('${l.id}')">
+                    ${l.label}
+                </a>
+            </li>
+        `).join('');
+
+        li.innerHTML = `
+            <a class="menu-text-color border-box ignore" href="javascript:void(0);">
+                <span id="keep-current-lang-label" class="ignore">${found.short === '简中' ? '🌐 语言 / Lang' : '🌐 ' + found.short}</span>
+                <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+            </a>
+            <ul class="sub-menu-list border-box ignore">
+                ${subItemsHtml}
+            </ul>
+        `;
+
+        // Insert right before the search icon or secret trigger
+        const searchItem = pcMenuList.querySelector('.menu-item.search');
+        if (searchItem) {
+            pcMenuList.insertBefore(li, searchItem);
+        } else {
+            pcMenuList.appendChild(li);
+        }
+    }
+
+    // 2. Mobile Header Button + Popup Injection (.mobile)
+    const mobileBar = document.querySelector('.header-wrapper .mobile');
+    if (mobileBar && !document.getElementById('keep-lang-mobile-btn')) {
+        const btn = document.createElement('div');
+        btn.id = 'keep-lang-mobile-btn';
+        btn.className = 'icon-item keep-lang-mobile-trigger ignore';
+        btn.title = 'Language / 言語 / 语言';
+        btn.innerHTML = '<i class="fa-solid fa-language" style="font-size: 1.2rem;"></i>';
+
+        const popup = document.createElement('div');
+        popup.id = 'keep-lang-mobile-popup';
+        popup.className = 'keep-lang-mobile-popup ignore';
+        popup.innerHTML = SUPPORTED_LANGUAGES.map(l => `
+            <div class="keep-lang-mobile-item keep-lang-option ignore ${l.id === currentLang ? 'active-lang' : ''}"
+                 data-lang="${l.id}"
+                 onclick="window.switchSiteLanguage('${l.id}')">
+                ${l.label}
+            </div>
+        `).join('');
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            popup.classList.toggle('open');
+        });
+
+        document.addEventListener('click', () => {
+            popup.classList.remove('open');
+        });
+
+        mobileBar.insertBefore(btn, mobileBar.firstChild);
+        const headerWrapper = document.querySelector('.header-wrapper');
+        if (headerWrapper && !document.getElementById('keep-lang-mobile-popup')) {
+            headerWrapper.appendChild(popup);
+        }
+    }
+
+    updateLangUI(currentLang);
+};
+
+const initSiteTranslate = () => {
+    injectLanguageSwitcherUI();
+
+    const configureAndRunTranslate = () => {
+        if (!window.translate) return;
+        try {
+            window.translate.selectLanguageTag.show = false;
+            window.translate.language.setLocal('chinese_simplified');
+            window.translate.service.use('client.edge');
+            if (window.translate.ignore && window.translate.ignore.class) {
+                ['ignore', 'code-container', 'highlight', 'Keep-lang-option'].forEach(cls => {
+                    if (window.translate.ignore.class.data.indexOf(cls) === -1) {
+                        window.translate.ignore.class.push(cls);
+                    }
+                });
+            }
+            if (!window._translateListenerStarted) {
+                window.translate.listener.start();
+                window._translateListenerStarted = true;
+            }
+            const saved = localStorage.getItem('translate_to_language');
+            if (saved && saved !== 'chinese_simplified') {
+                window.translate.changeLanguage(saved);
+            } else {
+                window.translate.execute();
+            }
+        } catch (err) {
+            console.warn('Translate init warning:', err);
+        }
+    };
+
+    if (window.translate) {
+        configureAndRunTranslate();
+    } else if (!document.getElementById('translate-js-sdk')) {
+        const script = document.createElement('script');
+        script.id = 'translate-js-sdk';
+        script.src = '/js/translate.min.js';
+        script.async = true;
+        script.onload = configureAndRunTranslate;
+        document.head.appendChild(script);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', initSiteTranslate);
+window.addEventListener('pjax:complete', initSiteTranslate);
+
