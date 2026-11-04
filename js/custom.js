@@ -317,3 +317,39 @@ const initSiteTranslate = () => {
 document.addEventListener('DOMContentLoaded', initSiteTranslate);
 window.addEventListener('pjax:complete', initSiteTranslate);
 
+
+// Meal Notes entry: keep the mobile shortcut visible without opening the drawer.
+(function () {
+  function mealLink(className) {
+    var a = document.createElement('a');
+    a.href = '/meals/'; a.textContent = '食记'; a.className = className;
+    a.setAttribute('aria-label', '打开朝夕食记入口');
+    a.addEventListener('click', function (event) {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault(); event.stopPropagation(); window.location.assign(a.href);
+    });
+    return a;
+  }
+  function mountMealEntry() {
+    var mobile = document.querySelector('.header-content .right .mobile');
+    if (mobile && !mobile.querySelector('[data-meal-entry]')) {
+      var a = mealLink('menu-text-color border-box');
+      a.dataset.mealEntry = 'mobile';
+      a.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin-right:4px;font-size:15px;font-weight:600;white-space:nowrap';
+      mobile.prepend(a);
+    }
+    var menu = document.querySelector('.header-content .menu-list');
+    if (menu && !menu.querySelector('[data-meal-entry]')) {
+      var item = document.createElement('li');
+      item.className = 'menu-item flex-start border-box'; item.dataset.mealEntry = 'desktop';
+      item.appendChild(mealLink('menu-text-color border-box'));
+      menu.insertBefore(item, menu.children[1] || null);
+    }
+  }
+  mountMealEntry();
+  if (!window.__mealEntryInstalled) {
+    window.__mealEntryInstalled = true;
+    document.addEventListener('DOMContentLoaded', mountMealEntry);
+    document.addEventListener('pjax:complete', mountMealEntry);
+  }
+})();
