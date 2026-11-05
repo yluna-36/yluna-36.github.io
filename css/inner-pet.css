@@ -50,6 +50,8 @@ body:not(.inner-site-active) .noa-pet-recall,
   background-repeat: no-repeat;
   image-rendering: pixelated;
   pointer-events: none;
+  /* Atlas frames must jump immediately; the theme transitions all backgrounds. */
+  transition: none !important;
 }
 .noa-pet-loading {
   position: absolute;
