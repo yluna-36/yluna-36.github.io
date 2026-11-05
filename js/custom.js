@@ -32,20 +32,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Inner Site Toggle Logic
-const initInnerSite = () => {
-    // 1. Check URL for override
-    const urlParams = new URLSearchParams(window.location.search);
-    const mode = urlParams.get('mode');
-    
-    if (mode === 'inner') {
-        localStorage.setItem('inner-site-enabled', 'true');
-    } else if (mode === 'outer') {
-        localStorage.removeItem('inner-site-enabled');
-    }
+const outerSiteName = document.querySelector('.site-name')?.textContent.trim() || 'yluna 的个人空间';
+const outerSiteLogo = document.querySelector('.logo-image img')?.getAttribute('src') || '/images/logo-icon.png';
 
-    // 2. Apply class based on state
-    const isInnerSite = localStorage.getItem('inner-site-enabled') === 'true';
+const resolveInnerSite = () => {
+    // Explicit switches remain supported; home URLs otherwise define the mode.
+    const mode = new URLSearchParams(window.location.search).get('mode');
+    if (mode === 'inner' || mode === 'outer') return mode === 'inner';
+    const path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\/$/, '');
+    if (path === '') return false;
+    if (path === '/inner') return true;
+    // Shared pages (gallery, articles, etc.) keep the previously selected mode.
+    try {
+        return localStorage.getItem('inner-site-enabled') === 'true';
+    } catch (error) {
+        return document.body.classList.contains('inner-site-active');
+    }
+};
+
+const initInnerSite = () => {
+    const isInnerSite = resolveInnerSite();
+    try {
+        if (isInnerSite) localStorage.setItem('inner-site-enabled', 'true');
+        else localStorage.removeItem('inner-site-enabled');
+    } catch (error) {
+        // URL-based entry and the moon switch also work with storage disabled.
+    }
     const firstScreen = document.querySelector('.first-screen-container');
+
+    // Keep identity in sync after full loads, PJAX navigation and history restores.
+    const logoText = document.querySelector('.site-name');
+    const logoImage = document.querySelector('.logo-image img');
+    if (logoText) logoText.textContent = isInnerSite ? 'yluna 的里世界' : outerSiteName;
+    if (logoImage) logoImage.setAttribute('src', isInnerSite ? '/images/里站头像.png' : outerSiteLogo);
+    if (isInnerSite && /^\/inner(?:\/|\/index\.html)?$/.test(window.location.pathname)) {
+        document.title = 'yluna 的里世界';
+    } else if (document.title === 'yluna 的里世界') {
+        document.title = outerSiteName;
+    }
     
     // Favicon swapping
     let faviconLink = document.querySelector("link[rel~='icon']");
@@ -97,9 +121,8 @@ const initInnerSite = () => {
             clearTimeout(resetTimer);
             clicks += 1;
             if (clicks >= 5) {
-                const active = localStorage.getItem('inner-site-enabled') === 'true';
-                if (active) localStorage.removeItem('inner-site-enabled');
-                else localStorage.setItem('inner-site-enabled', 'true');
+                // Another tab may have changed storage; toggle this page's mode.
+                const active = document.body.classList.contains('inner-site-active');
                 window.location.href = active ? '/' : '/inner/';
                 clicks = 0;
             }
@@ -110,7 +133,7 @@ const initInnerSite = () => {
     mountMoon(document.querySelector('.drawer-menu-list'), 'secret-inner-trigger-mobile', 'drawer-menu-item secret-moon-item');
 
     // 4. Modify Home links (e.g. Logo, Home menu item) to point to /inner/ when inner site is active
-    const homeLinks = document.querySelectorAll('a[href="/"]');
+    const homeLinks = document.querySelectorAll('a[href="/"], a[data-original-href="/"]');
     homeLinks.forEach(link => {
         if (isInnerSite) {
             if (!link.dataset.originalHref) {
@@ -127,6 +150,9 @@ const initInnerSite = () => {
 
 document.addEventListener('DOMContentLoaded', initInnerSite);
 window.addEventListener('pjax:complete', initInnerSite);
+window.addEventListener('pageshow', event => {
+    if (event.persisted) initInnerSite();
+});
 
 // =========================================================
 // Multi-Language Auto Translation (Powered by translate.js + Edge Neural Engine)
