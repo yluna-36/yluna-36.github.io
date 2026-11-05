@@ -35,6 +35,51 @@ document.addEventListener('DOMContentLoaded', () => {
 const outerSiteName = document.querySelector('.site-name')?.textContent.trim() || 'yluna 的个人空间';
 const outerSiteLogo = document.querySelector('.logo-image img')?.getAttribute('src') || '/images/logo-icon.png';
 
+// Load the companion only after entering the inner site. Outer visits request no pet assets.
+let innerPetLoading = false;
+const syncInnerPet = () => {
+    if (window.__ylunaInnerPet) {
+        window.__ylunaInnerPet.sync();
+        return;
+    }
+    if (!document.body.classList.contains('inner-site-active') || innerPetLoading) return;
+    innerPetLoading = true;
+    const loadScript = () => {
+        if (!document.body.classList.contains('inner-site-active')) {
+            innerPetLoading = false;
+            return;
+        }
+        const script = document.createElement('script');
+        script.id = 'yluna-inner-pet-script';
+        script.src = '/js/inner-pet.js';
+        script.async = true;
+        script.onload = () => {
+            innerPetLoading = false;
+            window.__ylunaInnerPet?.sync();
+        };
+        script.onerror = () => {
+            innerPetLoading = false;
+            script.remove();
+        };
+        document.body.appendChild(script);
+    };
+    const existingStyle = document.getElementById('yluna-inner-pet-style');
+    if (existingStyle?.sheet) {
+        loadScript();
+        return;
+    }
+    const style = existingStyle || document.createElement('link');
+    style.id = 'yluna-inner-pet-style';
+    style.rel = 'stylesheet';
+    style.href = '/css/inner-pet.css';
+    style.onload = loadScript;
+    style.onerror = () => {
+        innerPetLoading = false;
+        style.remove();
+    };
+    if (!existingStyle) document.head.appendChild(style);
+};
+
 const resolveInnerSite = () => {
     // Explicit switches remain supported; home URLs otherwise define the mode.
     const mode = new URLSearchParams(window.location.search).get('mode');
@@ -146,6 +191,7 @@ const initInnerSite = () => {
             }
         }
     });
+    syncInnerPet();
 };
 
 document.addEventListener('DOMContentLoaded', initInnerSite);

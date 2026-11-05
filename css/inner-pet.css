@@ -1,0 +1,126 @@
+.noa-pet {
+  --noa-width: 96px;
+  --noa-height: 104px;
+  position: fixed;
+  width: var(--noa-width);
+  z-index: 1002;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #eaf1ff;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.noa-pet [hidden], .noa-pet[hidden], .noa-pet-recall[hidden] { display: none !important; }
+body:not(.inner-site-active) .noa-pet,
+body:not(.inner-site-active) .noa-pet-recall,
+.show-header-drawer .noa-pet,
+.gallery-viewer-open .noa-pet { display: none !important; }
+.noa-pet button {
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.noa-pet button:focus-visible, .noa-pet-recall:focus-visible {
+  outline: 2px solid #a9d8ff;
+  outline-offset: 3px;
+}
+.noa-pet-stage {
+  position: relative;
+  display: block;
+  width: var(--noa-width);
+  height: var(--noa-height);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  touch-action: none;
+  cursor: grab !important;
+  border-radius: 12px;
+}
+.noa-pet.is-dragging .noa-pet-stage { cursor: grabbing !important; }
+.noa-pet-sprite {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: calc(var(--noa-width) * 8) calc(var(--noa-height) * 11);
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+.noa-pet-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #ddedff;
+  background: rgba(25, 36, 58, .9);
+  border: 1px solid rgba(167, 196, 238, .4);
+  border-radius: 20px;
+}
+.noa-pet-menu-button, .noa-pet-launcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 6px 8px;
+  border: 1px solid rgba(173, 201, 242, .38);
+  border-radius: 22px;
+  background: rgba(25, 36, 58, .94);
+  box-shadow: 0 3px 12px rgba(9, 18, 34, .16);
+}
+.noa-pet-menu-button { font-size: 12px !important; }
+.noa-pet-menu-button > span:last-child { font-size: 20px; line-height: 1; }
+.noa-pet-launcher { white-space: nowrap; }
+.noa-pet-menu, .noa-pet-bubble {
+  position: fixed;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid rgba(173, 201, 242, .45);
+  border-radius: 16px;
+  background: #202c43;
+  color: #eaf1ff;
+  box-shadow: 0 8px 28px rgba(9, 18, 34, .23);
+}
+.noa-pet-menu { max-height: calc(100dvh - 100px); overflow-y: auto; overscroll-behavior: contain; }
+.noa-pet-menu-title { margin: 0 0 3px; padding: 0 6px; font-weight: 650; font-size: 14px; }
+.noa-pet-menu-hint { margin: 0 0 9px; padding: 0 6px; color: #b8c9e0; font-size: 12px; }
+.noa-pet-menu > button {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 9px;
+  text-align: left;
+  background: transparent;
+}
+.noa-pet-menu > button:hover, .noa-pet-menu > button:focus-visible { background: #354761; }
+.noa-pet-menu > button[data-noa-action="close"] { color: #b8c9e0; font-size: 12px; }
+.noa-pet-bubble { padding: 12px 14px; font-size: 13px; line-height: 1.7; pointer-events: none; }
+.noa-pet-recall {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin: 10px;
+  padding: 6px 15px;
+  border: 1px solid #859bb8;
+  border-radius: 22px;
+  background: #202c43;
+  color: #eaf1ff;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  .noa-pet { --noa-width: 72px; --noa-height: 78px; }
+  .noa-pet-menu-button, .noa-pet-launcher { gap: 6px; }
+}
