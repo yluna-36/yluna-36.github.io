@@ -1,0 +1,19 @@
+.reading-start { margin: 8px 0 48px; color: var(--text-color-3); }
+.reading-start-heading { max-width: 700px; margin-bottom: 28px; }
+.reading-start-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .16em; color: var(--primary-color); }
+.reading-start h1 { margin: 10px 0 14px; font-size: clamp(26px, 3vw, 36px); line-height: 1.4; }
+.reading-start-heading p { font-size: 16px; line-height: 1.9; margin: 0 0 12px; }
+.reading-about { display: inline-flex; align-items: center; min-height: 44px; color: var(--primary-color); }
+.reading-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.reading-card { display: flex; flex-direction: column; gap: 16px; padding: 24px; border: 1px solid var(--background-color-3); border-radius: 14px; background: var(--background-color-1); color: var(--text-color-3); box-shadow: 0 3px 12px var(--shadow-color); transition: border-color .2s; }
+.reading-card:hover { border-color: var(--primary-color); }
+.reading-card-label { font-size: 12px; letter-spacing: .04em; color: var(--primary-color); }
+.reading-start .reading-card h2 { margin: 0; font-size: 21px; line-height: 1.5; }
+.reading-card p { margin: 0; line-height: 1.8; font-size: 15px; }
+.reading-card-action { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; margin-top: auto; font-size: 14px; }
+.reading-more { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.reading-more a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid var(--text-color-5); border-radius: 24px; color: var(--text-color-3); }
+.reading-private-note { margin-top: 24px; color: var(--text-color-4); font-size: 14px; line-height: 1.8; }
+.reading-start a:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
+@media (max-width: 900px) { .reading-cards { grid-template-columns: minmax(0, 1fr); gap: 16px; } .reading-card { padding: 22px; gap: 12px; } }
+@media (prefers-reduced-motion: reduce) { .reading-card { transition: none; } }
