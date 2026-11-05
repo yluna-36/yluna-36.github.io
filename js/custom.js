@@ -71,7 +71,7 @@ const syncInnerPet = () => {
     const style = existingStyle || document.createElement('link');
     style.id = 'yluna-inner-pet-style';
     style.rel = 'stylesheet';
-    style.href = '/css/inner-pet.css';
+    style.href = '/css/inner-pet.css?v=20261106';
     style.onload = loadScript;
     style.onerror = () => {
         innerPetLoading = false;
