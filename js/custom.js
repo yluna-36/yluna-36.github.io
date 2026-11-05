@@ -1,3 +1,8 @@
+// PJAX reloads this asset; keep global handlers installed exactly once.
+(function () {
+if (window.__ylunaCustomInstalled) return;
+window.__ylunaCustomInstalled = true;
+
 document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -73,54 +78,36 @@ const initInnerSite = () => {
         }
     }
 
-    // 3. Hidden trigger (5 clicks on a special icon in the top right menu)
-    let secretIcon = document.getElementById('secret-inner-trigger');
-    
-    // Inject the icon if it doesn't exist yet
-    if (!secretIcon) {
-        const menuList = document.querySelector('.menu-list') || document.querySelector('.header-menu');
-        if (menuList) {
-            secretIcon = document.createElement('li');
-            secretIcon.id = 'secret-inner-trigger';
-            secretIcon.className = 'menu-item flex-start border-box'; // Keep theme menu item class
-            
-            // Use a subtle icon, e.g., a moon
-            const aTag = document.createElement('a');
-            aTag.className = 'menu-text-color border-box';
-            aTag.style.cursor = 'default';
-            aTag.innerHTML = '<i class="menu-text-color menu-icon fa-solid fa-moon" style="opacity: 0.3; margin-left: 15px;"></i>';
-            
-            secretIcon.appendChild(aTag);
-            menuList.appendChild(secretIcon);
-            
-            let clickCount = 0;
-            let clickTimer;
-            
-            secretIcon.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent any default action
-                clickCount++;
-                clearTimeout(clickTimer);
-                
-                if (clickCount >= 5) {
-                    const currentPath = window.location.pathname;
-                    if (currentPath === '/inner/' || currentPath === '/inner/index.html') {
-                        // Exit inner site
-                        localStorage.removeItem('inner-site-enabled');
-                        window.location.href = '/';
-                    } else {
-                        // Enter inner site
-                        localStorage.setItem('inner-site-enabled', 'true');
-                        window.location.href = '/inner/';
-                    }
-                    clickCount = 0;
-                }
-                
-                clickTimer = setTimeout(() => {
-                    clickCount = 0;
-                }, 1000);
-            });
-        }
-    }
+    // Keep the five-click moon easter egg on both desktop and mobile.
+    const mountMoon = (menu, id, className) => {
+        if (!menu || document.getElementById(id)) return;
+        const item = document.createElement('li');
+        item.id = id;
+        item.className = className;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'secret-moon-button';
+        button.setAttribute('aria-label', '月亮');
+        button.innerHTML = '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+        item.appendChild(button);
+        menu.appendChild(item);
+        let clicks = 0;
+        let resetTimer;
+        button.addEventListener('click', () => {
+            clearTimeout(resetTimer);
+            clicks += 1;
+            if (clicks >= 5) {
+                const active = localStorage.getItem('inner-site-enabled') === 'true';
+                if (active) localStorage.removeItem('inner-site-enabled');
+                else localStorage.setItem('inner-site-enabled', 'true');
+                window.location.href = active ? '/' : '/inner/';
+                clicks = 0;
+            }
+            resetTimer = setTimeout(() => { clicks = 0; }, 1000);
+        });
+    };
+    mountMoon(document.querySelector('.pc .menu-list'), 'secret-inner-trigger', 'menu-item flex-start border-box');
+    mountMoon(document.querySelector('.drawer-menu-list'), 'secret-inner-trigger-mobile', 'drawer-menu-item secret-moon-item');
 
     // 4. Modify Home links (e.g. Logo, Home menu item) to point to /inner/ when inner site is active
     const homeLinks = document.querySelectorAll('a[href="/"]');
@@ -185,6 +172,7 @@ window.switchSiteLanguage = (langId) => {
     const mobileMenu = document.getElementById('keep-lang-mobile-popup');
     if (mobileMenu) {
         mobileMenu.classList.remove('open');
+        document.getElementById('keep-lang-mobile-btn')?.setAttribute('aria-expanded', 'false');
     }
     if (window.translate && typeof window.translate.changeLanguage === 'function') {
         window.translate.changeLanguage(langId);
@@ -233,13 +221,16 @@ const injectLanguageSwitcherUI = () => {
     }
 
     // 2. Mobile Header Button + Popup Injection (.mobile)
-    const mobileBar = document.querySelector('.header-wrapper .mobile');
+    const mobileBar = document.querySelector('.header-wrapper .drawer-menu-list');
     if (mobileBar && !document.getElementById('keep-lang-mobile-btn')) {
-        const btn = document.createElement('div');
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-controls', 'keep-lang-mobile-popup');
         btn.id = 'keep-lang-mobile-btn';
-        btn.className = 'icon-item keep-lang-mobile-trigger ignore';
+        btn.className = 'keep-lang-mobile-trigger ignore';
         btn.title = 'Language / 言語 / 语言';
-        btn.innerHTML = '<i class="fa-solid fa-language" style="font-size: 1.2rem;"></i>';
+        btn.innerHTML = '<i class="fa-solid fa-language" aria-hidden="true"></i><span>语言 / Language</span>';
 
         const popup = document.createElement('div');
         popup.id = 'keep-lang-mobile-popup';
@@ -254,18 +245,16 @@ const injectLanguageSwitcherUI = () => {
 
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            popup.classList.toggle('open');
+            const open = popup.classList.toggle('open');
+            btn.setAttribute('aria-expanded', String(open));
         });
 
-        document.addEventListener('click', () => {
-            popup.classList.remove('open');
-        });
 
-        mobileBar.insertBefore(btn, mobileBar.firstChild);
-        const headerWrapper = document.querySelector('.header-wrapper');
-        if (headerWrapper && !document.getElementById('keep-lang-mobile-popup')) {
-            headerWrapper.appendChild(popup);
-        }
+
+        const item = document.createElement('li');
+        item.className = 'drawer-menu-item language-drawer-item';
+        item.append(btn, popup);
+        mobileBar.insertBefore(item, document.getElementById('secret-inner-trigger-mobile'));
     }
 
     updateLangUI(currentLang);
@@ -314,6 +303,11 @@ const initSiteTranslate = () => {
     }
 };
 
+document.addEventListener('click', () => {
+    document.getElementById('keep-lang-mobile-popup')?.classList.remove('open');
+    document.getElementById('keep-lang-mobile-btn')?.setAttribute('aria-expanded', 'false');
+});
+
 document.addEventListener('DOMContentLoaded', initSiteTranslate);
 window.addEventListener('pjax:complete', initSiteTranslate);
 
@@ -338,13 +332,7 @@ window.addEventListener('pjax:complete', initSiteTranslate);
       a.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin-right:4px;font-size:15px;font-weight:600;white-space:nowrap';
       mobile.prepend(a);
     }
-    var menu = document.querySelector('.header-content .menu-list');
-    if (menu && !menu.querySelector('[data-meal-entry]')) {
-      var item = document.createElement('li');
-      item.className = 'menu-item flex-start border-box'; item.dataset.mealEntry = 'desktop';
-      item.appendChild(mealLink('menu-text-color border-box'));
-      menu.insertBefore(item, menu.children[1] || null);
-    }
+
   }
   mountMealEntry();
   if (!window.__mealEntryInstalled) {
@@ -352,4 +340,66 @@ window.addEventListener('pjax:complete', initSiteTranslate);
     document.addEventListener('DOMContentLoaded', mountMealEntry);
     document.addEventListener('pjax:complete', mountMealEntry);
   }
+})();
+
+
+// Compact player and a clear reading entry, without interrupting either playlist.
+(function () {
+    function initResponsiveUI() {
+        const player = document.getElementById('spotify-player-container');
+        if (player && !document.getElementById('spotify-player-toggle')) {
+            const toggle = document.createElement('button');
+            toggle.id = 'spotify-player-toggle';
+            toggle.type = 'button';
+            toggle.setAttribute('aria-controls', 'spotify-outer spotify-inner');
+            const narrow = window.matchMedia('(max-width: 800px)');
+            const sync = () => {
+                const open = !narrow.matches || player.classList.contains('is-expanded');
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? '收起音乐播放器' : '展开音乐播放器');
+                toggle.innerHTML = open ? '<span aria-hidden="true">×</span><span>收起</span>' : '<i class="fa-solid fa-music" aria-hidden="true"></i><span>音乐</span>';
+                player.querySelectorAll('iframe').forEach(frame => {
+                    frame.tabIndex = open ? 0 : -1;
+                    frame.title = frame.id === 'spotify-inner' ? '里站音乐' : '我的歌单';
+                });
+            };
+            toggle.addEventListener('click', () => {
+                player.classList.toggle('is-expanded');
+                sync();
+            });
+            player.prepend(toggle);
+            narrow.addEventListener('change', sync);
+            sync();
+        }
+        const content = document.querySelector('.home-content-container');
+        const firstScreen = document.querySelector('.first-screen-content');
+        if (content && firstScreen && !firstScreen.querySelector('.home-reading-link')) {
+            content.id = 'home-content';
+            const link = document.createElement('a');
+            link.href = '#home-content';
+            link.className = 'home-reading-link';
+            link.textContent = '往下看看 ↓';
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                content.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+            });
+            firstScreen.querySelector('.bottom-placeholder').appendChild(link);
+        }
+        const menuButton = document.querySelector('.menu-bar');
+        if (menuButton && !menuButton.hasAttribute('role')) {
+            menuButton.setAttribute('role', 'button');
+            menuButton.tabIndex = 0;
+            menuButton.setAttribute('aria-label', '打开或收起导航');
+            menuButton.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    menuButton.click();
+                }
+            });
+        }
+    }
+    document.addEventListener('DOMContentLoaded', initResponsiveUI);
+    window.addEventListener('pjax:complete', initResponsiveUI);
+})();
+
 })();

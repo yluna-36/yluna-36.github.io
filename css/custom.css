@@ -41,9 +41,11 @@
     padding-left: 0.8rem;
 }
 
-/* Force enlarge first screen font */
+/* Scale the headline with the available screen width. */
 .first-screen-container .first-screen-content .description {
-    font-size: 3.5rem !important;
+    font-size: clamp(28px, 3.6vw, 52px);
+    line-height: 1.55;
+    text-wrap: balance;
 }
 
 /* Focus on Steve Jobs in the presentation cover image */
@@ -204,3 +206,108 @@ header .left .logo-image {
     background: rgba(0, 102, 204, 0.08);
 }
 
+
+
+/* Shared navigation: one desktop row, a scrollable drawer on smaller screens. */
+header .header-content { gap: 24px; }
+header .header-content .left { min-width: 0; }
+header .left .logo-image { transform: none; display: flex; align-items: center; }
+header .header-content .right { flex-shrink: 0; }
+header .right .pc .menu-list { gap: clamp(12px, 1.5vw, 24px) !important; }
+header .right .mobile { display: none !important; }
+header .menu-item { position: relative; }
+header .menu-item.has-sub-menu::after { pointer-events: none; }
+header .right .pc .menu-list .sub-menu-list {
+    top: 100%; bottom: auto; left: 0; transform: none;
+    flex-direction: column; gap: 0; min-width: 140px;
+    padding: 8px; z-index: 2;
+}
+header .right .pc .sub-menu-item a { padding: 10px 12px; min-height: 40px; }
+header .right .pc .has-sub-menu:focus-within > .sub-menu-list { display: flex; }
+header .right .pc #keep-lang-menu-item .sub-menu-list { left: auto; right: 0; }
+.secret-moon-button {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%;
+    background: transparent; color: var(--text-color-3); cursor: pointer;
+}
+.secret-moon-button i { opacity: .45; }
+.secret-moon-button:hover i, .secret-moon-button:focus-visible i { opacity: 1; }
+.secret-moon-button:focus-visible, #spotify-player-toggle:focus-visible,
+.keep-lang-mobile-trigger:focus-visible, .home-reading-link:focus-visible {
+    outline: 2px solid var(--primary-color); outline-offset: 3px;
+}
+.keep-lang-mobile-trigger {
+    width: 100%; min-height: 44px; gap: 12px; justify-content: flex-start;
+    margin: 0; padding: 0; border: 0; font: inherit;
+    background: transparent; color: var(--text-color-3); text-align: left;
+}
+.keep-lang-mobile-popup { position: static; margin-top: 8px; box-shadow: none; }
+.home-reading-link {
+    display: table; margin: 22px auto 0; padding: 10px 18px;
+    color: var(--text-color-3); font-size: 14px; letter-spacing: .08em;
+    border: 1px solid var(--text-color-5); border-radius: 24px;
+}
+body.inner-site-active .home-reading-link { color: white; background: rgba(0,0,0,.35); border-color: rgba(255,255,255,.6); }
+#home-content { scroll-margin-top: 90px; }
+#spotify-player-toggle { display: none; }
+
+@media (max-width: 1100px) {
+    header .header-content, header .header-content.has-first-screen { width: calc(100% - 32px); gap: 12px; }
+    header .header-content .right .pc { display: none; }
+    header .header-content .right .mobile { display: flex !important; gap: 4px; align-items: center; }
+    header .header-content .right .mobile .icon-item { display: flex; align-items: center; justify-content: center; width: 40px; height: 44px; }
+    header .header-drawer { display: flex; max-height: 100vh; max-height: 100dvh; overflow-y: auto; overscroll-behavior: contain; }
+    header .header-drawer .drawer-menu-list { width: calc(100% - 40px); height: auto; gap: 4px; padding-bottom: 24px; }
+    header .header-drawer .drawer-menu-label { min-height: 40px; }
+    header .window-mask { display: block; }
+    header .site-name { font-size: clamp(16px, 3.8vw, 24px) !important; letter-spacing: 0; }
+    header .header-content .left .logo-image { width: 24px; height: 24px; margin-right: 6px; }
+    header .drawer-sub-menu-list .sub-menu-item a { min-height: 44px; }
+    .show-header-drawer #spotify-player-container { visibility: hidden; }
+}
+
+@media (max-width: 800px) {
+    .first-screen-container {
+        height: auto; min-height: 560px; min-height: min(680px, 88svh);
+        padding: 100px 24px 32px; overflow: visible;
+    }
+    .first-screen-container .first-screen-content {
+        width: 100%; height: auto; min-height: 420px; min-height: min(500px, 68svh);
+        padding-top: 0; gap: 28px;
+    }
+    .first-screen-content .top-placeholder { display: none; }
+    .first-screen-container .first-screen-content .middle-placeholder { margin: auto 0; }
+    .first-screen-container .first-screen-content .description { font-size: clamp(26px, 6.8vw, 38px); line-height: 1.6; transform: none; }
+    .first-screen-container .description .desc-item + .desc-item { font-size: .7em; margin-top: 18px; }
+    .first-screen-container .first-screen-content .sc-icon-list { flex-wrap: wrap; gap: 6px 10px; max-width: 340px; margin: 0 auto; }
+    .first-screen-container .first-screen-content .sc-icon-list .sc-icon-item { justify-content: center; margin: 0; width: 44px; height: 44px; }
+    .first-screen-container .sc-icon-item a { justify-content: center; width: 100%; height: 100%; }
+    .first-screen-container .first-screen-content .sc-icon-list .sc-icon-item i { font-size: 22px; }
+    .first-screen-container .first-screen-content .sc-icon-list .sc-icon-item svg { width: 22px; height: 22px; }
+    .home-reading-link { margin-top: 14px; }
+    .home-section-title { font-size: 1.2rem !important; gap: 12px; line-height: 1.5; }
+    .home-section-title > div:last-child { flex-shrink: 0; }
+    #spotify-player-container { bottom: max(12px, env(safe-area-inset-bottom)) !important; left: 12px !important; max-width: calc(100vw - 72px) !important; z-index: 1004 !important; }
+    #spotify-player-toggle {
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+        min-width: 80px; min-height: 44px; margin-bottom: 0; padding: 10px 14px;
+        border: 1px solid var(--text-color-5); border-radius: 24px;
+        color: var(--text-color-1); background: var(--background-color-1);
+        box-shadow: 0 3px 14px rgba(0,0,0,.1); font: inherit; cursor: pointer;
+    }
+    #spotify-player-container:not(.is-expanded) iframe,
+    body.inner-site-active #spotify-player-container:not(.is-expanded) iframe { display: none !important; }
+    #spotify-player-container.is-expanded #spotify-player-toggle { margin-bottom: 8px; }
+    .footer { padding-bottom: 72px; }
+}
+
+@media (max-width: 360px) {
+    header .header-content, header .header-content.has-first-screen { width: calc(100% - 20px); gap: 6px; }
+    header .header-content .left .logo-image { display: none; }
+    header .header-content .right .mobile .icon-item { width: 36px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-post-list .home-post-item { transition: none; transform: none; }
+    .photo-album-box .photo { transition: none; }
+}
