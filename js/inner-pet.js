@@ -16,6 +16,7 @@
   try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; } catch (_) {}
   let visibility = ['open', 'minimized', 'closed'].includes(saved.visibility) ? saved.visibility : 'open';
   let paused = saved.paused === true;
+  let soundOn = saved.sound !== false, petAudio = null;
   let baseAnimation = saved.reading === true ? 'reading' : 'idle';
   let position = saved.position && Number.isFinite(saved.position.x) && Number.isFinite(saved.position.y)
     ? { x: Math.max(0, Math.min(1, saved.position.x)), y: Math.max(0, Math.min(1, saved.position.y)) } : null;
@@ -26,10 +27,11 @@
   let x = 0, y = 0, searchObserver, observedSearch;
   let greetingIndex = 0;
   const greetings = ['老师，今天也有值得留在书页上的小事吗？', '事情可以慢慢整理，休息也不要漏掉哦。', '这一页有让您停下来的地方吗？我也想听听。', '呵呵，刚才是不是又冒出了一个新点子？'];
+  const voiceBase = '/media/noa/greetings-v1/';
 
   function persist() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ visibility, paused, reading: baseAnimation === 'reading', position }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ visibility, paused, sound: soundOn, reading: baseAnimation === 'reading', position }));
     } catch (_) {}
   }
   function inner() { return document.body?.classList.contains('inner-site-active'); }
@@ -74,14 +76,47 @@
   }
   function clearBubble() {
     clearTimeout(bubbleTimer); bubbleTimer = null;
+    const previous = petAudio;
+    petAudio = null;
+    if (previous) { previous.pause(); previous.removeAttribute('src'); previous.load(); }
+    if (root) root.dataset.speaking = 'false';
     if (bubble) { bubble.hidden = true; bubble.textContent = ''; }
   }
-  function say(text) {
+  function say(text, clip) {
     clearBubble();
     bubble.textContent = text;
     bubble.hidden = false;
     placePanels();
-    bubbleTimer = setTimeout(clearBubble, 3800);
+    const readingTime = Math.max(3800, Array.from(text).length * 190);
+    bubbleTimer = setTimeout(clearBubble, readingTime);
+    if (!soundOn || !clip) return;
+    // Called directly from the click handler, including on mobile Safari.
+    // These static clips never call the chat or synthesis API.
+    document.querySelectorAll('.noa-chat audio').forEach(player => player.pause());
+    const audio = new Audio(voiceBase + clip + '.mp3');
+    petAudio = audio;
+    audio.preload = 'none';
+    audio.volume = 0.8;
+    audio.addEventListener('playing', () => {
+      if (petAudio !== audio) return;
+      root.dataset.speaking = 'true';
+      clearTimeout(bubbleTimer);
+      bubbleTimer = setTimeout(clearBubble, Math.min(30000, (Number.isFinite(audio.duration) ? audio.duration * 1000 : 24000) + 1000));
+    });
+    audio.addEventListener('ended', () => {
+      if (petAudio !== audio) return;
+      root.dataset.speaking = 'false';
+      clearTimeout(bubbleTimer);
+      bubbleTimer = setTimeout(clearBubble, 900);
+    });
+    function textOnly() {
+      if (petAudio !== audio) return;
+      root.dataset.speaking = 'false';
+      clearTimeout(bubbleTimer);
+      bubbleTimer = setTimeout(clearBubble, readingTime);
+    }
+    audio.addEventListener('error', textOnly);
+    audio.play().catch(textOnly);
   }
   function limits() {
     const width = root?.offsetWidth || (innerWidth <= 800 ? 72 : 96);
@@ -168,7 +203,8 @@
     }
     closeMenu(false);
     play('wave');
-    say(greetings[greetingIndex++ % greetings.length]);
+    const index = greetingIndex++ % greetings.length;
+    say(greetings[index], 'greeting-' + (index + 1));
   }
   function restore() {
     visibility = 'open';
@@ -193,6 +229,9 @@
   function updateLabels() {
     menu.querySelector('[data-noa-action="pause"]').textContent = paused ? '继续活动' : '暂停动作';
     menu.querySelector('[data-noa-action="read"]').textContent = baseAnimation === 'reading' ? '休息一会儿' : '陪我读书';
+    const soundButton = menu.querySelector('[data-noa-action="sound"]');
+    soundButton.textContent = soundOn ? '点击语音：开' : '点击语音：关';
+    soundButton.setAttribute('aria-pressed', String(soundOn));
   }
   function make() {
     root = document.createElement('aside');
@@ -210,11 +249,12 @@
       </div>
       <button class="noa-pet-launcher" type="button" aria-label="展开诺亚小宠物" hidden>诺亚 <span aria-hidden="true">↗</span></button>
       <div id="noa-pet-menu" class="noa-pet-menu" role="group" aria-label="诺亚的互动菜单" hidden>
-        <p class="noa-pet-menu-title">诺亚在这里</p><p class="noa-pet-menu-hint">拖动我，可以换个位置。</p>
+        <p class="noa-pet-menu-title">诺亚在这里</p><p class="noa-pet-menu-hint">点我听台词，拖动可换位置。<br>固定语音 · 非官方 AI 合成</p>
         <button type="button" data-noa-action="chat">和诺亚聊聊 ✦</button>
         <button type="button" data-noa-action="wave">打个招呼</button>
         <button type="button" data-noa-action="jump">跳一下</button>
         <button type="button" data-noa-action="read">陪我读书</button>
+        <button type="button" data-noa-action="sound" aria-pressed="true">点击语音：开</button>
         <button type="button" data-noa-action="pause">暂停动作</button>
         <button type="button" data-noa-action="minimize">收起诺亚</button>
         <button type="button" data-noa-action="close">关闭 · 可在页脚召回</button>
@@ -283,11 +323,12 @@
         return;
       }
       if (action === 'wave') activate();
-      if (action === 'jump') { play('jump'); say('稍微活动一下，再继续吧。'); }
+      if (action === 'jump') { play('jump'); say('稍微活动一下，再继续吧。', 'jump'); }
       if (action === 'read') {
         baseAnimation = baseAnimation === 'reading' ? 'idle' : 'reading';
-        play(baseAnimation); say(baseAnimation === 'reading' ? '我也翻开书，陪你一起看。' : '那就安静地待一会儿。');
+        play(baseAnimation); say(baseAnimation === 'reading' ? '我也翻开书，陪你一起看。' : '那就安静地待一会儿。', baseAnimation === 'reading' ? 'reading' : 'rest');
       }
+      if (action === 'sound') { soundOn = !soundOn; if (!soundOn) clearBubble(); }
       if (action === 'pause') {
         paused = !paused;
         if (paused) { frame = 0; render(); }
@@ -333,6 +374,10 @@
   window.addEventListener('pjax:complete', sync);
   window.addEventListener('pageshow', sync);
   document.addEventListener('visibilitychange', sync);
+  window.addEventListener('pagehide', clearBubble);
+  document.addEventListener('play', event => {
+    if (event.target instanceof HTMLMediaElement && event.target.closest('.noa-chat')) clearBubble();
+  }, true);
   window.addEventListener('resize', () => { if (root && !root.hidden) restorePosition(); });
   window.visualViewport?.addEventListener('resize', () => { if (root && !root.hidden) restorePosition(); });
   motion.addEventListener('change', () => { if (motion.matches) { frame = 0; render(); } schedule(); });
