@@ -51,7 +51,7 @@ const syncInnerPet = () => {
         }
         const script = document.createElement('script');
         script.id = 'yluna-inner-pet-script';
-        script.src = '/js/inner-pet.js?v=20261106-voice1';
+        script.src = '/js/inner-pet.js?v=20261107-pet-voice1';
         script.async = true;
         script.onload = () => {
             innerPetLoading = false;
@@ -71,7 +71,7 @@ const syncInnerPet = () => {
     const style = existingStyle || document.createElement('link');
     style.id = 'yluna-inner-pet-style';
     style.rel = 'stylesheet';
-    style.href = '/css/inner-pet.css?v=20261106-voice1';
+    style.href = '/css/inner-pet.css?v=20261107-pet-voice1';
     style.onload = loadScript;
     style.onerror = () => {
         innerPetLoading = false;
