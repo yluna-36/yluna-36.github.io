@@ -4,7 +4,8 @@
   const API = 'https://noa-pet-api-643360244067.asia-east1.run.app';
   const TOKEN_KEY = 'yluna-noa-session-v1';
   let panel, input, log, status, send, returnFocus, busy = false, timer, until = 0, token = '', pending;
-  let history = [], contextEpoch = 0;
+  let history = [], contextEpoch = 0, voiceBusy = false;
+  const audioUrls = new Set();
   const encoder = new TextEncoder();
   function shorten(text, maxBytes = 750) {
     let result = '', size = 0;
@@ -47,11 +48,43 @@
     invalid_request: '消息有点长啦，试着简短一些吧。',
     invalid_context: '这页对话暂时接不上了，可以清空后重新聊。'
   };
-  function line(who, text) {
+  function voiceControl(item, voice) {
+    if (!voice?.ticket || typeof voice.text !== 'string') return;
+    const wrap = document.createElement('div'); wrap.className = 'noa-voice';
+    const button = document.createElement('button'); button.type = 'button'; button.textContent = '听诺亚说 · 短句';
+    const note = document.createElement('small'); note.textContent = '朗读：' + voice.text;
+    wrap.append(button, note); item.appendChild(wrap);
+    button.addEventListener('click', async () => {
+      if (voiceBusy || button.disabled) return;
+      voiceBusy = true; button.disabled = true; button.textContent = '正在准备声音…';
+      note.textContent = '首次加载可能需要 1～2 分钟，请稍等。';
+      const controller = new AbortController(); const timeout = setTimeout(() => controller.abort(), 155000);
+      try {
+        const response = await fetch(API + '/v1/voice', { method: 'POST', mode: 'cors', credentials: 'omit',
+          headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+          body: JSON.stringify({ ticket: voice.ticket }), signal: controller.signal });
+        if (!response.ok) { const error = await response.json(); throw Object.assign(new Error(), error); }
+        const blob = await response.blob();
+        if (!item.isConnected) return;
+        const url = URL.createObjectURL(blob); audioUrls.add(url);
+        const player = document.createElement('audio'); player.controls = true; player.preload = 'none'; player.src = url;
+        player.setAttribute('aria-label', '诺亚的 AI 合成语音');
+        // Explicit playback works on mobile Safari; repeated playback makes no API call.
+        button.replaceWith(player); note.textContent = 'AI 合成语音 · 可重复播放，不再扣次数。';
+      } catch (error) {
+        button.textContent = '暂时无法生成';
+        const tips = { voice_daily_limit: '全站今天的 10 次语音已用完，明天再听吧。', voice_user_limit: '你的语音次数今天已用完，明天再听吧。', voice_monthly_limit: '本期语音额度已用完，仍然可以文字聊天。', voice_busy: '诺亚正在准备另一段声音，稍后可再点。', invalid_voice_ticket: '这段回答的语音凭证已过期，请听新的回答。', voice_already_used: '这段语音已请求过，不会重复生成。', voice_disabled: '语音尚未开放，请先听下方示例。' };
+        note.textContent = tips[error.code] || '这次声音没有准备好。为避免重复扣次数，不自动重试；文字聊天仍可用。';
+        if (error.code === 'voice_busy') { button.disabled = false; button.textContent = '稍后再听'; }
+      } finally { clearTimeout(timeout); voiceBusy = false; }
+    });
+  }
+  function line(who, text, voice) {
     const item = document.createElement('p'); item.className = `noa-chat-line noa-chat-${who}`;
     const label = document.createElement('span'); label.textContent = who === 'user' ? '你' : '诺亚';
     const content = document.createElement('span'); content.textContent = text;
     item.append(label, content); log.appendChild(item);
+    if (who === 'assistant') voiceControl(item, voice);
     while (log.children.length > 24) log.firstElementChild.remove();
     log.scrollTop = log.scrollHeight;
   }
@@ -72,6 +105,7 @@
   function close() {
     if (!panel) return;
     panel.hidden = true;
+    for (const audio of panel.querySelectorAll('audio')) audio.pause();
     if (returnFocus?.isConnected && document.body.classList.contains('inner-site-active')) returnFocus.focus({ preventScroll: true });
   }
   async function request(path, body, auth) {
@@ -106,7 +140,7 @@
         status.textContent = data.status === 'pending' ? '这条消息还在处理中，请稍等；不会重复扣次数。' : '这条消息已经处理过了。若回答未收到，请换一条消息再聊。';
         if (data.status !== 'pending') pending = null;
       } else if (data.result?.text) {
-        line('user', message); line('assistant', data.result.text);
+        line('user', message); line('assistant', data.result.text, data.result.voice);
         history.push({ role: 'user', content: message }, { role: 'assistant', content: data.result.text });
         history = history.slice(-4);
         navigation(data.result.links);
@@ -126,13 +160,15 @@
   function make() {
     panel = document.createElement('section'); panel.className = 'noa-chat'; panel.hidden = true;
     panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', '和诺亚聊聊');
-    panel.innerHTML = `<header class="noa-chat-header"><div><strong>诺亚 <span>✦</span></strong><small>生盐诺亚 · 里站书记 · 非官方 AI</small></div><button type="button" class="noa-chat-close" aria-label="关闭聊天">×</button></header><div class="noa-chat-log" role="log" aria-live="polite" aria-label="聊天记录"></div><div class="noa-chat-topics" aria-label="聊天话题"><button type="button" data-topic="介绍一下这个网站的主人吧。">介绍站长</button><button type="button" data-topic="你了解这个网页吗？带我逛逛吧。">带我逛逛</button><button type="button" data-topic="诺亚，你和优香平时是怎么相处的？">聊聊诺亚</button></div><p class="noa-chat-status" role="status"></p><form class="noa-chat-form"><label for="noa-chat-input">想和我说点什么？</label><textarea id="noa-chat-input" rows="2" maxlength="1200" placeholder="老师，今天想聊些什么？"></textarea><div class="noa-chat-actions"><button type="button" class="noa-chat-clear">清空对话</button><button type="submit" class="noa-chat-send">发送</button></div></form><p class="noa-chat-note">每天 10 次，间隔 15 秒。AI 会收到消息及最近两轮对话，请勿填写隐私；本页对话在刷新或清空后重置。</p>`;
+    panel.innerHTML = `<header class="noa-chat-header"><div><strong>诺亚 <span>✦</span></strong><small>生盐诺亚 · 里站书记 · 非官方 AI</small></div><button type="button" class="noa-chat-close" aria-label="关闭聊天">×</button></header><div class="noa-chat-log" role="log" aria-live="polite" aria-label="聊天记录"></div><div class="noa-chat-topics" aria-label="聊天话题"><button type="button" data-topic="介绍一下这个网站的主人吧。">介绍站长</button><button type="button" data-topic="你了解这个网页吗？带我逛逛吧。">带我逛逛</button><button type="button" data-topic="诺亚，你和优香平时是怎么相处的？">聊聊诺亚</button></div><p class="noa-chat-status" role="status"></p><form class="noa-chat-form"><label for="noa-chat-input">想和我说点什么？</label><textarea id="noa-chat-input" rows="2" maxlength="1200" placeholder="老师，今天想聊些什么？"></textarea><div class="noa-chat-actions"><button type="button" class="noa-chat-clear">清空对话</button><button type="submit" class="noa-chat-send">发送</button></div></form><details class="noa-voice-sample"><summary>试听诺亚的声音 · AI 合成</summary><audio controls preload="none" src="/media/noa-voice-sample.wav" aria-label="诺亚语音示例"></audio><small>固定示例，可反复试听。聊天语音需点击生成：全站每天 10 次，每人 2 次，每次最多 60 字。</small></details><p class="noa-chat-note">文字每天 10 次，间隔 15 秒。AI 会收到消息及最近两轮对话，请勿填写隐私；本页对话在刷新或清空后重置。</p>`;
     document.body.appendChild(panel);
     input = panel.querySelector('textarea'); log = panel.querySelector('.noa-chat-log');
     status = panel.querySelector('.noa-chat-status'); send = panel.querySelector('.noa-chat-send');
     panel.querySelector('.noa-chat-close').addEventListener('click', close);
     panel.querySelector('form').addEventListener('submit', submit);
     panel.querySelector('.noa-chat-clear').addEventListener('click', () => {
+      for (const url of audioUrls) URL.revokeObjectURL(url); audioUrls.clear();
+      for (const audio of log.querySelectorAll('audio')) audio.pause();
       contextEpoch++; history = []; pending = null; input.value = ''; log.replaceChildren();
       status.textContent = '这一页的对话已经清空，我们重新开始吧。'; updateButton();
     });
