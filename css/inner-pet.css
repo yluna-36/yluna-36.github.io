@@ -131,7 +131,7 @@ body:not(.inner-site-active) .noa-pet-recall,
 .noa-chat { position: fixed; z-index: 1006; right: 24px; bottom: 24px; width: min(360px, calc(100vw - 24px)); max-height: min(600px, calc(var(--noa-view-height, 100dvh) - 100px)); display: flex; flex-direction: column; overflow: hidden; border: 1px solid rgba(132, 146, 193, .35); border-radius: 20px; background: #f7f8ff; color: #303752; box-shadow: 0 18px 65px rgba(28, 36, 70, .25); font-size: 14px; line-height: 1.6; }
 .noa-chat *, .noa-chat *::before, .noa-chat *::after { box-sizing: border-box; }
 .noa-chat button { cursor: pointer; font: inherit; border: 0; }
-.noa-chat-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 12px; border-bottom: 1px solid #e2e5f1; background: linear-gradient(110deg, #eef1ff, #f9f5ff); }
+.noa-chat-header { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 12px; border-bottom: 1px solid #e2e5f1; background: linear-gradient(110deg, #eef1ff, #f9f5ff); }
 .noa-chat-header strong { font-size: 18px; }
 .noa-chat-header strong span { color: #9281be; font-size: 13px; }
 .noa-chat-header small { display: block; color: #727991; font-size: 12px; }
@@ -142,12 +142,16 @@ body:not(.inner-site-active) .noa-pet-recall,
 .noa-chat-line > span:last-child { align-self: flex-start; max-width: 100%; border-radius: 13px; padding: 10px 12px; background: #e9ecf8; white-space: pre-wrap; overflow-wrap: anywhere; }
 .noa-chat-user { align-items: flex-end; }
 .noa-chat-user > span:last-child { align-self: flex-end; background: #e4def3; }
-.noa-chat-status { min-height: 20px; margin: 0; padding: 2px 18px 7px; color: #74748b; font-size: 12px; }
-.noa-chat-form { padding: 0 16px; }
+.noa-chat-status { flex-shrink: 0; min-height: 20px; margin: 0; padding: 2px 18px 7px; color: #74748b; font-size: 12px; }
+.noa-chat-form { flex-shrink: 0; padding: 0 16px; }
 .noa-chat-form label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .noa-chat-form textarea { display: block; width: 100%; min-height: 68px; max-height: 120px; resize: vertical; border: 1px solid #d9ddee; border-radius: 12px; padding: 10px 12px; background: #fff; color: #303752; font: inherit; font-size: 16px; line-height: 1.5; }
 .noa-chat :focus-visible { outline: 2px solid #8e7ebc; outline-offset: 2px; }
 .noa-chat-actions { display: flex; justify-content: space-between; gap: 12px; padding-top: 7px; }
+.noa-chat-topics { display: flex; flex-wrap: wrap; gap: 6px; padding: 5px 16px 8px; flex-shrink: 0; }
+.noa-chat-topics button { background: #ede9f7; color: #60567b; border-radius: 16px; min-height: 36px; padding: 6px 10px; font-size: 12px; }
+.noa-chat-links { display: flex; flex-direction: column; gap: 5px; padding: 0 0 12px; }
+.noa-chat-links a { color: #64538e; background: #eeebf8; border-radius: 8px; padding: 8px 10px; text-decoration: none; font-size: 12px; overflow-wrap: anywhere; }
 .noa-chat-clear { min-height: 42px; padding: 0 4px; color: #757a91; background: transparent; font-size: 12px !important; }
 .noa-chat-send { min-width: 90px; min-height: 42px; padding: 8px 16px; border-radius: 12px; background: #72659f; color: #fff; }
 .noa-chat-send:disabled { opacity: .55; cursor: default; }
@@ -158,3 +162,10 @@ body:not(.inner-site-active) .noa-chat { display: none !important; }
   .noa-chat-header { padding-top: 10px; padding-bottom: 8px; }
   .noa-chat-note { padding-bottom: max(10px, env(safe-area-inset-bottom)); }
 }
+.noa-chat.noa-chat-compact { top: calc(var(--noa-view-top, 0px) + 12px); bottom: auto; height: calc(var(--noa-view-height, 100dvh) - 24px); max-height: calc(var(--noa-view-height, 100dvh) - 24px); }
+.noa-chat-compact .noa-chat-topics { display: none; }
+.noa-chat-compact .noa-chat-header { padding: 4px 12px; }
+.noa-chat-compact .noa-chat-log { min-height: 0; }
+.noa-chat-compact .noa-chat-form textarea { height: 48px; min-height: 48px; max-height: 72px; }
+.noa-chat-compact .noa-chat-status { padding-top: 0; padding-bottom: 4px; }
+.noa-chat-compact .noa-chat-note { padding: 4px 16px 8px; line-height: 1.3; }

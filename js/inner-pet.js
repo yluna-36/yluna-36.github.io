@@ -25,7 +25,7 @@
   let timer = null, bubbleTimer = null, drag = null, suppressClickUntil = 0, menuOpen = false;
   let x = 0, y = 0, searchObserver, observedSearch;
   let greetingIndex = 0;
-  const greetings = ['欢迎回来，我在这里陪你。', '今天也留一点时间给喜欢的事吧。', '慢慢看，我会安静地待在这里。', '有意思的想法，记下来吧。'];
+  const greetings = ['老师，今天也有值得留在书页上的小事吗？', '事情可以慢慢整理，休息也不要漏掉哦。', '这一页有让您停下来的地方吗？我也想听听。', '呵呵，刚才是不是又冒出了一个新点子？'];
 
   function persist() {
     try {
@@ -274,7 +274,7 @@
           let script = document.getElementById('noa-chat-script');
           if (!script) {
             script = document.createElement('script'); script.id = 'noa-chat-script';
-            script.src = '/js/noa-chat.js?v=20261106';
+            script.src = '/js/noa-chat.js?v=20261106-persona2';
             script.onload = () => window.__noaChat?.open(menuButton);
             script.onerror = () => { script.remove(); say('聊天窗口暂时没打开，请稍后再试。'); };
             document.body.appendChild(script);
