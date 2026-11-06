@@ -130,11 +130,6 @@ body.inner-site-active .menu-item i {
    Fix Navigation Layout & Wrapping
    ========================================================= */
 
-/* Prevent the site title from breaking into two lines */
-header .site-name {
-    white-space: nowrap !important;
-}
-
 /* Ensure dropdown arrows are aligned next to text and prevent wrapping */
 header .menu-item > a.menu-text-color {
     display: inline-flex !important;
@@ -235,8 +230,15 @@ header .left .logo-image {
 
 
 /* Shared navigation: one desktop row, a scrollable drawer on smaller screens. */
-header .header-content { gap: 24px; }
-header .header-content .left { min-width: 0; }
+.header-wrapper .header-content,
+.header-wrapper .header-content.has-first-screen { width: calc(100% - 48px); max-width: 1440px; gap: 24px; }
+.header-wrapper .header-content .left { min-width: 0; }
+.header-wrapper .header-content .left .site-name {
+    display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis;
+    white-space: nowrap; font-size: clamp(20px, 2vw, 28px); line-height: 1.2;
+}
+.header-wrapper .header-content .right .pc .menu-list { width: max-content; }
+.header-wrapper .header-content .right .pc .menu-list > .menu-item > a { white-space: nowrap; }
 header .left .logo-image { transform: none; display: flex; align-items: center; }
 header .header-content .right { flex-shrink: 0; }
 header .right .pc .menu-list { gap: clamp(12px, 1.5vw, 24px) !important; }
@@ -290,6 +292,18 @@ body.inner-site-active .home-reading-link { color: white; background: rgba(0,0,0
 #home-content { scroll-margin-top: 90px; }
 #spotify-player-toggle { display: none; }
 
+/* Content-aware fallback: translated labels can need a drawer on a desktop too.
+   Keep the desktop row measurable, but out of layout and keyboard navigation. */
+.header-wrapper.compact-navigation .header-content .right .pc { display: block; position: absolute; top: 0; right: 0; visibility: hidden; pointer-events: none; }
+.header-wrapper.compact-navigation .header-content .right .mobile { display: flex !important; gap: 4px; align-items: center; }
+.header-wrapper.compact-navigation .header-content .right .mobile .icon-item { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; }
+.header-wrapper.compact-navigation .header-drawer { display: flex; max-height: 100dvh; overflow-y: auto; overscroll-behavior: contain; }
+.header-wrapper.compact-navigation .header-drawer .drawer-menu-list { width: calc(100% - 40px); height: auto; gap: 4px; padding-bottom: 24px; }
+.header-wrapper.compact-navigation .header-drawer .drawer-menu-label { min-height: 40px; }
+.header-wrapper.compact-navigation .drawer-sub-menu-list .sub-menu-item a { min-height: 44px; }
+.header-wrapper.compact-navigation .window-mask { display: block; }
+.show-header-drawer #spotify-player-container { visibility: hidden; }
+
 @media (max-width: 1100px) {
     .header-wrapper .header-content, .header-wrapper .header-content.has-first-screen { width: calc(100% - 32px); gap: 12px; }
     .header-wrapper .header-content .right .pc { display: none; }
@@ -299,7 +313,7 @@ body.inner-site-active .home-reading-link { color: white; background: rgba(0,0,0
     .header-wrapper .header-drawer .drawer-menu-list { width: calc(100% - 40px); height: auto; gap: 4px; padding-bottom: 24px; }
     .header-wrapper .header-drawer .drawer-menu-label { min-height: 40px; }
     .header-wrapper .window-mask { display: block; }
-    .header-wrapper .site-name { font-size: clamp(16px, 3.8vw, 24px) !important; letter-spacing: 0; }
+    .header-wrapper .header-content .left .site-name { font-size: clamp(16px, 3.8vw, 22px) !important; letter-spacing: 0; white-space: normal; overflow-wrap: anywhere; }
     .header-wrapper .header-content .left .logo-image { width: 24px; height: 24px; margin-right: 6px; }
     .header-wrapper .drawer-sub-menu-list .sub-menu-item a { min-height: 44px; }
     .show-header-drawer #spotify-player-container { visibility: hidden; }
