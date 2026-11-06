@@ -51,7 +51,7 @@ const syncInnerPet = () => {
         }
         const script = document.createElement('script');
         script.id = 'yluna-inner-pet-script';
-        script.src = '/js/inner-pet.js?v=20261107-pet-voice1';
+        script.src = '/js/inner-pet.js?v=20261107-interactions1';
         script.async = true;
         script.onload = () => {
             innerPetLoading = false;
@@ -71,7 +71,7 @@ const syncInnerPet = () => {
     const style = existingStyle || document.createElement('link');
     style.id = 'yluna-inner-pet-style';
     style.rel = 'stylesheet';
-    style.href = '/css/inner-pet.css?v=20261107-pet-voice1';
+    style.href = '/css/inner-pet.css?v=20261107-interactions1';
     style.onload = loadScript;
     style.onerror = () => {
         innerPetLoading = false;
@@ -308,11 +308,11 @@ const injectLanguageSwitcherUI = () => {
         popup.id = 'keep-lang-mobile-popup';
         popup.className = 'keep-lang-mobile-popup ignore';
         popup.innerHTML = SUPPORTED_LANGUAGES.map(l => `
-            <div class="keep-lang-mobile-item keep-lang-option ignore ${l.id === currentLang ? 'active-lang' : ''}"
+            <button type="button" class="keep-lang-mobile-item keep-lang-option ignore ${l.id === currentLang ? 'active-lang' : ''}"
                  data-lang="${l.id}"
                  onclick="window.switchSiteLanguage('${l.id}')">
                 ${l.label}
-            </div>
+            </button>
         `).join('');
 
         btn.addEventListener('click', (e) => {
@@ -470,6 +470,126 @@ window.addEventListener('pjax:complete', initSiteTranslate);
             });
         }
     }
+    // Keep keyboard focus out of closed drawers, and make icon controls usable
+    // without a mouse. Rebind only to new nodes after PJAX replaces the header.
+    const narrowHeader = window.matchMedia('(max-width: 1100px)');
+    let searchOpener;
+    document.addEventListener('click', event => {
+        const trigger = event.target.closest('.search-popup-trigger');
+        if (trigger) searchOpener = trigger;
+        if (!event.target.closest('.pc .has-sub-menu')) {
+            document.querySelectorAll('.pc .is-dropdown-open').forEach(menu => {
+                menu.classList.remove('is-dropdown-open');
+                menu.querySelector(':scope > a')?.setAttribute('aria-expanded', 'false');
+            });
+        }
+    }, true);
+    function keyboardButton(element, label) {
+        if (!element || element.dataset.keyboardReady) return;
+        element.dataset.keyboardReady = 'true';
+        element.setAttribute('role', 'button');
+        element.setAttribute('aria-label', label);
+        element.tabIndex = 0;
+        element.addEventListener('keydown', event => {
+            if (event.target === element && (event.key === 'Enter' || event.key === ' ')) {
+                event.preventDefault(); event.stopPropagation(); element.click();
+            }
+        });
+    }
+    function syncDrawer() {
+        const open = narrowHeader.matches && document.body.classList.contains('show-header-drawer');
+        const drawer = document.querySelector('.header-drawer');
+        if (drawer) { drawer.id = 'site-mobile-navigation'; drawer.inert = !open; }
+        const button = document.querySelector('.menu-bar');
+        button?.setAttribute('aria-expanded', String(open));
+        button?.setAttribute('aria-controls', 'site-mobile-navigation');
+    }
+    function initInteractionAccess() {
+        syncDrawer();
+        const desktopMenu = document.querySelector('.header-wrapper .pc .menu-list');
+        if (desktopMenu && !desktopMenu.classList.contains('interaction-nav-ready')) {
+            desktopMenu.classList.add('interaction-nav-ready');
+            const menus = [...desktopMenu.querySelectorAll(':scope > .has-sub-menu')];
+            const select = selected => menus.forEach(menu => {
+                const open = menu === selected;
+                menu.classList.toggle('is-dropdown-open', open);
+                menu.querySelector(':scope > a')?.setAttribute('aria-expanded', String(open));
+            });
+            menus.forEach(menu => {
+                menu.querySelector(':scope > a')?.addEventListener('click', () => select(menu));
+                menu.addEventListener('pointerenter', () => select(menu));
+                menu.addEventListener('pointerleave', () => {
+                    if (!menu.contains(document.activeElement) && menu.classList.contains('is-dropdown-open')) select(null);
+                });
+                menu.addEventListener('focusin', () => select(menu));
+                menu.addEventListener('focusout', () => queueMicrotask(() => {
+                    if (!menu.contains(document.activeElement) && !menu.matches(':hover') && menu.classList.contains('is-dropdown-open')) select(null);
+                }));
+                menu.addEventListener('keydown', event => {
+                    if (event.key === 'Escape') {
+                        event.preventDefault(); menu.querySelector(':scope > a')?.focus(); select(null);
+                    }
+                });
+            });
+            select(null);
+        }
+        document.querySelectorAll('.search-popup-trigger').forEach(element => keyboardButton(element, '搜索本站'));
+        const overlay = document.querySelector('.search-pop-overlay');
+        if (overlay && !overlay.dataset.accessReady) {
+            overlay.dataset.accessReady = 'true';
+            const popup = overlay.querySelector('.search-popup');
+            popup.setAttribute('role', 'dialog'); popup.setAttribute('aria-modal', 'true');
+            popup.setAttribute('aria-label', '搜索本站');
+            overlay.querySelector('.search-input')?.setAttribute('aria-label', '搜索关键词');
+            keyboardButton(overlay.querySelector('.close-popup-btn'), '关闭搜索');
+            keyboardButton(overlay.querySelector('.search-input-field-pre'), '清空搜索');
+            let wasOpen = false;
+            const syncSearch = () => {
+                const open = overlay.classList.contains('active');
+                const focusInside = overlay.contains(document.activeElement);
+                overlay.inert = !open;
+                if (!open && wasOpen && focusInside && searchOpener?.isConnected) searchOpener.focus({ preventScroll: true });
+                wasOpen = open;
+            };
+            new MutationObserver(syncSearch).observe(overlay, { attributes: true, attributeFilter: ['class'] });
+            overlay.addEventListener('keydown', event => {
+                if (event.key !== 'Tab') return;
+                const focusable = [...overlay.querySelectorAll('input, a[href], [tabindex="0"]')].filter(element => element.getClientRects().length);
+                const first = focusable[0], last = focusable[focusable.length - 1];
+                if ((event.shiftKey && document.activeElement === first) || (!event.shiftKey && document.activeElement === last)) {
+                    event.preventDefault(); (event.shiftKey ? last : first)?.focus();
+                }
+            });
+            syncSearch();
+        }
+        document.querySelectorAll('.home-section-title[onclick]').forEach(title => {
+            if (title.dataset.keyboardReady) return;
+            keyboardButton(title, title.textContent.trim());
+            const content = title.nextElementSibling;
+            if (content?.id) {
+                title.setAttribute('aria-controls', content.id);
+                const sync = () => title.setAttribute('aria-expanded', String(getComputedStyle(content).display !== 'none'));
+                new MutationObserver(sync).observe(content, { attributes: true, attributeFilter: ['style'] }); sync();
+            }
+            keyboardButton(title.querySelector('[id^="lock-"]'), '解锁此板块');
+        });
+    }
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && document.body.classList.contains('show-header-drawer') && !document.querySelector('.search-pop-overlay.active')) {
+            event.preventDefault();
+            document.body.classList.remove('show-header-drawer');
+            document.querySelector('.menu-bar')?.focus({ preventScroll: true });
+        }
+    });
+    narrowHeader.addEventListener('change', () => {
+        if (!narrowHeader.matches) document.body.classList.remove('show-header-drawer');
+        syncDrawer();
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        initInteractionAccess();
+        new MutationObserver(syncDrawer).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    });
+    window.addEventListener('pjax:complete', initInteractionAccess);
     document.addEventListener('DOMContentLoaded', initResponsiveUI);
     window.addEventListener('pjax:complete', initResponsiveUI);
 })();
