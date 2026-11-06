@@ -82,7 +82,7 @@
   function line(who, text, voice) {
     const item = document.createElement('p'); item.className = `noa-chat-line noa-chat-${who}`;
     const label = document.createElement('span'); label.textContent = who === 'user' ? '你' : '诺亚';
-    const content = document.createElement('span'); content.textContent = text;
+    const content = document.createElement('span'); content.className = 'noa-chat-text'; content.textContent = text;
     item.append(label, content); log.appendChild(item);
     if (who === 'assistant') voiceControl(item, voice);
     while (log.children.length > 24) log.firstElementChild.remove();
@@ -102,11 +102,14 @@
     clearTimeout(timer);
     if (remaining) timer = setTimeout(updateButton, 500);
   }
-  function close() {
+  function pauseAudio() {
+    panel?.querySelectorAll('audio').forEach(audio => audio.pause());
+  }
+  function close(restoreFocus = true) {
     if (!panel) return;
     panel.hidden = true;
-    for (const audio of panel.querySelectorAll('audio')) audio.pause();
-    if (returnFocus?.isConnected && document.body.classList.contains('inner-site-active')) returnFocus.focus({ preventScroll: true });
+    pauseAudio();
+    if (restoreFocus && returnFocus?.isConnected && document.body.classList.contains('inner-site-active')) returnFocus.focus({ preventScroll: true });
   }
   async function request(path, body, auth) {
     const controller = new AbortController();
@@ -164,7 +167,7 @@
     document.body.appendChild(panel);
     input = panel.querySelector('textarea'); log = panel.querySelector('.noa-chat-log');
     status = panel.querySelector('.noa-chat-status'); send = panel.querySelector('.noa-chat-send');
-    panel.querySelector('.noa-chat-close').addEventListener('click', close);
+    panel.querySelector('.noa-chat-close').addEventListener('click', () => close());
     panel.querySelector('form').addEventListener('submit', submit);
     panel.querySelector('.noa-chat-clear').addEventListener('click', () => {
       for (const url of audioUrls) URL.revokeObjectURL(url); audioUrls.clear();
@@ -182,11 +185,14 @@
     panel.addEventListener('keydown', event => { if (event.key === 'Escape') { event.preventDefault(); close(); } });
     line('assistant', '老师，欢迎回来。我是生盐诺亚，今天也在这里陪您。想先认识一下站长，还是翻翻这里的文章？');
     new MutationObserver(() => {
-      if (!document.body.classList.contains('inner-site-active') || document.body.classList.contains('gallery-viewer-open') || document.body.classList.contains('show-header-drawer')) { panel.hidden = true; }
+      if (!document.body.classList.contains('inner-site-active') || document.body.classList.contains('gallery-viewer-open') || document.body.classList.contains('show-header-drawer')) close(false);
     }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
     window.addEventListener('resize', viewport);
     window.visualViewport?.addEventListener('resize', viewport);
     window.visualViewport?.addEventListener('scroll', viewport);
+    document.addEventListener('pjax:send', () => close(false));
+    document.addEventListener('visibilitychange', () => { if (document.hidden) pauseAudio(); });
+    window.addEventListener('pagehide', pauseAudio);
   }
   window.__noaChat = { open(trigger) {
     if (!document.body.classList.contains('inner-site-active')) return;
