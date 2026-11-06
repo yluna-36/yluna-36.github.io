@@ -204,13 +204,13 @@ window.addEventListener('pageshow', event => {
 // Multi-Language Auto Translation (Powered by translate.js + Edge Neural Engine)
 // =========================================================
 const SUPPORTED_LANGUAGES = [
-    { id: 'chinese_simplified', label: '🇨🇳 简体中文', short: '简中' },
-    { id: 'english', label: '🇺🇸 English', short: 'EN' },
-    { id: 'japanese', label: '🇯🇵 日本語', short: '日本語' },
-    { id: 'korean', label: '🇰🇷 한국어', short: '한국어' },
-    { id: 'chinese_traditional', label: '🇭🇰 繁體中文', short: '繁中' },
-    { id: 'french', label: '🇫🇷 Français', short: 'FR' },
-    { id: 'spanish', label: '🇪🇸 Español', short: 'ES' }
+    { id: 'chinese_simplified', label: '🇨🇳 简体中文', short: '简中', meal: '食记' },
+    { id: 'english', label: '🇺🇸 English', short: 'EN', meal: 'Meals' },
+    { id: 'japanese', label: '🇯🇵 日本語', short: '日本語', meal: '食事' },
+    { id: 'korean', label: '🇰🇷 한국어', short: '한국어', meal: '식사' },
+    { id: 'chinese_traditional', label: '🇭🇰 繁體中文', short: '繁中', meal: '食記' },
+    { id: 'french', label: '🇫🇷 Français', short: 'FR', meal: 'Repas' },
+    { id: 'spanish', label: '🇪🇸 Español', short: 'ES', meal: 'Comidas' }
 ];
 
 const getSavedLang = () => {
@@ -223,6 +223,7 @@ const getSavedLang = () => {
 
 const updateLangUI = (langId) => {
     const found = SUPPORTED_LANGUAGES.find(l => l.id === langId) || SUPPORTED_LANGUAGES[0];
+    document.querySelectorAll('[data-meal-entry]').forEach(link => { link.textContent = found.meal; });
     const labelEl = document.getElementById('keep-current-lang-label');
     if (labelEl) {
         labelEl.textContent = found.short === '简中' ? '🌐 语言 / Lang' : `🌐 ${found.short}`;
@@ -388,7 +389,7 @@ window.addEventListener('pjax:complete', initSiteTranslate);
 (function () {
   function mealLink(className) {
     var a = document.createElement('a');
-    a.href = '/meals/'; a.textContent = '食记'; a.className = className;
+    a.href = '/meals/'; a.textContent = (SUPPORTED_LANGUAGES.find(l => l.id === getSavedLang()) || SUPPORTED_LANGUAGES[0]).meal; a.className = className + ' ignore';
     a.setAttribute('aria-label', '打开朝夕食记入口');
     a.addEventListener('click', function (event) {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -473,6 +474,36 @@ window.addEventListener('pjax:complete', initSiteTranslate);
     // Keep keyboard focus out of closed drawers, and make icon controls usable
     // without a mouse. Rebind only to new nodes after PJAX replaces the header.
     const narrowHeader = window.matchMedia('(max-width: 1100px)');
+    let adaptiveHeader, headerResize, headerText, headerFrame;
+    function fitNavigation() {
+        cancelAnimationFrame(headerFrame);
+        headerFrame = requestAnimationFrame(() => {
+            if (!adaptiveHeader?.isConnected) return;
+            const content = adaptiveHeader.querySelector('.header-content');
+            const name = content.querySelector('.site-name');
+            const logo = content.querySelector('.logo-image');
+            const pc = content.querySelector('.pc');
+            const menu = pc.querySelector('.menu-list');
+            const logoWidth = logo ? logo.offsetWidth + (parseFloat(getComputedStyle(logo).marginRight) || 0) : 0;
+            const needed = name.scrollWidth + logoWidth + menu.scrollWidth + 24;
+            const compact = narrowHeader.matches || needed > content.clientWidth;
+            adaptiveHeader.classList.toggle('compact-navigation', compact);
+            pc.inert = compact;
+            if (!compact) document.body.classList.remove('show-header-drawer');
+            syncDrawer();
+        });
+    }
+    function initAdaptiveNavigation() {
+        const header = document.querySelector('.header-wrapper');
+        if (!header || adaptiveHeader === header) { fitNavigation(); return; }
+        headerResize?.disconnect(); headerText?.disconnect();
+        adaptiveHeader = header;
+        headerResize = new ResizeObserver(fitNavigation);
+        for (const selector of ['.header-content', '.site-name', '.pc .menu-list']) headerResize.observe(header.querySelector(selector));
+        headerText = new MutationObserver(fitNavigation);
+        for (const selector of ['.site-name', '.pc .menu-list']) headerText.observe(header.querySelector(selector), { childList: true, characterData: true, subtree: true });
+        fitNavigation();
+    }
     let searchOpener;
     document.addEventListener('click', event => {
         const trigger = event.target.closest('.search-popup-trigger');
@@ -497,7 +528,8 @@ window.addEventListener('pjax:complete', initSiteTranslate);
         });
     }
     function syncDrawer() {
-        const open = narrowHeader.matches && document.body.classList.contains('show-header-drawer');
+        const compact = narrowHeader.matches || document.querySelector('.header-wrapper')?.classList.contains('compact-navigation');
+        const open = compact && document.body.classList.contains('show-header-drawer');
         const drawer = document.querySelector('.header-drawer');
         if (drawer) { drawer.id = 'site-mobile-navigation'; drawer.inert = !open; }
         const button = document.querySelector('.menu-bar');
@@ -505,6 +537,7 @@ window.addEventListener('pjax:complete', initSiteTranslate);
         button?.setAttribute('aria-controls', 'site-mobile-navigation');
     }
     function initInteractionAccess() {
+        initAdaptiveNavigation();
         syncDrawer();
         const desktopMenu = document.querySelector('.header-wrapper .pc .menu-list');
         if (desktopMenu && !desktopMenu.classList.contains('interaction-nav-ready')) {
@@ -582,9 +615,9 @@ window.addEventListener('pjax:complete', initSiteTranslate);
         }
     });
     narrowHeader.addEventListener('change', () => {
-        if (!narrowHeader.matches) document.body.classList.remove('show-header-drawer');
-        syncDrawer();
+        fitNavigation();
     });
+    document.fonts?.ready.then(fitNavigation);
     document.addEventListener('DOMContentLoaded', () => {
         initInteractionAccess();
         new MutationObserver(syncDrawer).observe(document.body, { attributes: true, attributeFilter: ['class'] });
