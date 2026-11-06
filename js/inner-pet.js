@@ -211,6 +211,7 @@
       <button class="noa-pet-launcher" type="button" aria-label="展开诺亚小宠物" hidden>诺亚 <span aria-hidden="true">↗</span></button>
       <div id="noa-pet-menu" class="noa-pet-menu" role="group" aria-label="诺亚的互动菜单" hidden>
         <p class="noa-pet-menu-title">诺亚在这里</p><p class="noa-pet-menu-hint">拖动我，可以换个位置。</p>
+        <button type="button" data-noa-action="chat">和诺亚聊聊 ✦</button>
         <button type="button" data-noa-action="wave">打个招呼</button>
         <button type="button" data-noa-action="jump">跳一下</button>
         <button type="button" data-noa-action="read">陪我读书</button>
@@ -267,6 +268,20 @@
       const action = event.target.closest('[data-noa-action]')?.dataset.noaAction;
       if (!action) return;
       closeMenu(false);
+      if (action === 'chat') {
+        if (window.__noaChat) window.__noaChat.open(menuButton);
+        else {
+          let script = document.getElementById('noa-chat-script');
+          if (!script) {
+            script = document.createElement('script'); script.id = 'noa-chat-script';
+            script.src = '/js/noa-chat.js?v=20261106';
+            script.onload = () => window.__noaChat?.open(menuButton);
+            script.onerror = () => { script.remove(); say('聊天窗口暂时没打开，请稍后再试。'); };
+            document.body.appendChild(script);
+          }
+        }
+        return;
+      }
       if (action === 'wave') activate();
       if (action === 'jump') { play('jump'); say('稍微活动一下，再继续吧。'); }
       if (action === 'read') {
