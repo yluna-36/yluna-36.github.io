@@ -126,3 +126,35 @@ body:not(.inner-site-active) .noa-pet-recall,
   .noa-pet { --noa-width: 72px; --noa-height: 78px; }
   .noa-pet-menu-button, .noa-pet-launcher { gap: 6px; }
 }
+/* Chat is lazy-created in the inner site; mobile follows the visible viewport. */
+.noa-chat[hidden] { display: none !important; }
+.noa-chat { position: fixed; z-index: 1006; right: 24px; bottom: 24px; width: min(360px, calc(100vw - 24px)); max-height: min(600px, calc(var(--noa-view-height, 100dvh) - 100px)); display: flex; flex-direction: column; overflow: hidden; border: 1px solid rgba(132, 146, 193, .35); border-radius: 20px; background: #f7f8ff; color: #303752; box-shadow: 0 18px 65px rgba(28, 36, 70, .25); font-size: 14px; line-height: 1.6; }
+.noa-chat *, .noa-chat *::before, .noa-chat *::after { box-sizing: border-box; }
+.noa-chat button { cursor: pointer; font: inherit; border: 0; }
+.noa-chat-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 12px; border-bottom: 1px solid #e2e5f1; background: linear-gradient(110deg, #eef1ff, #f9f5ff); }
+.noa-chat-header strong { font-size: 18px; }
+.noa-chat-header strong span { color: #9281be; font-size: 13px; }
+.noa-chat-header small { display: block; color: #727991; font-size: 12px; }
+.noa-chat-close { width: 44px; height: 44px; border-radius: 12px; background: transparent; color: #59617a; font-size: 26px !important; }
+.noa-chat-log { flex: 1 1 auto; min-height: 60px; overflow: auto; overscroll-behavior: contain; padding: 8px 16px; scrollbar-width: thin; }
+.noa-chat-line { display: flex; flex-direction: column; gap: 3px; margin: 12px 0; }
+.noa-chat-line > span:first-child { color: #7c8197; font-size: 11px; }
+.noa-chat-line > span:last-child { align-self: flex-start; max-width: 100%; border-radius: 13px; padding: 10px 12px; background: #e9ecf8; white-space: pre-wrap; overflow-wrap: anywhere; }
+.noa-chat-user { align-items: flex-end; }
+.noa-chat-user > span:last-child { align-self: flex-end; background: #e4def3; }
+.noa-chat-status { min-height: 20px; margin: 0; padding: 2px 18px 7px; color: #74748b; font-size: 12px; }
+.noa-chat-form { padding: 0 16px; }
+.noa-chat-form label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.noa-chat-form textarea { display: block; width: 100%; min-height: 68px; max-height: 120px; resize: vertical; border: 1px solid #d9ddee; border-radius: 12px; padding: 10px 12px; background: #fff; color: #303752; font: inherit; font-size: 16px; line-height: 1.5; }
+.noa-chat :focus-visible { outline: 2px solid #8e7ebc; outline-offset: 2px; }
+.noa-chat-actions { display: flex; justify-content: space-between; gap: 12px; padding-top: 7px; }
+.noa-chat-clear { min-height: 42px; padding: 0 4px; color: #757a91; background: transparent; font-size: 12px !important; }
+.noa-chat-send { min-width: 90px; min-height: 42px; padding: 8px 16px; border-radius: 12px; background: #72659f; color: #fff; }
+.noa-chat-send:disabled { opacity: .55; cursor: default; }
+.noa-chat-note { flex-shrink: 0; padding: 8px 18px 14px; margin: 0; color: #7b8094; font-size: 10px; line-height: 1.5; }
+body:not(.inner-site-active) .noa-chat { display: none !important; }
+@media (max-width: 600px) {
+  .noa-chat { left: 12px; right: 12px; bottom: auto; top: calc(var(--noa-view-top, 0px) + var(--noa-view-height, 100dvh) - min(540px, var(--noa-view-height, 100dvh) - 24px) - 12px); width: auto; max-height: calc(var(--noa-view-height, 100dvh) - 24px); height: min(540px, calc(var(--noa-view-height, 100dvh) - 24px)); border-radius: 18px; }
+  .noa-chat-header { padding-top: 10px; padding-bottom: 8px; }
+  .noa-chat-note { padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+}
