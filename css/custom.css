@@ -217,14 +217,24 @@ header .right .pc .menu-list { gap: clamp(12px, 1.5vw, 24px) !important; }
 header .right .mobile { display: none !important; }
 header .menu-item { position: relative; }
 header .menu-item.has-sub-menu::after { pointer-events: none; }
-header .right .pc .menu-list .sub-menu-list {
-    top: 100%; bottom: auto; left: 0; transform: none;
+.header-wrapper .header-content .right .pc .menu-list > .menu-item.has-sub-menu > .sub-menu-list {
+    /* Outrank Keep's bottom:-280% rule; top + bottom used to squash the panel. */
+    top: calc(100% + 8px); bottom: auto; left: 0; right: auto; transform: none;
+    height: auto; margin: 0;
     flex-direction: column; gap: 0; min-width: 140px;
     padding: 8px; z-index: 2;
 }
-header .right .pc .sub-menu-item a { padding: 10px 12px; min-height: 40px; }
-header .right .pc .has-sub-menu:focus-within > .sub-menu-list { display: flex; }
-header .right .pc #keep-lang-menu-item .sub-menu-list { left: auto; right: 0; }
+.header-wrapper .header-content .right .pc .menu-list > .has-sub-menu > .sub-menu-list::before {
+    /* Keep hover active across the visual gap without covering the trigger. */
+    content: ''; position: absolute; left: 0; right: 0; top: -10px; height: 10px;
+}
+.header-wrapper .header-content .right .pc .menu-list > .has-sub-menu:hover > .sub-menu-list,
+.header-wrapper .header-content .right .pc .menu-list > .has-sub-menu:focus-within > .sub-menu-list { display: flex; }
+.header-wrapper .header-content .right .pc .menu-list .sub-menu-item { width: 100%; }
+.header-wrapper .header-content .right .pc .menu-list .sub-menu-item a {
+    width: 100%; padding: 10px 12px; min-height: 40px;
+}
+.header-wrapper .header-content .right .pc .menu-list > #keep-lang-menu-item > .sub-menu-list { left: auto; right: 0; }
 .secret-moon-button {
     display: inline-flex; align-items: center; justify-content: center;
     width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%;
