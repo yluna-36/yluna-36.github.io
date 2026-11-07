@@ -371,3 +371,7 @@ body.inner-site-active .home-reading-link { color: white; background: rgba(0,0,0
 @media (max-width: 1100px) {
     .page-container .page-main-content .page-main-content-top { min-height: 52px; }
 }
+
+/* English prose should keep natural word spacing on narrow screens. */
+html:lang(en) .keep-markdown-body { text-align: left; overflow-wrap: break-word; }
+html:lang(en) .keep-markdown-body p { text-align: left; }

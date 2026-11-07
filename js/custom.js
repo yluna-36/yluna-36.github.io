@@ -51,7 +51,7 @@ const syncInnerPet = () => {
         }
         const script = document.createElement('script');
         script.id = 'yluna-inner-pet-script';
-        script.src = '/js/inner-pet.js?v=20261107-interactions1';
+        script.src = '/js/inner-pet.js?v=20261107-english-layout2';
         script.async = true;
         script.onload = () => {
             innerPetLoading = false;
@@ -71,7 +71,7 @@ const syncInnerPet = () => {
     const style = existingStyle || document.createElement('link');
     style.id = 'yluna-inner-pet-style';
     style.rel = 'stylesheet';
-    style.href = '/css/inner-pet.css?v=20261107-interactions1';
+    style.href = '/css/inner-pet.css?v=20261107-english-layout2';
     style.onload = loadScript;
     style.onerror = () => {
         innerPetLoading = false;
@@ -223,6 +223,7 @@ const getSavedLang = () => {
 
 const updateLangUI = (langId) => {
     const found = SUPPORTED_LANGUAGES.find(l => l.id === langId) || SUPPORTED_LANGUAGES[0];
+    document.documentElement.lang = ({ english: 'en', japanese: 'ja', korean: 'ko', chinese_traditional: 'zh-TW', french: 'fr', spanish: 'es' })[found.id] || 'zh-CN';
     document.querySelectorAll('[data-meal-entry]').forEach(link => { link.textContent = found.meal; });
     const labelEl = document.getElementById('keep-current-lang-label');
     if (labelEl) {
