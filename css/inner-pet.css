@@ -179,3 +179,13 @@ body:not(.inner-site-active) .noa-chat { display: none !important; }
 .noa-voice-sample { margin:4px 16px 0; flex-shrink:0; }
 .noa-voice-sample summary { cursor:pointer; padding:8px 0; font-size:12px; color:#706181; }
 .noa-chat-compact .noa-voice-sample { display:none; }
+
+/* Translated text can grow: keep controls visible and let supporting copy scroll. */
+.noa-chat-header > div { min-width: 0; overflow-wrap: anywhere; }
+.noa-chat-close { flex: 0 0 44px; }
+.noa-chat-extras { flex: 0 1 auto; min-height: 44px; max-height: 32%; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.noa-chat-topics { max-height: 96px; overflow-y: auto; }
+.noa-chat-topics button { max-width: 100%; overflow-wrap: anywhere; }
+.noa-chat-actions > button { min-width: 0; overflow-wrap: anywhere; }
+.noa-chat-send { flex: 0 1 110px; }
+.noa-chat-compact .noa-chat-log { min-height: 48px; }

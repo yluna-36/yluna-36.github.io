@@ -314,7 +314,7 @@
           let script = document.getElementById('noa-chat-script');
           if (!script) {
             script = document.createElement('script'); script.id = 'noa-chat-script';
-            script.src = '/js/noa-chat.js?v=20261107-interactions1';
+            script.src = '/js/noa-chat.js?v=20261107-english-layout2';
             script.onload = () => window.__noaChat?.open(menuButton);
             script.onerror = () => { script.remove(); say('聊天窗口暂时没打开，请稍后再试。'); };
             document.body.appendChild(script);
