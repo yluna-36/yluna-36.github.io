@@ -4,25 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#10151b">
-  <meta name="description" content="有时候，少一点光，才能看见更多。转动视角，寻找藏在日食里的入口。">
+  <meta name="description" content="有时候，少一点光，才能看见更多。日食只是开始。转动视角，寻找星图里缺席的一笔。">
   <meta name="robots" content="noindex, follow">
   <meta property="og:title" content="让光，暂时退场。 · yluna">
   <meta property="og:description" content="一个藏在日食里的入口，留给愿意换个角度的人。">
   <title>让光，暂时退场 · yluna</title>
   <link rel="icon" href="./moon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css?v=20261109-eclipse1">
-  <script type="module" src="./moon.js?v=20261109-eclipse1"></script>
+  <link rel="stylesheet" href="./style.css?v=20261109-hidden-star1">
+  <script type="module" src="./moon.js?v=20261109-hidden-star1"></script>
 </head>
 <body>
   <div class="page">
     <header class="masthead"><span class="wordmark"><img src="./moon.svg" alt="" width="25" height="25"> yluna <span class="divider">/</span><span class="wordmark-note">另一面</span></span><span class="header-note">给愿意换个角度的人</span></header>
     <main>
-      <section class="intro" aria-labelledby="page-title"><p class="eyebrow">A LITTLE DETOUR <span>—</span> 002 / ECLIPSE</p><h1 id="page-title">让光，暂时退场<span>。</span></h1><p class="lead">有时候，少一点光，才能看见更多。</p></section>
+      <section class="intro" aria-labelledby="page-title"><p class="eyebrow">A LITTLE DETOUR <span>—</span> 003 / THE MISSING STAR</p><h1 id="page-title">让光，暂时退场<span>。</span></h1><p class="lead">有时候，少一点光，才能看见更多。</p></section>
       <section class="observatory" aria-label="三维日食谜题">
         <div class="scene" id="scene">
           <canvas id="universe" tabindex="0" role="group" aria-label="三维夜空，拖动改变观察视角，也可以使用方向键" aria-describedby="move-help" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight"></canvas>
           <div class="scene-top" aria-hidden="true"><span>日与月 <i>/</i> 观察之所</span><span id="angle">视角 +24° / −10°</span></div>
           <span class="pole pole-n" aria-hidden="true">N</span><span class="pole pole-s" aria-hidden="true">S</span>
+          <div class="constellation-layer" id="constellation-layer" hidden>
+            <svg class="memory-lines" id="memory-lines" aria-hidden="true"><defs><mask id="lunar-mask" maskUnits="userSpaceOnUse"><rect id="mask-field" fill="white"/><circle id="moon-mask" fill="black"/></mask></defs><path id="memory-trace" mask="url(#lunar-mask)"/></svg>
+            <div id="star-controls" role="group" aria-label="显影的星图"></div>
+          </div>
+          <div class="eclipse-wave" id="eclipse-wave" aria-hidden="true" hidden></div>
           <span class="scene-caption" id="scene-caption" aria-hidden="true">两颗天体，一个尚未找到的位置。</span>
           <a class="star-door" id="star-door" href="/" hidden aria-label="循星而入，进入 yluna 的个人网站">
             <svg viewBox="0 0 240 300" aria-hidden="true"><defs><filter id="starlight"><feGaussianBlur stdDeviation="2"/></filter></defs><path class="door-aura" d="M22 276 V108 L50 53 L120 18 L190 53 L218 108 V276"/><path class="door-line" d="M22 276 V108 L50 53 L120 18 L190 53 L218 108 V276"/><g class="door-stars"><circle cx="22" cy="276" r="2"/><circle cx="22" cy="108" r="2.5"/><circle cx="50" cy="53" r="2.5"/><circle cx="120" cy="18" r="3.5"/><circle cx="190" cy="53" r="2.5"/><circle cx="218" cy="108" r="2.5"/><circle cx="218" cy="276" r="2"/></g></svg>
@@ -33,11 +38,11 @@
         <div class="scene-bottom"><p id="move-help">拖动天空，换一个位置。<span>日月会替你指路。</span></p><div class="light-meter" aria-hidden="true"><span>日光</span><i><b id="light-level"></b></i><span>星光</span></div></div>
         <p class="feedback" id="feedback" role="status" aria-live="polite">光有些耀眼。也许，答案藏在它后面。</p>
       </section>
-      <section class="arrival" id="arrival" hidden aria-labelledby="arrival-title"><p class="eyebrow">WHEN THE LIGHT STEPS ASIDE</p><h2 id="arrival-title">原来，入口一直都在。</h2><p>点亮的星光已经连成门。<span>沿着它，去看看我的另一面。</span></p><button type="button" id="replay" class="text-button">再看一次日食</button></section>
+      <section class="arrival" id="arrival" hidden aria-labelledby="arrival-title"><p class="eyebrow">WHEN THE LIGHT STEPS ASIDE</p><h2 id="arrival-title">原来，入口一直都在。</h2><p>你找回了缺席的那一笔。<span>星光连成的门，终于有了方向。</span></p><button type="button" id="replay" class="text-button">再走一次星路</button></section>
       <div class="puzzle-tools" id="puzzle-tools">
         <div class="hint-area"><button class="text-button" id="hint-button" type="button" aria-controls="hint">✧ 借一点线索</button><p id="hint" class="hint" role="status" aria-live="polite"></p></div>
         <details id="alternative" class="alternative"><summary>不用拖动</summary><div class="alternative-content"><p>点箭头调整视角；电脑也可以选中星空后按方向键。</p><div class="direction-pad" aria-label="调整观察视角"><button type="button" data-direction="left" aria-label="视角向左">←</button><button type="button" data-direction="up" aria-label="视角向上">↑</button><button type="button" data-direction="down" aria-label="视角向下">↓</button><button type="button" data-direction="right" aria-label="视角向右">→</button></div></div></details>
-        <button class="text-button reset" id="reset" type="button">回到起点</button>
+        <button class="text-button reset" id="reset" type="button">重新开始</button>
         <a class="return-link" id="return-link" href="/" hidden>你来过这里，直接进去 ↗</a>
       </div>
       <noscript><p class="noscript">这片星空需要 JavaScript 才能转动，请开启后再试。</p></noscript>
