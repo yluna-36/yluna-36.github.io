@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101b24">
+  <meta name="description" content="月亮只露出了一半。有些东西，要换个角度才看得见。一个留给好奇心的小入口。">
+  <meta name="robots" content="noindex, follow">
+  <meta property="og:title" content="月亮只露出了一半。">
+  <meta property="og:description" content="一个留给好奇心的小入口。">
+  <title>月亮只露出了一半 · yluna</title>
+  <link rel="icon" href="./moon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css?v=20261109-1">
+  <script type="module" src="./moon.js?v=20261109-1"></script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="page">
+    <header class="masthead">
+      <span class="wordmark"><img src="./moon.svg" alt="" width="26" height="26"> yluna<span class="wordmark-divider">/</span><span class="wordmark-note">另一面</span></span>
+      <span class="header-note">给偶然路过的人</span>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">A LITTLE DETOUR <span>—</span> 001</p>
+        <h1 id="page-title">月亮只露出了一半<span class="fullstop">。</span></h1>
+        <p class="lead">有些东西，要换个角度才看得见。</p>
+      </section>
+
+      <section class="observatory" aria-label="月亮与小球的谜题">
+        <div class="scene" id="scene">
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="axis" aria-hidden="true"></div>
+          <span class="scene-note" aria-hidden="true">一小片尚未被命名的夜空</span>
+          <svg class="constellation" viewBox="0 0 800 400" preserveAspectRatio="none" aria-hidden="true"><path d="M90 270 L220 105 L420 180 L620 70 L730 240"/><g><circle cx="90" cy="270" r="2"/><circle cx="220" cy="105" r="2"/><circle cx="420" cy="180" r="2"/><circle cx="620" cy="70" r="2"/><circle cx="730" cy="240" r="2"/></g></svg>
+          <div class="orb" id="orb" aria-hidden="true"><span></span></div>
+          <div class="arrival-ring" id="arrival-ring" aria-hidden="true"></div>
+          <button class="moon" id="moon" type="button" aria-label="移动月亮" aria-describedby="move-help" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight">
+            <svg viewBox="0 0 160 160" aria-hidden="true"><defs><mask id="crescent"><rect width="160" height="160" fill="black"/><circle cx="80" cy="80" r="70" fill="white"/><circle cx="105" cy="64" r="58" fill="black"/></mask><linearGradient id="moon-light" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#b38c5b"/><stop offset=".5" stop-color="#ead2a5"/><stop offset="1" stop-color="#fff3d5"/></linearGradient></defs><circle cx="80" cy="80" r="70" fill="url(#moon-light)" mask="url(#crescent)"/><circle cx="80" cy="80" r="69.5" fill="none" stroke="#fff1d1" stroke-opacity=".3" mask="url(#crescent)"/></svg>
+          </button>
+          <span class="coordinate" aria-hidden="true">☾ &nbsp; 不必急着找到答案</span>
+        </div>
+        <p class="move-help" id="move-help">试着移动月亮。<span>也许，它在等一个拥抱。</span></p>
+        <p class="feedback" id="feedback" role="status" aria-live="polite">夜色安静，月光尚未相逢。</p>
+      </section>
+
+      <section class="arrival" id="arrival" hidden aria-labelledby="arrival-title">
+        <p class="eyebrow">YOU FOUND THE WAY</p>
+        <h2 id="arrival-title" tabindex="-1">原来你也愿意多看一眼。</h2>
+        <p>这里记录着我的好奇、尝试，和不想忘记的小事。</p>
+        <a class="enter" href="/">往里面走 <span aria-hidden="true">↗</span></a>
+        <button class="text-button replay" id="replay" type="button">再看一次月光</button>
+      </section>
+
+      <div class="puzzle-tools" id="puzzle-tools">
+        <div class="hint-area">
+          <button class="text-button hint-button" id="hint-button" type="button" aria-controls="hint"><span aria-hidden="true">✧</span> 借一点月光</button>
+          <p class="hint" id="hint" role="status" aria-live="polite"></p>
+        </div>
+        <details class="alternative" id="alternative">
+          <summary>不用拖动</summary>
+          <div class="alternative-content">
+            <p>点箭头移动；电脑也可以选中月亮，使用方向键。</p>
+            <div class="direction-pad" aria-label="移动月亮的方向">
+              <button type="button" data-direction="left" aria-label="向左移动月亮">←</button>
+              <button type="button" data-direction="up" aria-label="向上移动月亮">↑</button>
+              <button type="button" data-direction="down" aria-label="向下移动月亮">↓</button>
+              <button type="button" data-direction="right" aria-label="向右移动月亮">→</button>
+            </div>
+          </div>
+        </details>
+        <a class="return-link" id="return-link" href="/" hidden>你来过这里，直接进去 <span aria-hidden="true">↗</span></a>
+      </div>
+      <noscript><p class="noscript">这片月光需要 JavaScript 才能移动，请在浏览器中开启后再试。</p></noscript>
+    </main>
+    <footer><span>留一点好奇，给寻常之外。</span><span class="footer-mark">THE QUIET SIDE OF YLUNA</span></footer>
+  </div>
+</body>
+</html>
