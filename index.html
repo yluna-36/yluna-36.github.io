@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script id="moon-signature-entry">
+(function () {
+  function openMoonEntry() {
+    if ((location.pathname === '/' || location.pathname === '/index.html') && location.hash === '#moon') {
+      location.replace('/moon/');
+    }
+  }
+  openMoonEntry();
+  window.addEventListener('hashchange', openMoonEntry);
+})();
+</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Keep">
