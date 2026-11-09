@@ -1,4 +1,4 @@
-import { SUN, MOON, SUN_RADIUS, MOON_RADIUS, project, optics, sub, dot, unit } from './geometry.mjs?v=20261109-eclipse1';
+import { SUN, MOON, SUN_RADIUS, MOON_RADIUS, project, optics, sub, dot, unit } from './geometry.mjs?v=20261109-hidden-star1';
 
 const vertex = `attribute vec2 aPosition; varying vec2 vUV; void main(){vUV=aPosition;gl_Position=vec4(aPosition,0.,1.);}`;
 const fragment = `precision highp float;
