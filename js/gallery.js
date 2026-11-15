@@ -42,6 +42,9 @@
       const button = selection[index];
       const name = button.dataset.galleryTitle;
       title.textContent = name;
+      const description = root.querySelector('.gallery-viewer-description');
+      description.textContent = button.dataset.galleryDescription || '';
+      description.hidden = !description.textContent;
       original.href = button.dataset.gallerySrc;
       image.alt = name;
       image.style.visibility = 'hidden';
