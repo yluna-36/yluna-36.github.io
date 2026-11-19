@@ -583,8 +583,56 @@
         <h1>相册</h1>
         <p>旅行、日常，以及想留住的瞬间。</p>
     </div>
-    
-    <section class="gallery-section  gallery-trip" id="tokyo-two-days" aria-labelledby="tokyo-two-days-title">
+    <nav class="gallery-categories" aria-label="相册分类" hidden>
+
+        <a href="#albums" data-pjax="false" data-category="albums" >全部</a>
+
+        <a href="#travel" data-pjax="false" data-category="travel" >旅行</a>
+
+        <a href="#anime" data-pjax="false" data-category="anime" >二次元</a>
+
+        <a href="#daily" data-pjax="false" data-category="daily" hidden>日常</a>
+
+    </nav>
+    <div class="gallery-directory" hidden>
+        <p class="gallery-directory-empty" hidden>这个分类暂时没有相册。</p>
+        <ul class="gallery-album-list">
+
+            <li class="gallery-album-tile " data-album-link="tokyo-two-days" hidden>
+                <a href="#tokyo-two-days" data-pjax="false">
+                    <img alt="" loading="lazy" decoding="async" data-cover="/images/gallery/tokyo-two-days/fountain.jpg">
+                    <span class="gallery-album-name">东京两日</span>
+                    <span class="gallery-album-summary">旅行 · 4 张</span>
+                </a>
+            </li>
+
+            <li class="gallery-album-tile secret-gallery-group home-collection" data-album-link="gallery-group-0-album" hidden>
+                <a href="#gallery-group-0-album" data-pjax="false">
+                    <img alt="" loading="lazy" decoding="async" data-cover="/images/gallery/hefei-home/plush-public.jpg">
+                    <span class="gallery-album-name">合肥 · 家里的收藏角</span>
+                    <span class="gallery-album-summary">二次元 · 4 张</span>
+                </a>
+            </li>
+
+            <li class="gallery-album-tile secret-gallery-group home-collection" data-album-link="gallery-group-1-album" hidden>
+                <a href="#gallery-group-1-album" data-pjax="false">
+                    <img alt="" loading="lazy" decoding="async" data-cover="/images/gallery/apartment/display-case.jpg">
+                    <span class="gallery-album-name">公寓</span>
+                    <span class="gallery-album-summary">二次元 · 2 张</span>
+                </a>
+            </li>
+
+        </ul>
+        <nav class="gallery-pagination" aria-label="相册目录翻页" hidden>
+            <a class="gallery-page-prev" data-pjax="false" aria-label="上一页">上一页</a>
+            <span class="gallery-page-indicator" aria-live="polite"></span>
+            <a class="gallery-page-next" data-pjax="false" aria-label="下一页">下一页</a>
+        </nav>
+    </div>
+    <a class="gallery-back" href="#albums" data-pjax="false" hidden>← 返回相册目录</a>
+
+
+    <section class="gallery-section  gallery-trip" id="tokyo-two-days" data-album="travel" aria-labelledby="tokyo-two-days-title">
         <div class="gallery-section-heading">
             <h2 id="tokyo-two-days-title">东京两日</h2>
             <span class="gallery-count">4 张</span>
@@ -676,16 +724,17 @@
         </div>
 
     </section>
-    
-    
-    <section class="gallery-section secret-gallery-group home-collection" aria-labelledby="gallery-group-0">
+
+    <section class="gallery-section secret-gallery-group home-collection" id="gallery-group-0-album" data-album="anime" aria-labelledby="gallery-group-0">
         <div class="gallery-section-heading">
             <h2 id="gallery-group-0">合肥 · 家里的收藏角</h2>
             <span class="gallery-count">4 张</span>
         </div>
         <p class="gallery-help">这几张照片拍的是我在合肥的家，放着一些二次元物品，也留着一些过去的记忆。</p>
+
+
         <div class="gallery-grid">
-            
+
             <figure class="gallery-card">
                 <button type="button" class="gallery-open" data-gallery-src="/images/gallery/hefei-home/plush-public.jpg" data-gallery-title="玩偶" data-gallery-description="最上面的绿色小女孩是师弟送的，左下角的是别人送我的生日礼物。右下角的小狐狸，本来想送给一个我喜欢的人，后来因为一些原因没有送出去。小章鱼是一个喜欢我的人送的，我也很感激她。蓝色的小女孩是我自己买的。"  aria-label="查看大图：玩偶" aria-haspopup="dialog">
                     <img alt="玩偶" loading="lazy" decoding="async">
@@ -693,9 +742,13 @@
                     <span class="gallery-description">最上面的绿色小女孩是师弟送的，左下角的是别人送我的生日礼物。右下角的小狐狸，本来想送给一个我喜欢的人，后来因为一些原因没有送出去。小章鱼是一个喜欢我的人送的，我也很感激她。蓝色的小女孩是我自己买的。</span>
                     <span class="gallery-enlarge" aria-hidden="true">查看大图 ↗</span>
                 </button>
-                <figcaption><span>玩偶</span><span class="gallery-card-index">01</span></figcaption>
+                <figcaption>
+
+                    <span>玩偶</span><span class="gallery-card-index">01</span>
+
+                </figcaption>
             </figure>
-            
+
             <figure class="gallery-card">
                 <button type="button" class="gallery-open" data-gallery-src="/images/gallery/hefei-home/figures-public.jpg" data-gallery-title="手办" data-gallery-description="这些手办纪念的是过去。下面三个是我在 2010 年代刚接触手办的时候买的，当时就是想尝尝鲜。右上角的玩偶，是一个师兄在团建时用抓娃娃机抓到后送给我的。"  aria-label="查看大图：手办" aria-haspopup="dialog">
                     <img alt="手办" loading="lazy" decoding="async">
@@ -703,9 +756,13 @@
                     <span class="gallery-description">这些手办纪念的是过去。下面三个是我在 2010 年代刚接触手办的时候买的，当时就是想尝尝鲜。右上角的玩偶，是一个师兄在团建时用抓娃娃机抓到后送给我的。</span>
                     <span class="gallery-enlarge" aria-hidden="true">查看大图 ↗</span>
                 </button>
-                <figcaption><span>手办</span><span class="gallery-card-index">02</span></figcaption>
+                <figcaption>
+
+                    <span>手办</span><span class="gallery-card-index">02</span>
+
+                </figcaption>
             </figure>
-            
+
             <figure class="gallery-card">
                 <button type="button" class="gallery-open" data-gallery-src="/images/gallery/hefei-home/stands-public.jpg" data-gallery-title="立牌" data-gallery-description="这些立牌摆在家里的入口处。里面有我喜欢的角色，也有一些和我经历过的事情有关。"  aria-label="查看大图：立牌" aria-haspopup="dialog">
                     <img alt="立牌" loading="lazy" decoding="async">
@@ -713,9 +770,13 @@
                     <span class="gallery-description">这些立牌摆在家里的入口处。里面有我喜欢的角色，也有一些和我经历过的事情有关。</span>
                     <span class="gallery-enlarge" aria-hidden="true">查看大图 ↗</span>
                 </button>
-                <figcaption><span>立牌</span><span class="gallery-card-index">03</span></figcaption>
+                <figcaption>
+
+                    <span>立牌</span><span class="gallery-card-index">03</span>
+
+                </figcaption>
             </figure>
-            
+
             <figure class="gallery-card">
                 <button type="button" class="gallery-open" data-gallery-src="/images/gallery/hefei-home/fridge-public.jpg" data-gallery-title="冰箱的一角" data-gallery-description="冰箱上主要是买来的一些吧唧，还有几张创业时别人给我的算力卡。下面放着科大摄影社给的一些风景照片，以及其他留下来的记忆。"  aria-label="查看大图：冰箱的一角" aria-haspopup="dialog">
                     <img alt="冰箱的一角" loading="lazy" decoding="async">
@@ -723,20 +784,28 @@
                     <span class="gallery-description">冰箱上主要是买来的一些吧唧，还有几张创业时别人给我的算力卡。下面放着科大摄影社给的一些风景照片，以及其他留下来的记忆。</span>
                     <span class="gallery-enlarge" aria-hidden="true">查看大图 ↗</span>
                 </button>
-                <figcaption><span>冰箱的一角</span><span class="gallery-card-index">04</span></figcaption>
+                <figcaption>
+
+                    <span>冰箱的一角</span><span class="gallery-card-index">04</span>
+
+                </figcaption>
             </figure>
-            
+
         </div>
+
+
     </section>
-    
-    <section class="gallery-section secret-gallery-group home-collection" aria-labelledby="gallery-group-1">
+
+    <section class="gallery-section secret-gallery-group home-collection" id="gallery-group-1-album" data-album="anime" aria-labelledby="gallery-group-1">
         <div class="gallery-section-heading">
             <h2 id="gallery-group-1">公寓</h2>
             <span class="gallery-count">2 张</span>
         </div>
         <p class="gallery-help">公寓里摆放手办的两个角落</p>
+
+
         <div class="gallery-grid">
-            
+
             <figure class="gallery-card">
                 <button type="button" class="gallery-open" data-gallery-src="/images/gallery/apartment/display-case.jpg" data-gallery-title="手办展示盒" data-gallery-description="这是我最初打算买的手办展示盒。虽然可以打光，但三面不透明。后来我买了一个三面是玻璃的楠木手办柜，看起来更清楚。"  aria-label="查看大图：手办展示盒" aria-haspopup="dialog">
                     <img alt="手办展示盒" loading="lazy" decoding="async">
@@ -744,9 +813,13 @@
                     <span class="gallery-description">这是我最初打算买的手办展示盒。虽然可以打光，但三面不透明。后来我买了一个三面是玻璃的楠木手办柜，看起来更清楚。</span>
                     <span class="gallery-enlarge" aria-hidden="true">查看大图 ↗</span>
                 </button>
-                <figcaption><span>手办展示盒</span><span class="gallery-card-index">01</span></figcaption>
+                <figcaption>
+
+                    <span>手办展示盒</span><span class="gallery-card-index">01</span>
+
+                </figcaption>
             </figure>
-            
+
             <figure class="gallery-card">
                 <button type="button" class="gallery-open" data-gallery-src="/images/gallery/apartment/desk-shelf.jpg" data-gallery-title="工作台旁的手办" data-gallery-description="最后我把这几个喜欢的手办摆在了工作台旁边，工作时随时都能看到。我比较喜欢天宇亚子和日奈。"  aria-label="查看大图：工作台旁的手办" aria-haspopup="dialog">
                     <img alt="工作台旁的手办" loading="lazy" decoding="async">
@@ -754,12 +827,18 @@
                     <span class="gallery-description">最后我把这几个喜欢的手办摆在了工作台旁边，工作时随时都能看到。我比较喜欢天宇亚子和日奈。</span>
                     <span class="gallery-enlarge" aria-hidden="true">查看大图 ↗</span>
                 </button>
-                <figcaption><span>工作台旁的手办</span><span class="gallery-card-index">02</span></figcaption>
+                <figcaption>
+
+                    <span>工作台旁的手办</span><span class="gallery-card-index">02</span>
+
+                </figcaption>
             </figure>
-            
+
         </div>
+
+
     </section>
-    
+
     <dialog class="gallery-viewer" aria-labelledby="gallery-viewer-title">
         <div class="gallery-viewer-panel">
             <div class="gallery-viewer-toolbar">
