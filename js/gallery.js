@@ -22,20 +22,85 @@
     const previous = root.querySelector('.gallery-prev');
     const next = root.querySelector('.gallery-next');
     const buttons = Array.from(root.querySelectorAll('.gallery-open'));
+    const directory = root.querySelector('.gallery-directory');
+    const navigation = root.querySelector('.gallery-categories');
+    const back = root.querySelector('.gallery-back');
+    const pagination = root.querySelector('.gallery-pagination');
+    const categories = Array.from(root.querySelectorAll('[data-category]'));
+    const albums = Array.from(root.querySelectorAll('[data-album]'));
+    const albumById = new Map(albums.map(album => [album.id, album]));
+    albums.forEach(album => albumById.set(album.getAttribute('aria-labelledby'), album));
+    const tiles = Array.from(root.querySelectorAll('[data-album-link]'));
+    const pageSize = 8;
     let selection = [];
     let index = 0;
     let opener = null;
+    let previousDirectory = '';
     const permitted = button => !button.closest('.secret-gallery-group') || document.body.classList.contains('inner-site-active');
+    const visible = button => permitted(button) && !button.closest('[data-album]')?.hidden;
+    const route = (category, page = 1) => `#${category}${page > 1 ? `/${page}` : ''}`;
 
     function close() { if (dialog.open) dialog.close(); }
+    function renderDirectory() {
+      if (!directory) return null;
+      const hash = window.location.hash.slice(1);
+      const target = albumById.get(hash);
+      const active = target && permitted(target) ? target : null;
+      const [requestedCategory, requestedPage] = hash.split('/');
+      const available = tiles.filter(tile => permitted(tile));
+      const categoryFor = tile => albumById.get(tile.dataset.albumLink).dataset.album;
+      const category = active?.dataset.album || (categories.some(link =>
+        !link.hidden && link.dataset.category === requestedCategory) ? requestedCategory : 'albums');
+      const matching = available.filter(tile => category === 'albums' || categoryFor(tile) === category);
+      const pages = Math.max(1, Math.ceil(matching.length / pageSize));
+      const page = /^\d+$/.test(requestedPage || '') ? Math.min(pages, Math.max(1, Number(requestedPage))) : 1;
+      const visibleTiles = new Set(active ? [] : matching.slice((page - 1) * pageSize, page * pageSize));
+
+      navigation.hidden = false;
+      directory.hidden = Boolean(active);
+      back.hidden = !active;
+      if (active) back.href = previousDirectory || route(category);
+      else previousDirectory = route(category, page);
+      categories.forEach(link => {
+        if (link.dataset.category === category) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+      albums.forEach(album => { album.hidden = album !== active; });
+      tiles.forEach(tile => {
+        tile.hidden = !visibleTiles.has(tile);
+        const cover = tile.querySelector('img');
+        if (!tile.hidden && !cover.hasAttribute('src')) cover.src = cover.dataset.cover;
+        if (!permitted(tile)) cover.removeAttribute('src');
+      });
+
+      const empty = root.querySelector('.gallery-empty');
+      if (empty) empty.hidden = true;
+      directory.querySelector('.gallery-directory-empty').hidden = matching.length > 0;
+      pagination.hidden = Boolean(active) || pages === 1;
+      const previousPage = pagination.querySelector('.gallery-page-prev');
+      const nextPage = pagination.querySelector('.gallery-page-next');
+      previousPage.hidden = page === 1;
+      nextPage.hidden = page === pages;
+      previousPage.href = route(category, page - 1);
+      nextPage.href = route(category, page + 1);
+      pagination.querySelector('.gallery-page-indicator').textContent = `第 ${page} 页，共 ${pages} 页`;
+      return active;
+    }
     function sync() {
+      const active = renderDirectory();
       buttons.forEach(button => {
         const thumbnail = button.querySelector('img');
-        if (permitted(button)) {
+        if (visible(button)) {
           if (!thumbnail.hasAttribute('src')) thumbnail.src = button.dataset.gallerySrc;
         } else thumbnail.removeAttribute('src');
       });
-      if (dialog.open && selection[index] && !permitted(selection[index])) close();
+      if (dialog.open && selection[index] && !visible(selection[index])) close();
+      return active;
+    }
+    function navigate() {
+      const active = sync();
+      const destination = active ? back : navigation;
+      if (window.location.hash && destination) destination.scrollIntoView({ block: 'start' });
     }
     function show(number) {
       index = (number + selection.length) % selection.length;
@@ -66,12 +131,12 @@
       thumbnail.addEventListener('error', () => button.classList.add('is-unavailable'));
       thumbnail.addEventListener('load', () => button.classList.remove('is-unavailable'));
       button.addEventListener('click', () => {
-        if (!permitted(button)) return;
+        if (!visible(button)) return;
         if (typeof dialog.showModal !== 'function') {
           window.open(button.dataset.gallerySrc, '_blank', 'noopener');
           return;
         }
-        selection = buttons.filter(permitted);
+        selection = buttons.filter(visible);
         opener = button;
         show(selection.indexOf(button));
         dialog.showModal();
@@ -84,7 +149,7 @@
     dialog.addEventListener('click', event => { if (event.target === dialog) close(); });
     dialog.addEventListener('close', () => {
       document.body.classList.remove('gallery-viewer-open');
-      if (opener?.isConnected && permitted(opener)) opener.focus({ preventScroll: true });
+      if (opener?.isConnected && visible(opener)) opener.focus({ preventScroll: true });
     });
     dialog.addEventListener('keydown', event => {
       if (selection.length < 2) return;
@@ -108,11 +173,17 @@
     stage.addEventListener('touchcancel', () => { touch = null; }, { passive: true });
     const observer = new MutationObserver(sync);
     observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    window.addEventListener('hashchange', navigate);
     current = {
       root, sync, close,
-      destroy() { observer.disconnect(); close(); document.body.classList.remove('gallery-viewer-open'); }
+      destroy() {
+        observer.disconnect();
+        window.removeEventListener('hashchange', navigate);
+        close();
+        document.body.classList.remove('gallery-viewer-open');
+      }
     };
-    sync();
+    navigate();
   }
   function refresh() { queueMicrotask(init); }
   window.__ylunaGallery = { refresh };

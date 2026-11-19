@@ -583,8 +583,44 @@
         <h1>相册</h1>
         <p>旅行、日常，以及想留住的瞬间。</p>
     </div>
-    
-    <section class="gallery-section  gallery-trip" id="tokyo-two-days" aria-labelledby="tokyo-two-days-title">
+    <nav class="gallery-categories" aria-label="相册分类" hidden>
+
+        <a href="#albums" data-pjax="false" data-category="albums" >全部</a>
+
+        <a href="#travel" data-pjax="false" data-category="travel" >旅行</a>
+
+        <a href="#anime" data-pjax="false" data-category="anime" >二次元</a>
+
+        <a href="#daily" data-pjax="false" data-category="daily" hidden>日常</a>
+
+    </nav>
+    <div class="gallery-directory" hidden>
+        <p class="gallery-directory-empty" hidden>这个分类暂时没有相册。</p>
+        <ul class="gallery-album-list">
+
+            <li class="gallery-album-tile " data-album-link="tokyo-two-days" hidden>
+                <a href="#tokyo-two-days" data-pjax="false">
+                    <img alt="" loading="lazy" decoding="async" data-cover="/images/gallery/tokyo-two-days/fountain.jpg">
+                    <span class="gallery-album-name">东京两日</span>
+                    <span class="gallery-album-summary">旅行 · 4 张</span>
+                </a>
+            </li>
+
+            
+
+            
+
+        </ul>
+        <nav class="gallery-pagination" aria-label="相册目录翻页" hidden>
+            <a class="gallery-page-prev" data-pjax="false" aria-label="上一页">上一页</a>
+            <span class="gallery-page-indicator" aria-live="polite"></span>
+            <a class="gallery-page-next" data-pjax="false" aria-label="下一页">下一页</a>
+        </nav>
+    </div>
+    <a class="gallery-back" href="#albums" data-pjax="false" hidden>← 返回相册目录</a>
+
+
+    <section class="gallery-section  gallery-trip" id="tokyo-two-days" data-album="travel" aria-labelledby="tokyo-two-days-title">
         <div class="gallery-section-heading">
             <h2 id="tokyo-two-days-title">东京两日</h2>
             <span class="gallery-count">4 张</span>
@@ -676,12 +712,11 @@
         </div>
 
     </section>
+
     
+
     
-    
-    
-    
-    
+
     <dialog class="gallery-viewer" aria-labelledby="gallery-viewer-title">
         <div class="gallery-viewer-panel">
             <div class="gallery-viewer-toolbar">
