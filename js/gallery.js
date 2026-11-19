@@ -113,18 +113,27 @@
       original.href = button.dataset.galleryOriginal || button.dataset.gallerySrc;
       image.alt = name;
       image.style.visibility = 'hidden';
-      status.textContent = '图片加载中…';
-      image.src = button.dataset.gallerySrc;
+      delete status.dataset.preview;
+      status.textContent = button.dataset.galleryOriginal ? '全尺寸图片加载中…' : '图片加载中…';
+      image.src = original.href;
       position.textContent = `${index + 1} / ${selection.length}`;
       previous.hidden = next.hidden = selection.length < 2;
     }
     image.addEventListener('load', () => {
       image.style.visibility = 'visible';
-      status.textContent = '';
+      status.textContent = status.dataset.preview ? '当前显示缩略图，全尺寸图片暂时无法加载。' : '';
     });
     image.addEventListener('error', () => {
+      const button = selection[index];
+      if (button?.dataset.galleryOriginal && !status.dataset.preview) {
+        status.dataset.preview = 'true';
+        status.textContent = '全尺寸图片暂时无法加载，正在加载缩略图…';
+        image.src = button.dataset.gallerySrc;
+        return;
+      }
       image.style.visibility = 'hidden';
-      status.textContent = '图片暂时无法加载，可以点击「查看原图」重试。';
+      delete status.dataset.preview;
+      status.textContent = '图片暂时无法加载，可以在新标签页重试。';
     });
     buttons.forEach(button => {
       const thumbnail = button.querySelector('img');
