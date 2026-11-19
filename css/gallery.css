@@ -78,3 +78,18 @@ body.gallery-viewer-open { overflow: hidden; }
 }
 @media (max-width: 540px) { .home-collection .gallery-grid { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .gallery-description { transition: none; } }
+
+.gallery-trip { scroll-margin-top: 88px; }
+.gallery-trip-day + .gallery-trip-day { margin-top: 26px; }
+.gallery-trip-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 11px; }
+.gallery-trip-heading h3 { margin: 0; font-size: 19px; line-height: 1.4; }
+.gallery-trip-heading time { white-space: nowrap; font-size: 13px; color: var(--text-color-4); }
+.gallery-trip .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.gallery-trip .gallery-open { height: clamp(205px, 30vw, 285px); aspect-ratio: auto; }
+.gallery-trip .gallery-card figcaption { display: block; padding: 10px 2px 0; }
+.gallery-trip figcaption h4 { margin: 0; font-size: 15px; }
+.gallery-trip figcaption p { margin: 4px 0 0; line-height: 1.7; color: var(--text-color-4); }
+@media (max-width: 540px) {
+    .gallery-trip .gallery-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .gallery-trip .gallery-open { height: clamp(195px, 75vw, 330px); }
+}
