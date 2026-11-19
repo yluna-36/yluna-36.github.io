@@ -110,7 +110,7 @@
       const description = root.querySelector('.gallery-viewer-description');
       description.textContent = button.dataset.galleryDescription || '';
       description.hidden = !description.textContent;
-      original.href = button.dataset.gallerySrc;
+      original.href = button.dataset.galleryOriginal || button.dataset.gallerySrc;
       image.alt = name;
       image.style.visibility = 'hidden';
       status.textContent = '图片加载中…';
@@ -133,7 +133,7 @@
       button.addEventListener('click', () => {
         if (!visible(button)) return;
         if (typeof dialog.showModal !== 'function') {
-          window.open(button.dataset.gallerySrc, '_blank', 'noopener');
+          window.open(button.dataset.galleryOriginal || button.dataset.gallerySrc, '_blank', 'noopener');
           return;
         }
         selection = buttons.filter(visible);
