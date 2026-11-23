@@ -250,6 +250,11 @@
       <button class="noa-pet-launcher" type="button" aria-label="展开诺亚小宠物" hidden>诺亚 <span aria-hidden="true">↗</span></button>
       <div id="noa-pet-menu" class="noa-pet-menu" role="group" aria-label="诺亚的互动菜单" hidden>
         <p class="noa-pet-menu-title">诺亚在这里</p><p class="noa-pet-menu-hint">点我听台词，拖动可换位置。<br>固定语音 · 非官方 AI 合成</p>
+        <details class="noa-pet-credits">
+          <summary>关于诺亚</summary>
+          <p>生盐诺亚来自《蔚蓝档案》。桌宠动画由 B 站用户「畅饮生理盐水」制作，我从 Codex Pets 取用。</p>
+          <p>语音使用 B 站分享的第三代诺亚角色模型，由 GPT-SoVITS 合成。</p>
+        </details>
         <button type="button" data-noa-action="chat">和诺亚聊聊 ✦</button>
         <button type="button" data-noa-action="wave">打个招呼</button>
         <button type="button" data-noa-action="jump">跳一下</button>
@@ -302,6 +307,7 @@
     stage.addEventListener('pointerup', finishDrag);
     stage.addEventListener('pointercancel', finishDrag);
     stage.addEventListener('lostpointercapture', finishDrag);
+    menu.querySelector('.noa-pet-credits').addEventListener('toggle', placePanels);
     menuButton.addEventListener('click', () => menuOpen ? closeMenu(true) : openMenu());
     launcher.addEventListener('click', restore);
     menu.addEventListener('click', event => {
