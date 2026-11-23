@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="从 Komi Store 到「死了么」：当 AI 让软件越来越容易被写出来，独立开发者更稀缺的可能是需求发现、验证、传播与商业化能力。">
+    <meta name="author" content="yluna">
+    
+    <title>
+        
+            [格物-005] 当 Codex 能复刻一个热门 App，独立开发者还剩什么壁垒？ |
+        
+        yluna 的个人空间
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo-icon.png">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/css/custom.css?v=20261107-english-layout2">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"yluna-36.github.io","root":"/","language":"en"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"yluna 的个人空间","author":"yluna","avatar":"/images/logo-icon.png","logo":"/images/logo-icon.png","favicon":"/images/logo-icon.png"},"menu":{"首页":"/","文章":{"children":[{"时间归档":"/archives/ || fa-solid fa-box-archive"},{"分类":"/categories/ || fa-solid fa-layer-group"},{"标签":"/tags/ || fa-solid fa-tags"}]},"专题":{"children":[{"读书":"/books/ || fa-solid fa-book"},{"访谈":"/interview/ || fa-solid fa-microphone"},{"灵感":"/spark/ || fa-solid fa-lightbulb"}]},"生活":{"children":[{"食记":"/meals/ || fa-solid fa-utensils"}]},"相册":"/gallery/","关于":{"children":[{"关于我":"/about/ || fa-solid fa-user"},{"链接":"/links/ || fa-solid fa-link"},{"动态":"/moment/ || fa-solid fa-camera"}]}},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"源于热爱，驱于好奇，见于广阔。 || —— Think Absolute","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/yluna-36","weixin":"img | /images/wechat.png","qq":"tencent://message/?uin=975851087","weibo":null,"zhihu":null,"twitter":null,"x":"https://x.com/ylunoa","facebook":null,"email":"yluna@foxmail.com","telegram":"https://t.me/ylunoa","spotify":"https://open.spotify.com/user/31gakmsj3z5rxenbsyixi454xmxe","bilibili":"https://space.bilibili.com/3632309557267399?spm_id_from=333.881.0.0","xiaohongshu":"https://xhslink.com/m/8MDIkna7Kzn","instagram":"https://www.instagram.com/ylunoa36?igsh=Zm50NmpuZzc5aWZv&utm_source=qr"}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":true,"img_link":null,"text":"Think Absolute.","icon":"fa-solid fa-qrcode"}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":true,"use":"giscus","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":"yluna-36","github_admins":"yluna-36","repository":"yluna-36.github.io","client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"https://your-waline-server.vercel.app","reaction":true,"version":"3.3.2"},"giscus":{"repo":"yluna-36/yluna-36.github.io","repo_id":"R_kgDOQFnQvw","category":"Announcements","category_id":"DIC_kwDOQFnQv84C5THI","reactions_enabled":true},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs","custom":{"enable":false,"url":null}},"pjax":{"enable":true},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":[null,"/css/custom.css?v=20261107-english-layout2"],"js":[null,"/js/custom.js?v=20261107-english-layout2"]},"root":"","search_db_path":"keep-search.json","source_data":{"links":[{"title":"友情链接"},{"name":"Keep Theme","link":"https://keep.xpoet.cn","description":"一个优雅的 Hexo 主题","avatar":"https://keep.xpoet.cn/images/logo.svg"},{"name":"comydream","link":"https://comydream.github.io/","description":"我的朋友","avatar":"https://github.com/comydream.png"}],"photos":[]},"version":"4.3.0"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 8.1.2"><link rel="canonical" href="https://yluna-36.github.io/2026/11/23/ai-coding-demand-discovery/">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo-icon.png">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               yluna 的个人空间
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                文章
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/archives/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-box-archive"></i>
+                                                
+                                                时间归档
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/categories/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-layer-group"></i>
+                                                
+                                                分类
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/tags/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-tags"></i>
+                                                
+                                                标签
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                专题
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/books/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-book"></i>
+                                                
+                                                读书
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/interview/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-microphone"></i>
+                                                
+                                                访谈
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/spark/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-lightbulb"></i>
+                                                
+                                                灵感
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                生活
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/meals/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-utensils"></i>
+                                                
+                                                食记
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/gallery/">
+                                
+                                相册
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box has-sub-menu">
+                            <a class="menu-text-color border-box" href="javascript:void(0);">
+                                
+                                关于
+                                
+                                    <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
+                                
+                            </a>
+                            
+                                <ul class="sub-menu-list border-box">
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/about/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-user"></i>
+                                                
+                                                关于我
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/about/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-brain"></i>
+                                                
+                                                人格
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/links/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-link"></i>
+                                                
+                                                链接
+                                            </a>
+                                        </li>
+                                    
+                                        
+                                        <li class="sub-menu-item border-box ">
+                                            <a class="menu-text-color border-box flex-start" href="/moment/">
+                                                
+                                                    <i class="menu-text-color sub-menu-icon fa-solid fa-camera"></i>
+                                                
+                                                动态
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            文章
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/archives/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-box-archive"></i>
+                                            </span>
+                                        
+                                        时间归档
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/categories/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-layer-group"></i>
+                                            </span>
+                                        
+                                        分类
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/tags/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-tags"></i>
+                                            </span>
+                                        
+                                        标签
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            专题
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/books/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-book"></i>
+                                            </span>
+                                        
+                                        读书
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/interview/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-microphone"></i>
+                                            </span>
+                                        
+                                        访谈
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/spark/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-lightbulb"></i>
+                                            </span>
+                                        
+                                        灵感
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            生活
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/meals/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-utensils"></i>
+                                            </span>
+                                        
+                                        食记
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/gallery/">
+                            
+                            相册
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box has-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="javascript:void(0);">
+                            
+                            关于
+                        </a>
+                        
+                            <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
+                        
+                    </label>
+                    
+                        <ul class="drawer-sub-menu-list border-box">
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/about/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-user"></i>
+                                            </span>
+                                        
+                                        关于我
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/about/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-brain"></i>
+                                            </span>
+                                        
+                                        人格
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/links/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-link"></i>
+                                            </span>
+                                        
+                                        链接
+                                    </a>
+                                </li>
+                            
+                                
+                                <li class="sub-menu-item border-box">
+                                    <a class="drawer-menu-text-color border-box flex-start" href="/moment/">
+                                        
+                                            <span class="sub-menu-icon-wrap border-box flex-center">
+                                                <i class="drawer-menu-text-color sub-menu-icon fa-solid fa-camera"></i>
+                                            </span>
+                                        
+                                        动态
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        [格物-005] 当 Codex 能复刻一个热门 App，独立开发者还剩什么壁垒？
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/logo-icon.png">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">yluna</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-11-23 13:35:00</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Mon Nov 23 2026 13:35:00 GMT+0800">2026-11-23 13:35:00</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/">方法论</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>4114 Words</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>7 Mins</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+<p>最近了解了两个项目，我的第一反应竟然出奇地一致：</p>
+<p><strong>这东西好像没什么技术难度，我用 Codex 也能写出来吧？</strong></p>
+<p>一个是开源应用商店 Komi Store，另一个是曾经爆火的「死了么」App。</p>
+<p>但仔细研究之后，我发现，比起它们实现了什么功能，更值得思考的是：为什么这么简单的东西，偏偏能被别人做成热门产品？</p>
+<h2 id="_E4_B8_80_E3_80_81_E4_B8_A4_E4_B8_87_20Star_20_E7_9A_84_E9_A1_B9_E7_9B_AE_EF_BC_8C_E5_8F_AF_E8_83_BD_E5_8F_AA_E6_98_AF_E7_BB_99_20GitHub_20_E5_A5_97_E4_BA_86_E4_B8_AA_E7_95_8C_E9_9D_A2_EF_BC_9F"><a class="headerlink" title="一、两万 Star 的项目，可能只是给 GitHub 套了个界面？" href="#_E4_B8_80_E3_80_81_E4_B8_A4_E4_B8_87_20Star_20_E7_9A_84_E9_A1_B9_E7_9B_AE_EF_BC_8C_E5_8F_AF_E8_83_BD_E5_8F_AA_E6_98_AF_E7_BB_99_20GitHub_20_E5_A5_97_E4_BA_86_E4_B8_AA_E7_95_8C_E9_9D_A2_EF_BC_9F"></a>一、两万 Star 的项目，可能只是给 GitHub 套了个界面？</h2>
+<p><a href="https://github.com/komi-store/komi-store" target="_blank" rel="noopener noreferrer">Komi Store</a> 是一个开源应用商店。它把 GitHub、Codeberg 等平台上开发者已经发布的软件集中起来，帮助用户搜索、下载、安装和管理应用。</p>
+<p>截至 2026 年 11 月 23 日，它的 GitHub Star 数量已经达到约 2.2 万。</p>
+<p>刚开始看到它时，我甚至有些困惑。</p>
+<p>因为这个想法实在太容易理解了：GitHub 已经有项目搜索和 Releases，为什么不能再开发一个图形化界面，把这些功能包装成应用商店？</p>
+<p><strong>这不就是一个 API 集成项目吗？</strong></p>
+<p>更何况，类似的想法并不新鲜。早在 Komi Store 之前，<a href="https://github.com/ImranR98/Obtainium" target="_blank" rel="noopener noreferrer">Obtainium</a> 就已经能帮助 Android 用户从 GitHub 等来源下载和更新应用。</p>
+<p>如今借助 Codex，开发这样的产品，至少在核心功能层面，门槛比以前低了很多。</p>
+<p>但随之而来的，是另一个问题。</p>
+<p><strong>Komi Store 的目标是帮助不懂 GitHub 的普通用户，可是愿意给它点 Star 的人，不恰恰是已经会使用 GitHub 的人吗？</strong></p>
+<p>这让我意识到一个经常被忽略的事实：</p>
+<p><strong>GitHub Star 并不等于真实用户，更不等于付费用户。</strong></p>
+<p>一个项目在开发者社区里很受欢迎，并不能直接证明它已经成功触达了目标用户。</p>
+<p>当然，这并不意味着 Komi Store 没有价值。</p>
+<p>会使用 GitHub，不代表愿意每次都手动寻找安装包；开发者也可能成为产品的传播者，把它推荐给不懂技术的朋友。</p>
+<p>而且，把多个平台的版本识别、下载、更新、兼容性和安全校验做好，也远不只是写几个 API 请求那么简单。</p>
+<p>但是，技术实现、用户增长和商业成功，显然是三个不同的问题。</p>
+<p><strong>能做出来，是工程问题；有人愿意用，是产品问题；有人愿意持续付费，则是商业问题。</strong></p>
+<h2 id="_E4_BA_8C_E3_80_81_E3_80_8C_E6_AD_BB_E4_BA_86_E4_B9_88_E3_80_8D_EF_BC_9A_E4_B8_80_E4_B8_AA_E5_AE_B9_E6_98_93_E5_A4_8D_E5_88_B6_EF_BC_8C_E5_8D_B4_E4_B8_8D_E5_AE_B9_E6_98_93_E5_81_9A_E6_88_90_E7_9A_84_E4_BA_A7_E5_93_81"><a class="headerlink" title="二、「死了么」：一个容易复制，却不容易做成的产品" href="#_E4_BA_8C_E3_80_81_E3_80_8C_E6_AD_BB_E4_BA_86_E4_B9_88_E3_80_8D_EF_BC_9A_E4_B8_80_E4_B8_AA_E5_AE_B9_E6_98_93_E5_A4_8D_E5_88_B6_EF_BC_8C_E5_8D_B4_E4_B8_8D_E5_AE_B9_E6_98_93_E5_81_9A_E6_88_90_E7_9A_84_E4_BA_A7_E5_93_81"></a>二、「死了么」：一个容易复制，却不容易做成的产品</h2>
+<p>相比 Komi Store，「死了么」App 更让我感兴趣。</p>
+<p>它最初的功能简单得令人惊讶：用户每天打开 App 签到。如果连续两天没有签到，系统就向预设的紧急联系人发送邮件。</p>
+<p>没有复杂的算法，没有庞大的功能体系，也没有什么看得见的技术突破。</p>
+<p>2026 年 1 月，这款 App 却迅速走红，一度登上苹果中国区付费应用榜榜首。</p>
+<p>更有意思的是，据<a href="https://www.stcn.com/article/detail/3591658.html" target="_blank" rel="noopener noreferrer">第一财经报道</a>，有开发者借助 Gemini，仅用约六个小时就制作出了功能类似的「活着么」。</p>
+<p><strong>但如果实现如此容易，为什么最先爆火的偏偏是「死了么」？</strong></p>
+<p>一开始，我认为它最大的价值在于发现了一个难以察觉的需求。</p>
+<p>后来查阅资料发现，事情更加有趣。</p>
+<p>早在 2024 年 12 月，就已经有网友提出过独居者每天签到、避免发生意外却无人知晓的 App 创意。<a href="https://news.youth.cn/gn/202601/t20260120_16470844.htm" target="_blank" rel="noopener noreferrer">《中国青年报》</a>对此有过报道。</p>
+<p>也就是说，这个想法不是第一次出现，功能也不是第一次被实现。</p>
+<p>那么它究竟做对了什么？</p>
+<p>首先，它把一个模糊的生活焦虑，变成了可以理解的具体功能。</p>
+<p>独居者真正担心的，也许不是忘记签到，而是：</p>
+<p><em>如果某一天我突然发生意外，会不会根本没有人发现？</em></p>
+<p>「死了么」将这种难以表达的担忧，转化为一个非常直接的产品。</p>
+<p>其次，它选择了一个极具传播性的名字。</p>
+<p>名字本身就能引发讨论。即使一个人完全不需要这个 App，也可能因为好奇而了解它。</p>
+<p>这让产品获得了远超自身功能复杂度的传播效果。</p>
+<p>但我们也应该区分：<strong>一次病毒式传播，不代表一个已经得到长期验证的需求。</strong></p>
+<p>每天签到能否坚持？忘记签到会不会造成误报？紧急联系人能否及时响应？这些问题都不是靠爆火就能自动解决的。</p>
+<p>而它后来的发展恰好提供了另一种观察视角。</p>
+<p>2026 年 1 月，这款产品曾宣布启用 Demumu 品牌；到了同年 5 月，它又更名为「在么在么」，逐步从年轻人的独居签到工具转向老年安全监护。</p>
+<p>根据<a href="https://www.thepaper.cn/newsDetail_forward_34317636" target="_blank" rel="noopener noreferrer">2026 年 10 月的报道</a>，团队开始探索面向社区与政府的安全监护服务，并公布了每年 99 元和 199 元的方案。但当时有关付费功能仍处于推广阶段，不能把报价直接当成已经实现的收入。</p>
+<p>最初吸引关注的是年轻人的独居焦虑，后来探索的场景却是老年安全监护。</p>
+<p><strong>产品找到的第一个需求，未必就是最终能支撑商业化的需求。</strong></p>
+<h2 id="_E4_B8_89_E3_80_81AI_20_E6_AD_A3_E5_9C_A8_E9_99_8D_E4_BD_8E_E5_BC_80_E5_8F_91_E9_97_A8_E6_A7_9B_EF_BC_8C_E4_BD_86_E6_B2_A1_E6_9C_89_E6_B6_88_E9_99_A4_E4_BA_A7_E5_93_81_E9_97_A8_E6_A7_9B"><a class="headerlink" title="三、AI 正在降低开发门槛，但没有消除产品门槛" href="#_E4_B8_89_E3_80_81AI_20_E6_AD_A3_E5_9C_A8_E9_99_8D_E4_BD_8E_E5_BC_80_E5_8F_91_E9_97_A8_E6_A7_9B_EF_BC_8C_E4_BD_86_E6_B2_A1_E6_9C_89_E6_B6_88_E9_99_A4_E4_BA_A7_E5_93_81_E9_97_A8_E6_A7_9B"></a>三、AI 正在降低开发门槛，但没有消除产品门槛</h2>
+<p>这两个案例让我重新思考独立开发的价值。</p>
+<p>过去，一个人有了好的 App 创意，还需要考虑大量技术问题。</p>
+<p>会不会编程？能不能独立开发前后端？有没有能力部署服务器？能否适配不同设备？</p>
+<p>这些门槛足以让很多创意停留在想法阶段。</p>
+<p>但现在，Codex 等 AI 编程工具正在快速降低其中一部分成本。</p>
+<p>一个人就可以尝试完成过去需要多人协作的工作。</p>
+<p>这意味着软件开发正在发生一种变化：</p>
+<p><strong>代码的供给越来越充足，真正值得解决的问题却没有因此自动增加。</strong></p>
+<p>当越来越多的人能够低成本开发软件，单纯的「我能把这个功能实现出来」，就不再是足够强的竞争优势。</p>
+<p>这时候，另外几种能力反而可能变得更加重要：</p>
+<ul><li><strong>发现需求</strong>：不是凭空想象一个功能，而是发现人们反复遇到、尚未得到妥善解决的问题。</li><li><strong>验证需求</strong>：用户说「不错」，不等于用户每天会用；愿意试用，也不等于愿意付费。</li><li><strong>表达与传播</strong>：产品如何被迅速理解、记住和推荐，决定了它能否走出开发者自己的圈子。</li><li><strong>持续交付</strong>：安全性、可靠性、异常处理和长期维护，不会因为 AI 能写代码就自动完成。</li></ul>
+<p><strong>AI 让产品的第一个版本变得便宜，却不会自动让一个产品值得信任。</strong></p>
+<h2 id="_E5_9B_9B_E3_80_81_E9_82_A3_E4_B9_88_EF_BC_8C_E7_8B_AC_E7_AB_8B_E5_BC_80_E5_8F_91_E8_80_85_E5_BA_94_E8_AF_A5_E6_80_8E_E4_B9_88_E5_81_9A_EF_BC_9F"><a class="headerlink" title="四、那么，独立开发者应该怎么做？" href="#_E5_9B_9B_E3_80_81_E9_82_A3_E4_B9_88_EF_BC_8C_E7_8B_AC_E7_AB_8B_E5_BC_80_E5_8F_91_E8_80_85_E5_BA_94_E8_AF_A5_E6_80_8E_E4_B9_88_E5_81_9A_EF_BC_9F"></a>四、那么，独立开发者应该怎么做？</h2>
+<p>如果现在让我从零开始做一个独立产品，我可能会调整思考顺序。</p>
+<p>以前的思路是：</p>
+<p><strong>先想到一个有趣的功能，再考虑怎么实现。</strong></p>
+<p>现在我更倾向于：</p>
+<p><strong>先寻找真实存在的问题，再用 AI 低成本验证解决方案。</strong></p>
+<p>例如，观察社交平台上人们反复抱怨什么，看看现有软件的差评集中在哪里，或者研究某个群体为什么不得不用繁琐的手工流程完成一件事。</p>
+<p>一个尤其值得关注的信号是：</p>
+<p><strong>如果用户已经在为某个问题付出时间、金钱或者精力，那么这个需求往往比一句「我觉得这个功能不错」更值得研究。</strong></p>
+<p>接下来，不必急着开发完整产品。</p>
+<p>可以先用 Codex 制作一个最小可用版本，让真实用户尝试。</p>
+<p>如果没人需要，就及时停止；如果有人反复使用，再逐渐完善功能、研究传播和商业化。</p>
+<p>AI 编程真正带来的机会，也许不是让每个人都去开发更多 App，而是让我们能够以更低的成本，验证更多原本不值得投入大量资源的想法。</p>
+<h2 id="_E4_BA_94_E3_80_81_E6_9C_80_E5_90_8E_EF_BC_9A_E6_83_B3_E6_B3_95_E5_AE_B9_E6_98_93_EF_BC_8C_E4_BB_A3_E7_A0_81_E4_B9_9F_E8_B6_8A_E6_9D_A5_E8_B6_8A_E5_AE_B9_E6_98_93_EF_BC_8C_E9_82_A3_E4_BB_80_E4_B9_88_E6_9C_80_E9_9A_BE_EF_BC_9F"><a class="headerlink" title="五、最后：想法容易，代码也越来越容易，那什么最难？" href="#_E4_BA_94_E3_80_81_E6_9C_80_E5_90_8E_EF_BC_9A_E6_83_B3_E6_B3_95_E5_AE_B9_E6_98_93_EF_BC_8C_E4_BB_A3_E7_A0_81_E4_B9_9F_E8_B6_8A_E6_9D_A5_E8_B6_8A_E5_AE_B9_E6_98_93_EF_BC_8C_E9_82_A3_E4_BB_80_E4_B9_88_E6_9C_80_E9_9A_BE_EF_BC_9F"></a>五、最后：想法容易，代码也越来越容易，那什么最难？</h2>
+<p>回到最初的两个项目。</p>
+<p>Komi Store 的功能不算难以想象，类似方案早就有人做过。</p>
+<p>「死了么」的功能更简单，不仅创意早就出现，走红后甚至有人用 AI 在几个小时内做出了类似产品。</p>
+<p>如果只是讨论技术可复制性，它们都没有一道不可逾越的护城河。</p>
+<p>但这不意味着任何人都能复制它们的成功。</p>
+<p><strong>复制功能，不等于复制需求；复制产品，不等于复制用户；复制流量，更不等于复制商业模式。</strong></p>
+<p>随着 AI 编程工具的发展，独立开发者的竞争，可能会越来越少地集中在「谁能把代码写出来」，而越来越多地集中在「谁能够找到真正值得解决的问题，并把解决方案送到需要它的人面前」。</p>
+<p>这对独立开发者来说，既是挑战，也是机会。</p>
+<p>毕竟，过去一个好想法可能因为技术能力不足而无法实现。</p>
+<p>现在，至少我们可以先把它做出来，再看看世界是否真的需要它。</p>
+<p><strong>AI 正在让编程变得更容易，但理解人的需求，依然是一件困难的事。</strong></p>
+<h2 id="_E5_8F_82_E8_80_83_E8_B5_84_E6_96_99"><a class="headerlink" title="参考资料" href="#_E5_8F_82_E8_80_83_E8_B5_84_E6_96_99"></a>参考资料</h2>
+<ul><li><a href="https://github.com/komi-store/komi-store" target="_blank" rel="noopener noreferrer">Komi Store · GitHub</a></li><li><a href="https://github.com/ImranR98/Obtainium" target="_blank" rel="noopener noreferrer">Obtainium · GitHub</a></li><li><a href="https://news.inewsweek.cn/finance/2026-01-13/28529.shtml" target="_blank" rel="noopener noreferrer">中国新闻周刊：「死了么」，能活多久？</a></li><li><a href="https://news.youth.cn/gn/202601/t20260120_16470844.htm" target="_blank" rel="noopener noreferrer">中国青年报：「死了么」App 的爆火与争议</a></li><li><a href="https://www.stcn.com/article/detail/3591658.html" target="_blank" rel="noopener noreferrer">第一财经：有开发者用 AI 6 小时做出「活着么」</a></li><li><a href="https://www.thepaper.cn/newsDetail_forward_34317636" target="_blank" rel="noopener noreferrer">澎湃新闻：在么在么收费方案及政府采购探索</a></li></ul>
+<p>注：文中部分产品规模与商业化进展来自公开报道和团队披露，不代表经过独立审计的经营数据。</p>
+
+
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                [格物-005] 当 Codex 能复刻一个热门 App，独立开发者还剩什么壁垒？
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis" style="opacity: 0.8; font-size: 0.9em; margin-top: 5px;">
+                转载请注明出处：<a href="/" style="text-decoration: underline;">yluna 的个人空间</a>
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    Author
+                </div>
+                <div class="content">yluna</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    Published
+                </div>
+                <div class="content">2026-11-23 13:35</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    License
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">
+                        
+                            <i class="fa-brands fa-creative-commons"></i>
+                            <i class="fa-brands fa-creative-commons-by"></i>
+                            <i class="fa-brands fa-creative-commons-nc"></i>
+                            <i class="fa-brands fa-creative-commons-sa"></i>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+        <li class="twitter share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to X (Twitter)"
+        >
+            <i class="fa-brands fa-x-twitter"></i>
+        </li>
+        <li class="telegram share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to Telegram"
+        >
+            <i class="fa-brands fa-telegram"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/11/23/n1-open-day/"
+                                   title="[立业-018] 去 N1 School，看投资怎么往前走了一步"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">[立业-018] 去 N1 School，看投资怎么往前走了一步</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;Comments
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">Comment plugin failed to load</span>
+    <button class="reload keep-button">Click to reload</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">Loading comment plugin</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="giscus-comments-container">
+        <div class="giscus" id="giscus"></div>
+        <script data-pjax
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          if (!window.KeepCommentPlugin?.getGiscusTheme) {
+            window.KeepCommentPlugin.getGiscusTheme = () => {
+              return document.documentElement.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.changeGiscusTheme) {
+            window.KeepCommentPlugin.changeGiscusTheme = () => {
+              const iframe = document.querySelector('iframe.giscus-frame')
+              iframe && iframe.contentWindow.postMessage({
+                giscus: {
+                  setConfig: {
+                    theme: window.KeepCommentPlugin.getGiscusTheme()
+                  }
+                }
+              }, 'https://giscus.app')
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.initGiscus) {
+            window.KeepCommentPlugin.initGiscus = () => {
+              const script = document.createElement('script')
+              script.async = true
+              script.src = 'https://giscus.app/client.js'
+              script.setAttribute('data-repo', 'yluna-36/yluna-36.github.io')
+              script.setAttribute('data-repo-id', 'R_kgDOQFnQvw')
+              script.setAttribute('data-category', 'Announcements')
+              script.setAttribute('data-category-id', 'DIC_kwDOQFnQv84C5THI')
+              script.setAttribute('data-reactions-enabled', '1')
+              script.setAttribute('data-lang', 'en')
+              script.setAttribute('data-mapping', 'pathname')
+              script.setAttribute('data-strict', '0')
+              script.setAttribute('data-emit-metadata', '0')
+              script.setAttribute('data-input-position', 'top')
+              script.setAttribute('crossorigin', 'anonymous')
+              script.setAttribute('loading', 'lazy')
+              script.setAttribute('data-theme', window.KeepCommentPlugin.getGiscusTheme())
+              document.querySelector('.giscus-comments-container').appendChild(script)
+              script.onerror = () => {
+                window.KeepCommentPlugin.loadFailHandle()
+              }
+              script.onload = () => {
+                window.KeepCommentPlugin.hideLoading()
+              }
+              const toggleThemeBtn = document.querySelector('.tool-toggle-theme-mode')
+              toggleThemeBtn && toggleThemeBtn.addEventListener('click', () => {
+                window.KeepCommentPlugin.changeGiscusTheme()
+              })
+            }
+          }
+
+          if ('true' === "true") {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initGiscus()
+            }, 1000)
+          } else {
+            window.addEventListener("DOMContentLoaded", window.KeepCommentPlugin.initGiscus)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">yluna</a>
+        
+        &nbsp;&nbsp;All Rights Reserved.
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+            
+<script src="/js/post/copyright-info.js"></script>
+
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script id="pjax-script" src="/js/libs/pjax.min.js"></script>
+<script>
+  (function () {
+    const isGoogleTranslate = location.hostname.includes('.translate.goog')
+
+    if (isGoogleTranslate) {
+      document.getElementById('pjax-script')?.remove()
+      return
+    }
+
+    function initPjax () {
+      if (window.pjax) return
+
+      window.pjax = new Pjax({
+        selectors: [
+          'head title',
+          '.page-container',
+          '.pjax'
+        ],
+        history: true,
+        debug: false,
+        cacheBust: false,
+        timeout: 0,
+        analytics: false,
+        currentUrlFullReload: false,
+        scrollRestoration: false
+      })
+
+      document.addEventListener('pjax:send', onPjaxSend)
+      document.addEventListener('pjax:complete', onPjaxComplete)
+    }
+
+    function onPjaxSend () {
+      KEEP?.utils?.pjaxProgressBarStart()
+    }
+
+    function onPjaxComplete () {
+      KEEP?.utils?.pjaxProgressBarEnd()
+
+      window?.pjax?.executeScripts(
+        document.querySelectorAll('script[data-pjax], .pjax script')
+      )
+
+      KEEP?.initExecute()
+    }
+
+    // DOM Ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPjax)
+    } else {
+      initPjax()
+    }
+  })()
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/js/custom.js?v=20261107-english-layout2" data-pjax></script>
+
+        
+    
+
+
+<!-- Global Spotify Player -->
+<div id="spotify-player-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; transition: all 0.3s ease; max-width: calc(100vw - 40px);">
+    <!-- Outer Site Player -->
+    <iframe id="spotify-outer" style="border-radius:12px; width:300px; height:80px; border:none; display:block; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/09iyJFvXvGbBBye2fXfNmr?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    
+    <!-- Inner Site Player -->
+    <iframe id="spotify-inner" style="border-radius:12px; width:300px; height:80px; border:none; display:none; max-width: 100%;" 
+            src="https://open.spotify.com/embed/playlist/1NVhN5uA2xNMgjFbOcW0kF?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
+    <meta name="post-section" content="立业">
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            let sectionMeta = document.querySelector('meta[name="post-section"]');
+            if (sectionMeta && sectionMeta.content) {
+                let savedPwd = sessionStorage.getItem('section_pwd_' + sectionMeta.content);
+                if (savedPwd) {
+                    let hbeForm = document.getElementById('hbeForm');
+                    let passInput = document.getElementById('hbePass');
+                    if (hbeForm && passInput) {
+                        passInput.value = savedPwd;
+                        hbeForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
+                    }
+                }
+            }
+        }, 100);
+    });
+</script>
+</body>
+
+</html>
