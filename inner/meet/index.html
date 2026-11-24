@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>和 yluna 约个时间</title>
+<link rel="stylesheet" href="./meet.css">
+<script src="./meet.js" defer></script>
+</head>
+<body><main>
+<nav><a href="/inner/">← 回里站</a></nav>
+<header><h1>和我约个时间</h1><p>挑个我们都方便的时候，微信上再确认。</p></header>
+<form id="unlock">
+<label for="invite">邀请码</label>
+<div class="entry"><input id="invite" type="password" required maxlength="80" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="status"><button>查看可约时间</button></div>
+</form>
+<p id="status" role="status"></p>
+<section id="schedule" hidden>
+<h2>接下来两周</h2><p>北京时间（UTC+8） · 每档 1 小时</p><p id="updated"></p>
+<div class="days"></div>
+<section id="selection" hidden><label for="message">发给我的微信消息</label>
+<textarea id="message" rows="2" readonly></textarea><button type="button" id="copy">复制消息</button><span id="copied" role="status"></span></section>
+<button type="button" id="lock">锁定页面</button>
+</section>
+</main></body></html>
