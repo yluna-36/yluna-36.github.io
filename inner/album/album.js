@@ -78,6 +78,8 @@ async function inviteRequest(path, data) {
 }
 
 const unlockForm = document.querySelector('#unlock-form');
+const privateAccess = document.querySelector('#private-access');
+const privateStatus = document.querySelector('#private-status');
 unlockForm.addEventListener('submit', event => {
   event.preventDefault();
   try {
@@ -88,17 +90,21 @@ unlockForm.addEventListener('submit', event => {
     if (link.hash === location.hash) location.reload();
     else location.replace(link.hash);
   } catch {
-    statusLine.textContent = '请粘贴本站的完整相册邀请链接。';
+    privateStatus.textContent = '请粘贴本站的完整邀请链接。';
   }
 });
 
-async function unlock() {
-  const params = new URLSearchParams(location.hash.slice(1));
-  const personal = params.has('i');
-  const token = params.get(personal ? 'i' : 'k');
-  if (!token) { unlockForm.hidden = false; return; }
+function makeReader(key, folder) {
+  return async function read(name) {
+    const response = await fetch(folder + name, {credentials:'omit'});
+    if (!response.ok) throw Error('File unavailable');
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    return crypto.subtle.decrypt({name:'AES-GCM', iv:bytes.slice(0,12), additionalData:new TextEncoder().encode(name)}, key, bytes.slice(12));
+  };
+}
+
+async function openWithInvite(token, personal) {
   if (!/^[A-Za-z0-9_-]{43}$/.test(token)) throw Error();
-  statusLine.textContent = '正在打开相册…';
   let raw = decodeToken(token);
   let inviteId;
   if (personal) {
@@ -114,13 +120,15 @@ async function unlock() {
     }, wrappingKey, envelope.slice(12));
   }
   const key = await crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['decrypt']);
-  async function read(name) {
-    const response = await fetch('data/' + name, {credentials:'omit'});
-    if (!response.ok) throw Error();
-    const bytes = new Uint8Array(await response.arrayBuffer());
-    return crypto.subtle.decrypt({name:'AES-GCM', iv:bytes.slice(0,12), additionalData:new TextEncoder().encode(name)}, key, bytes.slice(12));
+  const read = makeReader(key, 'data/');
+  await showPhotos(read);
+  if (personal) {
+    await inviteRequest('usage/' + inviteId, {count:{'.sv':{increment:1}}, last:{'.sv':'timestamp'}});
   }
-  const groups = JSON.parse(new TextDecoder().decode(await read('album.bin')));
+  showPrivateReadings(read);
+}
+
+function showPrivateReadings(read) {
   const readings = document.createDocumentFragment();
   function addReading(label, file, render) {
     const details = document.createElement('details');
@@ -148,6 +156,11 @@ async function unlock() {
     body.append(...nodes.map(renderProfileNode));
     return body;
   });
+  privateAccess.replaceWith(readings);
+}
+
+async function showPhotos(read) {
+  const groups = JSON.parse(new TextDecoder().decode(await read('album.bin')));
   const sections = document.createDocumentFragment();
   const imageLoads = [];
   for (const group of groups) {
@@ -178,16 +191,31 @@ async function unlock() {
     }
   }
   await Promise.all(imageLoads);
-  if (personal) {
-    await inviteRequest('usage/' + inviteId, {count:{'.sv':{increment:1}}, last:{'.sv':'timestamp'}});
-  }
-  document.querySelector('#albums').after(readings);
-  document.querySelector('#albums').append(sections);
+  document.querySelector('#albums').replaceChildren(sections);
   statusLine.hidden = true;
-  window.navigation?.updateCurrentEntry({state:{...window.navigation.currentEntry.getState(), friendAlbumOpened:true}});
-  document.querySelector('#album-directory').addEventListener('click', () => {
-    try { sessionStorage.setItem('friend-album-return', 'yes'); } catch {}
-  });
-  document.querySelector('#album-directory').href = '/gallery/?mode=inner&from=friend-album';
 }
-unlock().catch(() => { unlockForm.hidden = false; statusLine.textContent = '相册未打开。请检查邀请链接是否完整，或稍后刷新重试。'; });
+
+async function openAlbum() {
+  const params = new URLSearchParams(location.hash.slice(1));
+  const personal = params.has('i');
+  const token = params.get(personal ? 'i' : 'k');
+  if (token) {
+    try {
+      await openWithInvite(token, personal);
+      return;
+    } catch {
+      privateStatus.textContent = '手记和个人资料未解锁，请检查邀请链接或稍后重试。';
+      privateAccess.open = true;
+      if (document.querySelector('#albums').childElementCount) return;
+      photos.length = 0;
+    }
+  }
+  const grant = await fetch(new URL('/friendPhotoPreview.json', inviteDatabase), {
+    cache:'no-store', credentials:'omit', referrerPolicy:'no-referrer'
+  });
+  if (!grant.ok) throw Error();
+  const raw = decodeToken(await grant.json());
+  const key = await crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['decrypt']);
+  await showPhotos(makeReader(key, 'data/preview/'));
+}
+openAlbum().catch(() => { statusLine.textContent = '暂时无法打开照片，请稍后刷新重试。'; });

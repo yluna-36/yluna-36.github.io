@@ -8,20 +8,24 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://yluna-meet-20261124-default-rtdb.asia-southeast1.firebasedatabase.app; img-src blob:; base-uri 'none'; form-action 'none'">
   <title>朋友相册 · yluna 的里站</title>
   <link rel="stylesheet" href="album.css">
-  <script src="album.js?v=gallery3" defer></script>
+  <script src="album.js?v=photo-trial1" defer></script>
 </head>
 <body>
   <main>
     <nav aria-label="当前位置"><a href="/inner/">里站</a> / <a id="album-directory" href="/gallery/?mode=inner">相册</a> / 朋友相册</nav>
     <h1>朋友相册</h1>
     <p id="invite-notice" hidden>这是我单独发出的邀请。我能看到这条邀请的使用时间和成功打开次数。</p>
-    <p id="status" role="status">请用我私下发给你的完整邀请链接打开相册。</p>
-    <form id="unlock-form" hidden>
-      <label for="invitation">粘贴我发给你的相册邀请链接</label>
-      <input id="invitation" type="password" required autocomplete="off" spellcheck="false">
-      <button type="submit">打开相册</button>
-    </form>
+    <p id="status" role="status">正在打开照片…</p>
     <div id="albums"></div>
+    <details id="private-access" class="journal">
+      <summary>手记和个人资料（需要邀请）</summary>
+      <form id="unlock-form">
+        <label for="invitation">粘贴我私下发给你的完整邀请链接</label>
+        <input id="invitation" type="password" required autocomplete="off" spellcheck="false">
+        <button type="submit">解锁阅读</button>
+      </form>
+      <p id="private-status" role="status"></p>
+    </details>
     <p><a href="/feedback/" referrerpolicy="no-referrer">给我提建议 ↗</a></p>
   </main>
   <dialog aria-labelledby="photo-title">
