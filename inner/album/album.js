@@ -42,6 +42,38 @@ async function unlock() {
     return crypto.subtle.decrypt({name:'AES-GCM', iv:bytes.slice(0,12), additionalData:new TextEncoder().encode(name)}, key, bytes.slice(12));
   }
   const groups = JSON.parse(new TextDecoder().decode(await read('album.bin')));
+  const journal = document.createElement('details');
+  journal.className = 'journal';
+  journal.append(textElement('summary', '读里站手记'));
+  const article = document.createElement('article');
+  journal.append(article);
+  let loaded = false;
+  journal.addEventListener('toggle', async () => {
+    if (!journal.open || loaded) return;
+    loaded = true;
+    article.textContent = '正在打开手记…';
+    try {
+      const note = JSON.parse(new TextDecoder().decode(await read('note-1.bin')));
+      const body = document.createDocumentFragment();
+      body.append(textElement('h2', note.title), textElement('time', note.date));
+      for (const block of note.blocks) {
+        if (block.image) {
+          const image = new Image();
+          image.alt = block.alt;
+          const bytes = Uint8Array.from(atob(block.image), c => c.charCodeAt(0));
+          image.src = URL.createObjectURL(new Blob([bytes], {type:'image/png'}));
+          body.append(image);
+        } else {
+          body.append(textElement(block.heading ? 'h3' : 'p', block.heading || block.text));
+        }
+      }
+      article.replaceChildren(body);
+    } catch {
+      loaded = false;
+      article.textContent = '手记未打开，收起后可以重试。';
+    }
+  });
+  document.querySelector('#albums').before(journal);
   const sections = document.createDocumentFragment();
   for (const group of groups) {
     const section = document.createElement('section');
