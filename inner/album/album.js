@@ -61,12 +61,43 @@ function renderProfileNode(node) {
   return element;
 }
 
+const inviteDatabase = 'https://yluna-meet-20261124-default-rtdb.asia-southeast1.firebasedatabase.app/friendAccess/';
+function decodeToken(text) {
+  return Uint8Array.from(atob(text.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0));
+}
+
+async function inviteRequest(path, data) {
+  const options = {credentials:'omit', cache:'no-store', referrerPolicy:'no-referrer'};
+  if (data) {
+    options.method = 'PUT';
+    options.body = JSON.stringify(data);
+  }
+  const response = await fetch(inviteDatabase + path + '.json' + (data ? '?print=silent' : ''), options);
+  if (!response.ok) throw Error('Invitation service unavailable');
+  if (!data) return response.json();
+}
+
 async function unlock() {
-  const token = new URLSearchParams(location.hash.slice(1)).get('k');
+  const params = new URLSearchParams(location.hash.slice(1));
+  const personal = params.has('i');
+  const token = params.get(personal ? 'i' : 'k');
   if (!token) return;
   if (!/^[A-Za-z0-9_-]{43}$/.test(token)) throw Error();
   statusLine.textContent = '正在打开相册…';
-  const raw = Uint8Array.from(atob(token.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0));
+  let raw = decodeToken(token);
+  let inviteId;
+  if (personal) {
+    document.querySelector('#invite-notice').hidden = false;
+    const hash = await crypto.subtle.digest('SHA-256', raw);
+    inviteId = Array.from(new Uint8Array(hash), b => b.toString(16).padStart(2, '0')).join('');
+    await inviteRequest('opens/' + inviteId, {'.sv':'timestamp'});
+    const envelope = decodeToken(await inviteRequest('envelopes/' + inviteId));
+    const wrappingKey = await crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['decrypt']);
+    raw = await crypto.subtle.decrypt({
+      name:'AES-GCM', iv:envelope.slice(0, 12),
+      additionalData:new TextEncoder().encode('album-invite:' + inviteId)
+    }, wrappingKey, envelope.slice(12));
+  }
   const key = await crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['decrypt']);
   async function read(name) {
     const response = await fetch('data/' + name, {credentials:'omit'});
@@ -75,6 +106,7 @@ async function unlock() {
     return crypto.subtle.decrypt({name:'AES-GCM', iv:bytes.slice(0,12), additionalData:new TextEncoder().encode(name)}, key, bytes.slice(12));
   }
   const groups = JSON.parse(new TextDecoder().decode(await read('album.bin')));
+  const readings = document.createDocumentFragment();
   function addReading(label, file, render) {
     const details = document.createElement('details');
     details.className = 'journal';
@@ -93,7 +125,7 @@ async function unlock() {
         article.textContent = '未能打开，收起后可以重试。';
       }
     });
-    document.querySelector('#albums').before(details);
+    readings.append(details);
   }
   addReading('读里站手记', 'note-1.bin', renderNote);
   addReading('读个人资料', 'record-2.bin', nodes => {
@@ -127,6 +159,10 @@ async function unlock() {
       grid.append(figure);
     }
   }
+  if (personal) {
+    await inviteRequest('usage/' + inviteId, {count:{'.sv':{increment:1}}, last:{'.sv':'timestamp'}});
+  }
+  document.querySelector('#albums').before(readings);
   document.querySelector('#albums').append(sections);
   statusLine.hidden = true;
 }

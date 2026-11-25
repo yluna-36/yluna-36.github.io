@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src blob:; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://yluna-meet-20261124-default-rtdb.asia-southeast1.firebasedatabase.app; img-src blob:; base-uri 'none'; form-action 'none'">
   <title>朋友相册 · yluna 的里站</title>
   <link rel="stylesheet" href="album.css">
-  <script src="album.js" defer></script>
+  <script src="album.js?v=invites1" defer></script>
 </head>
 <body>
   <main>
     <a href="/inner/">← 里站</a>
     <h1>朋友相册</h1>
+    <p id="invite-notice" hidden>这是我单独发出的邀请。我能看到这条邀请的使用时间和成功打开次数。</p>
     <p id="status" role="status">请用我私下发给你的完整邀请链接打开相册。</p>
     <div id="albums"></div>
   </main>
