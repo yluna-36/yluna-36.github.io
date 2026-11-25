@@ -185,9 +185,9 @@ async function unlock() {
   document.querySelector('#albums').append(sections);
   statusLine.hidden = true;
   window.navigation?.updateCurrentEntry({state:{...window.navigation.currentEntry.getState(), friendAlbumOpened:true}});
-  document.querySelector('#inner-home').addEventListener('click', () => {
+  document.querySelector('#album-directory').addEventListener('click', () => {
     try { sessionStorage.setItem('friend-album-return', 'yes'); } catch {}
   });
-  document.querySelector('#inner-home').href = '/inner/?from=friend-album';
+  document.querySelector('#album-directory').href = '/gallery/?mode=inner&from=friend-album';
 }
 unlock().catch(() => { unlockForm.hidden = false; statusLine.textContent = '相册未打开。请检查邀请链接是否完整，或稍后刷新重试。'; });

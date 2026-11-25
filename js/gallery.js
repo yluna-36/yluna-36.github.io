@@ -24,6 +24,36 @@
     const buttons = Array.from(root.querySelectorAll('.gallery-open'));
     const directory = root.querySelector('.gallery-directory');
     const navigation = root.querySelector('.gallery-categories');
+    const friends = document.createElement('a');
+    friends.textContent = '朋友相册';
+    friends.className = 'friend-album-link';
+    friends.href = '/inner/album/';
+    friends.dataset.pjaxState = 'native';
+    friends.setAttribute('aria-label', '朋友相册（需要邀请）');
+
+    // A history entry can restore an invite in this tab without copying the secret into storage.
+    friends.addEventListener('click', event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const nav = window.navigation;
+      const entry = nav?.entries().slice().reverse().find(entry =>
+        entry.index < nav.currentEntry.index && entry.url &&
+        new URL(entry.url).pathname === friends.pathname && entry.getState()?.friendAlbumOpened);
+      if (entry) {
+        event.preventDefault();
+        nav.traverseTo(entry.key).finished.catch(() => location.assign(friends.href));
+      } else if (history.state?.fromUnlockedAlbum && history.length > 1) {
+        event.preventDefault();
+        history.back();
+      }
+    });
+    if (new URLSearchParams(location.search).get('from') === 'friend-album') {
+      try {
+        if (sessionStorage.getItem('friend-album-return') === 'yes') {
+          history.replaceState({...history.state, fromUnlockedAlbum:true}, '');
+          sessionStorage.removeItem('friend-album-return');
+        }
+      } catch {}
+    }
     const back = root.querySelector('.gallery-back');
     const pagination = root.querySelector('.gallery-pagination');
     const categories = Array.from(root.querySelectorAll('[data-category]'));
@@ -56,6 +86,11 @@
       const page = /^\d+$/.test(requestedPage || '') ? Math.min(pages, Math.max(1, Number(requestedPage))) : 1;
       const visibleTiles = new Set(active ? [] : matching.slice((page - 1) * pageSize, page * pageSize));
 
+      if (document.body.classList.contains('inner-site-active')) {
+        if (!friends.isConnected) navigation.append(friends);
+      } else {
+        friends.remove();
+      }
       navigation.hidden = false;
       directory.hidden = Boolean(active);
       back.hidden = !active;
