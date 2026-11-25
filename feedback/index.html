@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; connect-src https://yluna-meet-20261124-default-rtdb.asia-southeast1.firebasedatabase.app; base-uri 'none'; form-action 'none'">
+  <title>给我提建议</title>
+  <link rel="stylesheet" href="feedback.css">
+  <script src="feedback.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <a class="back-link" href="/">
+      <span aria-hidden="true">←</span>
+      返回首页
+    </a>
+
+    <main>
+      <header class="masthead">
+        <h1>给我提建议</h1>
+        <p class="intro">网站刚开始分享。哪里不好找，或是你想多看些什么，都可以写给我。</p>
+      </header>
+
+      <section class="feedback-card" aria-label="意见栏">
+        <form id="feedback" method="post">
+          <div class="field">
+            <div class="label-row">
+              <label for="message">建议内容</label>
+              <span class="limit" id="message-limit">最多 800 字</span>
+            </div>
+            <textarea
+              id="message"
+              rows="8"
+              required
+              maxlength="800"
+              aria-describedby="message-limit"
+              placeholder="例如：希望增加按地点查看照片的功能……"
+            ></textarea>
+          </div>
+
+          <button id="send" type="submit" disabled>
+            发送建议
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <noscript>请开启 JavaScript，或通过首页联系我。</noscript>
+        <p class="privacy">
+          匿名提交，无需留下姓名或邮箱，内容只有站主可读。
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

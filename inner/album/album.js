@@ -77,11 +77,26 @@ async function inviteRequest(path, data) {
   if (!data) return response.json();
 }
 
+const unlockForm = document.querySelector('#unlock-form');
+unlockForm.addEventListener('submit', event => {
+  event.preventDefault();
+  try {
+    const link = new URL(document.querySelector('#invitation').value.trim());
+    if (link.origin !== location.origin || link.pathname !== '/inner/album/' ||
+        !/^#(?:k|i)=[A-Za-z0-9_-]{43}$/.test(link.hash)) throw Error();
+    unlockForm.reset();
+    if (link.hash === location.hash) location.reload();
+    else location.replace(link.hash);
+  } catch {
+    statusLine.textContent = '请粘贴本站的完整相册邀请链接。';
+  }
+});
+
 async function unlock() {
   const params = new URLSearchParams(location.hash.slice(1));
   const personal = params.has('i');
   const token = params.get(personal ? 'i' : 'k');
-  if (!token) return;
+  if (!token) { unlockForm.hidden = false; return; }
   if (!/^[A-Za-z0-9_-]{43}$/.test(token)) throw Error();
   statusLine.textContent = '正在打开相册…';
   let raw = decodeToken(token);
@@ -134,6 +149,7 @@ async function unlock() {
     return body;
   });
   const sections = document.createDocumentFragment();
+  const imageLoads = [];
   for (const group of groups) {
     const section = document.createElement('section');
     section.append(textElement('h2', group.title), textElement('p', group.description));
@@ -149,8 +165,10 @@ async function unlock() {
       button.setAttribute('aria-label', '查看大图：' + photo.title);
       const image = new Image();
       image.alt = photo.title;
-      photo.url = URL.createObjectURL(new Blob([await read(photo.file)], {type:'image/jpeg'}));
-      image.src = photo.url;
+      imageLoads.push(read(photo.file).then(bytes => {
+        photo.url = URL.createObjectURL(new Blob([bytes], {type:'image/jpeg'}));
+        image.src = photo.url;
+      }));
       button.append(image);
       button.onclick = () => show(index);
       const caption = textElement('figcaption', photo.title);
@@ -159,11 +177,17 @@ async function unlock() {
       grid.append(figure);
     }
   }
+  await Promise.all(imageLoads);
   if (personal) {
     await inviteRequest('usage/' + inviteId, {count:{'.sv':{increment:1}}, last:{'.sv':'timestamp'}});
   }
-  document.querySelector('#albums').before(readings);
+  document.querySelector('#albums').after(readings);
   document.querySelector('#albums').append(sections);
   statusLine.hidden = true;
+  window.navigation?.updateCurrentEntry({state:{...window.navigation.currentEntry.getState(), friendAlbumOpened:true}});
+  document.querySelector('#inner-home').addEventListener('click', () => {
+    try { sessionStorage.setItem('friend-album-return', 'yes'); } catch {}
+  });
+  document.querySelector('#inner-home').href = '/inner/?from=friend-album';
 }
-unlock().catch(() => { statusLine.textContent = '相册未打开。请检查邀请链接是否完整，或稍后刷新重试。'; });
+unlock().catch(() => { unlockForm.hidden = false; statusLine.textContent = '相册未打开。请检查邀请链接是否完整，或稍后刷新重试。'; });
