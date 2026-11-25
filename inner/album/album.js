@@ -28,6 +28,39 @@ dialog.addEventListener('keydown', e => {
 });
 window.addEventListener('hashchange', () => location.reload());
 
+function renderNote(note) {
+  const body = document.createDocumentFragment();
+  body.append(textElement('h2', note.title), textElement('time', note.date));
+  for (const block of note.blocks) {
+    if (block.image) {
+      const image = new Image();
+      image.alt = block.alt;
+      const bytes = Uint8Array.from(atob(block.image), c => c.charCodeAt(0));
+      image.src = URL.createObjectURL(new Blob([bytes], {type:'image/png'}));
+      body.append(image);
+    } else {
+      body.append(textElement(block.heading ? 'h3' : 'p', block.heading || block.text));
+    }
+  }
+  return body;
+}
+
+const profileTags = new Set(['h2', 'h3', 'p', 'em', 'del', 'strong', 'br', 'ul', 'li', 'a', 'blockquote']);
+function renderProfileNode(node) {
+  if (typeof node === 'string') return document.createTextNode(node);
+  if (!profileTags.has(node.tag)) throw Error('Unknown text element');
+  const element = document.createElement(node.tag);
+  if (node.tag === 'a') {
+    const url = new URL(node.href, location.origin);
+    if (url.origin !== location.origin && url.protocol !== 'https:') throw Error('Invalid link');
+    element.href = url.href;
+    element.target = '_blank';
+    element.rel = 'noopener noreferrer';
+  }
+  element.append(...node.kids.map(renderProfileNode));
+  return element;
+}
+
 async function unlock() {
   const token = new URLSearchParams(location.hash.slice(1)).get('k');
   if (!token) return;
@@ -42,38 +75,32 @@ async function unlock() {
     return crypto.subtle.decrypt({name:'AES-GCM', iv:bytes.slice(0,12), additionalData:new TextEncoder().encode(name)}, key, bytes.slice(12));
   }
   const groups = JSON.parse(new TextDecoder().decode(await read('album.bin')));
-  const journal = document.createElement('details');
-  journal.className = 'journal';
-  journal.append(textElement('summary', '读里站手记'));
-  const article = document.createElement('article');
-  journal.append(article);
-  let loaded = false;
-  journal.addEventListener('toggle', async () => {
-    if (!journal.open || loaded) return;
-    loaded = true;
-    article.textContent = '正在打开手记…';
-    try {
-      const note = JSON.parse(new TextDecoder().decode(await read('note-1.bin')));
-      const body = document.createDocumentFragment();
-      body.append(textElement('h2', note.title), textElement('time', note.date));
-      for (const block of note.blocks) {
-        if (block.image) {
-          const image = new Image();
-          image.alt = block.alt;
-          const bytes = Uint8Array.from(atob(block.image), c => c.charCodeAt(0));
-          image.src = URL.createObjectURL(new Blob([bytes], {type:'image/png'}));
-          body.append(image);
-        } else {
-          body.append(textElement(block.heading ? 'h3' : 'p', block.heading || block.text));
-        }
+  function addReading(label, file, render) {
+    const details = document.createElement('details');
+    details.className = 'journal';
+    const article = document.createElement('article');
+    details.append(textElement('summary', label), article);
+    let loaded = false;
+    details.addEventListener('toggle', async () => {
+      if (!details.open || loaded) return;
+      loaded = true;
+      article.textContent = '正在打开…';
+      try {
+        const data = JSON.parse(new TextDecoder().decode(await read(file)));
+        article.replaceChildren(render(data));
+      } catch {
+        loaded = false;
+        article.textContent = '未能打开，收起后可以重试。';
       }
-      article.replaceChildren(body);
-    } catch {
-      loaded = false;
-      article.textContent = '手记未打开，收起后可以重试。';
-    }
+    });
+    document.querySelector('#albums').before(details);
+  }
+  addReading('读里站手记', 'note-1.bin', renderNote);
+  addReading('读个人资料', 'record-2.bin', nodes => {
+    const body = document.createDocumentFragment();
+    body.append(...nodes.map(renderProfileNode));
+    return body;
   });
-  document.querySelector('#albums').before(journal);
   const sections = document.createDocumentFragment();
   for (const group of groups) {
     const section = document.createElement('section');
