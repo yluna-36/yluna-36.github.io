@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src blob:; base-uri 'none'; form-action 'none'">
+  <title>朋友相册 · yluna 的里站</title>
+  <link rel="stylesheet" href="album.css">
+  <script src="album.js" defer></script>
+</head>
+<body>
+  <main>
+    <a href="/inner/">← 里站</a>
+    <h1>朋友相册</h1>
+    <p id="status" role="status">请用我私下发给你的完整邀请链接打开相册。</p>
+    <div id="albums"></div>
+  </main>
+  <dialog aria-labelledby="photo-title">
+    <header><strong id="photo-title"></strong><button id="close" autofocus>关闭</button></header>
+    <img id="full" alt="">
+    <p id="caption"></p>
+    <footer><button id="prev">上一张</button><span id="count"></span><button id="next">下一张</button></footer>
+  </dialog>
+</body>
+</html>

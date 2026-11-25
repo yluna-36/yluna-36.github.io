@@ -1,0 +1,27 @@
+:root { color-scheme: dark; font-family: system-ui,sans-serif; background: #191d23; color: #eef0f5; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 960px; margin: auto; padding: 32px clamp(16px,4vw,48px) 64px; }
+a { color: #b7c9e2; }
+h1 { margin: 1em 0; }
+h2 { margin: 2em 0 .3em; }
+p { line-height: 1.7; }
+.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+figure { margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+figure button { display:block; position:relative; width:100%; border:0; border-radius:12px; background:#242931; overflow:hidden; padding:0; }
+figure img { display:block; width:100%; aspect-ratio:4/3; object-fit:contain; }
+figure p { margin:.35em 0; color:#c9d1db; }
+figcaption { padding-top:.5em; }
+@media (hover:hover) and (pointer:fine) {
+  figure { position:relative; }
+  figure p { position:absolute; bottom:2.2rem; left:0; right:0; background:#171b21f2; color:#fff; padding:12px; margin:0; pointer-events:none; opacity:0; }
+  figure:hover p, figure:focus-within p { opacity:1; }
+}
+dialog { width:min(940px,96vw); max-height:94dvh; color:inherit; background:#20252c; border:1px solid #566170; border-radius:14px; padding:14px; }
+dialog::backdrop { background:#05070be6; }
+dialog header,dialog footer { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+dialog img { width:100%; height:min(58dvh,650px); object-fit:contain; display:block; margin:10px 0; }
+dialog p { max-height:15dvh; overflow:auto; }
+dialog button { min-height:42px; padding:0 14px; border:1px solid #5b6777; background:#303945; border-radius:8px; }
+@media(max-width:600px) { .grid { grid-template-columns:1fr; } main { padding-top:22px; } }

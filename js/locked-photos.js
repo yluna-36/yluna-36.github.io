@@ -1,5 +1,12 @@
 // Only decrypted articles supply the attachment keys. The server serves ciphertext.
 (() => {
+  // The theme moves src into data-src before encryption. Restore embedded
+  // previews after unlocking, when the original lazy loader has already run.
+  for (const img of document.querySelectorAll('figure img[data-src^="data:image/jpeg;base64,"]')) {
+    img.src = img.dataset.src;
+    img.removeAttribute('lazyload');
+    img.removeAttribute('data-src');
+  }
   for (const panel of document.querySelectorAll('details[data-photo-key]')) {
     if (panel.dataset.initialized) continue;
     panel.dataset.initialized = 'true';

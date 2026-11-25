@@ -168,7 +168,8 @@ const initInnerSite = () => {
             if (clicks >= 5) {
                 // Another tab may have changed storage; toggle this page's mode.
                 const active = document.body.classList.contains('inner-site-active');
-                window.location.href = active ? '/' : '/inner/';
+                if (active) window.location.assign('/');
+                else if (window.confirm('恭喜你发现了隐藏入口！进入里站吗？')) window.location.assign('/inner/');
                 clicks = 0;
             }
             resetTimer = setTimeout(() => { clicks = 0; }, 1000);
