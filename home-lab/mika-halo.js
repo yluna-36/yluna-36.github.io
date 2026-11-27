@@ -1,4 +1,4 @@
-// Original canvas drawing inspired by Mika's regular character illustration.
+// Sample the halo and word once. Each visible star keeps its color and travels between two positions.
 function createMikaHalo(canvas) {
   const ctx = canvas.getContext('2d');
   let width = 0, height = 0, dpr = 1;
@@ -15,17 +15,71 @@ function createMikaHalo(canvas) {
   const moons = [[-252,174,13],[-294,165,7],[-265,-10,9],[-237,-40,4],[-158,-54,12],
     [-151,-65,6],[-112,169,7],[-81,153,4],[232,-130,9],[214,-113,3],[178,-37,5],[244,69,7],[314,-29,5]];
   const sparkle = new Path2D('M 0 -1 C .1 -.96 .1 -.31 .2 -.19 C .32 -.09 .95 -.1 1 0 C .95 .1 .33 .11 .19 .2 C .10 .31 .1 .94 0 1 C -.09 .96 -.12 .32 -.2 .19 C -.34 .10 -.96 .10 -1 0 C -.96 -.09 -.31 -.10 -.2 -.2 C -.10 -.34 -.11 -.97 0 -1 Z');
-  function surface(path,fill,stroke='#c3a7fa',pen=2) {
-    ctx.fillStyle=fill;ctx.fill(path);
-    ctx.strokeStyle=stroke;ctx.lineWidth=pen;ctx.stroke(path);
+  const mask = document.createElement('canvas');
+  mask.width=880; mask.height=500;
+  const ink=mask.getContext('2d',{willReadFrequently:true});
+  const count=matchMedia('(max-width:680px)').matches ? 5200 : 10800;
+  let seed=2113;
+  function random(){
+    seed=(Math.imul(seed,1664525)+1013904223)>>>0;
+    return (seed+.5)/4294967296;
   }
-  function pearl(x,y,r,core){
-    const g=ctx.createRadialGradient(x-r*.23,y-r*.35,r*.08,x,y,r);
-    g.addColorStop(0,core?'#fff7fe':'#f7fdff');
-    g.addColorStop(.72,core?'#f9dffb':'#e4ebff');
-    g.addColorStop(1,core?'#e8baf4':'#bdadff');
-    ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
-    ctx.strokeStyle='#caacff';ctx.lineWidth=core?2.4:1.2;ctx.stroke();
+  function sampleMask(){
+    const alpha=ink.getImageData(0,0,mask.width,mask.height).data;
+    const cells=[];
+    for(let y=1;y<mask.height;y+=2){
+      for(let x=1;x<mask.width;x+=2){
+        if(alpha[(y*mask.width+x)*4+3]>100) cells.push(y*mask.width+x);
+      }
+    }
+    // Stratify by occupied area so even the thin ring and small satellites get stars.
+    const points=[];
+    for(let i=0;i<count;i++){
+      const cell=cells[Math.floor((i+random())*cells.length/count)];
+      points.push({x:cell%mask.width-mask.width/2+2*random()-1,
+        y:Math.floor(cell/mask.width)-mask.height/2+2*random()-1});
+    }
+    return points;
+  }
+  ink.translate(mask.width/2,mask.height/2);
+  ink.fillStyle=ink.strokeStyle='#fff';ink.lineWidth=1.6;
+  for(const path of Object.values(paths)){ink.fill(path);ink.stroke(path);}
+  for(const [x,y,r] of [[0,0,53],...moons]){
+    ink.beginPath();ink.arc(x,y,r,0,Math.PI*2);ink.fill();
+  }
+  for(const [x,y,w,h,angle] of sparks){
+    ink.save();ink.translate(x,y);ink.rotate(angle);ink.scale(w,h);ink.fill(sparkle);ink.restore();
+  }
+  const source=sampleMask();
+  ink.clearRect(-mask.width/2,-mask.height/2,mask.width,mask.height);
+  ink.font='italic bold 290px Georgia, "Times New Roman", serif';
+  const word='yluna';
+  const m=ink.measureText(word);
+  const fit=690/(m.actualBoundingBoxLeft+m.actualBoundingBoxRight);
+  ink.save();ink.scale(fit,fit);
+  ink.fillText(word,(m.actualBoundingBoxLeft-m.actualBoundingBoxRight)/2,
+    (m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2);
+  ink.restore();
+  const target=sampleMask();
+
+  // Nearby stars share a broad direction; local shuffling lets the strokes unwind into streams.
+  source.sort((a,b)=>a.x-b.x);target.sort((a,b)=>a.x-b.x);
+  const spread=Math.floor(count*.105);
+  for(let i=0;i<count;i++){
+    const j=i+Math.floor(random()*Math.min(spread,count-i));
+    [target[i],target[j]]=[target[j],target[i]];
+  }
+  const colors=['#84669e','#b184be','#db9bca','#fbc6dc','#ffdfef','#b09acb','#c8b2ef','#e0d4ff',
+    '#f7e7ff','#958bbd','#a3acdd','#b8d1f4','#ddfaff','#fff1f7'];
+  const batches=colors.map(()=>[]);
+  for(let i=0;i<count;i++){
+    const a=source[i], b=target[i], rand=random();
+    const horizontal=(a.x+380)/730+(.5-random())*.33;
+    const band=horizontal<.35?0:horizontal<.68?5:9;
+    const tone=random()<.035?13:band+Math.min(3,Math.floor(rand*4));
+    batches[tone].push({a,b,r:.86+Math.pow(rand,1.65)*1.82,
+      drift:random()*6.283,bend:(random()-.5)*83,delay:random()*.20,
+      arc:Math.sin(a.x/125+a.y/92)*(55+Math.abs(a.x)*.15)+(.5-random())*32});
   }
   return {
     resize(w,h){
@@ -34,37 +88,27 @@ function createMikaHalo(canvas) {
     },
     render(t,px,py){
       ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,width,height);
-      if(!width||!height)return;
-      const small=width<=680, unit=Math.min(width/(small?840:1170),height/(small?565:735));
-      const cx=width*(small?.51:.56),cy=height*(small?.47:.40);
-      ctx.save();ctx.translate(cx,cy+Math.sin(t*.8)*unit*3.5);ctx.scale(unit,unit);
-      // Keep the illustration's tilt readable throughout the motion.
-      ctx.rotate(Math.sin(t*.36)*.028+px*.044);ctx.transform(1,py*.024,px*.025,1+py*.05,0,0);
-      const aura=ctx.createRadialGradient(0,0,7,0,0,378);
-      aura.addColorStop(0,'rgba(255,177,235,.17)');aura.addColorStop(.44,'rgba(182,134,228,.07)');aura.addColorStop(1,'rgba(120,91,186,0)');
-      ctx.fillStyle=aura;ctx.fillRect(-380,-380,760,760);
-      const enamel=ctx.createLinearGradient(-328,65,307,-87);
-      enamel.addColorStop(0,'#ccfaff');enamel.addColorStop(.25,'#f3e9ff');enamel.addColorStop(.52,'#ffe6f1');
-      enamel.addColorStop(.75,'#f3e5ff');enamel.addColorStop(1,'#d6f5ff');
-      ctx.lineJoin='round';ctx.shadowColor='rgba(202,157,255,.44)';ctx.shadowBlur=unit*dpr*7;
-      surface(paths.upperTip,'#f7d5f5');
-      surface(paths.upperRibbon,enamel);
-      surface(paths.leftRibbon,enamel);
-      for(const [i,[x,y,r]] of moons.entries()){
-        pearl(x+Math.sin(t*.72+i)*2,y+Math.cos(t*.8+i)*2,r,false);
+      if(!width||!height)return false;
+      const small=width<=680, scale=Math.min(width/(small?800:1090),height/(small?550:695));
+      const phase=Math.max(0,Math.min(1,(t-2.6)/2.65));
+      ctx.translate(width*(small?.51:.56),height*(small?.47:.40));
+      ctx.scale(scale,scale);
+      ctx.rotate((Math.sin(t*.42)*.025+px*.045)*(1-phase));
+      ctx.transform(1,py*.018*(1-phase),px*.014,1+py*.035,0,0);
+      for(let k=0;k<batches.length;k++){
+        ctx.fillStyle=colors[k];ctx.beginPath();
+        for(const star of batches[k]){
+          const u=Math.max(0,Math.min(1,(phase-star.delay)/.80)), blend=u*u*(3-2*u);
+          const lift=4*blend*(1-blend);
+          const flicker=Math.sin(t*1.4+star.drift);
+          const x=star.a.x+(star.b.x-star.a.x)*blend+star.bend*lift+flicker*(1.3-.8*blend);
+          const y=star.a.y+(star.b.y-star.a.y)*blend+star.arc*lift+Math.cos(t*.9+star.drift)*(1.3-.8*blend);
+          const r=star.r*(.97+.12*flicker)*(small?1.23:1);
+          ctx.rect(x-r*.5,y-r*.5,r,r);
+        }
+        ctx.fill();
       }
-      pearl(0,0,53,true);
-      surface(paths.lowerTip,'#f4ccf7');
-      surface(paths.innerRibbon,enamel);
-      surface(paths.equator,'#f4ddff','#cfaff4',1.6);
-      surface(paths.lowerRing,enamel);
-      sparks.forEach(([x,y,w,h,angle],i)=>{
-        const pulse=.93+.07*Math.sin(t*1.55+i*2.2);
-        ctx.save();ctx.translate(x+px*(4+i),y+Math.sin(t*.9+i)*2.4);
-        ctx.rotate(angle+Math.sin(t*.55+i)*.022);ctx.scale(w*pulse,h*pulse);
-        surface(sparkle,i===0?'#def5ff':'#f4e4ff','#c5aaff',.045);ctx.restore();
-      });
-      ctx.restore();
+      return phase>=1;
     }
   };
 }

@@ -5,6 +5,8 @@
   const halo = createMikaHalo(haloCanvas);
   const switchArt = document.querySelector('#change-art');
   const caption = document.querySelector('#art-caption');
+  const replay = document.querySelector('#replay-halo');
+  let finished = false;
   let galaxy;
   let showHalo = true;
   const toggle = document.querySelector('#motion');
@@ -37,7 +39,14 @@
       viewY+=(targetY-viewY)*Math.min(1,dt*5);
     }
     last=stamp;
-    if(showHalo) halo.render(time,viewX,viewY);
+    if(showHalo) {
+      const settled=halo.render(time,viewX,viewY);
+      if(settled!==finished){
+        finished=settled;
+        replay.hidden=!settled;
+        caption.textContent=settled?'yluna':'未花光环';
+      }
+    }
     else galaxy.render(time*.047,viewX,viewY);
     if(!paused)start();
   }
@@ -57,12 +66,20 @@
   new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(visible){last=0;start();}else{cancelAnimationFrame(frame);frame=0;}}).observe(stage);
   document.addEventListener('visibilitychange',()=>{last=0;if(!document.hidden)start();});
   toggle.addEventListener('click',()=>setMode(!paused)); reduce.addEventListener('change',e=>setMode(e.matches));
+  replay.addEventListener('click',()=>{
+    time=0;last=0;finished=false;replay.hidden=true;
+    caption.textContent='未花光环';
+    switchArt.focus({preventScroll:true});
+    if(paused)setMode(false);
+    start();
+  });
   switchArt.addEventListener('click',()=>{
     showHalo=!showHalo;
     if(!showHalo && !galaxy)galaxy=createGalaxy(galaxyCanvas);
     haloCanvas.hidden=!showHalo;galaxyCanvas.hidden=showHalo;
     caption.textContent=showHalo?'未花光环':'彩色星系';
     switchArt.textContent=showHalo?'看彩色星系':'看未花光环';
+    finished=false;replay.hidden=true;
     time=0;last=0;targetX=targetY=viewX=viewY=0;
     size();
   });
