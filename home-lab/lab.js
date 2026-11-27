@@ -6,7 +6,9 @@
   const switchArt = document.querySelector('#change-art');
   const caption = document.querySelector('#art-caption');
   const replay = document.querySelector('#replay-halo');
-  let finished = false;
+  const inspect = document.querySelector('#inspect-halo');
+  let finished = false, inspecting = false, manualAngle = false;
+  let yaw = 0, elevation = .25, drag = null;
   let galaxy;
   let showHalo = true;
   const toggle = document.querySelector('#motion');
@@ -40,11 +42,16 @@
     }
     last=stamp;
     if(showHalo) {
-      const settled=halo.render(time,viewX,viewY);
+      if(!manualAngle){
+        const spin=Math.min(time,4.2);
+        yaw=spin*.51+viewX*.27;
+        elevation=.24+.24*Math.sin(spin*.77)+viewY*.18;
+      }
+      const settled=halo.render(time,yaw,elevation,inspecting);
       if(settled!==finished){
         finished=settled;
         replay.hidden=!settled;
-        caption.textContent=settled?'yluna':'未花光环';
+        caption.textContent=settled?'yluna':'拖动旋转光环';
       }
     }
     else galaxy.render(time*.047,viewX,viewY);
@@ -59,6 +66,41 @@
     targetX=2*(e.clientX-box.left)/box.width-1;
     targetY=2*(e.clientY-box.top)/box.height-1;
   }
+  function inspectModel(){
+    if(!showHalo || inspecting)return;
+    if(finished){yaw=0;elevation=.25;}
+    inspecting=manualAngle=true;finished=false;replay.hidden=true;
+    inspect.textContent='聚成 yluna';caption.textContent='拖动查看角度';
+    start();
+  }
+  function rotate(dx,dy){
+    yaw+=dx;
+    elevation=Math.min(Math.PI/2,Math.max(-Math.PI/2,elevation+dy));
+    start();
+  }
+  haloCanvas.addEventListener('pointerdown',e=>{
+    if(!e.isPrimary || e.button!==0)return;
+    inspectModel();drag={id:e.pointerId,x:e.clientX,y:e.clientY};
+    haloCanvas.setPointerCapture(e.pointerId);
+  });
+  haloCanvas.addEventListener('pointermove',e=>{
+    if(!drag || e.pointerId!==drag.id)return;
+    const radiansPerPixel=2*Math.PI/Math.max(230,Math.min(640,stage.clientWidth*.8));
+    rotate((e.clientX-drag.x)*radiansPerPixel,(drag.y-e.clientY)*radiansPerPixel);
+    drag.x=e.clientX;drag.y=e.clientY;
+  });
+  haloCanvas.addEventListener('lostpointercapture',()=>{drag=null;});
+  haloCanvas.addEventListener('keydown',e=>{
+    const directions={ArrowLeft:[-.22,0],ArrowRight:[.22,0],ArrowUp:[0,.18],ArrowDown:[0,-.18]};
+    if(!directions[e.key])return;
+    e.preventDefault();inspectModel();rotate(...directions[e.key]);
+  });
+  inspect.addEventListener('click',()=>{
+    if(!inspecting){inspectModel();return;}
+    inspecting=false;time=4.2;last=0;inspect.textContent='自由旋转';caption.textContent='未花光环';
+    if(paused)setMode(false);
+    start();
+  });
   stage.addEventListener('pointermove',aim);
   stage.addEventListener('pointerdown',aim);
   stage.addEventListener('pointerleave',()=>{targetX=targetY=0;});
@@ -68,7 +110,8 @@
   toggle.addEventListener('click',()=>setMode(!paused)); reduce.addEventListener('change',e=>setMode(e.matches));
   replay.addEventListener('click',()=>{
     time=0;last=0;finished=false;replay.hidden=true;
-    caption.textContent='未花光环';
+    inspecting=manualAngle=false;inspect.textContent='自由旋转';
+    caption.textContent='拖动旋转光环';
     switchArt.focus({preventScroll:true});
     if(paused)setMode(false);
     start();
@@ -77,7 +120,8 @@
     showHalo=!showHalo;
     if(!showHalo && !galaxy)galaxy=createGalaxy(galaxyCanvas);
     haloCanvas.hidden=!showHalo;galaxyCanvas.hidden=showHalo;
-    caption.textContent=showHalo?'未花光环':'彩色星系';
+    caption.textContent=showHalo?'拖动旋转光环':'彩色星系';
+    inspecting=manualAngle=false;drag=null;inspect.hidden=!showHalo;inspect.textContent='自由旋转';
     switchArt.textContent=showHalo?'看彩色星系':'看未花光环';
     finished=false;replay.hidden=true;
     time=0;last=0;targetX=targetY=viewX=viewY=0;
