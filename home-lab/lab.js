@@ -1,6 +1,12 @@
 (() => {
-  const canvas = document.querySelector('#galaxy');
-  const galaxy = createGalaxy(canvas);
+  const stage = document.querySelector('.hero-art');
+  const haloCanvas = document.querySelector('#mika-halo');
+  const galaxyCanvas = document.querySelector('#galaxy');
+  const halo = createMikaHalo(haloCanvas);
+  const switchArt = document.querySelector('#change-art');
+  const caption = document.querySelector('#art-caption');
+  let galaxy;
+  let showHalo = true;
   const toggle = document.querySelector('#motion');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   let paused = reduce.matches, frame = 0, visible = true, time = 0, last = 0;
@@ -31,24 +37,34 @@
       viewY+=(targetY-viewY)*Math.min(1,dt*5);
     }
     last=stamp;
-    galaxy.render(time*.047,viewX,viewY);
+    if(showHalo) halo.render(time,viewX,viewY);
+    else galaxy.render(time*.047,viewX,viewY);
     if(!paused)start();
   }
   function size() {
-    const box=canvas.getBoundingClientRect();
-    galaxy.resize(box.width,box.height);start();
+    const box=stage.getBoundingClientRect();
+    (showHalo ? halo : galaxy).resize(box.width,box.height);start();
   }
   function aim(e) {
-    const box=canvas.getBoundingClientRect();
+    const box=stage.getBoundingClientRect();
     targetX=2*(e.clientX-box.left)/box.width-1;
     targetY=2*(e.clientY-box.top)/box.height-1;
   }
-  canvas.addEventListener('pointermove',aim);
-  canvas.addEventListener('pointerdown',aim);
-  canvas.addEventListener('pointerleave',()=>{targetX=targetY=0;});
-  new ResizeObserver(size).observe(canvas);
-  new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(visible){last=0;start();}else{cancelAnimationFrame(frame);frame=0;}}).observe(canvas);
+  stage.addEventListener('pointermove',aim);
+  stage.addEventListener('pointerdown',aim);
+  stage.addEventListener('pointerleave',()=>{targetX=targetY=0;});
+  new ResizeObserver(size).observe(stage);
+  new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(visible){last=0;start();}else{cancelAnimationFrame(frame);frame=0;}}).observe(stage);
   document.addEventListener('visibilitychange',()=>{last=0;if(!document.hidden)start();});
   toggle.addEventListener('click',()=>setMode(!paused)); reduce.addEventListener('change',e=>setMode(e.matches));
+  switchArt.addEventListener('click',()=>{
+    showHalo=!showHalo;
+    if(!showHalo && !galaxy)galaxy=createGalaxy(galaxyCanvas);
+    haloCanvas.hidden=!showHalo;galaxyCanvas.hidden=showHalo;
+    caption.textContent=showHalo?'未花光环':'彩色星系';
+    switchArt.textContent=showHalo?'看彩色星系':'看未花光环';
+    time=0;last=0;targetX=targetY=viewX=viewY=0;
+    size();
+  });
   size();setMode(paused);
 })();
