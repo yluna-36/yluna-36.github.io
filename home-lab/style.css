@@ -47,8 +47,8 @@ h1,h2,h3,p {
   align-items:center;
   gap:32px;
   color:#ecf1e7;
-  background:#111d1c;
-  border-bottom:1px solid #ffffff28;
+  background:#080909;
+  border-bottom:1px solid #ffffff15;
 }
 .wordmark {
   font:bold italic 30px/1 Georgia,serif;
@@ -77,18 +77,26 @@ h1,h2,h3,p {
   font-size:14px;
   padding:6px 14px;
 }
+#top {
+  padding-top:1px;
+  background:#050606;
+}
 .hero {
+  --inset:clamp(12px,1.7vw,30px);
   position:relative;
   isolation:isolate;
   overflow:hidden;
-  min-height:580px;
-  height:min(78svh,860px);
-  background:radial-gradient(ellipse at 71% 57%,#263530 0%,#14201e 41%,#101a19 72%);
-  color:#f4f4eb;
+  margin:var(--inset);
+  padding:clamp(22px,3vw,54px);
+  border-radius:clamp(20px,2.2vw,40px);
+  background:radial-gradient(ellipse at 55% 45%,#141416,#0c0d0e 60%,#0b0c0c);
+  color:#f5f4ee;
+  min-height:570px;
+  height:clamp(570px,82svh,950px);
   display:flex;
-  align-items:center;
-  padding:55px var(--pad);
+  align-items:flex-end;
 }
+.latest,.topics { background:var(--paper); }
 .hero-art {
   position:absolute;
   inset:0;
@@ -101,7 +109,7 @@ h1,h2,h3,p {
   touch-action:pan-y pinch-zoom;
 }
 .hero-copy {
-  width:44%;
+  width:min(740px,75%);
   pointer-events:none;
 }
 .kicker,.rubric,time,.topic small {
@@ -109,10 +117,14 @@ h1,h2,h3,p {
   letter-spacing:.11em;
 }
 .kicker {
+  position:absolute;
+  top:clamp(24px,3vw,54px);
+  left:clamp(22px,3vw,54px);
+  pointer-events:none;
   display:flex;
   align-items:center;
   gap:10px;
-  color:#d1efb0;
+  color:#c1c6c0;
   font-family:inherit;
   font-size:14px;
 }
@@ -122,27 +134,26 @@ h1,h2,h3,p {
   background:var(--lime);
 }
 h1 {
-  margin:22px 0 25px;
-  line-height:.99;
-  letter-spacing:-.065em;
+  margin:0 0 12px;
+  line-height:1.1;
+  letter-spacing:-.058em;
+  font-size:clamp(40px,4.8vw,86px);
 }
 h1 em {
-  display:block;
-  font:italic 500 clamp(84px,8.7vw,155px)/.85 Georgia,"Times New Roman",serif;
-  letter-spacing:-.085em;
-  margin-bottom:14px;
+  font:italic 500 1.15em/.9 Georgia,"Times New Roman",serif;
+  margin-right:.16em;
+  letter-spacing:-.06em;
 }
-h1 span {
-  display:block;
-  font-size:clamp(44px,4.7vw,87px);
-  font-weight:720;
-}
+h1 span {font-weight:720;}
 h1 b {
-  color:var(--lime);
-  font-weight:700;
+  color:#dbabec;
+  background:linear-gradient(100deg,#ffbb79,#ef83bc 40%,#ad9cfb 72%,#84d6eb);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 .intro {
-  max-width:25em;
+  max-width:34em;
   color:#c0cec5;
   font-size:clamp(16px,1.27vw,21px);
   line-height:1.82;
@@ -151,7 +162,7 @@ h1 b {
   color:#f0f6e8;
 }
 .hero-actions {
-  margin-top:30px;
+  margin-top:16px;
   display:flex;
   align-items:center;
   gap:24px;
@@ -169,8 +180,8 @@ h1 b {
 }
 .art-tools {
   position:absolute;
-  bottom:21px;
-  right:var(--pad);
+  top:clamp(20px,2.8vw,50px);
+  right:clamp(22px,3vw,54px);
   display:flex;
   align-items:center;
   gap:14px;
@@ -178,7 +189,7 @@ h1 b {
   font-size:13px;
 }
 .art-tools button {
-  background:#12201cb3;
+  background:#111213b3;
   border:1px solid #83988c;
   border-radius:20px;
   padding:5px 12px;
@@ -496,40 +507,18 @@ time {
     padding:4px 8px;
   }
   .hero {
-    padding:35px var(--pad) 0;
-    display:block;
-    min-height:700px;
-    height:min(93svh,840px);
+    min-height:570px;
+    height:clamp(570px,82svh,780px);
+    padding:25px 20px;
+    margin:9px;
   }
-  .hero-copy {
-    width:100%;
-  }
-  .hero h1 {
-    margin:16px 0;
-  }
-  .hero h1 em {
-    font-size:72px;
-    margin-bottom:7px;
-  }
-  .hero h1 span {
-    font-size:43px;
-  }
-  .intro {
-    font-size:15px;
-    max-width:24em;
-  }
-  .hero-actions {
-    margin-top:16px;
-  }
-  .hero-art {
-    top:45%;
-  }
-  .art-tools {
-    bottom:12px;
-    right:var(--pad);
-    left:var(--pad);
-    justify-content:space-between;
-  }
+  .hero-copy {width:100%;}
+  .hero h1 {font-size:clamp(31px,8.6vw,48px);}
+  .intro {font-size:15px;max-width:26em;}
+  .hero-art {bottom:23%;top:12%;}
+  .art-tools {top:19px;right:18px;}
+  .art-tools span {display:none;}
+  .hero-actions {margin-top:17px;}
   .latest,.topics {
     grid-template-columns:1fr;
     gap:24px;
@@ -598,12 +587,12 @@ time {
 }
 @supports (animation-timeline:view()) {
   .hero {
-    view-timeline-name:--prism-view;
+    view-timeline-name:--galaxy-view;
     view-timeline-axis:block;
   }
   .motion-on .hero-copy:not(:focus-within) {
     animation:hero-exit linear both;
-    animation-timeline:--prism-view;
+    animation-timeline:--galaxy-view;
     animation-range:exit 0% exit 75%;
   }
   @keyframes hero-exit {
